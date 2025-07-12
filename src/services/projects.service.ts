@@ -9,7 +9,10 @@ export async function getProjects() {
   const allProjects: IProject[] = await response.json()
 
   return allProjects
-    .filter((project) => !!project.topics.length)
+    .filter(
+      (project) =>
+        project.topics.length > 0 && !project.topics.includes('course')
+    )
     .filter((project) => !!project.description)
     .sort(({ pushed_at: one }, { pushed_at: two }) => dayjs(two).diff(one))
 }
