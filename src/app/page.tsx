@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import { Suspense } from 'react'
 import { CourseList } from './_components/courses/course-list'
 import { Education } from './_components/education/education'
