@@ -1,4 +1,5 @@
 import { Suspense } from 'react'
+import { Education } from './_components/education/education'
 import { Header } from './_components/header/header'
 import { ProjectList } from './_components/projects/project-list'
 import { Technologies } from './_components/technologies/technologies'
@@ -13,6 +14,8 @@ export default function Home() {
       <Suspense fallback={<p>Loading...</p>}>
         <ProjectList />
       </Suspense>
+
+      <Education />
     </main>
   )
 }
