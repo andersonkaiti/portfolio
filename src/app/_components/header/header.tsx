@@ -8,7 +8,14 @@ import {
   CardHeader,
   CardTitle,
 } from '@components/ui/card'
-import { Cpu, FileUser, Github, Linkedin } from 'lucide-react'
+import {
+  Cpu,
+  FileUser,
+  Github,
+  Linkedin,
+  MapPin,
+  MessageCircle,
+} from 'lucide-react'
 import Link from 'next/link'
 import { Code } from './code'
 
@@ -30,16 +37,24 @@ export function Header() {
                 Cientista da Computação
               </Badge>
             </div>
+
             <h1 className="scroll-m-20 text-balance break-words text-start font-extrabold text-4xl tracking-wide">
               Anderson Kaiti
             </h1>
-            <span className="font-light text-emerald-500">
-              Disponível para projetos
+
+            <span className="mt-2 flex gap-1 font-light text-emerald-500">
+              <MapPin className="size-4" /> Bauru, SP - Brasil
             </span>
           </CardTitle>
         </CardHeader>
 
         <CardContent className="text-justify font-light text-lg">
+          <h3 className="scroll-m-20 font-semibold text-2xl text-emerald-500 tracking-tight">
+            Desenvolvedor Web Full-Stack
+          </h3>
+          <span className="mb-4 font-light text-sm">
+            Disponível para trabalhos
+          </span>
           <p className="leading-7 [&:not(:first-child)]:mt-6">
             Estagiário de TI com atuação em desenvolvimento web, me destaco por
             entregar soluções robustas e escaláveis em ambientes modernos. Tenho
@@ -58,22 +73,40 @@ export function Header() {
           </p>
         </CardContent>
 
-        <CardFooter className="space-x-4">
-          <Link href="https://github.com/andersonkaiti" target="_blank">
-            <Button variant="outline">
+        <CardFooter className="flex flex-wrap gap-2 sm:gap-4">
+          <Link
+            className="w-full sm:w-fit"
+            href="https://github.com/andersonkaiti"
+            target="_blank"
+          >
+            <Button className="w-full" variant="outline">
               <Github /> GitHub
             </Button>
           </Link>
           <Link
+            className="w-full sm:w-fit"
             href="https://www.linkedin.com/in/anderson-kaiti-67906126a"
             target="_blank"
           >
-            <Button variant="outline">
+            <Button className="w-full" variant="outline">
               <Linkedin /> LinkedIn
             </Button>
           </Link>
-          <Link href="/anderson-kaiti-curriculo.pdf" target="_blank">
-            <Button className="border border-emerald-300 bg-emerald-500 shadow-emerald-500/40 shadow-lg transition-all duration-300">
+          <Link
+            className="w-full sm:w-fit"
+            href="https://www.linkedin.com/in/anderson-kaiti-67906126a"
+            target="_blank"
+          >
+            <Button className="w-full" variant="outline">
+              <MessageCircle /> WhatsApp
+            </Button>
+          </Link>
+          <Link
+            className="w-full sm:w-fit"
+            href="/anderson-kaiti-curriculo.pdf"
+            target="_blank"
+          >
+            <Button className="w-full border border-emerald-300 bg-emerald-500 shadow-emerald-500/40 shadow-lg transition-all duration-300">
               <FileUser />
               Currículo
             </Button>
