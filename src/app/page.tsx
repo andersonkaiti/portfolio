@@ -1,4 +1,6 @@
+import { Suspense } from 'react'
 import { Header } from './_components/header/header'
+import { ProjectList } from './_components/projects/project-list'
 import { Technologies } from './_components/technologies/technologies'
 
 export default function Home() {
@@ -7,6 +9,10 @@ export default function Home() {
       <Header />
 
       <Technologies />
+
+      <Suspense fallback={<p>Loading...</p>}>
+        <ProjectList />
+      </Suspense>
     </main>
   )
 }
