@@ -11,7 +11,7 @@ export async function ProjectList() {
   const projects = await getProjects()
 
   return (
-    <SectionContainer>
+    <SectionContainer id="projects">
       <SectionHeader>
         <SectionTitle>Projetos</SectionTitle>
         <SectionSubtitle>

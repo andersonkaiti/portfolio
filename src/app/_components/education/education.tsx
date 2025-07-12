@@ -16,7 +16,7 @@ import { Globe, GraduationCap } from 'lucide-react'
 
 export function Education() {
   return (
-    <SectionContainer>
+    <SectionContainer id="education">
       <SectionHeader>
         <SectionTitle>Formações</SectionTitle>
         <SectionSubtitle>

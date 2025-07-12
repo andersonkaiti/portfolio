@@ -1,6 +1,11 @@
-export function SectionContainer({ children }: { children: React.ReactNode }) {
+import type { HTMLAttributes } from 'react'
+
+export function SectionContainer({
+  children,
+  ...props
+}: { children: React.ReactNode } & HTMLAttributes<HTMLDivElement>) {
   return (
-    <section className="w-full space-y-8 px-6 md:space-y-16">
+    <section className="w-full space-y-8 px-6 md:space-y-16" {...props}>
       {children}
     </section>
   )

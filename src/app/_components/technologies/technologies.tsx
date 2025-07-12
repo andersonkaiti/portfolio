@@ -9,7 +9,7 @@ import { Stack } from './stack'
 
 export function Technologies() {
   return (
-    <SectionContainer>
+    <SectionContainer id="technologies">
       <SectionHeader>
         <SectionTitle>Principais Tecnologias</SectionTitle>
         <SectionSubtitle>

@@ -14,7 +14,7 @@ export async function CourseList() {
   const { courses, totalHours } = await getCourses()
 
   return (
-    <SectionContainer>
+    <SectionContainer id="courses">
       <SectionHeader>
         <SectionTitle>Cursos e Certificações</SectionTitle>
         <SectionSubtitle>
@@ -28,7 +28,7 @@ export async function CourseList() {
         ))}
       </div>
 
-      <Card className="mx-auto w-full items-center bg-transparent md:w-fit">
+      <Card className="mx-auto w-full items-center bg-transparent text-center md:w-fit md:text-start">
         <CardContent className="flex flex-col items-center gap-4 md:flex-row">
           <Badge className="aspect-square h-fit border-emerald-500/20 bg-emerald-500/10 p-2">
             <Award className="!size-8 text-emerald-500" />

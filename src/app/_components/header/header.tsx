@@ -21,7 +21,10 @@ import { Code } from './code'
 
 export function Header() {
   return (
-    <header className="grid grid-cols-1 items-center gap-4 xl:grid-cols-2">
+    <header
+      className="grid grid-cols-1 items-center gap-4 xl:grid-cols-2"
+      id="presentation"
+    >
       <Card className="border-0 bg-transparent shadow-none">
         <CardHeader className="flex flex-col items-center gap-4 md:flex-row">
           <Avatar className="size-30 ring-3 ring-emerald-500/20">
