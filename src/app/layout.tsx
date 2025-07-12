@@ -1,3 +1,4 @@
+import SmoothScrolling from '@lib/lenis'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import './globals.css'
@@ -18,10 +19,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html className="dark" lang="en">
-      <body className={`${MontserratSans.variable} antialiased`}>
-        {children}
-      </body>
+    <html lang="en">
+      <SmoothScrolling>
+        <body className={`${MontserratSans.variable} dark antialiased`}>
+          {children}
+        </body>
+      </SmoothScrolling>
     </html>
   )
 }
