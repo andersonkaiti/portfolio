@@ -17,7 +17,11 @@ export function Stack({ category, icon: Icon, technologies }: IStack) {
         </CardHeader>
         <CardContent className="flex flex-wrap gap-2">
           {technologies.map((tech) => (
-            <Badge key={tech} variant="outline">
+            <Badge
+              className="border-emerald-500/40 bg-emerald-500/10 text-emerald-500"
+              key={tech}
+              variant="outline"
+            >
               {tech}
             </Badge>
           ))}

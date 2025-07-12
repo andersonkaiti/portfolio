@@ -21,7 +21,11 @@ export function Project({ name, description, html_url, topics }: IProject) {
         <CardTitle className="tracking-wider">{formatTitle(name)}</CardTitle>
         <CardDescription className="flex flex-wrap gap-2">
           {topics.map((topic) => (
-            <Badge className="rounded-full" key={topic} variant="outline">
+            <Badge
+              className="rounded-full border-emerald-500/40 bg-emerald-500/10 text-emerald-500"
+              key={topic}
+              variant="outline"
+            >
               {formatTopic(topic)}
             </Badge>
           ))}
