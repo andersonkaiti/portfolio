@@ -14,13 +14,13 @@ import { Code } from './code'
 
 export function Header() {
   return (
-    <header className="grid grid-cols-1 items-center gap-4 lg:grid-cols-2">
+    <header className="grid grid-cols-1 items-center gap-4 xl:grid-cols-2">
       <Card className="border-0 bg-transparent shadow-none">
-        <CardHeader className="flex items-center gap-4">
+        <CardHeader className="flex flex-col items-center gap-4 md:flex-row">
           <Avatar className="size-30 ring-3 ring-emerald-500/20">
             <AvatarImage src="/foto.jpeg" />
           </Avatar>
-          <CardTitle>
+          <CardTitle className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-2">
               <Cpu className="size-5 text-emerald-500" />
               <Badge
