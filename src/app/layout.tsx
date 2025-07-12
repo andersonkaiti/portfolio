@@ -1,6 +1,7 @@
-import SmoothScrolling from '@lib/lenis'
+import { LenisProvider } from '@providers/lenis'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
+import { NavigationBar } from './_components/navbar'
 import './globals.css'
 
 const MontserratSans = Montserrat({
@@ -20,11 +21,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <SmoothScrolling>
-        <body className={`${MontserratSans.variable} dark antialiased`}>
+      <LenisProvider>
+        <body
+          className={`${MontserratSans.variable} dark relative antialiased`}
+        >
+          <NavigationBar />
           {children}
         </body>
-      </SmoothScrolling>
+      </LenisProvider>
     </html>
   )
 }

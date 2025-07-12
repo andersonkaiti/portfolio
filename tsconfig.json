@@ -22,6 +22,7 @@
       "types/*": ["./src/@types/*"],
       "@components/*": ["./src/components/*"],
       "@lib/*": ["./src/lib/*"],
+      "@providers/*": ["./src/providers/*"],
       "@services/*": ["./src/services/*"],
       "@utils/*": ["./src/utils/*"],
       "@/*": ["./src/*"]
