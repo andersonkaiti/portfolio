@@ -18,9 +18,9 @@ export function Education() {
   return (
     <SectionContainer>
       <SectionHeader>
-        <SectionTitle>Principais Tecnologias</SectionTitle>
+        <SectionTitle>Formações</SectionTitle>
         <SectionSubtitle>
-          Ferramentas e tecnologias que domino para criar soluções completas
+          Minha educação formal e desenvolvimento de idiomas
         </SectionSubtitle>
       </SectionHeader>
 
