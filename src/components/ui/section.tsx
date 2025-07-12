@@ -1,5 +1,9 @@
 export function SectionContainer({ children }: { children: React.ReactNode }) {
-  return <section className="space-y-8 px-6 md:space-y-16">{children}</section>
+  return (
+    <section className="w-full space-y-8 px-6 md:space-y-16">
+      {children}
+    </section>
+  )
 }
 
 export function SectionHeader({ children }: { children: React.ReactNode }) {
