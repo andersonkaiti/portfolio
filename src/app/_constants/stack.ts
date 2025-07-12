@@ -14,6 +14,11 @@ export const stack: IStack[] = [
       'React.js',
       'Next.js',
       'TailwindCSS',
+      'React Query',
+      'Shadcn/ui',
+      'Vite',
+      'Zod',
+      'React Hook Form',
     ],
   },
   {
