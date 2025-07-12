@@ -76,6 +76,12 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+
+  --code-variable: #2b80d5;
+  --code-declarator: #d32f2f;
+  --code-operator: #212121;
+  --code-value: #55a267;
+  --code-comment: #c9cacc;
 }
 
 .dark {
@@ -110,6 +116,12 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
+
+  --code-variable: #ffffff;
+  --code-declarator: #959595;
+  --code-operator: #ffffff;
+  --code-value: #07a97d;
+  --code-comment: #4a4a4a;
 }
 
 @layer base {
