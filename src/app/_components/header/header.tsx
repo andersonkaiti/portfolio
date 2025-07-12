@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@components/ui/card'
-import { Cpu, Github, Linkedin } from 'lucide-react'
+import { Cpu, FileUser, Github, Linkedin } from 'lucide-react'
 import Link from 'next/link'
 import { Code } from './code'
 
@@ -70,6 +70,12 @@ export function Header() {
           >
             <Button variant="outline">
               <Linkedin /> LinkedIn
+            </Button>
+          </Link>
+          <Link href="/anderson-kaiti-curriculo.pdf" target="_blank">
+            <Button className="border border-emerald-300 bg-emerald-500 shadow-emerald-500/40 shadow-lg transition-all duration-300">
+              <FileUser />
+              Currículo
             </Button>
           </Link>
         </CardFooter>
