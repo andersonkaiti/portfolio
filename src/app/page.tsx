@@ -1,11 +1,18 @@
 export const dynamic = 'force-dynamic'
 
+import dynamicImport from 'next/dynamic'
 import { Suspense } from 'react'
-import { CourseList } from './_components/courses/course-list'
 import { Education } from './_components/education/education'
 import { Header } from './_components/header/header'
-import { ProjectList } from './_components/projects/project-list'
 import { Technologies } from './_components/technologies/technologies'
+
+const DynamicProjectList = dynamicImport(() =>
+  import('./_components/projects/project-list').then((m) => m.ProjectList)
+)
+
+const DynamicCourseList = dynamicImport(() =>
+  import('./_components/courses/course-list').then((m) => m.CourseList)
+)
 
 export default function Home() {
   return (
@@ -15,13 +22,13 @@ export default function Home() {
       <Technologies />
 
       <Suspense fallback={<p>Loading...</p>}>
-        <ProjectList />
+        <DynamicProjectList />
       </Suspense>
 
       <Education />
 
       <Suspense fallback={<p>Loading...</p>}>
-        <CourseList />
+        <DynamicCourseList />
       </Suspense>
     </main>
   )
