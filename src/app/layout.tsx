@@ -1,6 +1,7 @@
 import { LenisProvider } from '@providers/lenis'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
+import { ThemeProvider } from 'next-themes'
 import { NavigationBar } from './_components/navbar'
 import './globals.css'
 
@@ -20,13 +21,18 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR" suppressHydrationWarning>
       <LenisProvider>
-        <body
-          className={`${MontserratSans.variable} dark relative antialiased`}
-        >
-          <NavigationBar />
-          {children}
+        <body className={`${MontserratSans.variable} relative antialiased`}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            disableTransitionOnChange
+            enableSystem
+          >
+            <NavigationBar />
+            {children}
+          </ThemeProvider>
         </body>
       </LenisProvider>
     </html>

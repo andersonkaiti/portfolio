@@ -11,6 +11,7 @@ import {
 } from '@components/ui/resizable-navbar'
 import { useLenis } from '@providers/lenis'
 import { useState } from 'react'
+import { DarkModeButton } from './dark-mode-button'
 
 export interface NavItem {
   name: string
@@ -50,6 +51,7 @@ export function NavigationBar() {
       {/* Desktop Navigation */}
       <NavBody>
         <NavItems items={navItems} />
+        <DarkModeButton />
       </NavBody>
 
       {/* Mobile Navigation */}
@@ -80,6 +82,7 @@ export function NavigationBar() {
             </a>
           ))}
         </MobileNavMenu>
+        <DarkModeButton />
       </MobileNav>
     </Navbar>
   )

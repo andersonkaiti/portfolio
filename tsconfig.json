@@ -22,6 +22,7 @@
       "types/*": ["./src/@types/*"],
       "@components/*": ["./src/components/*"],
       "@config/*": ["./src/config/*"],
+      "@hooks/*": ["./src/hooks/*"],
       "@lib/*": ["./src/lib/*"],
       "@providers/*": ["./src/providers/*"],
       "@services/*": ["./src/services/*"],
