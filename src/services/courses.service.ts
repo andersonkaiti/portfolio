@@ -1,3 +1,4 @@
+import { env } from '@config/env'
 import dayjs from 'dayjs'
 import type { IProject } from 'types/project'
 
@@ -5,7 +6,12 @@ const HOURS_REGEX = /(\d+)\s*horas/i
 
 export async function getCourses() {
   const response = await fetch(
-    'https://api.github.com/users/andersonkaiti/repos?per_page=100&page=1'
+    'https://api.github.com/users/andersonkaiti/repos?per_page=100&page=1',
+    {
+      headers: {
+        Authorization: env.GITHUB_TOKEN,
+      },
+    }
   )
 
   const allProjects: IProject[] = await response.json()

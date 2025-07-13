@@ -21,6 +21,7 @@
     "paths": {
       "types/*": ["./src/@types/*"],
       "@components/*": ["./src/components/*"],
+      "@config/*": ["./src/config/*"],
       "@lib/*": ["./src/lib/*"],
       "@providers/*": ["./src/providers/*"],
       "@services/*": ["./src/services/*"],
