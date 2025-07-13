@@ -10,11 +10,17 @@ import {
 } from '@components/ui/card'
 import { formatTitle } from '@utils/format-title'
 import { formatTopic } from '@utils/format-topic'
-import { Github } from 'lucide-react'
+import { Github, Link2 } from 'lucide-react'
 import Link from 'next/link'
 import type { IProject } from 'types/project'
 
-export function Project({ name, description, html_url, topics }: IProject) {
+export function Project({
+  name,
+  description,
+  html_url,
+  homepage,
+  topics,
+}: IProject) {
   return (
     <Card className="border-0 border-b-1 border-b-emerald-500 bg-transparent shadow-lg transition-all duration-300 hover:shadow-emerald-500/20">
       <CardHeader className="space-y-4">
@@ -34,13 +40,22 @@ export function Project({ name, description, html_url, topics }: IProject) {
       <CardContent>
         <p className="font-light">{description}</p>
       </CardContent>
-      <CardFooter className="mt-auto flex">
+      <CardFooter className="mt-auto flex justify-between gap-2">
         <Link href={html_url} target="_blank">
           <Button variant="outline">
             {' '}
             <Github /> Código
           </Button>
         </Link>
+
+        {homepage && (
+          <Link href={homepage} target="_blank">
+            <Button className="border border-emerald-300" variant="default">
+              {' '}
+              <Link2 /> Demo
+            </Button>
+          </Link>
+        )}
       </CardFooter>
     </Card>
   )
