@@ -55,24 +55,20 @@ export function Header() {
           <h3 className="scroll-m-20 font-semibold text-2xl text-emerald-500 tracking-tight">
             Desenvolvedor Web Full-Stack
           </h3>
-          <span className="mb-4 font-light text-sm">
-            Disponível para trabalhos
-          </span>
           <p className="leading-7 [&:not(:first-child)]:mt-6">
-            Estagiário de TI com atuação em desenvolvimento web, me destaco por
-            entregar soluções robustas e escaláveis em ambientes modernos. Tenho
-            domínio em{' '}
+            Discente de Ciência da Computação com foco em desenvolvimento web,
+            tenho domínio em{' '}
             <strong className="text-emerald-500">
               HTML5, CSS3, JavaScript, TypeScript, Node.js, MySQL, React.js,
-              Next.js, Prisma, Firebase e Docker
+              Next.js, TailwindCSS, Prisma, Firebase, Git e Docker
             </strong>
             .
           </p>
           <p className="leading-7 [&:not(:first-child)]:mt-6">
             Busco sempre entender profundamente o{' '}
             <strong className="text-emerald-500">“porquê”</strong> por trás de
-            cada escolha técnica e arquitetural, e sou movido por desafios que
-            exigem pensamento fora da caixa e inovação constante.
+            cada escolha técnica e arquitetural e expandir o meu conhecimento no
+            ecossistema JavaScript.
           </p>
         </CardContent>
 
