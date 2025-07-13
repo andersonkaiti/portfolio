@@ -28,13 +28,13 @@ export function Header() {
       <Card className="border-0 bg-transparent shadow-none">
         <CardHeader className="flex flex-col items-center gap-4 md:flex-row">
           <Avatar className="size-30 ring-3 ring-emerald-500/20">
-            <AvatarImage src="/foto.jpeg" />
+            <AvatarImage src="/foto.webp" />
           </Avatar>
           <CardTitle className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-2">
               <Cpu className="size-5 text-emerald-500" />
               <Badge
-                className="rounded-full border-emerald-500/50 bg-emerald-500/20 shadow-emerald-500/20 shadow-lg"
+                className="rounded-full border-emerald-500/50 bg-emerald-500/10 text-emerald-500 shadow-emerald-500/20 shadow-lg"
                 variant="outline"
               >
                 Cientista da Computação
@@ -97,7 +97,7 @@ export function Header() {
           </Link>
           <Link
             className="w-full sm:w-fit"
-            href="https://www.linkedin.com/in/anderson-kaiti-67906126a"
+            href="https://wa.me/14998053657"
             target="_blank"
           >
             <Button className="w-full" variant="outline">
