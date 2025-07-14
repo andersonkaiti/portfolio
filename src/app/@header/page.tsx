@@ -19,7 +19,7 @@ import {
 import Link from 'next/link'
 import { Code } from './code'
 
-export function Header() {
+export default function Header() {
   return (
     <header
       className="grid grid-cols-1 items-center gap-4 xl:grid-cols-2"

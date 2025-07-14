@@ -16,9 +16,17 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  children,
+  certifications,
+  education,
+  header,
+  projects,
+  technologies,
 }: Readonly<{
-  children: React.ReactNode
+  certifications: React.ReactNode
+  education: React.ReactNode
+  header: React.ReactNode
+  projects: React.ReactNode
+  technologies: React.ReactNode
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
@@ -31,7 +39,13 @@ export default function RootLayout({
             enableSystem
           >
             <NavigationBar />
-            {children}
+            <main className="mx-auto flex min-h-100vh max-w-7xl flex-col items-center justify-center gap-8 px-2 py-10 md:gap-20 md:px-20 md:py-30">
+              {header}
+              {technologies}
+              {projects}
+              {education}
+              {certifications}
+            </main>
           </ThemeProvider>
         </body>
       </LenisProvider>

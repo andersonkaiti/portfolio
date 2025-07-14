@@ -14,7 +14,7 @@ import {
 } from '@components/ui/section'
 import { Globe, GraduationCap } from 'lucide-react'
 
-export function Education() {
+export default function Education() {
   return (
     <SectionContainer id="education">
       <SectionHeader>

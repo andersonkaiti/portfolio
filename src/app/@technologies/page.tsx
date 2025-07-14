@@ -4,10 +4,10 @@ import {
   SectionSubtitle,
   SectionTitle,
 } from '@components/ui/section'
-import { stack } from '../../_constants/stack'
+import { stack } from '../_constants/stack'
 import { Stack } from './stack'
 
-export function Technologies() {
+export default function Technologies() {
   return (
     <SectionContainer id="technologies">
       <SectionHeader>
