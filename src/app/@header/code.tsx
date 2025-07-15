@@ -26,7 +26,7 @@ export function Code() {
               <div>
                 <span className="text-[var(--code-variable)]">name</span>:{' '}
                 <span className="text-[var(--code-value)]">
-                  'Cientista da Computação'
+                  'Anderson Kaiti'
                 </span>
                 ,
               </div>
