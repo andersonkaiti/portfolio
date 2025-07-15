@@ -82,6 +82,8 @@
   --code-operator: #212121;
   --code-value: #55a267;
   --code-comment: #c9cacc;
+
+  --skeleton: oklch(92% 0.004 286.32);
 }
 
 .dark {
@@ -122,6 +124,8 @@
   --code-operator: #ffffff;
   --code-value: #07a97d;
   --code-comment: #4a4a4a;
+
+  --skeleton: oklch(27.4% 0.006 286.033);
 }
 
 @layer base {
