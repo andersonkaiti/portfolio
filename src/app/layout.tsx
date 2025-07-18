@@ -1,7 +1,7 @@
 import { LenisProvider } from '@providers/lenis'
 import type { Metadata } from 'next'
-import { Montserrat } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
+import { Montserrat } from 'next/font/google'
 import { NavigationBar } from './_components/navbar'
 import './globals.css'
 
@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <LenisProvider>
-        <body className={`${MontserratSans.variable} relative antialiased`}>
+        <body className={`${MontserratSans.variable} transition-colors relative antialiased`}>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
