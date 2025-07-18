@@ -1,4 +1,10 @@
 import { Code2 } from 'lucide-react'
+import { JetBrains_Mono } from 'next/font/google'
+
+const JetBrainsMono = JetBrains_Mono({
+  variable: '--font-jetbrains-mono',
+  subsets: ['latin'],
+})
 
 export function Code() {
   return (
@@ -16,7 +22,7 @@ export function Code() {
           </div>
         </div>
 
-        <div className="p-6 font-mono text-sm">
+        <div className={`p-6 font-mono text-sm ${JetBrainsMono.className}`}>
           <div className="space-y-2">
             <div className="text-[var(--code-variable)]">
               <span className="text-[var(--code-declarator)]">const</span>{' '}
