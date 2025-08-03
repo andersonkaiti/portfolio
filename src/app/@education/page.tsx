@@ -25,7 +25,7 @@ export default function Education() {
       </SectionHeader>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <Card className="bg-transparent">
+        <Card className="bg-background transition-colors duration-300 hover:border-emerald-500 hover:bg-card/20">
           <CardHeader className="flex gap-2">
             <Badge className="border-emerald-500/20 bg-emerald-500/10 p-2">
               <GraduationCap className="!size-10 text-emerald-500" />
@@ -54,7 +54,7 @@ export default function Education() {
           </CardFooter>
         </Card>
 
-        <Card className="bg-transparent">
+        <Card className="bg-background transition-colors duration-300 hover:border-emerald-500 hover:bg-card/20">
           <CardHeader className="flex gap-2">
             <Badge className="border-emerald-500/20 bg-emerald-500/10 p-2">
               <Globe className="!size-10 text-emerald-500" />
