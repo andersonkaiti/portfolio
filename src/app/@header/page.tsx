@@ -25,7 +25,7 @@ export default function Header() {
       className="grid grid-cols-1 items-center gap-4 xl:grid-cols-2"
       id="presentation"
     >
-      <Card className="border-0 bg-transparent shadow-none">
+      <Card className="border-0 bg-background shadow-none">
         <CardHeader className="flex flex-col items-center gap-4 md:flex-row">
           <Avatar className="size-30 ring-3 ring-emerald-500/20">
             <AvatarImage src="/foto.webp" />
@@ -78,7 +78,10 @@ export default function Header() {
             href="https://github.com/andersonkaiti"
             target="_blank"
           >
-            <Button className="w-full" variant="outline">
+            <Button
+              className="w-full transition-all duration-300 hover:shadow-emerald-500/40 hover:shadow-lg"
+              variant="outline"
+            >
               <Github /> GitHub
             </Button>
           </Link>
@@ -87,7 +90,10 @@ export default function Header() {
             href="https://www.linkedin.com/in/anderson-kaiti-67906126a"
             target="_blank"
           >
-            <Button className="w-full" variant="outline">
+            <Button
+              className="w-full transition-all duration-300 hover:shadow-emerald-500/40 hover:shadow-lg"
+              variant="outline"
+            >
               <Linkedin /> LinkedIn
             </Button>
           </Link>
@@ -96,7 +102,10 @@ export default function Header() {
             href="https://wa.me/14998053657"
             target="_blank"
           >
-            <Button className="w-full" variant="outline">
+            <Button
+              className="w-full transition-all duration-300 hover:shadow-emerald-500/40 hover:shadow-lg"
+              variant="outline"
+            >
               <MessageCircle /> WhatsApp
             </Button>
           </Link>
@@ -105,7 +114,7 @@ export default function Header() {
             href="/anderson-kaiti-curriculo.pdf"
             target="_blank"
           >
-            <Button className="w-full border border-emerald-300 bg-emerald-500 shadow-emerald-500/40 shadow-lg transition-all duration-300">
+            <Button className="w-full border border-emerald-300 bg-emerald-500 shadow-emerald-500/40 shadow-lg transition-all duration-300 hover:shadow-emerald-500/60">
               <FileUser />
               Currículo
             </Button>

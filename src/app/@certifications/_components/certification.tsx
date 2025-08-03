@@ -13,7 +13,7 @@ export function Certification({
   const [platform, time] = description?.split(' - ') || []
 
   return (
-    <Card className="border-0 border-b-1 border-b-emerald-500 bg-transparent shadow-lg transition-all duration-300 hover:shadow-emerald-500/20">
+    <Card className="border-0 border-b-1 border-b-emerald-500 bg-background shadow-lg transition-all duration-300 hover:shadow-emerald-500/20">
       <CardHeader className="flex gap-4">
         <Badge className="border-emerald-500/20 bg-emerald-500/10 p-2">
           <Award className="!size-5.5 text-emerald-500" />

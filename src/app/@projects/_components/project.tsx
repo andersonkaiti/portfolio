@@ -22,7 +22,7 @@ export function Project({
   topics,
 }: IProject) {
   return (
-    <Card className="border-0 border-b-1 border-b-emerald-500 bg-transparent shadow-lg transition-all duration-300 hover:shadow-emerald-500/20">
+    <Card className="border-0 border-b-1 border-b-emerald-500 bg-background shadow-lg transition-all duration-300 hover:shadow-emerald-500/20">
       <CardHeader className="space-y-4">
         <CardTitle className="tracking-wider">{formatTitle(name)}</CardTitle>
         <CardDescription className="flex flex-wrap gap-2">
