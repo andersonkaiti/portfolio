@@ -3,8 +3,9 @@ import {
   SectionHeader,
   SectionSubtitle,
   SectionTitle,
+  SectionUnderline,
 } from '@components/ui/section'
-import { stack } from '../_constants/stack'
+import { stack } from './_constants/stack'
 import { Stack } from './stack'
 
 export default function Technologies() {
@@ -15,8 +16,10 @@ export default function Technologies() {
         <SectionSubtitle>
           Ferramentas e tecnologias que domino para criar soluções completas
         </SectionSubtitle>
+        <SectionUnderline />
       </SectionHeader>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+      <div className="grid grid-cols-1">
         {stack.map((skill) => (
           <Stack key={skill.id} {...skill} />
         ))}
