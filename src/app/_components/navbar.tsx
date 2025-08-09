@@ -27,7 +27,7 @@ export function NavigationBar() {
       link: '#presentation',
     },
     {
-      name: 'Technologias',
+      name: 'Tecnologias',
       link: '#technologies',
     },
     {
