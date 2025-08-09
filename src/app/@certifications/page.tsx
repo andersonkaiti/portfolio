@@ -5,6 +5,7 @@ import {
   SectionHeader,
   SectionSubtitle,
   SectionTitle,
+  SectionUnderline,
 } from '@components/ui/section'
 import dynamicImport from 'next/dynamic'
 import { Suspense } from 'react'
@@ -22,6 +23,7 @@ export default function CertificationList() {
         <SectionSubtitle>
           Meu compromisso com o aprendizado contínuo
         </SectionSubtitle>
+        <SectionUnderline />
       </SectionHeader>
       <Suspense fallback={<LoadingSkeleton />}>
         <DynamicCertificationList />
