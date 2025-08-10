@@ -1,14 +1,14 @@
 import type { LucideIcon } from 'lucide-react'
 import type { StaticImageData } from 'next/image'
 
+export interface ITheme {
+  dark: StaticImageData
+  light: StaticImageData
+}
+
 export interface ITechnology {
   name: string
-  logo:
-    | {
-        dark: StaticImageData
-        light: StaticImageData
-      }
-    | StaticImageData
+  logo: ITheme | StaticImageData
 }
 
 export interface IStack {
