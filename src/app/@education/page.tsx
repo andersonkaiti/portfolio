@@ -27,8 +27,8 @@ export default function Education() {
       </SectionHeader>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <Card className="bg-background">
-          <CardHeader className="relative flex gap-2">
+        <Card className="border-none bg-background">
+          <CardHeader className="relative flex justify-center gap-2">
             <Badge className="border-emerald-500/20 bg-emerald-500/10 p-2">
               <GraduationCap className="!size-10 text-emerald-500" />
             </Badge>
@@ -45,8 +45,10 @@ export default function Education() {
           </CardHeader>
 
           <CardContent className="relative z-1 space-y-1">
-            <CardTitle className="text-base">CIÊNCIA DA COMPUTAÇÃO</CardTitle>
-            <p className="font-light text-muted-foreground text-sm">
+            <CardTitle className="text-center text-base">
+              CIÊNCIA DA COMPUTAÇÃO
+            </CardTitle>
+            <p className="text-balance font-light text-muted-foreground text-sm">
               Cursando Ciência da Computação no UNISAGRADO, com término previsto
               para 2025. Focado em desenvolvimento de software, algoritmos e
               estruturas de dados.
@@ -54,14 +56,14 @@ export default function Education() {
           </CardContent>
 
           <CardFooter className="z-1">
-            <Badge className="rounded-full border-emerald-500/20 bg-emerald-500/10 text-emerald-500">
+            <Badge className="mx-auto rounded-full border-emerald-500/20 bg-emerald-500/10 text-emerald-500">
               Formatura: 2025
             </Badge>
           </CardFooter>
         </Card>
 
-        <Card className="bg-background">
-          <CardHeader className="relative flex gap-2">
+        <Card className="border-none bg-background">
+          <CardHeader className="relative flex justify-center gap-2">
             <Badge className="border-emerald-500/20 bg-emerald-500/10 p-2">
               <Globe className="!size-10 text-emerald-500" />
             </Badge>
@@ -78,8 +80,8 @@ export default function Education() {
           </CardHeader>
 
           <CardContent className="z-1 space-y-1">
-            <CardTitle className="text-base">INGLÊS</CardTitle>
-            <p className="font-light text-muted-foreground text-sm">
+            <CardTitle className="text-center text-base">INGLÊS</CardTitle>
+            <p className="text-balance font-light text-muted-foreground text-sm">
               Cursando o 3º ano do curso de inglês da CNA, desenvolvendo
               habilidades de comunicação para o ambiente profissional
               internacional.
@@ -87,7 +89,7 @@ export default function Education() {
           </CardContent>
 
           <CardFooter className="z-1 h-full">
-            <Badge className="mt-auto rounded-full border-emerald-500/20 bg-emerald-500/10 text-emerald-500">
+            <Badge className="mx-auto mt-auto rounded-full border-emerald-500/20 bg-emerald-500/10 text-emerald-500">
               Nível: Pré-Avançado
             </Badge>
           </CardFooter>
