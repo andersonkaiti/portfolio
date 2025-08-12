@@ -1,3 +1,4 @@
+import { AosProvider } from '@providers/aos'
 import { LenisProvider } from '@providers/lenis'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
@@ -40,14 +41,16 @@ export default function RootLayout({
             disableTransitionOnChange
             enableSystem
           >
-            <NavigationBar />
-            <main className="mx-auto flex min-h-100vh max-w-7xl flex-col items-center justify-center gap-8 px-2 py-10 md:gap-20 md:px-20 md:py-30">
-              {header}
-              {technologies}
-              {projects}
-              {education}
-              {certifications}
-            </main>
+            <AosProvider>
+              <NavigationBar />
+              <main className="mx-auto flex min-h-100vh max-w-7xl flex-col items-center justify-center gap-8 px-2 py-10 md:gap-20 md:px-20 md:py-30">
+                {header}
+                {technologies}
+                {projects}
+                {education}
+                {certifications}
+              </main>
+            </AosProvider>
           </ThemeProvider>
         </body>
       </LenisProvider>

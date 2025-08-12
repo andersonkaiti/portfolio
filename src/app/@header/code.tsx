@@ -8,7 +8,7 @@ const JetBrainsMono = JetBrains_Mono({
 
 export function Code() {
   return (
-    <div className="relative px-6">
+    <div className="relative px-6" data-aos="fade-down" data-aos-delay={400}>
       <div className="overflow-hidden rounded-xl border bg-secondary/20 shadow-xs backdrop-blur-sm dark:border-[#313231] dark:shadow-emerald-500/50">
         <div className="flex items-center gap-2 border-[#313231] border-b bg-secondary/20 px-4 py-3">
           <div className="flex gap-2">

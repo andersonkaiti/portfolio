@@ -18,7 +18,7 @@ import { Globe, GraduationCap } from 'lucide-react'
 export default function Education() {
   return (
     <SectionContainer id="education">
-      <SectionHeader>
+      <SectionHeader data-aos="fade-down">
         <SectionTitle>Formações</SectionTitle>
         <SectionSubtitle>
           Minha educação formal e desenvolvimento de idiomas
@@ -27,7 +27,11 @@ export default function Education() {
       </SectionHeader>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <Card className="border-none bg-background">
+        <Card
+          className="border-none bg-background"
+          data-aos="fade-down"
+          data-aos-delay={200}
+        >
           <CardHeader className="relative flex justify-center gap-2">
             <Badge className="border-emerald-500/20 bg-emerald-500/10 p-2">
               <GraduationCap className="!size-10 text-emerald-500" />
@@ -62,7 +66,11 @@ export default function Education() {
           </CardFooter>
         </Card>
 
-        <Card className="border-none bg-background">
+        <Card
+          className="border-none bg-background"
+          data-aos="fade-down"
+          data-aos-delay={400}
+        >
           <CardHeader className="relative flex justify-center gap-2">
             <Badge className="border-emerald-500/20 bg-emerald-500/10 p-2">
               <Globe className="!size-10 text-emerald-500" />

@@ -25,7 +25,11 @@ export default function Header() {
       className="grid grid-cols-1 items-center gap-4 xl:grid-cols-2"
       id="presentation"
     >
-      <Card className="border-0 bg-background shadow-none">
+      <Card
+        className="border-0 bg-background shadow-none"
+        data-aos="fade-down"
+        data-aos-delay={200}
+      >
         <CardHeader className="flex flex-col items-center gap-4 md:flex-row">
           <Avatar className="size-30 ring-3 ring-emerald-500/20">
             <AvatarImage src="/foto.webp" />

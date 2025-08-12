@@ -5,8 +5,8 @@ import {
   MobileNavHeader,
   MobileNavMenu,
   MobileNavToggle,
-  NavBody,
   Navbar,
+  NavBody,
   NavItems,
 } from '@components/ui/resizable-navbar'
 import { useLenis } from '@providers/lenis'
@@ -67,9 +67,11 @@ export function NavigationBar() {
           isOpen={isMobileMenuOpen}
           onClose={() => setIsMobileMenuOpen(false)}
         >
-          {navItems.map((item: NavItem) => (
+          {navItems.map((item: NavItem, index: number) => (
             <a
               className="relative text-neutral-600 dark:text-neutral-300"
+              data-aos="fade-down"
+              data-aos-delay={200 * index}
               href={item.link}
               key={`mobile-link-${item.name}`}
               onClick={(event) => {

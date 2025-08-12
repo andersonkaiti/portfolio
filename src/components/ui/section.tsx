@@ -11,8 +11,15 @@ export function SectionContainer({
   )
 }
 
-export function SectionHeader({ children }: { children: React.ReactNode }) {
-  return <header className="space-y-4">{children}</header>
+export function SectionHeader({
+  children,
+  ...rest
+}: { children: React.ReactNode } & HTMLAttributes<HTMLDivElement>) {
+  return (
+    <header className="space-y-4" {...rest}>
+      {children}
+    </header>
+  )
 }
 
 export function SectionTitle({ children }: { children: React.ReactNode }) {

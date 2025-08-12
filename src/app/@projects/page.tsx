@@ -18,7 +18,7 @@ const DynamicProjectList = dynamicImport(() =>
 export default function ProjectList() {
   return (
     <SectionContainer id="projects">
-      <SectionHeader>
+      <SectionHeader data-aos="fade-down">
         <SectionTitle>Projetos</SectionTitle>
         <SectionSubtitle>
           Alguns dos projetos que desenvolvi ao longo da minha jornada

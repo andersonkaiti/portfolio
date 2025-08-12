@@ -136,3 +136,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+[data-aos="fade-down"] {
+  transform: translateY(-20px); /* reduz de ~100px para 20px */
+}
+[data-aos="fade-down"].aos-animate {
+  transform: translateY(0);
+}

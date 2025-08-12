@@ -11,7 +11,7 @@ import { Stack } from './stack'
 export default function Technologies() {
   return (
     <SectionContainer id="technologies">
-      <SectionHeader>
+      <SectionHeader data-aos="fade-down">
         <SectionTitle>Principais Tecnologias</SectionTitle>
         <SectionSubtitle>
           Ferramentas e tecnologias que domino para criar soluções completas

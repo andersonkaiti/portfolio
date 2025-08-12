@@ -18,7 +18,7 @@ const DynamicCertificationList = dynamicImport(() =>
 export default function CertificationList() {
   return (
     <SectionContainer id="courses">
-      <SectionHeader>
+      <SectionHeader data-aos="fade-down">
         <SectionTitle>Cursos e Certificações</SectionTitle>
         <SectionSubtitle>
           Meu compromisso com o aprendizado contínuo

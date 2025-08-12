@@ -1,17 +1,18 @@
-'use client'
-
 import { Badge } from '@components/ui/badge'
 import Image from 'next/image'
 import type { ITechnology } from 'types/stack'
 
 interface IBadgeStackProps {
   tech: ITechnology
+  index: number
 }
 
-export function BadgeStack({ tech }: IBadgeStackProps) {
+export function BadgeStack({ tech, index }: IBadgeStackProps) {
   return (
     <Badge
       className="relative rounded-lg border-border border-t-2 px-3 py-2 text-sm shadow-2xl dark:border-accent"
+      data-aos="fade-down"
+      data-aos-delay={100 * index}
       key={tech.name}
       variant="outline"
     >
