@@ -19,6 +19,7 @@ import prismaLogoDark from '@assets/Prisma_light_dark/Prisma_dark.svg'
 import prismaLogoLight from '@assets/Prisma_light_dark/Prisma_light.svg'
 import reactLogoDark from '@assets/React_light_dark/React_dark.svg'
 import reactLogoLight from '@assets/React_light_dark/React_light.svg'
+import reactHookForm from '@assets/react_hook_form.svg'
 import reactQueryLogo from '@assets/reactquery.svg'
 import shadcnLogoDark from '@assets/shadcn_ui_light_dark/shadcn/ui_dark.svg'
 import shadcnLogoLight from '@assets/shadcn_ui_light_dark/shadcn/ui_light.svg'
@@ -56,7 +57,7 @@ export const stack: IStack[] = [
       { name: 'Zod', logo: zodLogo },
       {
         name: 'React Hook Form',
-        logo: { dark: reactLogoDark, light: reactLogoLight },
+        logo: reactHookForm,
       },
     ],
   },
