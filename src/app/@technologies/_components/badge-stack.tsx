@@ -10,7 +10,7 @@ interface IBadgeStackProps {
 export function BadgeStack({ tech, index }: IBadgeStackProps) {
   return (
     <Badge
-      className="relative rounded-lg border-border border-t-2 px-3 py-2 text-sm shadow-2xl dark:border-accent"
+      className="relative rounded-full border-border border-t-2 px-5 py-2 text-sm shadow-2xl dark:border-accent"
       data-aos="fade-down"
       data-aos-delay={100 * index}
       key={tech.name}
@@ -20,17 +20,17 @@ export function BadgeStack({ tech, index }: IBadgeStackProps) {
         <>
           <Image
             alt={tech.name}
-            className="mr-2 hidden size-5 dark:flex"
+            className="mr-2 hidden size-4 dark:flex"
             src={tech.logo?.dark}
           />
           <Image
             alt={tech.name}
-            className="mr-2 flex size-5 dark:hidden"
+            className="mr-2 flex size-4 dark:hidden"
             src={tech.logo?.light}
           />
         </>
       ) : (
-        <Image alt={tech.name} className="mr-2 size-5" src={tech.logo} />
+        <Image alt={tech.name} className="mr-2 size-4" src={tech.logo} />
       )}
       {tech.name}
     </Badge>
