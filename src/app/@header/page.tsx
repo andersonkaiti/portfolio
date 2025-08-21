@@ -68,12 +68,6 @@ export default function Header() {
             </strong>
             .
           </p>
-          <p className="leading-7 [&:not(:first-child)]:mt-6">
-            Busco sempre entender profundamente o{' '}
-            <strong className="text-emerald-500">“porquê”</strong> por trás de
-            cada escolha técnica e arquitetural e expandir o meu conhecimento no
-            ecossistema JavaScript.
-          </p>
         </CardContent>
 
         <CardFooter className="flex flex-wrap gap-2 sm:gap-4">
