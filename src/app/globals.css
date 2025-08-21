@@ -143,3 +143,7 @@
 [data-aos="fade-down"].aos-animate {
   transform: translateY(0);
 }
+::view-transition-old(root), ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}

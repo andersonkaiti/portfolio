@@ -1,5 +1,5 @@
+import { AnimatedThemeToggler } from '@components/magicui/animated-theme-toggler'
 import { Button } from '@components/ui/button'
-import { Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 
 export function DarkModeButton() {
@@ -11,12 +11,12 @@ export function DarkModeButton() {
 
   return (
     <Button
+      asChild
       className="z-50 ml-auto size-9"
       onClick={toggleTheme}
       variant="ghost"
     >
-      <Moon className="hidden dark:flex" />
-      <Sun className="flex dark:hidden" />
+      <AnimatedThemeToggler />
     </Button>
   )
 }
