@@ -23,10 +23,10 @@
       "@assets/*": ["./src/assets/*"],
       "@components/*": ["./src/components/*"],
       "@config/*": ["./src/config/*"],
+      "@http/*": ["./src/http/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@lib/*": ["./src/lib/*"],
       "@providers/*": ["./src/providers/*"],
-      "@services/*": ["./src/services/*"],
       "@utils/*": ["./src/utils/*"],
       "@/*": ["./src/*"]
     },

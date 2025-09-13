@@ -1,5 +1,5 @@
 import { Badge } from '@components/ui/badge'
-import { getCourses } from '@services/courses.service'
+import { getCourses } from '@http/get-courses'
 import { Award } from 'lucide-react'
 import { Certification } from './certification'
 

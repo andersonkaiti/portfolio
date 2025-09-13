@@ -1,4 +1,4 @@
-import { getProjects } from '@services/projects.service'
+import { getProjects } from '@http/get-projects'
 import { Project } from './project'
 
 export async function ProjectList() {
