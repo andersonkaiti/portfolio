@@ -5,7 +5,7 @@ import { Skeleton } from '@components/ui/skeleton'
 export function LoadingSkeleton() {
   return (
     <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {Array.from({ length: 13 }).map((_, index: number) => (
+      {Array.from({ length: 3 }).map((_, index: number) => (
         <div
           className="flex h-73.5 flex-col gap-6 rounded-xl border-b-1 border-b-zinc-500 py-6 shadow-sm"
           key={index}

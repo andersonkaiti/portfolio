@@ -7,6 +7,7 @@ import {
   SectionTitle,
   SectionUnderline,
 } from '@components/ui/section'
+import { getProjects } from '@http/get-projects'
 import dynamicImport from 'next/dynamic'
 import { Suspense } from 'react'
 import { LoadingSkeleton } from './_components/loading-skeleton'
@@ -15,18 +16,20 @@ const DynamicProjectList = dynamicImport(() =>
   import('./_components/project-list').then((m) => m.ProjectList)
 )
 
-export default function ProjectList() {
+export default async function ProjectList() {
+  const projects = await getProjects()
+
   return (
     <SectionContainer id="projects">
       <SectionHeader data-aos="fade-down">
-        <SectionTitle>Projetos</SectionTitle>
+        <SectionTitle>Projects</SectionTitle>
         <SectionSubtitle>
-          Alguns dos projetos que desenvolvi ao longo da minha jornada
+          Some of the projects I have developed along my journey
         </SectionSubtitle>
         <SectionUnderline />
       </SectionHeader>
       <Suspense fallback={<LoadingSkeleton />}>
-        <DynamicProjectList />
+        <DynamicProjectList projects={projects} />
       </Suspense>
     </SectionContainer>
   )
