@@ -19,7 +19,6 @@
       }
     ],
     "paths": {
-      "types/*": ["./src/@types/*"],
       "@assets/*": ["./src/assets/*"],
       "@components/*": ["./src/components/*"],
       "@config/*": ["./src/config/*"],

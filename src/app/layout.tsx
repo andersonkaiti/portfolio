@@ -18,13 +18,11 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  certifications,
   education,
   header,
   projects,
   technologies,
 }: Readonly<{
-  certifications: React.ReactNode
   education: React.ReactNode
   header: React.ReactNode
   projects: React.ReactNode
@@ -51,7 +49,6 @@ export default function RootLayout({
                 {technologies}
                 {projects}
                 {education}
-                {certifications}
               </main>
             </AosProvider>
           </ThemeProvider>

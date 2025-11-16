@@ -38,10 +38,6 @@ export function NavigationBar() {
       name: 'Formações',
       link: '#education',
     },
-    {
-      name: 'Cursos',
-      link: '#courses',
-    },
   ]
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
