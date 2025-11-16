@@ -5,23 +5,23 @@ import {
   SectionTitle,
   SectionUnderline,
 } from '@components/ui/section'
-import { stack } from './_constants/stack'
+import { stacks } from './_constants/stack'
 import { Stack } from './stack'
 
 export default function Technologies() {
   return (
     <SectionContainer id="technologies">
       <SectionHeader data-aos="fade-down">
-        <SectionTitle>Principais Tecnologias</SectionTitle>
+        <SectionTitle>Main Technologies</SectionTitle>
         <SectionSubtitle>
-          Ferramentas e tecnologias que domino para criar soluções completas
+          Tools and technologies I master to create complete solutions
         </SectionSubtitle>
         <SectionUnderline />
       </SectionHeader>
 
       <div className="grid grid-cols-1">
-        {stack.map((skill) => (
-          <Stack key={skill.id} {...skill} />
+        {stacks.map((stack) => (
+          <Stack key={stack.id} stack={stack} />
         ))}
       </div>
     </SectionContainer>

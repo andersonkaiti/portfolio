@@ -32,7 +32,7 @@ export function SectionTitle({ children }: { children: React.ReactNode }) {
 
 export function SectionSubtitle({ children }: { children: React.ReactNode }) {
   return (
-    <h4 className="scroll-m-20 text-balance text-center font-light text-lg text-muted-foreground tracking-tight">
+    <h4 className="text-balance text-center font-base text-lg leading-7">
       {children}
     </h4>
   )

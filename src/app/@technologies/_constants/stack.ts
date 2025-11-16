@@ -29,32 +29,77 @@ import vercelLogoDark from '@assets/Vercel_light_dark/Vercel_dark.svg'
 import vercelLogoLight from '@assets/Vercel_light_dark/Vercel_light.svg'
 import viteLogo from '@assets/vitejs.svg'
 import zodLogo from '@assets/zod.svg'
+import type { LucideIcon } from 'lucide-react'
 import { Cloud, Database, Globe } from 'lucide-react'
-import type { IStack } from 'types/stack'
+import type { StaticImageData } from 'next/image'
 
-export const stack: IStack[] = [
+export interface ITheme {
+  dark: StaticImageData
+  light: StaticImageData
+}
+
+export interface ITechnology {
+  name: string
+  logo: ITheme | StaticImageData
+}
+
+export interface IStack {
+  id: number
+  category: string
+  icon: LucideIcon
+  technologies: ITechnology[]
+}
+
+export const stacks: IStack[] = [
   {
     id: 1,
     category: 'Front-end',
     icon: Globe,
     technologies: [
-      { name: 'HTML5', logo: htmlLogo },
-      { name: 'CSS3', logo: cssLogo },
-      { name: 'JavaScript', logo: javascriptLogo },
-      { name: 'TypeScript', logo: typescriptLogo },
+      {
+        name: 'HTML5',
+        logo: htmlLogo,
+      },
+      {
+        name: 'CSS3',
+        logo: cssLogo,
+      },
+      {
+        name: 'JavaScript',
+        logo: javascriptLogo,
+      },
+      {
+        name: 'TypeScript',
+        logo: typescriptLogo,
+      },
       {
         name: 'React.js',
         logo: { dark: reactLogoDark, light: reactLogoLight },
       },
-      { name: 'Next.js', logo: { dark: nextLogoDark, light: nextLogoLight } },
-      { name: 'TailwindCSS', logo: tailwindLogo },
-      { name: 'React Query', logo: reactQueryLogo },
+      {
+        name: 'Next.js',
+        logo: { dark: nextLogoDark, light: nextLogoLight },
+      },
+      {
+        name: 'TailwindCSS',
+        logo: tailwindLogo,
+      },
+      {
+        name: 'React Query',
+        logo: reactQueryLogo,
+      },
       {
         name: 'Shadcn/ui',
         logo: { dark: shadcnLogoDark, light: shadcnLogoLight },
       },
-      { name: 'Vite', logo: viteLogo },
-      { name: 'Zod', logo: zodLogo },
+      {
+        name: 'Vite',
+        logo: viteLogo,
+      },
+      {
+        name: 'Zod',
+        logo: zodLogo,
+      },
       {
         name: 'React Hook Form',
         logo: reactHookForm,
@@ -66,7 +111,10 @@ export const stack: IStack[] = [
     category: 'Back-end & Databases',
     icon: Database,
     technologies: [
-      { name: 'Node.js', logo: nodejsLogo },
+      {
+        name: 'Node.js',
+        logo: nodejsLogo,
+      },
       {
         name: 'Express.js',
         logo: {
@@ -81,13 +129,22 @@ export const stack: IStack[] = [
           light: fastifyLogoLight,
         },
       },
-      { name: 'MySQL', logo: mysqlLogo },
-      { name: 'MongoDB', logo: mongoLogo },
+      {
+        name: 'MySQL',
+        logo: mysqlLogo,
+      },
+      {
+        name: 'MongoDB',
+        logo: mongoLogo,
+      },
       {
         name: 'Prisma',
         logo: { dark: prismaLogoDark, light: prismaLogoLight },
       },
-      { name: 'Drizzle', logo: drizzleLogo },
+      {
+        name: 'Drizzle',
+        logo: drizzleLogo,
+      },
     ],
   },
   {
@@ -99,10 +156,22 @@ export const stack: IStack[] = [
         name: 'Vercel',
         logo: { dark: vercelLogoDark, light: vercelLogoLight },
       },
-      { name: 'Azure', logo: azureLogo },
-      { name: 'Firebase', logo: firebaseLogo },
-      { name: 'Git', logo: gitLogo },
-      { name: 'Docker', logo: dockerLogo },
+      {
+        name: 'Azure',
+        logo: azureLogo,
+      },
+      {
+        name: 'Firebase',
+        logo: firebaseLogo,
+      },
+      {
+        name: 'Git',
+        logo: gitLogo,
+      },
+      {
+        name: 'Docker',
+        logo: dockerLogo,
+      },
     ],
   },
 ]

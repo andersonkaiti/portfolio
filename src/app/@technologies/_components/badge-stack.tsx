@@ -1,38 +1,49 @@
-import { Badge } from '@components/ui/badge'
-import Image from 'next/image'
-import type { ITechnology } from 'types/stack'
+import Image, { type StaticImageData } from 'next/image'
 
 interface IBadgeStackProps {
-  tech: ITechnology
+  tech: {
+    name: string
+    logo:
+      | {
+          dark: StaticImageData
+          light: StaticImageData
+        }
+      | StaticImageData
+  }
   index: number
 }
 
 export function BadgeStack({ tech, index }: IBadgeStackProps) {
   return (
-    <Badge
-      className="relative rounded-full border-border border-t-2 px-5 py-2 text-sm shadow-2xl dark:border-accent"
+    <div
+      className="relative rounded-full border-border border-t-2 p-3 text-xs shadow-2xl sm:p-4 sm:text-sm dark:border-accent"
       data-aos="fade-down"
       data-aos-delay={100 * index}
       key={tech.name}
-      variant="outline"
     >
       {'dark' in tech.logo && 'light' in tech.logo ? (
         <>
           <Image
             alt={tech.name}
-            className="mr-2 hidden size-4 dark:flex"
+            className="hidden size-7 xs:size-8 md:size-10 dark:flex"
+            sizes="28px 32px 40px"
             src={tech.logo?.dark}
           />
           <Image
             alt={tech.name}
-            className="mr-2 flex size-4 dark:hidden"
+            className="flex size-7 xs:size-8 md:size-10 dark:hidden"
+            sizes="28px 32px 40px"
             src={tech.logo?.light}
           />
         </>
       ) : (
-        <Image alt={tech.name} className="mr-2 size-4" src={tech.logo} />
+        <Image
+          alt={tech.name}
+          className="size-7 xs:size-8 md:size-10"
+          sizes="28px 32px 40px"
+          src={tech.logo}
+        />
       )}
-      {tech.name}
-    </Badge>
+    </div>
   )
 }

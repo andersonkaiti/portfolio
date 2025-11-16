@@ -1,18 +1,28 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@components/ui/card'
-import type { IStack } from 'types/stack'
+import { Card, CardContent } from '@components/ui/card'
+import type { LucideIcon } from 'lucide-react'
+import type { StaticImageData } from 'next/image'
 import { BadgeStack } from './_components/badge-stack'
 
-export function Stack({ category, icon: Icon, technologies, id }: IStack) {
+interface IStackProps {
+  stack: {
+    id: number
+    category: string
+    icon: LucideIcon
+    technologies: {
+      name: string
+      logo:
+        | {
+            dark: StaticImageData
+            light: StaticImageData
+          }
+        | StaticImageData
+    }[]
+  }
+}
+
+export function Stack({ stack: { technologies } }: IStackProps) {
   return (
     <Card className="h-full border-none bg-transparent shadow-none">
-      <CardHeader
-        className="flex items-center justify-center gap-4"
-        data-aos="fade-down"
-        data-aos-delay={100 * id}
-      >
-        <Icon className="!size-5" />
-        <CardTitle>{category}</CardTitle>
-      </CardHeader>
       <CardContent className="flex flex-wrap justify-center gap-2">
         {technologies.map((tech, index: number) => (
           <BadgeStack index={index} key={tech.name} tech={tech} />
