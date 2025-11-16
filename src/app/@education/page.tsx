@@ -19,9 +19,9 @@ export default function Education() {
   return (
     <SectionContainer id="education">
       <SectionHeader data-aos="fade-down">
-        <SectionTitle>Formações</SectionTitle>
+        <SectionTitle>Education</SectionTitle>
         <SectionSubtitle>
-          Minha educação formal e desenvolvimento de idiomas
+          My formal education and language development
         </SectionSubtitle>
         <SectionUnderline />
       </SectionHeader>
@@ -38,7 +38,7 @@ export default function Education() {
             </Badge>
             <div>
               <CardTitle className="scroll-m-20 font-semibold text-xl tracking-tight">
-                Graduação
+                Undergraduate
               </CardTitle>
               <h4 className="scroll-m-20 font-semibold text-base text-muted-foreground tracking-tight">
                 UNISAGRADO • 2022-2025
@@ -50,18 +50,18 @@ export default function Education() {
 
           <CardContent className="relative z-1 space-y-1">
             <CardTitle className="text-center text-base">
-              CIÊNCIA DA COMPUTAÇÃO
+              COMPUTER SCIENCE
             </CardTitle>
-            <p className="text-balance font-light text-muted-foreground text-sm">
-              Cursando Ciência da Computação no UNISAGRADO, com término previsto
-              para 2025. Focado em desenvolvimento de software, algoritmos e
-              estruturas de dados.
+            <p className="text-center text-muted-foreground text-sm">
+              Pursuing a degree in Computer Science at UNISAGRADO, expected to
+              graduate in 2025. Focused on software development, algorithms, and
+              data structures.
             </p>
           </CardContent>
 
           <CardFooter className="z-1">
             <Badge className="mx-auto rounded-full border-emerald-500/20 bg-emerald-500/10 text-emerald-500">
-              Formatura: 2025
+              Graduation: 2025
             </Badge>
           </CardFooter>
         </Card>
@@ -77,10 +77,10 @@ export default function Education() {
             </Badge>
             <div>
               <CardTitle className="scroll-m-20 font-semibold text-xl tracking-tight">
-                Idiomas
+                Languages
               </CardTitle>
               <h4 className="scroll-m-20 font-semibold text-base text-muted-foreground tracking-tight">
-                CNA • Em andamento
+                CNA • Ongoing
               </h4>
             </div>
 
@@ -88,17 +88,17 @@ export default function Education() {
           </CardHeader>
 
           <CardContent className="z-1 space-y-1">
-            <CardTitle className="text-center text-base">INGLÊS</CardTitle>
-            <p className="text-balance font-light text-muted-foreground text-sm">
-              Cursando o 3º ano do curso de inglês da CNA, desenvolvendo
-              habilidades de comunicação para o ambiente profissional
-              internacional.
+            <CardTitle className="text-center text-base">ENGLISH</CardTitle>
+            <p className="text-center text-muted-foreground text-sm">
+              Currently enrolled in the 3rd year of the English course at CNA,
+              developing communication skills for the international professional
+              environment.
             </p>
           </CardContent>
 
           <CardFooter className="z-1 h-full">
             <Badge className="mx-auto mt-auto rounded-full border-emerald-500/20 bg-emerald-500/10 text-emerald-500">
-              Nível: Pré-Avançado
+              Level: Pre-Advanced
             </Badge>
           </CardFooter>
         </Card>
