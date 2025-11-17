@@ -32,7 +32,7 @@ export default function RootLayout({
     <html lang="pt-BR" suppressHydrationWarning>
       <LenisProvider>
         <body
-          className={`${MontserratSans.variable} relative w-screen overflow-hidden antialiased transition-colors`}
+          className={`${MontserratSans.variable} relative antialiased transition-colors`}
         >
           <ThemeProvider
             attribute="class"
