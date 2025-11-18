@@ -43,6 +43,17 @@
   --radius-xl: calc(var(--radius) + 4px);
 
   --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+
+  --animate-shine: shine 6s linear infinite;
+
+  @keyframes shine {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -400% 0;
+    }
+  }
 }
 
 :root {
