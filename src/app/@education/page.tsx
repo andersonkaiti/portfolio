@@ -34,7 +34,7 @@ export default function Education() {
         >
           <CardHeader className="relative flex justify-center gap-2">
             <Badge className="border-emerald-500/20 bg-emerald-500/10 p-2">
-              <GraduationCap className="!size-10 text-emerald-500" />
+              <GraduationCap className="size-10 text-emerald-500" />
             </Badge>
             <div>
               <CardTitle className="scroll-m-20 font-semibold text-xl tracking-tight">
@@ -45,7 +45,7 @@ export default function Education() {
               </h4>
             </div>
 
-            <div className="absolute inset-0 top-2 size-full rounded-xl bg-gradient-to-b from-background/0 to-background" />
+            <div className="absolute inset-0 top-2 size-full rounded-xl bg-linear-to-b from-background/0 to-background" />
           </CardHeader>
 
           <CardContent className="relative z-1 space-y-1">
@@ -73,7 +73,7 @@ export default function Education() {
         >
           <CardHeader className="relative flex justify-center gap-2">
             <Badge className="border-emerald-500/20 bg-emerald-500/10 p-2">
-              <Globe className="!size-10 text-emerald-500" />
+              <Globe className="size-10 text-emerald-500" />
             </Badge>
             <div>
               <CardTitle className="scroll-m-20 font-semibold text-xl tracking-tight">
@@ -84,7 +84,7 @@ export default function Education() {
               </h4>
             </div>
 
-            <div className="absolute inset-0 top-2 size-full rounded-xl bg-gradient-to-b from-background/0 to-background" />
+            <div className="absolute inset-0 top-2 size-full rounded-xl bg-linear-to-b from-background/0 to-background" />
           </CardHeader>
 
           <CardContent className="z-1 space-y-1">
