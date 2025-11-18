@@ -13,8 +13,8 @@ const MontserratSans = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'Portfólio - Anderson Kaiti',
-  description: 'Cientista da Computação e Desenvolvedor Full-Stack',
+  title: 'Portfolio - Anderson Kaiti',
+  description: 'Computer Scientist and Full-Stack Developer',
 }
 
 export default function RootLayout({

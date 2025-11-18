@@ -44,8 +44,7 @@ export const links = [
     icon: FileUser,
     tooltip: (
       <>
-        View or download my{' '}
-        <span className="font-semibold">Currículo (Resume)</span> (PDF)
+        View or download my <span className="font-semibold">Resume</span> (PDF)
       </>
     ),
   },

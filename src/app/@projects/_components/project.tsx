@@ -150,7 +150,7 @@ export function Project({
       <div className="mt-auto flex gap-3 border-t border-dashed pt-2">
         <Button asChild size="sm" variant="ghost">
           <Link href={html_url} target="_blank">
-            Código <Github className="ml-0 size-3.5 opacity-50" />
+            Code <Github className="ml-0 size-3.5 opacity-50" />
           </Link>
         </Button>
 
