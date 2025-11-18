@@ -1,6 +1,6 @@
+import { AnimatedCard } from '@components/ui/animated-card'
 import { Badge } from '@components/ui/badge'
 import { Button } from '@components/ui/button'
-import { Card } from '@components/ui/card'
 import { LinkPreview } from '@components/ui/link-preview'
 import { formatTitle } from '@utils/format-title'
 import { formatTopic } from '@utils/format-topic'
@@ -124,7 +124,10 @@ export function Project({
   topics,
 }: IProjectProps) {
   return (
-    <Card className="bg-background p-6">
+    <AnimatedCard
+      className="flex size-full flex-col gap-6 rounded-xl bg-background p-6"
+      variant="revealed-pointer"
+    >
       <div className="space-y-2 py-2">
         <h3 className="font-medium text-base">{formatTitle(name)}</h3>
         <p className="line-clamp-2 text-muted-foreground text-sm">
@@ -147,7 +150,7 @@ export function Project({
       <div className="mt-auto flex gap-3 border-t border-dashed pt-2">
         <Button asChild size="sm" variant="ghost">
           <Link href={html_url} target="_blank">
-            Código <Github className="!size-3.5 ml-0 opacity-50" />
+            Código <Github className="ml-0 size-3.5 opacity-50" />
           </Link>
         </Button>
 
@@ -159,6 +162,6 @@ export function Project({
           </LinkPreview>
         )}
       </div>
-    </Card>
+    </AnimatedCard>
   )
 }
