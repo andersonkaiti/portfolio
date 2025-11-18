@@ -5,8 +5,8 @@ import {
   MobileNavHeader,
   MobileNavMenu,
   MobileNavToggle,
-  Navbar,
   NavBody,
+  Navbar,
   NavItems,
 } from '@components/ui/resizable-navbar'
 import { useLenis } from '@providers/lenis'
@@ -23,19 +23,19 @@ export function NavigationBar() {
 
   const navItems: NavItem[] = [
     {
-      name: 'Apresentação',
+      name: 'Introduction',
       link: '#presentation',
     },
     {
-      name: 'Tecnologias',
+      name: 'Technologies',
       link: '#technologies',
     },
     {
-      name: 'Projetos',
+      name: 'Projects',
       link: '#projects',
     },
     {
-      name: 'Formações',
+      name: 'Education',
       link: '#education',
     },
   ]
