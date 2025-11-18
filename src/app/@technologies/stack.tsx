@@ -1,3 +1,8 @@
+import {
+  AnimatedTooltip,
+  AnimatedTooltipContent,
+  AnimatedTooltipTrigger,
+} from '@components/ui/animated-tooltip'
 import { Card, CardContent } from '@components/ui/card'
 import type { LucideIcon } from 'lucide-react'
 import type { StaticImageData } from 'next/image'
@@ -16,6 +21,7 @@ interface IStackProps {
             light: StaticImageData
           }
         | StaticImageData
+      link?: string
     }[]
   }
 }
@@ -25,7 +31,14 @@ export function Stack({ stack: { technologies } }: IStackProps) {
     <Card className="h-full border-none bg-transparent shadow-none">
       <CardContent className="flex flex-wrap justify-center gap-2">
         {technologies.map((tech, index: number) => (
-          <BadgeStack index={index} key={tech.name} tech={tech} />
+          <AnimatedTooltip key={tech.name}>
+            <AnimatedTooltipTrigger id={index}>
+              <BadgeStack index={index} tech={tech} />
+            </AnimatedTooltipTrigger>
+            <AnimatedTooltipContent id={index}>
+              <span className="font-semibold">{tech.name}</span>
+            </AnimatedTooltipContent>
+          </AnimatedTooltip>
         ))}
       </CardContent>
     </Card>
