@@ -1,5 +1,10 @@
-import { FileUser, Github, Linkedin, MessageCircle } from 'lucide-react'
+import {
+  AnimatedTooltip,
+  AnimatedTooltipContent,
+  AnimatedTooltipTrigger,
+} from '@components/ui/animated-tooltip'
 import Link from 'next/link'
+import { links } from './socials'
 
 export default function Header() {
   return (
@@ -31,34 +36,16 @@ export default function Header() {
       </p>
 
       <div className="mx-auto mt-8 flex flex-wrap items-center justify-center gap-5 text-muted-foreground sm:mt-10 sm:gap-8 ">
-        <Link
-          className="transition duration-500 hover:scale-125"
-          href="https://github.com/andersonkaiti"
-          target="_blank"
-        >
-          <Github className="size-5 sm:size-6" />
-        </Link>
-        <Link
-          className="transition duration-500 hover:scale-125"
-          href="https://www.linkedin.com/in/anderson-kaiti-67906126a"
-          target="_blank"
-        >
-          <Linkedin className="size-5 sm:size-6" />
-        </Link>
-        <Link
-          className="transition duration-500 hover:scale-125"
-          href="https://wa.me/14998053657"
-          target="_blank"
-        >
-          <MessageCircle className="size-5 sm:size-6" />
-        </Link>
-        <Link
-          className="transition duration-500 hover:scale-125"
-          href="/anderson-kaiti-curriculo.pdf"
-          target="_blank"
-        >
-          <FileUser className="size-5 sm:size-6" />
-        </Link>
+        {links.map(({ id, ariaLabel, href, icon: Icon, tooltip }) => (
+          <AnimatedTooltip key={id}>
+            <AnimatedTooltipTrigger id={id}>
+              <Link aria-label={ariaLabel} href={href} target="_blank">
+                <Icon className="size-5 sm:size-6" />
+              </Link>
+            </AnimatedTooltipTrigger>
+            <AnimatedTooltipContent id={id}>{tooltip}</AnimatedTooltipContent>
+          </AnimatedTooltip>
+        ))}
       </div>
     </header>
   )
