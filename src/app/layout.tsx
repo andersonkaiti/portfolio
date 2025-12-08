@@ -2,8 +2,8 @@ import { Spotlight } from '@components/ui/spotlight'
 import { AosProvider } from '@providers/aos'
 import { LenisProvider } from '@providers/lenis'
 import type { Metadata } from 'next'
-import { Montserrat } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
+import { Montserrat } from 'next/font/google'
 import { NavigationBar } from './_components/navbar'
 import './globals.css'
 
@@ -21,11 +21,13 @@ export default function RootLayout({
   education,
   header,
   projects,
+  experiences,
   technologies,
 }: Readonly<{
   education: React.ReactNode
   header: React.ReactNode
   projects: React.ReactNode
+  experiences: React.ReactNode
   technologies: React.ReactNode
 }>) {
   return (
@@ -48,6 +50,7 @@ export default function RootLayout({
                 {header}
                 {technologies}
                 {projects}
+                {experiences}
                 {education}
               </main>
             </AosProvider>
