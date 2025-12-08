@@ -1,9 +1,10 @@
 import { Spotlight } from '@components/ui/spotlight'
 import { AosProvider } from '@providers/aos'
 import { LenisProvider } from '@providers/lenis'
+import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
-import { ThemeProvider } from 'next-themes'
 import { Montserrat } from 'next/font/google'
+import { ThemeProvider } from 'next-themes'
 import { NavigationBar } from './_components/navbar'
 import './globals.css'
 
@@ -55,6 +56,8 @@ export default function RootLayout({
               </main>
             </AosProvider>
           </ThemeProvider>
+
+          <Analytics />
         </body>
       </LenisProvider>
     </html>
