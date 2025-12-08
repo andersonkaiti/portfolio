@@ -2,6 +2,7 @@ import { Spotlight } from '@components/ui/spotlight'
 import { AosProvider } from '@providers/aos'
 import { LenisProvider } from '@providers/lenis'
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
@@ -58,6 +59,7 @@ export default function RootLayout({
           </ThemeProvider>
 
           <Analytics />
+          <SpeedInsights />
         </body>
       </LenisProvider>
     </html>
