@@ -1,5 +1,3 @@
-export const dynamic = 'force-dynamic'
-
 import {
   SectionContainer,
   SectionHeader,
@@ -7,18 +5,11 @@ import {
   SectionTitle,
   SectionUnderline,
 } from '@components/ui/section'
-import { getProjects } from '@http/get-projects'
-import dynamicImport from 'next/dynamic'
 import { Suspense } from 'react'
 import { LoadingSkeleton } from './_components/loading-skeleton'
+import { ProjectList } from './_components/project-list'
 
-const DynamicProjectList = dynamicImport(() =>
-  import('./_components/project-list').then((m) => m.ProjectList)
-)
-
-export default async function ProjectList() {
-  const projects = await getProjects()
-
+export default function ProjectListSlot() {
   return (
     <SectionContainer id="projects">
       <SectionHeader data-aos="fade-down">
@@ -29,7 +20,7 @@ export default async function ProjectList() {
         <SectionUnderline />
       </SectionHeader>
       <Suspense fallback={<LoadingSkeleton />}>
-        <DynamicProjectList projects={projects} />
+        <ProjectList />
       </Suspense>
     </SectionContainer>
   )

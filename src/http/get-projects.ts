@@ -1,132 +1,71 @@
 import { env } from '@config/env'
 import dayjs from 'dayjs'
+import z from 'zod'
 
-interface IProject {
-  id: number
-  name: string
-  description: string | null
-  topics: string[]
-  html_url: string
+const githubOwnerSchema = z.object({
+  login: z.string(),
+  id: z.number(),
+  avatar_url: z.url(),
+  html_url: z.url(),
+})
 
-  node_id?: string
-  full_name?: string
-  private?: boolean
-  owner?: {
-    login?: string
-    id?: number
-    node_id?: string
-    avatar_url?: string
-    gravatar_id?: string
-    url?: string
-    html_url?: string
-    followers_url?: string
-    following_url?: string
-    gists_url?: string
-    starred_url?: string
-    subscriptions_url?: string
-    organizations_url?: string
-    repos_url?: string
-    events_url?: string
-    received_events_url?: string
-    type?: string
-    user_view_type?: string
-    site_admin?: boolean
-  }
-  fork?: boolean
-  url?: string
-  forks_url?: string
-  keys_url?: string
-  collaborators_url?: string
-  teams_url?: string
-  hooks_url?: string
-  issue_events_url?: string
-  events_url?: string
-  assignees_url?: string
-  branches_url?: string
-  tags_url?: string
-  blobs_url?: string
-  git_tags_url?: string
-  git_refs_url?: string
-  trees_url?: string
-  statuses_url?: string
-  languages_url?: string
-  stargazers_url?: string
-  contributors_url?: string
-  subscribers_url?: string
-  subscription_url?: string
-  commits_url?: string
-  git_commits_url?: string
-  comments_url?: string
-  issue_comment_url?: string
-  contents_url?: string
-  compare_url?: string
-  merges_url?: string
-  archive_url?: string
-  downloads_url?: string
-  issues_url?: string
-  pulls_url?: string
-  milestones_url?: string
-  notifications_url?: string
-  labels_url?: string
-  releases_url?: string
-  deployments_url?: string
-  created_at?: string
-  updated_at?: string
-  pushed_at?: string
-  git_url?: string
-  ssh_url?: string
-  clone_url?: string
-  svn_url?: string
-  homepage?: string | null
-  size?: number
-  stargazers_count?: number
-  watchers_count?: number
-  language?: string | null
-  has_issues?: boolean
-  has_projects?: boolean
-  has_downloads?: boolean
-  has_wiki?: boolean
-  has_pages?: boolean
-  has_discussions?: boolean
-  forks_count?: number
-  mirror_url?: string | null
-  archived?: boolean
-  disabled?: boolean
-  open_issues_count?: number
-  license?: {
-    key?: string
-    name?: string
-    spdx_id?: string
-    url?: string
-    node_id?: string
-  } | null
-  allow_forking?: boolean
-  is_template?: boolean
-  web_commit_signoff_required?: boolean
-  visibility?: string
-  forks?: number
-  open_issues?: number
-  watchers?: number
-  default_branch?: string
-}
+const githubRepoSchema = z.object({
+  id: z.number(),
+  node_id: z.string(),
+  name: z.string(),
+  full_name: z.string(),
+  private: z.boolean(),
+  owner: githubOwnerSchema,
+  html_url: z.url(),
+  description: z.string().nullable(),
+  fork: z.boolean(),
+  url: z.url(),
+  created_at: z.date(),
+  updated_at: z.date(),
+  pushed_at: z.date(),
+  homepage: z.url().nullable(),
+  size: z.number(),
+  stargazers_count: z.number(),
+  watchers_count: z.number(),
+  language: z.string().nullable(),
+  forks_count: z.number(),
+  archived: z.boolean(),
+  disabled: z.boolean(),
+  open_issues_count: z.number(),
+  topics: z.array(z.string()),
+  visibility: z.enum(['public', 'private', 'internal']),
+  default_branch: z.string(),
+})
+
+export const githubReposResponseSchema = z.array(githubRepoSchema)
+
+export type GithubRepo = z.infer<typeof githubRepoSchema>
 
 export async function getProjects() {
   const response = await fetch(
     'https://api.github.com/users/andersonkaiti/repos?per_page=100&page=1',
     {
       headers: {
-        Authorization: env.GITHUB_TOKEN,
+        Authorization: env.NEXT_PUBLIC_GITHUB_TOKEN,
+      },
+      next: {
+        revalidate: 3600,
       },
     }
   )
 
-  const allProjects: IProject[] = await response.json()
+  const allProjects: GithubRepo[] = await response.json()
 
-  return allProjects
-    .filter(
-      (project) =>
-        project.topics.length > 0 && !project.topics.includes('course')
-    )
-    .filter((project) => !!project.description)
-    .sort(({ pushed_at: one }, { pushed_at: two }) => dayjs(two).diff(one))
+  const filteredProjects = allProjects.filter(
+    (project) =>
+      project.topics.length > 0 &&
+      !project.topics.includes('course') &&
+      !!project.description
+  )
+
+  const sortedProjects = filteredProjects.sort(
+    ({ pushed_at: one }, { pushed_at: two }) => dayjs(two).diff(one)
+  )
+
+  return sortedProjects
 }
