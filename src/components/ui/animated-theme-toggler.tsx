@@ -1,15 +1,17 @@
 'use client'
 
-import { cn } from '@/lib/utils'
+import { cn } from '@lib/utils'
 import { Moon, SunDim } from 'lucide-react'
 import { useRef, useState } from 'react'
 import { flushSync } from 'react-dom'
 
-type props = {
+interface IAnimatedThemeTogglerProps {
   className?: string
 }
 
-export const AnimatedThemeToggler = ({ className }: props) => {
+export function AnimatedThemeToggler({
+  className,
+}: IAnimatedThemeTogglerProps) {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false)
   const buttonRef = useRef<HTMLButtonElement | null>(null)
   const changeTheme = async () => {

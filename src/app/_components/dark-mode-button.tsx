@@ -1,4 +1,4 @@
-import { AnimatedThemeToggler } from '@components/magicui/animated-theme-toggler'
+import { AnimatedThemeToggler } from '@components/ui/animated-theme-toggler'
 import { Button } from '@components/ui/button'
 
 export function DarkModeButton() {
