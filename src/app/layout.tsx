@@ -1,6 +1,7 @@
 import { Spotlight } from '@components/ui/spotlight'
 import { AosProvider } from '@providers/aos'
 import { LenisProvider } from '@providers/lenis'
+import { QueryProvider } from '@providers/query-provider'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
@@ -45,16 +46,18 @@ export default function RootLayout({
             enableSystem
           >
             <AosProvider>
-              <Spotlight />
+              <QueryProvider>
+                <Spotlight />
 
-              <NavigationBar />
-              <main className="mx-auto flex min-h-100vh max-w-7xl flex-col items-center justify-center gap-8 px-2 py-10 md:gap-20 md:px-20 md:py-30">
-                {header}
-                {technologies}
-                {projects}
-                {experiences}
-                {education}
-              </main>
+                <NavigationBar />
+                <main className="mx-auto flex min-h-100vh max-w-7xl flex-col items-center justify-center gap-8 px-2 py-10 md:gap-20 md:px-20 md:py-30">
+                  {header}
+                  {technologies}
+                  {projects}
+                  {experiences}
+                  {education}
+                </main>
+              </QueryProvider>
             </AosProvider>
           </ThemeProvider>
 
