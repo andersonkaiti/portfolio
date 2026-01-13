@@ -28,7 +28,7 @@ export default function Education() {
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <Card
-          className="border-none bg-background"
+          className="border-none bg-background shadow-none"
           data-aos="fade-down"
           data-aos-delay={200}
         >
@@ -53,21 +53,20 @@ export default function Education() {
               COMPUTER SCIENCE
             </CardTitle>
             <p className="text-center text-muted-foreground text-sm">
-              Pursuing a degree in Computer Science at UNISAGRADO, expected to
-              graduate in 2025. Focused on software development, algorithms, and
-              data structures.
+              Degree in Computer Science at UNISAGRADO. Focused on software
+              development, algorithms, and data structures.
             </p>
           </CardContent>
 
           <CardFooter className="z-1">
             <Badge className="mx-auto rounded-full border-emerald-500/20 bg-emerald-500/10 text-emerald-500">
-              Graduation: 2025
+              Graduated
             </Badge>
           </CardFooter>
         </Card>
 
         <Card
-          className="border-none bg-background"
+          className="border-none bg-background shadow-none"
           data-aos="fade-down"
           data-aos-delay={400}
         >

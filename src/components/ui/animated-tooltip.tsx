@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { cn } from "@lib/utils"
+import { cn } from '@lib/utils'
 import {
   AnimatePresence,
   type MotionValue,
@@ -8,8 +8,8 @@ import {
   useMotionValue,
   useSpring,
   useTransform,
-} from "motion/react"
-import React, { type MouseEvent, type ReactNode, useRef, useState } from "react"
+} from 'motion/react'
+import React, { type MouseEvent, type ReactNode, useRef, useState } from 'react'
 
 interface AnimatedTooltipContextType {
   hoveredIndex: number | null
@@ -25,7 +25,7 @@ function useAnimatedTooltipContext() {
   const context = React.useContext(AnimatedTooltipContext)
   if (!context) {
     throw new Error(
-      "AnimatedTooltip components must be used within AnimatedTooltip",
+      'AnimatedTooltip components must be used within AnimatedTooltip',
     )
   }
   return context
@@ -62,7 +62,7 @@ function AnimatedTooltip({ children, className }: AnimatedTooltipProps) {
     <AnimatedTooltipContext.Provider
       value={{ hoveredIndex, setHoveredIndex, x, handleMouseMove }}
     >
-      <div className={cn("relative inline-block", className)}>{children}</div>
+      <div className={cn('relative inline-block', className)}>{children}</div>
     </AnimatedTooltipContext.Provider>
   )
 }
@@ -82,11 +82,11 @@ function AnimatedTooltipTrigger({
 
   return (
     <button
-      className={cn("relative", className)}
+      className={cn('relative', className)}
       onMouseEnter={() => setHoveredIndex(id)}
       onMouseLeave={() => setHoveredIndex(null)}
       onMouseMove={handleMouseMove}
-      style={{ display: "inline-block" }}
+      style={{ display: 'inline-block' }}
       type="button"
     >
       {children}
@@ -126,13 +126,13 @@ function AnimatedTooltipContent({
             y: 0,
             scale: 1,
             transition: {
-              type: "spring",
+              type: 'spring',
               stiffness: 260,
               damping: 10,
             },
           }}
           className={cn(
-            "-top-10 -translate-x-1/2 absolute left-1/2 z-50 flex flex-col items-center justify-center rounded-md bg-black px-4 py-2 text-xs shadow-xl",
+            '-top-10 -translate-x-1/2 absolute left-1/2 z-50 flex flex-col items-center justify-center rounded-md bg-black p-2 text-xs shadow-xl',
             className,
           )}
           exit={{ opacity: 0, y: 20, scale: 0.6 }}
@@ -140,7 +140,7 @@ function AnimatedTooltipContent({
           style={{
             translateX,
             rotate,
-            whiteSpace: "nowrap",
+            whiteSpace: 'nowrap',
           }}
         >
           <div className="-bottom-px absolute inset-x-10 z-30 h-px w-[20%]" />

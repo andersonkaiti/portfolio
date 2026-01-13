@@ -16,7 +16,7 @@ interface IBadgeStackProps {
 export function BadgeStack({ tech, index }: IBadgeStackProps) {
   return (
     <div
-      className="relative rounded-full border-border border-t-2 p-3 text-xs shadow-2xl sm:p-4 sm:text-sm dark:border-accent"
+      className="relative rounded-full border-border border-t-2 p-3 text-xs shadow-2xl sm:p-4 sm:text-sm dark:border-accent bg-background"
       data-aos="fade-down"
       data-aos-delay={100 * index}
       key={tech.name}
