@@ -1,7 +1,7 @@
 import androidLogo from '@assets/android-icon.svg'
 import androidStudioLogo from '@assets/android-studio.svg'
-import awsLogoDark from '@assets/aws/aws_dark.svg'
-import awsLogoLight from '@assets/aws/aws_light.svg'
+import awsLogoDark from '@assets/aws/aws-dark.svg'
+import awsLogoLight from '@assets/aws/aws-light.svg'
 import azureLogo from '@assets/azure.svg'
 import babelLogo from '@assets/babel.svg'
 import clerkLogoDark from '@assets/clerk/clerk-dark.svg'
@@ -88,6 +88,7 @@ export interface ITheme {
 }
 
 export type TechLogo = ITheme | StaticImageData
+console.log(csharpLogo)
 
 export const topicToLogo: Record<string, TechLogo> = {
   // Front-end
