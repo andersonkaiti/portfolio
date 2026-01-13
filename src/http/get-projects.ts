@@ -51,7 +51,7 @@ export async function getProjects() {
       next: {
         revalidate: 3600,
       },
-    }
+    },
   )
 
   const allProjects: GithubRepo[] = await response.json()
@@ -60,11 +60,11 @@ export async function getProjects() {
     (project) =>
       project.topics.length > 0 &&
       !project.topics.includes('course') &&
-      !!project.description
+      !!project.description,
   )
 
   const sortedProjects = filteredProjects.sort(
-    ({ pushed_at: one }, { pushed_at: two }) => dayjs(two).diff(one)
+    ({ pushed_at: one }, { pushed_at: two }) => dayjs(two).diff(one),
   )
 
   return sortedProjects

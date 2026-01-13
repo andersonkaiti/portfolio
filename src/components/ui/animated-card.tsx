@@ -17,7 +17,7 @@ const variants = [
         {...props}
         className={cn(
           'relative rounded-xl border bg-card px-6 py-6 text-card-foreground shadow-sm',
-          className
+          className,
         )}
       >
         {children}
@@ -31,14 +31,14 @@ const variants = [
         {...props}
         className={cn(
           'relative rounded-xl border bg-card px-6 py-6 text-card-foreground shadow-sm',
-          className
+          className,
         )}
       >
         <div
           className={cn(
             '-inset-px pointer-events-none absolute rounded-[inherit] border border-transparent',
             '[mask-clip:padding-box,border-box]',
-            'mask-intersect mask-[linear-gradient(transparent,transparent),linear-gradient(#000,#000)]'
+            'mask-intersect mask-[linear-gradient(transparent,transparent),linear-gradient(#000,#000)]',
           )}
         >
           <motion.div
@@ -46,7 +46,7 @@ const variants = [
               offsetDistance: ['0%', '100%'],
             }}
             className={cn(
-              'absolute aspect-square bg-linear-to-r from-transparent via-primary to-primary/80 dark:from-transparent dark:via-primary/50 dark:to-primary/40'
+              'absolute aspect-square bg-linear-to-r from-transparent via-primary to-primary/80 dark:from-transparent dark:via-primary/50 dark:to-primary/40',
             )}
             style={{
               width: 42,
@@ -73,7 +73,7 @@ const variants = [
           'animate-shine',
           'bg-[linear-gradient(110deg,var(--color-card),45%,var(--color-border),55%,var(--color-card))] bg-size-[400%_100%]',
           'dark:bg-[linear-gradient(110deg,var(--color-card),45%,var(--color-border),55%,var(--color-card))]',
-          className
+          className,
         )}
       >
         {children}
@@ -87,12 +87,10 @@ const variants = [
       const mouseY = useMotionValue(0)
 
       return (
-        // biome-ignore lint/a11y/noStaticElementInteractions: needed
-        // biome-ignore lint/nursery/noNoninteractiveElementInteractions: needed
         <div
-          aria-label="Revealed pointer animated card"
+          aria-hidden="true"
           className={cn(
-            'group relative overflow-hidden rounded-xl bg-border/40 p-px'
+            'group relative overflow-hidden rounded-xl bg-border/40 p-px',
           )}
           onMouseMove={(e) => {
             const { left, top } = e.currentTarget.getBoundingClientRect()
@@ -104,7 +102,7 @@ const variants = [
             aria-hidden="true"
             className={cn(
               '-inset-px pointer-events-none absolute rounded-xl opacity-0 transition duration-300 group-hover:opacity-20',
-              '[--color:var(--color-primary)]'
+              '[--color:var(--color-primary)]',
             )}
             style={{
               background: useMotionTemplate`radial-gradient(200px circle at ${mouseX}px ${mouseY}px, var(--color), transparent 80%)`,
@@ -114,7 +112,7 @@ const variants = [
             {...props}
             className={cn(
               'relative select-none rounded-xl bg-card px-6 py-6 text-card-foreground shadow-sm',
-              className
+              className,
             )}
           >
             {children}
@@ -137,7 +135,7 @@ export function AnimatedCard({
   const FALLBACK_INDEX = 0
 
   const variantComponent = variants.find(
-    (v) => v.variant === variant
+    (v) => v.variant === variant,
   )?.component
 
   const Component = variantComponent || variants[FALLBACK_INDEX].component

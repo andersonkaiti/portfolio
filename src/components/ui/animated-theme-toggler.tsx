@@ -46,7 +46,7 @@ export function AnimatedThemeToggler({
         duration: 600,
         easing: 'ease-in-out',
         pseudoElement: '::view-transition-new(root)',
-      }
+      },
     )
   }
   return (

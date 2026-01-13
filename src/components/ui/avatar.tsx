@@ -9,7 +9,7 @@ function Avatar({ className, ...props }: React.ComponentProps<typeof Root>) {
     <Root
       className={cn(
         'relative flex size-8 shrink-0 overflow-hidden rounded-full',
-        className
+        className,
       )}
       data-slot="avatar"
       {...props}
@@ -38,7 +38,7 @@ function AvatarFallback({
     <Fallback
       className={cn(
         'flex size-full items-center justify-center rounded-full bg-muted',
-        className
+        className,
       )}
       data-slot="avatar-fallback"
       {...props}

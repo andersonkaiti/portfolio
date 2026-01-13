@@ -124,7 +124,7 @@ export function ExperiencePositionItem({
         <CollapsibleTrigger
           className={cn(
             'group/experience not-prose block w-full cursor-pointer select-none text-left',
-            'before:-top-1 before:-right-1 before:-bottom-1.5 relative before:absolute before:left-7 before:rounded-lg hover:before:bg-muted/50'
+            'before:-top-1 before:-right-1 before:-bottom-1.5 relative before:absolute before:left-7 before:rounded-lg hover:before:bg-muted/50',
           )}
         >
           <div className="relative z-1 mb-1 flex items-center gap-3">
@@ -199,7 +199,7 @@ function Prose({ className, ...props }: React.ComponentProps<'div'>) {
         'prose prose-sm prose-emerald-500 dark:prose-invert max-w-none font-mono text-foreground',
         'prose-a:wrap-break-word prose-a:font-medium prose-a:text-foreground prose-a:underline prose-a:underline-offset-4',
         'prose-code:rounded-md prose-code:border prose-code:bg-muted/50 prose-code:px-[0.3rem] prose-code:py-[0.2rem] prose-code:font-normal prose-code:text-sm prose-code:before:content-none prose-code:after:content-none',
-        className
+        className,
       )}
       {...props}
     />
@@ -211,7 +211,7 @@ function Skill({ className, ...props }: React.ComponentProps<'span'>) {
     <span
       className={cn(
         'inline-flex items-center rounded-lg border bg-emerald-500/15 px-1.5 py-0.5 font-mono text-emerald-500 text-xs',
-        className
+        className,
       )}
       {...props}
     />
