@@ -108,7 +108,7 @@ export const LinkPreview = ({
 
         <Content
           align="center"
-          className="[transform-origin:var(--radix-hover-card-content-transform-origin)]"
+          className="origin-(--radix-hover-card-content-transform-origin)"
           side="top"
           sideOffset={10}
         >
