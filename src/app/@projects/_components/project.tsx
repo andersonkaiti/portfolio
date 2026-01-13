@@ -1,11 +1,17 @@
 import { AnimatedCard } from '@components/ui/animated-card'
-import { Badge } from '@components/ui/badge'
+import {
+  AnimatedTooltip,
+  AnimatedTooltipContent,
+  AnimatedTooltipTrigger,
+} from '@components/ui/animated-tooltip'
 import { Button } from '@components/ui/button'
 import { LinkPreview } from '@components/ui/link-preview'
 import { formatTitle } from '@utils/format-title'
 import { formatTopic } from '@utils/format-topic'
 import { Github } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
+import { getTopicLogo } from '../_constants/topic-to-logo'
 
 interface IProjectProps {
   id: number
@@ -59,16 +65,49 @@ export function Project({
         </p>
       </div>
 
-      <div className="flex flex-wrap gap-2">
-        {topics.map((topic) => (
-          <Badge
-            className="rounded-full border-emerald-500/40 bg-emerald-500/10 text-emerald-500"
-            key={topic}
-            variant="outline"
-          >
-            {formatTopic(topic)}
-          </Badge>
-        ))}
+      <div className="flex flex-wrap items-center gap-3">
+        {topics.map((topic, index) => {
+          const logo = getTopicLogo(topic)
+
+          if (!logo) {
+            return null
+          }
+
+          return (
+            <AnimatedTooltip key={topic}>
+              <AnimatedTooltipTrigger id={index}>
+                <div className="cursor-pointer transition-all hover:scale-110">
+                  {'dark' in logo && 'light' in logo ? (
+                    <>
+                      <Image
+                        alt={topic}
+                        className="hidden size-6 dark:flex"
+                        sizes="24px"
+                        src={logo.dark}
+                      />
+                      <Image
+                        alt={topic}
+                        className="flex size-6 dark:hidden"
+                        sizes="24px"
+                        src={logo.light}
+                      />
+                    </>
+                  ) : (
+                    <Image
+                      alt={topic}
+                      className="size-6"
+                      sizes="24px"
+                      src={logo}
+                    />
+                  )}
+                </div>
+              </AnimatedTooltipTrigger>
+              <AnimatedTooltipContent id={index}>
+                {formatTopic(topic)}
+              </AnimatedTooltipContent>
+            </AnimatedTooltip>
+          )
+        })}
       </div>
 
       <div className="mt-auto flex gap-3 border-t border-dashed pt-2">
