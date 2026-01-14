@@ -25,7 +25,8 @@ import reactHookForm from '@assets/react_hook_form.svg'
 import reactQueryLogo from '@assets/reactquery.svg'
 import shadcnLogoDark from '@assets/shadcn/shadcn-dark.svg'
 import shadcnLogoLight from '@assets/shadcn/shadcn-light.svg'
-import styledComponentsLogo from '@assets/styled-components.svg'
+import styledComponentsLogoDark from '@assets/styled-components/styled-components-dark.svg'
+import styledComponentsLogoLight from '@assets/styled-components/styled-components-light.svg'
 import tailwindLogo from '@assets/tailwindcss.svg'
 import typescriptLogo from '@assets/typescript.svg'
 import vercelLogoDark from '@assets/vercel/vercel-dark.svg'
@@ -109,7 +110,10 @@ export const stacks: IStack[] = [
       },
       {
         name: 'Styled Components',
-        logo: styledComponentsLogo,
+        logo: {
+          dark: styledComponentsLogoDark,
+          light: styledComponentsLogoLight,
+        },
       },
       {
         name: 'Nuqs',

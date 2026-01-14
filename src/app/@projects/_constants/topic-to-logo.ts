@@ -60,7 +60,8 @@ import serverlessLogo from '@assets/serverless.svg'
 import shadcnLogoDark from '@assets/shadcn/shadcn-dark.svg'
 import shadcnLogoLight from '@assets/shadcn/shadcn-light.svg'
 import shikiLogo from '@assets/shiki.svg'
-import styledComponentsLogo from '@assets/styled-components.svg'
+import styledComponentsLogoDark from '@assets/styled-components/styled-components-dark.svg'
+import styledComponentsLogoLight from '@assets/styled-components/styled-components-light.svg'
 import swaggerLogo from '@assets/swagger.svg'
 import t3LogoDark from '@assets/t3/t3-dark.svg'
 import t3LogoLight from '@assets/t3/t3-light.svg'
@@ -88,7 +89,6 @@ export interface ITheme {
 }
 
 export type TechLogo = ITheme | StaticImageData
-console.log(csharpLogo)
 
 export const topicToLogo: Record<string, TechLogo> = {
   // Front-end
@@ -139,8 +139,14 @@ export const topicToLogo: Record<string, TechLogo> = {
   radix: { dark: radixLogoDark, light: radixLogoLight },
   'radix-ui': { dark: radixLogoDark, light: radixLogoLight },
   '@radix-ui': { dark: radixLogoDark, light: radixLogoLight },
-  'styled-components': styledComponentsLogo,
-  styledcomponents: styledComponentsLogo,
+  'styled-components': {
+    dark: styledComponentsLogoDark,
+    light: styledComponentsLogoLight,
+  },
+  styledcomponents: {
+    dark: styledComponentsLogoDark,
+    light: styledComponentsLogoLight,
+  },
   babel: babelLogo,
   shiki: shikiLogo,
   nuqs: { dark: nuqsLogoDark, light: nuqsLogoLight },
