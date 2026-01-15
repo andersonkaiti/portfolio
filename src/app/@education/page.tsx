@@ -53,8 +53,9 @@ export default function Education() {
               COMPUTER SCIENCE
             </CardTitle>
             <p className="text-center text-muted-foreground text-sm">
-              Degree in Computer Science at UNISAGRADO. Focused on software
-              development, algorithms, and data structures.
+              Completed Bachelor's Degree in Computer Science at UNISAGRADO.
+              Specialized in software development, algorithms, and data
+              structures.
             </p>
           </CardContent>
 

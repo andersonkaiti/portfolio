@@ -30,7 +30,7 @@ export default function Header() {
       </h2>
 
       <p className="mx-auto mt-3 max-w-2xl text-balance font-base text-base leading-6 sm:mt-4 sm:text-lg sm:leading-7 md:text-xl md:leading-8 ">
-        Computer Science student focused on web development, with experience in
+        Computer Science graduate focused on web development, with experience in
         modern technologies like React, Next.js, Node.js, TypeScript,
         PostgreSQL, TailwindCSS, Docker and others.
       </p>
