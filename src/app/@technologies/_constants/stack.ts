@@ -1,5 +1,7 @@
 import azureLogo from '@assets/azure.svg'
 import cssLogo from '@assets/css_old.svg'
+import cypressLogoDark from '@assets/cypress/cypress-dark.svg'
+import cypressLogoLight from '@assets/cypress/cypress-light.svg'
 import dockerLogo from '@assets/docker.svg'
 import drizzleLogoDark from '@assets/drizzle/drizzle-dark.svg'
 import drizzleLogoLight from '@assets/drizzle/drizzle-light.svg'
@@ -32,6 +34,7 @@ import typescriptLogo from '@assets/typescript.svg'
 import vercelLogoDark from '@assets/vercel/vercel-dark.svg'
 import vercelLogoLight from '@assets/vercel/vercel-light.svg'
 import viteLogo from '@assets/vitejs.svg'
+import vitestLogo from '@assets/vitest.svg'
 import zodLogo from '@assets/zod.svg'
 import type { LucideIcon } from 'lucide-react'
 import { Cloud, Database, Globe } from 'lucide-react'
@@ -119,6 +122,10 @@ export const stacks: IStack[] = [
         name: 'Nuqs',
         logo: { dark: nuqsLogoDark, light: nuqsLogoLight },
       },
+      {
+        name: 'Cypress',
+        logo: { dark: cypressLogoDark, light: cypressLogoLight },
+      },
     ],
   },
   {
@@ -159,6 +166,10 @@ export const stacks: IStack[] = [
       {
         name: 'Drizzle',
         logo: { dark: drizzleLogoDark, light: drizzleLogoLight },
+      },
+      {
+        name: 'Vitest',
+        logo: vitestLogo,
       },
     ],
   },
