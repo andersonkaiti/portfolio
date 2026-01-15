@@ -89,9 +89,7 @@ const variants = [
       return (
         <div
           aria-hidden="true"
-          className={cn(
-            'group relative overflow-hidden rounded-xl bg-border/40 p-px',
-          )}
+          className={cn('group relative rounded-xl bg-border/40 p-px')}
           onMouseMove={(e) => {
             const { left, top } = e.currentTarget.getBoundingClientRect()
             mouseX.set(e.clientX - left)
