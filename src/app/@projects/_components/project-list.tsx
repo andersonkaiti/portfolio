@@ -8,7 +8,7 @@ import {
 } from '@components/ui/collapsible'
 import { getProjects } from '@http/get-projects'
 import { useSuspenseQuery } from '@tanstack/react-query'
-import { ChevronUp } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import { useState } from 'react'
 import { Project } from './project'
 
@@ -51,7 +51,7 @@ export function ProjectList() {
                 ? 'Show less'
                 : `Show ${extraProjects.length} more project${extraProjects.length > 1 ? 's' : ''}`}
             </span>
-            <ChevronUp className="transition-transform group-data-[state=open]:rotate-180" />
+            <ChevronDown className="transition-transform group-data-[state=open]:rotate-180" />
           </Button>
         </CollapsibleTrigger>
       )}
