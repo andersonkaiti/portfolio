@@ -40,7 +40,7 @@ export const links = [
   {
     id: 4,
     ariaLabel: "Download Anderson Kaiti's résumé",
-    href: '/andersonkaiti-curriculum.pdf',
+    href: 'https://docs.google.com/document/d/1Ae_NK_wTcgf9sjNRkVO9S0F-z76MoTyq/edit?usp=sharing&ouid=110745851965910975930&rtpof=true&sd=true',
     icon: FileUser,
     tooltip: (
       <>
