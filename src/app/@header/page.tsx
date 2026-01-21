@@ -3,8 +3,15 @@ import {
   AnimatedTooltipContent,
   AnimatedTooltipTrigger,
 } from '@components/ui/animated-tooltip'
+import { cn } from '@lib/utils'
+import { Playfair_Display } from 'next/font/google'
 import Link from 'next/link'
 import { links } from './socials'
+
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair-display',
+})
 
 export default function Header() {
   return (
@@ -20,7 +27,12 @@ export default function Header() {
           </span>
         </div>
 
-        <h1 className="scroll-m-20 text-balance text-center font-base text-3xl xs:text-4xl tracking-tight sm:text-5xl md:text-7xl ">
+        <h1
+          className={cn(
+            'scroll-m-20 text-balance text-center font-base text-3xl xs:text-4xl tracking-tight sm:text-5xl md:text-7xl ',
+            playfairDisplay.className,
+          )}
+        >
           Hi, I'm Anderson Kaiti
         </h1>
       </div>

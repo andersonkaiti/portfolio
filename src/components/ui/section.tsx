@@ -1,4 +1,11 @@
+import { cn } from '@lib/utils'
+import { Playfair_Display } from 'next/font/google'
 import type { HTMLAttributes } from 'react'
+
+const playfairDisplay = Playfair_Display({
+  variable: '--font-playfair-display',
+  subsets: ['latin'],
+})
 
 export function SectionContainer({
   children,
@@ -24,7 +31,12 @@ export function SectionHeader({
 
 export function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h1 className="scroll-m-20 text-balance text-center font-semibold text-4xl tracking-wide">
+    <h1
+      className={cn(
+        'scroll-m-20 text-balance text-center font-semibold text-5xl tracking-wide',
+        playfairDisplay.className,
+      )}
+    >
       {children}
     </h1>
   )
@@ -32,14 +44,12 @@ export function SectionTitle({ children }: { children: React.ReactNode }) {
 
 export function SectionSubtitle({ children }: { children: React.ReactNode }) {
   return (
-    <h4 className="text-balance text-center font-base text-lg leading-7">
-      {children}
-    </h4>
+    <h4 className="text-balance text-center text-lg leading-7">{children}</h4>
   )
 }
 
 export function SectionUnderline() {
   return (
-    <div className="mx-auto h-[1px] w-1/2 bg-gradient-to-r from-transparent via-black/20 to-transparent dark:via-white/20" />
+    <div className="mx-auto h-px w-1/2 bg-linear-to-r from-transparent via-black/20 to-transparent dark:via-white/20" />
   )
 }
