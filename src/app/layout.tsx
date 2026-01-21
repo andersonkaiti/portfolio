@@ -7,7 +7,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
-import { NavigationBar } from './_components/navbar'
+import { NavigationBar } from './_components/navigation-bar'
 import './globals.css'
 
 const MontserratSans = Montserrat({

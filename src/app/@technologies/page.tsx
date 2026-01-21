@@ -5,7 +5,7 @@ import {
   SectionTitle,
   SectionUnderline,
 } from '@components/ui/section'
-import { stacks } from './_constants/stack'
+import { stacks } from './_components/stacks'
 import { Stack } from './stack'
 
 export default function Technologies() {

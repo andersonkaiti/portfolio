@@ -11,7 +11,7 @@ import { formatTopic } from '@utils/format-topic'
 import { Github } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { getTopicLogo } from '../_constants/topic-to-logo'
+import { getTopicLogo } from './topic-to-logo'
 
 interface IProjectProps {
   id: number
