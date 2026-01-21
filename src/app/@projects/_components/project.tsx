@@ -60,7 +60,7 @@ export function Project({
     >
       <div className="space-y-2 py-2">
         <h3 className="font-medium text-base">{formatTitle(name)}</h3>
-        <p className="line-clamp-2 text-muted-foreground text-sm">
+        <p className="text-muted-foreground text-sm text-justify">
           {description}
         </p>
       </div>
