@@ -18,20 +18,57 @@ const MontserratSans = Montserrat({
 export const metadata: Metadata = {
   title: 'Portfolio - Anderson Kaiti',
   description: 'Computer Scientist and Full-Stack Developer',
+  applicationName: 'Anderson Kaiti - Portfolio',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'AK - Portfolio',
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  manifest: '/manifest.webmanifest',
+  icons: {
+    icon: [
+      {
+        url: '/favicon.ico',
+        sizes: 'any',
+      },
+      {
+        url: '/android-chrome-192x192.png',
+        sizes: '192x192',
+        type: 'image/png',
+      },
+      {
+        url: '/android-chrome-512x512.png',
+        sizes: '512x512',
+        type: 'image/png',
+      },
+    ],
+    apple: [
+      {
+        url: '/apple-touch-icon.png',
+        sizes: '180x180',
+        type: 'image/png',
+      },
+    ],
+  },
 }
 
 export default function RootLayout({
-  education,
   header,
-  projects,
   experiences,
+  projects,
+  contributions,
   technologies,
+  education,
 }: Readonly<{
-  education: React.ReactNode
   header: React.ReactNode
-  projects: React.ReactNode
   experiences: React.ReactNode
+  projects: React.ReactNode
+  contributions: React.ReactNode
   technologies: React.ReactNode
+  education: React.ReactNode
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
@@ -52,9 +89,10 @@ export default function RootLayout({
                 <NavigationBar />
                 <main className="mx-auto flex min-h-100vh max-w-7xl flex-col items-center justify-center gap-8 px-2 py-10 md:gap-20 md:px-20 md:py-30">
                   {header}
-                  {technologies}
-                  {projects}
                   {experiences}
+                  {projects}
+                  {contributions}
+                  {technologies}
                   {education}
                 </main>
               </QueryProvider>
