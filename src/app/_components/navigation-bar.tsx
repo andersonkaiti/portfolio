@@ -27,12 +27,20 @@ export function NavigationBar() {
       link: '#presentation',
     },
     {
-      name: 'Technologies',
-      link: '#technologies',
+      name: 'Experiences',
+      link: '#experiences',
     },
     {
       name: 'Projects',
       link: '#projects',
+    },
+    {
+      name: 'Contributions',
+      link: '#contributions',
+    },
+    {
+      name: 'Technologies',
+      link: '#technologies',
     },
     {
       name: 'Education',
