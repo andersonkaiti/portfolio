@@ -9,26 +9,34 @@ import {
 import {
   SectionContainer,
   SectionHeader,
+  SectionLabel,
   SectionSubtitle,
   SectionTitle,
-  SectionUnderline,
 } from '@components/ui/section'
-import { Globe, GraduationCap } from 'lucide-react'
+import { GraduationCap, Languages } from 'lucide-react'
+import { JetBrains_Mono } from 'next/font/google'
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains-mono',
+})
 
 export default function Education() {
   return (
     <SectionContainer id="education">
       <SectionHeader data-aos="fade-down">
+        <SectionLabel>Learning</SectionLabel>
+
         <SectionTitle>Education</SectionTitle>
+
         <SectionSubtitle>
           My formal education and language development
         </SectionSubtitle>
-        <SectionUnderline />
       </SectionHeader>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <Card
-          className="border-none bg-background shadow-none"
+          className="border-none bg-transparent shadow-none"
           data-aos="fade-down"
           data-aos-delay={200}
         >
@@ -37,15 +45,19 @@ export default function Education() {
               <GraduationCap className="size-10 text-emerald-500" />
             </Badge>
             <div>
-              <CardTitle className="scroll-m-20 font-semibold text-xl tracking-tight">
+              <CardTitle
+                className={`scroll-m-20 font-semibold text-xl tracking-tight ${jetbrainsMono.className}`}
+              >
                 Undergraduate
               </CardTitle>
-              <h4 className="scroll-m-20 font-semibold text-base text-muted-foreground tracking-tight">
+              <h4
+                className={`scroll-m-20 font-semibold text-base text-muted-foreground tracking-tight ${jetbrainsMono.className}`}
+              >
                 UNISAGRADO • 2022-2025
               </h4>
             </div>
 
-            <div className="absolute inset-0 top-2 size-full rounded-xl bg-linear-to-b from-background/0 to-background" />
+            <div className="absolute inset-0 top-2 size-full rounded-xl bg-linear-to-b from-background/0 to-background/80" />
           </CardHeader>
 
           <CardContent className="relative z-1 space-y-1">
@@ -67,24 +79,28 @@ export default function Education() {
         </Card>
 
         <Card
-          className="border-none bg-background shadow-none"
+          className="border-none bg-transparent shadow-none"
           data-aos="fade-down"
           data-aos-delay={400}
         >
           <CardHeader className="relative flex justify-center gap-2">
             <Badge className="border-emerald-500/20 bg-emerald-500/10 p-2">
-              <Globe className="size-10 text-emerald-500" />
+              <Languages className="size-10 text-emerald-500" />
             </Badge>
             <div>
-              <CardTitle className="scroll-m-20 font-semibold text-xl tracking-tight">
+              <CardTitle
+                className={`scroll-m-20 font-semibold text-xl tracking-tight ${jetbrainsMono.className}`}
+              >
                 Languages
               </CardTitle>
-              <h4 className="scroll-m-20 font-semibold text-base text-muted-foreground tracking-tight">
+              <h4
+                className={`scroll-m-20 font-semibold text-base text-muted-foreground tracking-tight ${jetbrainsMono.className}`}
+              >
                 CNA • Ongoing
               </h4>
             </div>
 
-            <div className="absolute inset-0 top-2 size-full rounded-xl bg-linear-to-b from-background/0 to-background" />
+            <div className="absolute inset-0 top-2 size-full rounded-xl bg-linear-to-b from-background/0 to-background/80" />
           </CardHeader>
 
           <CardContent className="z-1 space-y-1">
@@ -98,7 +114,7 @@ export default function Education() {
 
           <CardFooter className="z-1 h-full">
             <Badge className="mx-auto mt-auto rounded-full border-emerald-500/20 bg-emerald-500/10 text-emerald-500">
-              Level: Pre-Advanced
+              Level: Pre-Advanced (B2)
             </Badge>
           </CardFooter>
         </Card>

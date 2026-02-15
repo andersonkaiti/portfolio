@@ -1,9 +1,9 @@
 import {
   SectionContainer,
   SectionHeader,
+  SectionLabel,
   SectionSubtitle,
   SectionTitle,
-  SectionUnderline,
 } from '@components/ui/section'
 import { stacks } from './_components/stacks'
 import { Stack } from './stack'
@@ -12,11 +12,13 @@ export default function Technologies() {
   return (
     <SectionContainer id="technologies">
       <SectionHeader data-aos="fade-down">
-        <SectionTitle>Main Technologies</SectionTitle>
+        <SectionLabel>Stack</SectionLabel>
+
+        <SectionTitle>Technologies</SectionTitle>
+
         <SectionSubtitle>
           Tools and technologies I master to create complete solutions
         </SectionSubtitle>
-        <SectionUnderline />
       </SectionHeader>
 
       <div className="grid grid-cols-1">

@@ -1,9 +1,9 @@
 import { cn } from '@lib/utils'
-import { Playfair_Display } from 'next/font/google'
+import { JetBrains_Mono } from 'next/font/google'
 import type { HTMLAttributes } from 'react'
 
-const playfairDisplay = Playfair_Display({
-  variable: '--font-playfair-display',
+const jetBrainsMono = JetBrains_Mono({
+  variable: '--font-jet-brains-mono',
   subsets: ['latin'],
 })
 
@@ -23,18 +23,18 @@ export function SectionHeader({
   ...rest
 }: { children: React.ReactNode } & HTMLAttributes<HTMLDivElement>) {
   return (
-    <header className="space-y-4" {...rest}>
+    <header className="space-y-4 mb-8" {...rest}>
       {children}
     </header>
   )
 }
 
-export function SectionTitle({ children }: { children: React.ReactNode }) {
+export function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <h1
       className={cn(
-        'scroll-m-20 text-balance text-center font-semibold text-5xl tracking-wide',
-        playfairDisplay.className,
+        'scroll-m-20 text-balance font-semibold tracking-wide uppercase text-primary text-sm md:text-base',
+        jetBrainsMono.className,
       )}
     >
       {children}
@@ -42,14 +42,16 @@ export function SectionTitle({ children }: { children: React.ReactNode }) {
   )
 }
 
-export function SectionSubtitle({ children }: { children: React.ReactNode }) {
+export function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h4 className="text-balance text-center text-lg leading-7">{children}</h4>
+    <h1 className="scroll-m-20 text-balance text-3xl font-semibold md:text-5xl">
+      {children}
+    </h1>
   )
 }
 
-export function SectionUnderline() {
+export function SectionSubtitle({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mx-auto h-px w-1/2 bg-linear-to-r from-transparent via-black/20 to-transparent dark:via-white/20" />
+    <h4 className="text-balance leading-7 text-muted-foreground">{children}</h4>
   )
 }

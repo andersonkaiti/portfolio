@@ -1,9 +1,9 @@
 import {
   SectionContainer,
   SectionHeader,
+  SectionLabel,
   SectionSubtitle,
   SectionTitle,
-  SectionUnderline,
 } from '@components/ui/section'
 import { Suspense } from 'react'
 import { LoadingSkeleton } from './_components/loading-skeleton'
@@ -13,12 +13,15 @@ export default function ProjectListSlot() {
   return (
     <SectionContainer id="projects">
       <SectionHeader data-aos="fade-down">
+        <SectionLabel>Work</SectionLabel>
+
         <SectionTitle>Projects</SectionTitle>
+
         <SectionSubtitle>
           Some of the projects I have developed along my journey
         </SectionSubtitle>
-        <SectionUnderline />
       </SectionHeader>
+
       <Suspense fallback={<LoadingSkeleton />}>
         <ProjectList />
       </Suspense>
