@@ -62,6 +62,7 @@ export default function RootLayout({
   projects,
   experiences,
   education,
+  contact,
 }: Readonly<{
   header: React.ReactNode
   about: React.ReactNode
@@ -69,6 +70,7 @@ export default function RootLayout({
   projects: React.ReactNode
   experiences: React.ReactNode
   education: React.ReactNode
+  contact: React.ReactNode
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
@@ -95,6 +97,7 @@ export default function RootLayout({
                   {projects}
                   {experiences}
                   {education}
+                  {contact}
                 </main>
               </QueryProvider>
             </AosProvider>

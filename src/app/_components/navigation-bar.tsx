@@ -46,6 +46,10 @@ export function NavigationBar() {
       name: 'Education',
       link: '#education',
     },
+    {
+      name: 'Contact',
+      link: '#contact',
+    },
   ]
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
