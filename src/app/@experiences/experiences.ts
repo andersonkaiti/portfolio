@@ -5,7 +5,7 @@ export const WORK_EXPERIENCES: ExperienceItemType[] = [
     id: 'funprev-1',
     companyName: 'Funprev Bauru',
     companyLogo: undefined,
-    isCurrentEmployer: true,
+    isCurrentEmployer: false,
     positions: [
       {
         id: 'funprev-1-1',

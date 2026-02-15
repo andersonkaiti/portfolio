@@ -54,7 +54,7 @@ export function WorkExperience({
   experiences: ExperienceItemType[]
 }) {
   return (
-    <div className={cn('bg-background px-4 rounded-md', className)}>
+    <div className={cn('bg-transparent px-4 rounded-md', className)}>
       {experiences.map((experience) => (
         <ExperienceItem experience={experience} key={experience.id} />
       ))}
