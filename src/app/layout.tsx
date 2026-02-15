@@ -1,4 +1,4 @@
-import { Spotlight } from '@components/ui/spotlight'
+import { Footer } from '@components/footer'
 import { AosProvider } from '@providers/aos'
 import { LenisProvider } from '@providers/lenis'
 import { QueryProvider } from '@providers/query-provider'
@@ -56,21 +56,9 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  header,
-  about,
-  technologies,
-  projects,
-  experiences,
-  education,
-  contact,
+  children,
 }: Readonly<{
-  header: React.ReactNode
-  about: React.ReactNode
-  technologies: React.ReactNode
-  projects: React.ReactNode
-  experiences: React.ReactNode
-  education: React.ReactNode
-  contact: React.ReactNode
+  children: React.ReactNode
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
@@ -86,19 +74,11 @@ export default function RootLayout({
           >
             <AosProvider>
               <QueryProvider>
-                <Spotlight />
-
                 <NavigationBar />
 
-                <main className="mx-auto flex min-h-100vh max-w-7xl flex-col items-center justify-center gap-16 px-2 py-10 md:gap-40 md:px-20 md:py-30">
-                  {header}
-                  {about}
-                  {technologies}
-                  {projects}
-                  {experiences}
-                  {education}
-                  {contact}
-                </main>
+                {children}
+
+                <Footer />
               </QueryProvider>
             </AosProvider>
           </ThemeProvider>

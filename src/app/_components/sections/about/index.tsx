@@ -5,9 +5,9 @@ import {
   SectionSubtitle,
   SectionTitle,
 } from '@components/ui/section'
-import { GithubGraph } from './_components/github-graph'
+import { GithubGraph } from './github-graph'
 
-export default function About() {
+export function AboutSection() {
   return (
     <SectionContainer id="about">
       <SectionHeader>

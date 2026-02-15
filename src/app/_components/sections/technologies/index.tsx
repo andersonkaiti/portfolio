@@ -5,10 +5,10 @@ import {
   SectionSubtitle,
   SectionTitle,
 } from '@components/ui/section'
-import { stacks } from './_components/stacks'
 import { Stack } from './stack'
+import { stacks } from './stacks'
 
-export default function Technologies() {
+export function TechnologiesSection() {
   return (
     <SectionContainer id="technologies">
       <SectionHeader data-aos="fade-down">

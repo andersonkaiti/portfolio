@@ -8,7 +8,7 @@ import {
 import { WorkExperience } from '@components/ui/work-experience'
 import { WORK_EXPERIENCES } from './experiences'
 
-export default function Experiences() {
+export function ExperiencesSection() {
   return (
     <SectionContainer id="experiences">
       <SectionHeader data-aos="fade-down">

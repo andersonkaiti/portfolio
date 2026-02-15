@@ -21,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
   variable: '--font-jetbrains-mono',
 })
 
-export default function Education() {
+export function EducationSection() {
   return (
     <SectionContainer id="education">
       <SectionHeader data-aos="fade-down">

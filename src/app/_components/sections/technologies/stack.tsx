@@ -1,7 +1,7 @@
 import { Card, CardContent } from '@components/ui/card'
 import type { LucideIcon } from 'lucide-react'
 import type { StaticImageData } from 'next/image'
-import { BadgeStack } from './_components/badge-stack'
+import { BadgeStack } from './badge-stack'
 
 interface IStackProps {
   stack: {

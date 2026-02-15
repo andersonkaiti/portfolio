@@ -6,10 +6,10 @@ import {
   SectionTitle,
 } from '@components/ui/section'
 import { Suspense } from 'react'
-import { LoadingSkeleton } from './_components/loading-skeleton'
-import { ProjectList } from './_components/project-list'
+import { LoadingSkeleton } from './loading-skeleton'
+import { ProjectList } from './project-list'
 
-export default function ProjectListSlot() {
+export function ProjectListSection() {
   return (
     <SectionContainer id="projects">
       <SectionHeader data-aos="fade-down">

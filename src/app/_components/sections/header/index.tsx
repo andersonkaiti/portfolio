@@ -2,7 +2,7 @@ import { Button } from '@components/ui/button'
 import Link from 'next/link'
 import { links } from './socials'
 
-export default function Header() {
+export function HeaderSection() {
   return (
     <header
       className="mx-2 my-10 flex flex-col gap-6 text-center sm:mx-8 sm:my-16 md:mx-20 md:my-24 lg:mx-24 lg:my-24 "
