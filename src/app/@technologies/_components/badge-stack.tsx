@@ -16,7 +16,7 @@ interface IBadgeStackProps {
 export function BadgeStack({ tech, index }: IBadgeStackProps) {
   return (
     <div
-      className="relative rounded-full border-border border-t-2 p-3 text-xs shadow-2xl sm:p-4 sm:text-sm dark:border-accent bg-background"
+      className="relative flex cursor-pointer items-center justify-center gap-2 rounded-full border-border border-t-2 px-3 py-2 text-xs shadow-2xl sm:text-sm dark:border-accent bg-background"
       data-aos="fade-down"
       data-aos-delay={100 * index}
       key={tech.name}
@@ -25,25 +25,22 @@ export function BadgeStack({ tech, index }: IBadgeStackProps) {
         <>
           <Image
             alt={tech.name}
-            className="hidden size-7 xs:size-8 md:size-10 dark:flex"
+            className="hidden size-5 dark:flex"
             sizes="28px 32px 40px"
             src={tech.logo?.dark}
           />
           <Image
             alt={tech.name}
-            className="flex size-7 xs:size-8 md:size-10 dark:hidden"
+            className="flex size-5 dark:hidden"
             sizes="28px 32px 40px"
             src={tech.logo?.light}
           />
         </>
       ) : (
-        <Image
-          alt={tech.name}
-          className="size-7 xs:size-8 md:size-10"
-          sizes="28px 32px 40px"
-          src={tech.logo}
-        />
+        <Image alt={tech.name} className="size-5" src={tech.logo} />
       )}
+
+      <span className="whitespace-nowrap">{tech.name}</span>
     </div>
   )
 }
