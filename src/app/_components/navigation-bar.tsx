@@ -27,16 +27,16 @@ export function NavigationBar() {
       link: '#presentation',
     },
     {
+      name: 'About',
+      link: '#about',
+    },
+    {
       name: 'Experiences',
       link: '#experiences',
     },
     {
       name: 'Projects',
       link: '#projects',
-    },
-    {
-      name: 'Contributions',
-      link: '#contributions',
     },
     {
       name: 'Technologies',

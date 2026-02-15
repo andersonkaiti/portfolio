@@ -12,6 +12,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'ghchart.rshah.org',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
   reactCompiler: true,

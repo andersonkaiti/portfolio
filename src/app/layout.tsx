@@ -57,17 +57,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   header,
-  experiences,
-  projects,
-  contributions,
+  about,
   technologies,
+  projects,
+  experiences,
   education,
 }: Readonly<{
   header: React.ReactNode
-  experiences: React.ReactNode
-  projects: React.ReactNode
-  contributions: React.ReactNode
+  about: React.ReactNode
   technologies: React.ReactNode
+  projects: React.ReactNode
+  experiences: React.ReactNode
   education: React.ReactNode
 }>) {
   return (
@@ -87,12 +87,13 @@ export default function RootLayout({
                 <Spotlight />
 
                 <NavigationBar />
-                <main className="mx-auto flex min-h-100vh max-w-7xl flex-col items-center justify-center gap-8 px-2 py-10 md:gap-20 md:px-20 md:py-30">
+
+                <main className="mx-auto flex min-h-100vh max-w-7xl flex-col items-center justify-center gap-16 px-2 py-10 md:gap-40 md:px-20 md:py-30">
                   {header}
-                  {experiences}
-                  {projects}
-                  {contributions}
+                  {about}
                   {technologies}
+                  {projects}
+                  {experiences}
                   {education}
                 </main>
               </QueryProvider>
