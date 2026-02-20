@@ -5,17 +5,21 @@ import {
   SectionSubtitle,
   SectionTitle,
 } from '@components/ui/section'
+import { Suspense } from 'react'
 import { GithubGraph } from './github-graph'
+import { LoadingSkeleton } from './loading-skeleton'
 
 export function AboutSection() {
   return (
     <SectionContainer id="about">
       <SectionHeader>
-        <SectionLabel>Contributions</SectionLabel>
+        <SectionLabel data-aos="fade-down">Contributions</SectionLabel>
 
-        <SectionTitle>About Me</SectionTitle>
+        <SectionTitle data-aos="fade-down">About Me</SectionTitle>
 
-        <SectionSubtitle>Get to know me better</SectionSubtitle>
+        <SectionSubtitle data-aos="fade-down">
+          Get to know me better
+        </SectionSubtitle>
       </SectionHeader>
 
       <main data-aos="fade-down">
@@ -57,7 +61,9 @@ export function AboutSection() {
         </p>
       </main>
 
-      <GithubGraph />
+      <Suspense fallback={<LoadingSkeleton />}>
+        <GithubGraph />
+      </Suspense>
     </SectionContainer>
   )
 }
