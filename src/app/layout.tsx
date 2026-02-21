@@ -1,4 +1,5 @@
 import { Footer } from '@components/footer'
+import { TooltipProvider } from '@components/ui/tooltip'
 import { AosProvider } from '@providers/aos'
 import { LenisProvider } from '@providers/lenis'
 import { QueryProvider } from '@providers/query-provider'
@@ -73,13 +74,15 @@ export default function RootLayout({
             enableSystem
           >
             <AosProvider>
-              <QueryProvider>
-                <NavigationBar />
+              <TooltipProvider>
+                <QueryProvider>
+                  <NavigationBar />
 
-                {children}
+                  {children}
 
-                <Footer />
-              </QueryProvider>
+                  <Footer />
+                </QueryProvider>
+              </TooltipProvider>
             </AosProvider>
           </ThemeProvider>
 
