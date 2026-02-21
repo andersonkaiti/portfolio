@@ -11,12 +11,12 @@ import { stacks } from './stacks'
 export function TechnologiesSection() {
   return (
     <SectionContainer id="technologies">
-      <SectionHeader data-aos="fade-down">
-        <SectionLabel>Stack</SectionLabel>
+      <SectionHeader>
+        <SectionLabel data-aos="fade-down">Stack</SectionLabel>
 
-        <SectionTitle>Technologies</SectionTitle>
+        <SectionTitle data-aos="fade-down">Technologies</SectionTitle>
 
-        <SectionSubtitle>
+        <SectionSubtitle data-aos="fade-down">
           Tools and technologies I master to create complete solutions
         </SectionSubtitle>
       </SectionHeader>

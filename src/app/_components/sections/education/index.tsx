@@ -24,12 +24,12 @@ const jetbrainsMono = JetBrains_Mono({
 export function EducationSection() {
   return (
     <SectionContainer id="education">
-      <SectionHeader data-aos="fade-down">
-        <SectionLabel>Learning</SectionLabel>
+      <SectionHeader>
+        <SectionLabel data-aos="fade-down">Learning</SectionLabel>
 
-        <SectionTitle>Education</SectionTitle>
+        <SectionTitle data-aos="fade-down">Education</SectionTitle>
 
-        <SectionSubtitle>
+        <SectionSubtitle data-aos="fade-down">
           My formal education and language development
         </SectionSubtitle>
       </SectionHeader>

@@ -46,15 +46,17 @@ export type ExperienceItemType = {
   isCurrentEmployer?: boolean
 }
 
-export function WorkExperience({
-  className,
-  experiences,
-}: {
-  className?: string
+export type WorkExperienceProps = React.HTMLAttributes<HTMLDivElement> & {
   experiences: ExperienceItemType[]
-}) {
+}
+
+export function WorkExperience({
+  experiences,
+  className,
+  ...props
+}: WorkExperienceProps) {
   return (
-    <div className={cn('bg-transparent px-4 rounded-md', className)}>
+    <div {...props} className={cn('bg-transparent px-4 rounded-md', className)}>
       {experiences.map((experience) => (
         <ExperienceItem experience={experience} key={experience.id} />
       ))}

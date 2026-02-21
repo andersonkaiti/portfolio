@@ -29,29 +29,44 @@ export function SectionHeader({
   )
 }
 
-export function SectionLabel({ children }: { children: React.ReactNode }) {
+export function SectionLabel({
+  children,
+  ...rest
+}: { children: React.ReactNode } & HTMLAttributes<HTMLHeadingElement>) {
   return (
     <h1
       className={cn(
         'scroll-m-20 text-balance font-semibold tracking-wide uppercase text-primary text-sm md:text-base',
         jetBrainsMono.className,
       )}
+      {...rest}
     >
       {children}
     </h1>
   )
 }
 
-export function SectionTitle({ children }: { children: React.ReactNode }) {
+export function SectionTitle({
+  children,
+  ...rest
+}: { children: React.ReactNode } & HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h1 className="scroll-m-20 text-balance text-3xl font-semibold md:text-5xl">
+    <h1
+      className="scroll-m-20 text-balance text-3xl font-semibold md:text-5xl"
+      {...rest}
+    >
       {children}
     </h1>
   )
 }
 
-export function SectionSubtitle({ children }: { children: React.ReactNode }) {
+export function SectionSubtitle({
+  children,
+  ...rest
+}: { children: React.ReactNode } & HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h4 className="text-balance leading-7 text-muted-foreground">{children}</h4>
+    <h4 className="text-balance leading-7 text-muted-foreground" {...rest}>
+      {children}
+    </h4>
   )
 }

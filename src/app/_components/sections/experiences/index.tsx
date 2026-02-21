@@ -11,17 +11,19 @@ import { WORK_EXPERIENCES } from './experiences'
 export function ExperiencesSection() {
   return (
     <SectionContainer id="experiences">
-      <SectionHeader data-aos="fade-down">
-        <SectionLabel>Journey</SectionLabel>
+      <SectionHeader>
+        <SectionLabel data-aos="fade-down">Journey</SectionLabel>
 
-        <SectionTitle>Professional Experience</SectionTitle>
+        <SectionTitle data-aos="fade-down">
+          Professional Experience
+        </SectionTitle>
 
-        <SectionSubtitle>
+        <SectionSubtitle data-aos="fade-down">
           My career journey and impactful work experiences
         </SectionSubtitle>
       </SectionHeader>
 
-      <WorkExperience experiences={WORK_EXPERIENCES} />
+      <WorkExperience data-aos="fade-down" experiences={WORK_EXPERIENCES} />
     </SectionContainer>
   )
 }
