@@ -1,15 +1,10 @@
 'use client'
 
 import { Button } from '@components/ui/button'
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from '@components/ui/collapsible'
 import { getProjects } from '@http/get-projects'
 import { useSuspenseQuery } from '@tanstack/react-query'
-import { ChevronDown } from 'lucide-react'
-import { useState } from 'react'
+import { ChevronRight } from 'lucide-react'
+import Link from 'next/link'
 import { Project } from './project'
 
 export function ProjectList() {
@@ -18,43 +13,31 @@ export function ProjectList() {
     queryFn: getProjects,
   })
 
-  const visibleCount = 2
-  const [open, setOpen] = useState(false)
+  const lastTwo = 2
 
-  const mainProjects = projects.slice(0, visibleCount)
-  const extraProjects = projects.slice(visibleCount)
+  const latestsProjects = projects.slice(0, lastTwo)
 
   return (
-    <Collapsible onOpenChange={setOpen} open={open}>
-      <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-        {mainProjects.map((project) => (
+    <div
+      className="flex flex-col justify-center items-center gap-4 md:gap-16"
+      data-aos="fade-down"
+    >
+      <p className="self-end">{projects.length} projects</p>
+
+      <div
+        className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+        data-aos="fade-down"
+      >
+        {latestsProjects.map((project) => (
           <Project key={project.id} {...project} />
         ))}
-
-        <CollapsibleContent asChild>
-          <div className="contents">
-            {extraProjects.map((project) => (
-              <Project key={project.id} {...project} />
-            ))}
-          </div>
-        </CollapsibleContent>
       </div>
 
-      {extraProjects.length > 0 && (
-        <CollapsibleTrigger
-          asChild
-          className="group mx-auto mt-4 flex text-sm transition"
-        >
-          <Button variant="ghost">
-            <span>
-              {open
-                ? 'Show less'
-                : `Show ${extraProjects.length} more project${extraProjects.length > 1 ? 's' : ''}`}
-            </span>
-            <ChevronDown className="transition-transform group-data-[state=open]:rotate-180" />
-          </Button>
-        </CollapsibleTrigger>
-      )}
-    </Collapsible>
+      <Button asChild data-aos="fade-down">
+        <Link href="/projects">
+          <ChevronRight className="size-4" /> See more
+        </Link>
+      </Button>
+    </div>
   )
 }

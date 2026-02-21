@@ -2,12 +2,10 @@
 
 import { Skeleton } from '@components/ui/skeleton'
 
-export function LoadingSkeleton() {
+export default function LoadingSkeleton() {
   return (
-    <div className="flex flex-col justify-center items-center gap-8 md:gap-16">
-      <Skeleton className="h-6 w-24 self-end rounded-md bg-skeleton" />
-
-      <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
+    <main className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-16 px-2 py-10 md:gap-40 md:px-20 md:py-30">
+      <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {Array.from({ length: 2 }).map((_, index: number) => (
           <div
             className="flex size-full flex-col gap-6 rounded-xl bg-background p-6"
@@ -33,8 +31,6 @@ export function LoadingSkeleton() {
           </div>
         ))}
       </div>
-
-      <Skeleton className="h-10 w-32 rounded-md bg-skeleton" />
-    </div>
+    </main>
   )
 }

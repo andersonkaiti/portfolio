@@ -39,14 +39,14 @@ const githubRepoSchema = z.object({
 
 export const githubReposResponseSchema = z.array(githubRepoSchema)
 
-export type GithubRepo = z.infer<typeof githubRepoSchema>
+export interface IGithubRepository extends z.infer<typeof githubRepoSchema> {}
 
 export async function getProjects() {
   const response = await fetch(
     'https://api.github.com/users/andersonkaiti/repos?per_page=100&page=1',
     {
       headers: {
-        Authorization: env.NEXT_PUBLIC_GITHUB_TOKEN,
+        Authorization: `Bearer ${env.NEXT_PUBLIC_GITHUB_TOKEN}`,
       },
       next: {
         revalidate: 3600,
@@ -54,7 +54,7 @@ export async function getProjects() {
     },
   )
 
-  const allProjects: GithubRepo[] = await response.json()
+  const allProjects: IGithubRepository[] = await response.json()
 
   const filteredProjects = allProjects.filter(
     (project) =>

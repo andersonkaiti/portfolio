@@ -12,12 +12,12 @@ import { ProjectList } from './project-list'
 export function ProjectListSection() {
   return (
     <SectionContainer id="projects">
-      <SectionHeader data-aos="fade-down">
-        <SectionLabel>Work</SectionLabel>
+      <SectionHeader>
+        <SectionLabel data-aos="fade-down">Work</SectionLabel>
 
-        <SectionTitle>Projects</SectionTitle>
+        <SectionTitle data-aos="fade-down">Projects</SectionTitle>
 
-        <SectionSubtitle>
+        <SectionSubtitle data-aos="fade-down">
           Some of the projects I have developed along my journey
         </SectionSubtitle>
       </SectionHeader>
