@@ -2,7 +2,6 @@ import { Footer } from '@components/footer'
 import { TooltipProvider } from '@components/ui/tooltip'
 import { AosProvider } from '@providers/aos'
 import { LenisProvider } from '@providers/lenis'
-import { QueryProvider } from '@providers/query-provider'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
@@ -75,13 +74,11 @@ export default function RootLayout({
           >
             <AosProvider>
               <TooltipProvider>
-                <QueryProvider>
-                  <NavigationBar />
+                <NavigationBar />
 
-                  {children}
+                {children}
 
-                  <Footer />
-                </QueryProvider>
+                <Footer />
               </TooltipProvider>
             </AosProvider>
           </ThemeProvider>

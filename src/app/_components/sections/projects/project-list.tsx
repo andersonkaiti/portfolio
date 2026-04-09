@@ -1,21 +1,15 @@
-'use client'
-
 import { Button } from '@components/ui/button'
-import { getProjects } from '@http/get-projects'
-import { useSuspenseQuery } from '@tanstack/react-query'
+import type { IGithubRepository } from '@http/get-projects'
 import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import { Project } from './project'
 
-export function ProjectList() {
-  const { data: projects } = useSuspenseQuery({
-    queryKey: ['projects'],
-    queryFn: getProjects,
-  })
+interface ProjectListProps {
+  projects: IGithubRepository[]
+}
 
-  const lastTwo = 2
-
-  const latestsProjects = projects.slice(0, lastTwo)
+export function ProjectList({ projects }: ProjectListProps) {
+  const latestsProjects = projects.slice(0, 2)
 
   return (
     <div

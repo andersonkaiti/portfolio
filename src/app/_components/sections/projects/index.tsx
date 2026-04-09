@@ -5,11 +5,12 @@ import {
   SectionSubtitle,
   SectionTitle,
 } from '@components/ui/section'
-import { Suspense } from 'react'
-import { LoadingSkeleton } from './loading-skeleton'
+import { getProjects } from '@http/get-projects'
 import { ProjectList } from './project-list'
 
-export function ProjectListSection() {
+export async function ProjectListSection() {
+  const projects = await getProjects()
+
   return (
     <SectionContainer id="projects">
       <SectionHeader>
@@ -22,9 +23,7 @@ export function ProjectListSection() {
         </SectionSubtitle>
       </SectionHeader>
 
-      <Suspense fallback={<LoadingSkeleton />}>
-        <ProjectList />
-      </Suspense>
+      <ProjectList projects={projects} />
     </SectionContainer>
   )
 }
