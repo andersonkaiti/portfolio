@@ -62,10 +62,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <LenisProvider>
-        <body
-          className={`${MontserratSans.variable} relative antialiased transition-colors`}
-        >
+      <body
+        className={`${MontserratSans.variable} relative antialiased transition-colors`}
+      >
+        <LenisProvider>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -82,11 +82,11 @@ export default function RootLayout({
               </TooltipProvider>
             </AosProvider>
           </ThemeProvider>
+        </LenisProvider>
 
-          <Analytics />
-          <SpeedInsights />
-        </body>
-      </LenisProvider>
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   )
 }
