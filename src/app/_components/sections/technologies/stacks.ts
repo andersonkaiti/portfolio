@@ -1,53 +1,14 @@
-import azureLogo from '@assets/azure.svg'
-import cssLogo from '@assets/css_old.svg'
-import cypressLogoDark from '@assets/cypress/cypress-dark.svg'
-import cypressLogoLight from '@assets/cypress/cypress-light.svg'
-import dockerLogo from '@assets/docker.svg'
-import drizzleLogoDark from '@assets/drizzle/drizzle-dark.svg'
-import drizzleLogoLight from '@assets/drizzle/drizzle-light.svg'
-import expressLogoDark from '@assets/express/express-dark.svg'
-import expressLogoLight from '@assets/express/express-light.svg'
-import fastifyLogoDark from '@assets/fastify/fastify-dark.svg'
-import fastifyLogoLight from '@assets/fastify/fastify-light.svg'
-import firebaseLogo from '@assets/firebase.svg'
-import gitLogo from '@assets/git.svg'
-import htmlLogo from '@assets/html5.svg'
-import javascriptLogo from '@assets/javascript.svg'
-import mongoLogo from '@assets/mongodb.svg'
-import mysqlLogo from '@assets/mysql.svg'
-import nextLogo from '@assets/nextjs.svg'
-import nodejsLogo from '@assets/nodejs.svg'
-import nuqsLogoDark from '@assets/nuqs/nuqs-dark.svg'
-import nuqsLogoLight from '@assets/nuqs/nuqs-light.svg'
-import prismaLogoDark from '@assets/prisma/prisma-dark.svg'
-import prismaLogoLight from '@assets/prisma/prisma-light.svg'
-import reactLogoDark from '@assets/react/react-dark.svg'
-import reactLogoLight from '@assets/react/react-light.svg'
-import reactHookForm from '@assets/react_hook_form.svg'
-import reactQueryLogo from '@assets/reactquery.svg'
-import shadcnLogoDark from '@assets/shadcn/shadcn-dark.svg'
-import shadcnLogoLight from '@assets/shadcn/shadcn-light.svg'
-import styledComponentsLogoDark from '@assets/styled-components/styled-components-dark.svg'
-import styledComponentsLogoLight from '@assets/styled-components/styled-components-light.svg'
-import tailwindLogo from '@assets/tailwindcss.svg'
-import typescriptLogo from '@assets/typescript.svg'
-import vercelLogoDark from '@assets/vercel/vercel-dark.svg'
-import vercelLogoLight from '@assets/vercel/vercel-light.svg'
-import viteLogo from '@assets/vitejs.svg'
-import vitestLogo from '@assets/vitest.svg'
-import zodLogo from '@assets/zod.svg'
 import type { LucideIcon } from 'lucide-react'
 import { Cloud, Database, Globe } from 'lucide-react'
-import type { StaticImageData } from 'next/image'
 
 export interface ITheme {
-  dark: StaticImageData
-  light: StaticImageData
+  dark: string
+  light: string
 }
 
 export interface ITechnology {
   name: string
-  logo: ITheme | StaticImageData
+  logo: ITheme | string
 }
 
 export interface IStack {
@@ -63,68 +24,50 @@ export const stacks: IStack[] = [
     category: 'Front-end',
     icon: Globe,
     technologies: [
-      {
-        name: 'HTML5',
-        logo: htmlLogo,
-      },
-      {
-        name: 'CSS3',
-        logo: cssLogo,
-      },
-      {
-        name: 'JavaScript',
-        logo: javascriptLogo,
-      },
-      {
-        name: 'TypeScript',
-        logo: typescriptLogo,
-      },
+      { name: 'HTML5', logo: '/assets/html5.svg' },
+      { name: 'CSS3', logo: '/assets/css_old.svg' },
+      { name: 'JavaScript', logo: '/assets/javascript.svg' },
+      { name: 'TypeScript', logo: '/assets/typescript.svg' },
       {
         name: 'React.js',
-        logo: { dark: reactLogoDark, light: reactLogoLight },
+        logo: {
+          dark: '/assets/react/react-dark.svg',
+          light: '/assets/react/react-light.svg',
+        },
       },
-      {
-        name: 'Next.js',
-        logo: nextLogo,
-      },
-      {
-        name: 'TailwindCSS',
-        logo: tailwindLogo,
-      },
-      {
-        name: 'React Query',
-        logo: reactQueryLogo,
-      },
+      { name: 'Next.js', logo: '/assets/nextjs.svg' },
+      { name: 'TailwindCSS', logo: '/assets/tailwindcss.svg' },
+      { name: 'React Query', logo: '/assets/reactquery.svg' },
       {
         name: 'Shadcn/ui',
-        logo: { dark: shadcnLogoDark, light: shadcnLogoLight },
+        logo: {
+          dark: '/assets/shadcn/shadcn-dark.svg',
+          light: '/assets/shadcn/shadcn-light.svg',
+        },
       },
-      {
-        name: 'Vite',
-        logo: viteLogo,
-      },
-      {
-        name: 'Zod',
-        logo: zodLogo,
-      },
-      {
-        name: 'React Hook Form',
-        logo: reactHookForm,
-      },
+      { name: 'Vite', logo: '/assets/vitejs.svg' },
+      { name: 'Zod', logo: '/assets/zod.svg' },
+      { name: 'React Hook Form', logo: '/assets/react_hook_form.svg' },
       {
         name: 'Styled Components',
         logo: {
-          dark: styledComponentsLogoDark,
-          light: styledComponentsLogoLight,
+          dark: '/assets/styled-components/styled-components-dark.svg',
+          light: '/assets/styled-components/styled-components-light.svg',
         },
       },
       {
         name: 'Nuqs',
-        logo: { dark: nuqsLogoDark, light: nuqsLogoLight },
+        logo: {
+          dark: '/assets/nuqs/nuqs-dark.svg',
+          light: '/assets/nuqs/nuqs-light.svg',
+        },
       },
       {
         name: 'Cypress',
-        logo: { dark: cypressLogoDark, light: cypressLogoLight },
+        logo: {
+          dark: '/assets/cypress/cypress-dark.svg',
+          light: '/assets/cypress/cypress-light.svg',
+        },
       },
     ],
   },
@@ -133,44 +76,38 @@ export const stacks: IStack[] = [
     category: 'Back-end & Databases',
     icon: Database,
     technologies: [
-      {
-        name: 'Node.js',
-        logo: nodejsLogo,
-      },
+      { name: 'Node.js', logo: '/assets/nodejs.svg' },
       {
         name: 'Express.js',
         logo: {
-          dark: expressLogoDark,
-          light: expressLogoLight,
+          dark: '/assets/express/express-dark.svg',
+          light: '/assets/express/express-light.svg',
         },
       },
       {
         name: 'Fastify',
         logo: {
-          dark: fastifyLogoDark,
-          light: fastifyLogoLight,
+          dark: '/assets/fastify/fastify-dark.svg',
+          light: '/assets/fastify/fastify-light.svg',
+        },
+      },
+      { name: 'MySQL', logo: '/assets/mysql.svg' },
+      { name: 'MongoDB', logo: '/assets/mongodb.svg' },
+      {
+        name: 'Prisma',
+        logo: {
+          dark: '/assets/prisma/prisma-dark.svg',
+          light: '/assets/prisma/prisma-light.svg',
         },
       },
       {
-        name: 'MySQL',
-        logo: mysqlLogo,
-      },
-      {
-        name: 'MongoDB',
-        logo: mongoLogo,
-      },
-      {
-        name: 'Prisma',
-        logo: { dark: prismaLogoDark, light: prismaLogoLight },
-      },
-      {
         name: 'Drizzle',
-        logo: { dark: drizzleLogoDark, light: drizzleLogoLight },
+        logo: {
+          dark: '/assets/drizzle/drizzle-dark.svg',
+          light: '/assets/drizzle/drizzle-light.svg',
+        },
       },
-      {
-        name: 'Vitest',
-        logo: vitestLogo,
-      },
+      { name: 'Vitest', logo: '/assets/vitest.svg' },
     ],
   },
   {
@@ -180,24 +117,15 @@ export const stacks: IStack[] = [
     technologies: [
       {
         name: 'Vercel',
-        logo: { dark: vercelLogoDark, light: vercelLogoLight },
+        logo: {
+          dark: '/assets/vercel/vercel-dark.svg',
+          light: '/assets/vercel/vercel-light.svg',
+        },
       },
-      {
-        name: 'Azure',
-        logo: azureLogo,
-      },
-      {
-        name: 'Firebase',
-        logo: firebaseLogo,
-      },
-      {
-        name: 'Git',
-        logo: gitLogo,
-      },
-      {
-        name: 'Docker',
-        logo: dockerLogo,
-      },
+      { name: 'Azure', logo: '/assets/azure.svg' },
+      { name: 'Firebase', logo: '/assets/firebase.svg' },
+      { name: 'Git', logo: '/assets/git.svg' },
+      { name: 'Docker', logo: '/assets/docker.svg' },
     ],
   },
 ]
