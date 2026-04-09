@@ -1,8 +1,11 @@
 import { ContributionGraph } from '@components/ui/contribution-graph'
 import { LinkPreview } from '@components/ui/link-preview'
 import { generateGitHubContributionData } from '@http/github-graph'
+import { connection } from 'next/server'
 
 export async function GithubGraph() {
+  await connection()
+
   const today = new Date()
   const oneYearAgo = new Date()
   oneYearAgo.setFullYear(today.getFullYear() - 1)
