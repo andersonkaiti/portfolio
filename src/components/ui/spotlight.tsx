@@ -1,6 +1,5 @@
 'use client'
 
-import { useIsMobile } from '@hooks/use-mobile'
 import { motion } from 'motion/react'
 
 type SpotlightProps = {
@@ -26,110 +25,87 @@ export function Spotlight({
   duration = 7,
   xOffset = 100,
 }: SpotlightProps = {}) {
-  const isMobile = useIsMobile()
-
-  const responsiveTranslateY = isMobile ? -120 : translateY
-  const responsiveWidth = isMobile ? 180 : width
-  const responsiveHeight = isMobile ? 480 : height
-  const responsiveSmallWidth = isMobile ? 80 : smallWidth
-  const responsiveXOffset = isMobile ? 20 : xOffset
-  const responsiveDuration = isMobile ? 5 : duration
-
   return (
     <motion.div
-      animate={{
-        opacity: 1,
-      }}
+      animate={{ opacity: 1 }}
       className="pointer-events-none absolute inset-0 h-full w-full overflow-hidden"
-      initial={{
-        opacity: 0,
-      }}
-      transition={{
-        duration: 1.5,
-      }}
+      initial={{ opacity: 0 }}
+      transition={{ duration: 1.5 }}
     >
       <motion.div
-        animate={{
-          x: [0, responsiveXOffset, 0],
-        }}
+        animate={{ x: [0, xOffset, 0] }}
         className="pointer-events-none absolute top-0 left-0 z-40 h-screen w-screen"
         transition={{
-          duration: responsiveDuration,
+          duration,
           repeat: Number.POSITIVE_INFINITY,
           repeatType: 'reverse',
           ease: 'easeInOut',
         }}
       >
         <div
-          className={'absolute top-0 left-0'}
+          className="absolute top-0 left-0"
           style={{
-            transform: `translateY(${responsiveTranslateY}px) rotate(-45deg)`,
+            transform: `translateY(${translateY}px) rotate(-45deg)`,
             background: gradientFirst,
-            width: `${responsiveWidth}px`,
-            height: `${responsiveHeight}px`,
+            width: `${width}px`,
+            height: `${height}px`,
           }}
         />
-
         <div
-          className={'absolute top-0 left-0 origin-top-left'}
+          className="absolute top-0 left-0 origin-top-left"
           style={{
             transform: 'rotate(-45deg) translate(5%, -50%)',
             background: gradientSecond,
-            width: `${responsiveSmallWidth}px`,
-            height: `${responsiveHeight}px`,
+            width: `${smallWidth}px`,
+            height: `${height}px`,
           }}
         />
-
         <div
-          className={'absolute top-0 left-0 origin-top-left'}
+          className="absolute top-0 left-0 origin-top-left"
           style={{
             transform: 'rotate(-45deg) translate(-180%, -70%)',
             background: gradientThird,
-            width: `${responsiveSmallWidth}px`,
-            height: `${responsiveHeight}px`,
+            width: `${smallWidth}px`,
+            height: `${height}px`,
           }}
         />
       </motion.div>
 
       <motion.div
-        animate={{
-          x: [0, -responsiveXOffset, 0],
-        }}
+        animate={{ x: [0, -xOffset, 0] }}
         className="pointer-events-none absolute top-0 right-0 z-40 h-screen w-screen"
         transition={{
-          duration: responsiveDuration,
+          duration,
           repeat: Number.POSITIVE_INFINITY,
           repeatType: 'reverse',
           ease: 'easeInOut',
         }}
       >
         <div
-          className={'absolute top-0 right-0'}
+          className="absolute top-0 right-0"
           style={{
-            transform: `translateY(${responsiveTranslateY}px) rotate(45deg)`,
+            transform: `translateY(${translateY}px) rotate(45deg)`,
             background: gradientFirst,
-            width: `${responsiveWidth}px`,
-            height: `${responsiveHeight}px`,
+            width: `${width}px`,
+            height: `${height}px`,
           }}
         />
-
         <div
-          className={'absolute top-0 right-0 origin-top-right'}
+          className="absolute top-0 right-0 origin-top-right"
           style={{
             transform: 'rotate(45deg) translate(-5%, -50%)',
             background: gradientSecond,
-            width: `${responsiveSmallWidth}px`,
-            height: `${responsiveHeight}px`,
+            width: `${smallWidth}px`,
+            height: `${height}px`,
           }}
         />
-
         <div
-          className={'absolute top-0 right-0 origin-top-right'}
+          className="absolute top-0 right-0 origin-top-right"
           style={{
             transform: 'rotate(45deg) translate(180%, -70%)',
             background: gradientThird,
-            width: `${responsiveSmallWidth}px`,
-            height: `${responsiveHeight}px`,
+            width: `${smallWidth}px`,
+            height: `${height}px`,
           }}
         />
       </motion.div>
