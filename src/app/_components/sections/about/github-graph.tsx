@@ -1,16 +1,13 @@
-'use client'
-
 import { ContributionGraph } from '@components/ui/contribution-graph'
 import { LinkPreview } from '@components/ui/link-preview'
-import { LoadingSkeleton } from './loading-skeleton'
-import { useGithubGraph } from './use-github-graph'
+import { generateGitHubContributionData } from '@http/github-graph'
 
-export function GithubGraph() {
-  const { data, isLoading, today, oneYearAgo } = useGithubGraph()
+export async function GithubGraph() {
+  const today = new Date()
+  const oneYearAgo = new Date()
+  oneYearAgo.setFullYear(today.getFullYear() - 1)
 
-  if (isLoading) {
-    return <LoadingSkeleton />
-  }
+  const data = await generateGitHubContributionData(oneYearAgo, today)
 
   return (
     <>
