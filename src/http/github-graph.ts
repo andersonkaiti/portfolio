@@ -45,6 +45,9 @@ export async function generateGitHubContributionData(
         to,
       },
     }),
+    next: {
+      revalidate: 3600,
+    },
   })
 
   const json = await response.json()
