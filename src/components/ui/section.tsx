@@ -23,7 +23,7 @@ export function SectionHeader({
   ...rest
 }: { children: React.ReactNode } & HTMLAttributes<HTMLDivElement>) {
   return (
-    <header className="space-y-4 mb-8" {...rest}>
+    <header className="space-y-4 mb-8 text-center" {...rest}>
       {children}
     </header>
   )
