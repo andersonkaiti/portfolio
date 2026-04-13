@@ -47,12 +47,14 @@ export function Footer() {
           </SectionSubtitle>
         </SectionHeader>
 
-        <Button asChild>
-          <Link href="mailto:anderkaiti@gmail.com">
-            <Mail className="size-4" />
-            <span className={jetbrainsMono.className}>Get in touch</span>
-          </Link>
-        </Button>
+        <div className="flex justify-center">
+          <Button asChild size="lg">
+            <Link href="mailto:anderkaiti@gmail.com">
+              <Mail className="size-4" />
+              <span className={jetbrainsMono.className}>Get in touch</span>
+            </Link>
+          </Button>
+        </div>
 
         <div className="flex flex-col items-start justify-between gap-6 border-t border-border pt-8 md:flex-row md:items-center">
           <div className="flex flex-col gap-1">
@@ -66,17 +68,16 @@ export function Footer() {
 
           <div className="flex items-center gap-4">
             {socialLinks.map((link) => (
-              <Button asChild key={link.label} variant="ghost" size="icon">
-                <Link
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex size-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-all hover:border-primary/30 hover:text-primary"
-                  aria-label={link.label}
-                >
-                  <link.icon className="h-4 w-4" />
-                </Link>
-              </Button>
+              <Link
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex size-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-all hover:border-primary/30 hover:text-primary"
+                aria-label={link.label}
+              >
+                <link.icon className="size-4" />
+              </Link>
             ))}
           </div>
         </div>
