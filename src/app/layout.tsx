@@ -16,9 +16,42 @@ const MontserratSans = Montserrat({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://andersonkaiti.com'),
   title: 'Portfolio - Anderson Kaiti',
   description: 'Computer Scientist and Full-Stack Developer',
   applicationName: 'Anderson Kaiti - Portfolio',
+  authors: [{ name: 'Anderson Kaiti', url: 'https://andersonkaiti.com' }],
+  keywords: [
+    'Anderson Kaiti',
+    'Full-Stack Developer',
+    'React',
+    'Next.js',
+    'TypeScript',
+    'Node.js',
+    'PostgreSQL',
+    'TailwindCSS',
+    'Docker',
+    'Portfolio',
+  ],
+  alternates: {
+    canonical: 'https://andersonkaiti.com',
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://andersonkaiti.com',
+    locale: 'pt_BR',
+    title: 'Portfolio - Anderson Kaiti',
+    description: 'Computer Scientist and Full-Stack Developer',
+    siteName: 'Anderson Kaiti',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Portfolio - Anderson Kaiti',
+    description: 'Computer Scientist and Full-Stack Developer',
+  },
+  verification: {
+    google: 'googlec07cb626ec36686a',
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
@@ -30,10 +63,7 @@ export const metadata: Metadata = {
   manifest: '/manifest.webmanifest',
   icons: {
     icon: [
-      {
-        url: '/favicon.ico',
-        sizes: 'any',
-      },
+      { url: '/favicon.ico', sizes: 'any' },
       {
         url: '/android-chrome-192x192.png',
         sizes: '192x192',
