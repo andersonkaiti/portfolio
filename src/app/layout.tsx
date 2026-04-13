@@ -125,7 +125,7 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          // biome-ignore lint: JSON-LD schema data is safe
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD structured data is static, server-rendered, and safe
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
