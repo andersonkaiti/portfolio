@@ -85,6 +85,36 @@ export const metadata: Metadata = {
   },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      name: 'Anderson Kaiti',
+      url: 'https://andersonkaiti.com',
+      jobTitle: 'Full-Stack Web Developer',
+      knowsAbout: [
+        'React',
+        'Next.js',
+        'TypeScript',
+        'Node.js',
+        'PostgreSQL',
+        'TailwindCSS',
+        'Docker',
+      ],
+      sameAs: [
+        'https://github.com/andersonkaiti',
+        'https://www.linkedin.com/in/anderson-kaiti-67906126a',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      name: 'Anderson Kaiti - Portfolio',
+      url: 'https://andersonkaiti.com',
+    },
+  ],
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -92,6 +122,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          // biome-ignore lint: JSON-LD schema data is safe
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${MontserratSans.variable} relative antialiased transition-colors`}
       >
