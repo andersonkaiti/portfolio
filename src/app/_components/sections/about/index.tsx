@@ -22,8 +22,8 @@ export function AboutSection() {
         </SectionSubtitle>
       </SectionHeader>
 
-      <main data-aos="fade-down">
-        <p className="text-justify font-base text-base leading-6 sm:mt-4 sm:leading-7 md:leading-8">
+      <div className="space-y-4" data-aos="fade-down">
+        <p className="text-justify text-base leading-6 sm:leading-7 md:leading-8">
           I&apos;m Anderson Kaiti, a Computer Science graduate building
           well-structured, <span className="text-primary">scalable</span> web
           and mobile applications with{' '}
@@ -37,7 +37,7 @@ export function AboutSection() {
           long-term maintainability.
         </p>
 
-        <p className="text-justify font-base text-base leading-6 sm:mt-4 sm:leading-7 md:leading-8">
+        <p className="text-justify text-base leading-6 sm:leading-7 md:leading-8">
           My approach goes beyond making things work &mdash; I focus on
           understanding <span className="italic text-primary">why</span> they
           work and how they can evolve safely. From component design to data
@@ -45,7 +45,7 @@ export function AboutSection() {
           <span className="text-primary">best practices</span> to deliver
           solutions that are performant, readable, and easy to extend.
         </p>
-      </main>
+      </div>
 
       <Suspense fallback={<LoadingSkeleton />}>
         <GithubGraph />

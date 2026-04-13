@@ -14,7 +14,7 @@ export async function GithubGraph() {
 
   return (
     <>
-      <div className="ml-auto">
+      <div className="flex justify-end">
         <LinkPreview
           url="https://github.com/andersonkaiti"
           className="font-semibold text-primary"
