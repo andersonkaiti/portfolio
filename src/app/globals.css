@@ -43,6 +43,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-skeleton: var(--skeleton);
 
   --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
 

@@ -6,7 +6,6 @@ export interface ITheme {
 export type TechLogo = ITheme | string
 
 export const topicToLogo: Record<string, TechLogo> = {
-  // Front-end
   html: '/assets/html5.svg',
   html5: '/assets/html5.svg',
   css: '/assets/css_old.svg',
@@ -113,7 +112,6 @@ export const topicToLogo: Record<string, TechLogo> = {
   ionicons: '/assets/ionicons.svg',
   'ion-icons': '/assets/ionicons.svg',
 
-  // Back-end & Databases
   node: '/assets/nodejs.svg',
   nodejs: '/assets/nodejs.svg',
   'node-js': '/assets/nodejs.svg',
@@ -163,7 +161,6 @@ export const topicToLogo: Record<string, TechLogo> = {
   rabbitmq: '/assets/rabbitmq.svg',
   'rabbit-mq': '/assets/rabbitmq.svg',
 
-  // Tools & Libraries
   clerk: {
     dark: '/assets/clerk/clerk-dark.svg',
     light: '/assets/clerk/clerk-light.svg',
@@ -224,7 +221,6 @@ export const topicToLogo: Record<string, TechLogo> = {
   swagger: '/assets/swagger.svg',
   'swagger-ui': '/assets/swagger.svg',
 
-  // Mobile & Native
   expo: {
     dark: '/assets/expo/expo-dark.svg',
     light: '/assets/expo/expo-light.svg',
@@ -232,7 +228,6 @@ export const topicToLogo: Record<string, TechLogo> = {
   android: '/assets/android-icon.svg',
   'android-studio': '/assets/android-studio.svg',
 
-  // Cloud & DevOps
   vercel: {
     dark: '/assets/vercel/vercel-dark.svg',
     light: '/assets/vercel/vercel-light.svg',
@@ -252,7 +247,6 @@ export const topicToLogo: Record<string, TechLogo> = {
   'docker-compose': '/assets/docker.svg',
   dockerfile: '/assets/docker.svg',
 
-  // IDEs & Editors
   'visual-studio': '/assets/microsoft-visual-studio.svg',
   visualstudio: '/assets/microsoft-visual-studio.svg',
   vs: '/assets/microsoft-visual-studio.svg',
