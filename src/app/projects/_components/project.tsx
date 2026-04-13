@@ -8,6 +8,7 @@ import { formatTopic } from '@utils/format-topic'
 import dayjs from 'dayjs'
 import { Github } from 'lucide-react'
 import Link from 'next/link'
+import { TopicLogoImage } from './topic-logo-image'
 import { getTopicLogo } from './topic-to-logo'
 
 export function Project({
@@ -47,22 +48,7 @@ export function Project({
             <Tooltip key={topic}>
               <TooltipTrigger>
                 <div className="cursor-pointer transition-all hover:scale-110">
-                  {typeof logo === 'object' ? (
-                    <>
-                      <img
-                        alt={topic}
-                        className="hidden size-6 dark:flex"
-                        src={logo.dark}
-                      />
-                      <img
-                        alt={topic}
-                        className="flex size-6 dark:hidden"
-                        src={logo.light}
-                      />
-                    </>
-                  ) : (
-                    <img alt={topic} className="size-6" src={logo} />
-                  )}
+                  <TopicLogoImage logo={logo} topic={topic} size={24} />
                 </div>
               </TooltipTrigger>
 

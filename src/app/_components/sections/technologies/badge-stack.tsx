@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 interface IBadgeStackProps {
   tech: {
     name: string
@@ -21,19 +23,29 @@ export function BadgeStack({ tech, index }: IBadgeStackProps) {
     >
       {typeof tech.logo === 'object' ? (
         <>
-          <img
+          <Image
             alt={tech.name}
             className="hidden size-5 dark:flex"
             src={tech.logo.dark}
+            width={20}
+            height={20}
           />
-          <img
+          <Image
             alt={tech.name}
             className="flex size-5 dark:hidden"
             src={tech.logo.light}
+            width={20}
+            height={20}
           />
         </>
       ) : (
-        <img alt={tech.name} className="size-5" src={tech.logo} />
+        <Image
+          alt={tech.name}
+          className="size-5"
+          src={tech.logo}
+          width={20}
+          height={20}
+        />
       )}
 
       <span className="whitespace-nowrap">{tech.name}</span>
