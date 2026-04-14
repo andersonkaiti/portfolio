@@ -12,11 +12,11 @@ export function TechnologiesSection() {
   return (
     <SectionContainer id="technologies">
       <SectionHeader>
-        <SectionLabel data-aos="fade-down">Stack</SectionLabel>
+        <SectionLabel>Stack</SectionLabel>
 
-        <SectionTitle data-aos="fade-down">Technologies</SectionTitle>
+        <SectionTitle>Technologies</SectionTitle>
 
-        <SectionSubtitle data-aos="fade-down">
+        <SectionSubtitle>
           Tools and technologies I master to create complete solutions
         </SectionSubtitle>
       </SectionHeader>

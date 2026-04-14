@@ -12,7 +12,7 @@ export function ProjectList({ projects }: ProjectListProps) {
   const latestsProjects = projects.slice(0, 2)
 
   return (
-    <div className="flex flex-col gap-4" data-aos="fade-down">
+    <div className="flex flex-col gap-4" data-aos="fade-up">
       <div className="flex items-center justify-between">
         <span className="text-sm text-muted-foreground">
           {projects.length} projects

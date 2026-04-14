@@ -36,7 +36,7 @@ const jetbrainsMono = JetBrains_Mono({
 export function Footer() {
   return (
     <div className="mx-auto max-w-7xl px-2 py-10 md:px-20 md:py-30">
-      <SectionContainer id="contact" data-aos="fade-down">
+      <SectionContainer id="contact">
         <SectionHeader>
           <SectionLabel>Contact</SectionLabel>
 

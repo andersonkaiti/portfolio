@@ -14,11 +14,11 @@ export function ProjectListSection() {
   return (
     <SectionContainer id="projects">
       <SectionHeader>
-        <SectionLabel data-aos="fade-down">Work</SectionLabel>
+        <SectionLabel>Work</SectionLabel>
 
-        <SectionTitle data-aos="fade-down">Projects</SectionTitle>
+        <SectionTitle>Projects</SectionTitle>
 
-        <SectionSubtitle data-aos="fade-down">
+        <SectionSubtitle>
           Some of the projects I have developed along my journey
         </SectionSubtitle>
       </SectionHeader>

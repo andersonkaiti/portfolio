@@ -12,18 +12,16 @@ export function ExperiencesSection() {
   return (
     <SectionContainer id="experiences">
       <SectionHeader>
-        <SectionLabel data-aos="fade-down">Journey</SectionLabel>
+        <SectionLabel>Journey</SectionLabel>
 
-        <SectionTitle data-aos="fade-down">
-          Professional Experience
-        </SectionTitle>
+        <SectionTitle>Professional Experience</SectionTitle>
 
-        <SectionSubtitle data-aos="fade-down">
+        <SectionSubtitle>
           My career journey and impactful work experiences
         </SectionSubtitle>
       </SectionHeader>
 
-      <WorkExperience data-aos="fade-down" experiences={WORK_EXPERIENCES} />
+      <WorkExperience data-aos="fade-up" experiences={WORK_EXPERIENCES} />
     </SectionContainer>
   )
 }

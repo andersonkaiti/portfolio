@@ -13,16 +13,14 @@ export function AboutSection() {
   return (
     <SectionContainer id="about">
       <SectionHeader>
-        <SectionLabel data-aos="fade-down">Contributions</SectionLabel>
+        <SectionLabel>Contributions</SectionLabel>
 
-        <SectionTitle data-aos="fade-down">About Me</SectionTitle>
+        <SectionTitle>About Me</SectionTitle>
 
-        <SectionSubtitle data-aos="fade-down">
-          Get to know me better
-        </SectionSubtitle>
+        <SectionSubtitle>Get to know me better</SectionSubtitle>
       </SectionHeader>
 
-      <div className="space-y-4" data-aos="fade-down">
+      <div className="space-y-4">
         <p className="text-justify text-base leading-6 sm:leading-7 md:leading-8">
           I&apos;m Anderson Kaiti, a Computer Science graduate building
           well-structured, <span className="text-primary">scalable</span> web

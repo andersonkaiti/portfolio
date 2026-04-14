@@ -17,7 +17,7 @@ export function BadgeStack({ tech, index }: IBadgeStackProps) {
   return (
     <div
       className="relative flex cursor-pointer items-center justify-center gap-2 rounded-full border-border border-t-2 px-3 py-2 text-xs shadow-2xl sm:text-sm dark:border-accent bg-background"
-      data-aos="fade-down"
+      data-aos="fade-up"
       data-aos-delay={40 * index}
       key={tech.name}
     >

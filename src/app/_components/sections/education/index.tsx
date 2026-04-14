@@ -25,11 +25,11 @@ export function EducationSection() {
   return (
     <SectionContainer id="education">
       <SectionHeader>
-        <SectionLabel data-aos="fade-down">Learning</SectionLabel>
+        <SectionLabel>Learning</SectionLabel>
 
-        <SectionTitle data-aos="fade-down">Education</SectionTitle>
+        <SectionTitle>Education</SectionTitle>
 
-        <SectionSubtitle data-aos="fade-down">
+        <SectionSubtitle>
           My formal education and language development
         </SectionSubtitle>
       </SectionHeader>
@@ -37,7 +37,7 @@ export function EducationSection() {
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <Card
           className="border-none bg-transparent shadow-none"
-          data-aos="fade-down"
+          data-aos="fade-up"
           data-aos-delay={200}
         >
           <CardHeader className="relative flex justify-center gap-2">
@@ -80,7 +80,7 @@ export function EducationSection() {
 
         <Card
           className="border-none bg-transparent shadow-none"
-          data-aos="fade-down"
+          data-aos="fade-up"
           data-aos-delay={400}
         >
           <CardHeader className="relative flex justify-center gap-2">
