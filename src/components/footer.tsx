@@ -1,5 +1,5 @@
+import { jetBrainsMono } from '@lib/fonts'
 import { Github, Linkedin, Mail } from 'lucide-react'
-import { JetBrains_Mono } from 'next/font/google'
 import Link from 'next/link'
 import { Button } from './ui/button'
 import {
@@ -12,26 +12,21 @@ import {
 
 const socialLinks = [
   {
-    label: 'GitHub',
+    label: "Anderson Kaiti's GitHub profile",
     href: 'https://github.com/andersonkaiti',
     icon: Github,
   },
   {
-    label: 'LinkedIn',
+    label: 'Connect with Anderson Kaiti on LinkedIn',
     href: 'https://www.linkedin.com/in/anderson-kaiti-67906126a/',
     icon: Linkedin,
   },
   {
-    label: 'Email',
+    label: 'Send email to Anderson Kaiti',
     href: 'mailto:anderkaiti@gmail.com',
     icon: Mail,
   },
 ]
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains-mono',
-})
 
 export function Footer() {
   return (
@@ -51,7 +46,7 @@ export function Footer() {
           <Button asChild size="lg">
             <Link href="mailto:anderkaiti@gmail.com">
               <Mail className="size-4" />
-              <span className={jetbrainsMono.className}>Get in touch</span>
+              <span className={jetBrainsMono.className}>Get in touch</span>
             </Link>
           </Button>
         </div>
