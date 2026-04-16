@@ -17,8 +17,9 @@ const MontserratSans = Montserrat({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://andersonkaiti.com'),
-  title: 'Portfolio - Anderson Kaiti',
-  description: 'Computer Scientist and Full-Stack Developer',
+  title: 'Anderson Kaiti | Full-Stack Developer',
+  description:
+    'Anderson Kaiti é um Full-Stack Developer formado em Ciência da Computação, especializado em React, Next.js, Node.js e TypeScript. Disponível para novas oportunidades.',
   applicationName: 'Anderson Kaiti - Portfolio',
   authors: [{ name: 'Anderson Kaiti', url: 'https://andersonkaiti.com' }],
   keywords: [
@@ -40,14 +41,16 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://andersonkaiti.com',
     locale: 'pt_BR',
-    title: 'Portfolio - Anderson Kaiti',
-    description: 'Computer Scientist and Full-Stack Developer',
+    title: 'Anderson Kaiti | Full-Stack Developer',
+    description:
+      'Anderson Kaiti é um Full-Stack Developer formado em Ciência da Computação, especializado em React, Next.js, Node.js e TypeScript. Disponível para novas oportunidades.',
     siteName: 'Anderson Kaiti',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Portfolio - Anderson Kaiti',
-    description: 'Computer Scientist and Full-Stack Developer',
+    title: 'Anderson Kaiti | Full-Stack Developer',
+    description:
+      'Anderson Kaiti é um Full-Stack Developer formado em Ciência da Computação, especializado em React, Next.js, Node.js e TypeScript. Disponível para novas oportunidades.',
   },
   verification: {
     google: 'googlec07cb626ec36686a',
@@ -91,8 +94,13 @@ const jsonLd = {
     {
       '@type': 'Person',
       name: 'Anderson Kaiti',
+      givenName: 'Anderson',
+      familyName: 'Kaiti',
       url: 'https://andersonkaiti.com',
+      email: 'mailto:anderkaiti@gmail.com',
       jobTitle: 'Full-Stack Web Developer',
+      description:
+        'Full-Stack Developer formado em Ciência da Computação pela UNISAGRADO, especializado em React, Next.js, Node.js e TypeScript.',
       knowsAbout: [
         'React',
         'Next.js',
@@ -101,7 +109,18 @@ const jsonLd = {
         'PostgreSQL',
         'TailwindCSS',
         'Docker',
+        'React Native',
+        'Laravel',
       ],
+      alumniOf: {
+        '@type': 'EducationalOrganization',
+        name: 'UNISAGRADO',
+        url: 'https://www.unisagrado.edu.br',
+      },
+      worksFor: {
+        '@type': 'Organization',
+        name: 'Solid Tech',
+      },
       sameAs: [
         'https://github.com/andersonkaiti',
         'https://www.linkedin.com/in/anderson-kaiti-67906126a',
@@ -111,6 +130,10 @@ const jsonLd = {
       '@type': 'WebSite',
       name: 'Anderson Kaiti - Portfolio',
       url: 'https://andersonkaiti.com',
+      author: {
+        '@type': 'Person',
+        name: 'Anderson Kaiti',
+      },
     },
   ],
 }
