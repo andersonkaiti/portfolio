@@ -1,11 +1,6 @@
+import { jetBrainsMono } from '@lib/fonts'
 import { cn } from '@lib/utils'
-import { JetBrains_Mono } from 'next/font/google'
 import type { HTMLAttributes } from 'react'
-
-const jetBrainsMono = JetBrains_Mono({
-  variable: '--font-jet-brains-mono',
-  subsets: ['latin'],
-})
 
 export function SectionContainer({
   children,
@@ -32,9 +27,9 @@ export function SectionHeader({
 export function SectionLabel({
   children,
   ...rest
-}: { children: React.ReactNode } & HTMLAttributes<HTMLHeadingElement>) {
+}: { children: React.ReactNode } & HTMLAttributes<HTMLParagraphElement>) {
   return (
-    <h1
+    <p
       className={cn(
         'scroll-m-20 text-balance font-semibold tracking-wide uppercase text-primary text-sm md:text-base',
         jetBrainsMono.className,
@@ -42,7 +37,7 @@ export function SectionLabel({
       {...rest}
     >
       {children}
-    </h1>
+    </p>
   )
 }
 
@@ -51,22 +46,22 @@ export function SectionTitle({
   ...rest
 }: { children: React.ReactNode } & HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h1
+    <h2
       className="scroll-m-20 text-balance text-3xl font-semibold md:text-5xl"
       {...rest}
     >
       {children}
-    </h1>
+    </h2>
   )
 }
 
 export function SectionSubtitle({
   children,
   ...rest
-}: { children: React.ReactNode } & HTMLAttributes<HTMLHeadingElement>) {
+}: { children: React.ReactNode } & HTMLAttributes<HTMLParagraphElement>) {
   return (
-    <h4 className="text-balance leading-7 text-muted-foreground" {...rest}>
+    <p className="text-balance leading-7 text-muted-foreground" {...rest}>
       {children}
-    </h4>
+    </p>
   )
 }
