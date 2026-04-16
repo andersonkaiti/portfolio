@@ -13,13 +13,8 @@ import {
   SectionSubtitle,
   SectionTitle,
 } from '@components/ui/section'
+import { jetBrainsMono } from '@lib/fonts'
 import { GraduationCap, Languages } from 'lucide-react'
-import { JetBrains_Mono } from 'next/font/google'
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains-mono',
-})
 
 export function EducationSection() {
   return (
@@ -46,12 +41,12 @@ export function EducationSection() {
             </Badge>
             <div>
               <CardTitle
-                className={`scroll-m-20 font-semibold text-xl tracking-tight ${jetbrainsMono.className}`}
+                className={`scroll-m-20 font-semibold text-xl tracking-tight ${jetBrainsMono.className}`}
               >
                 Undergraduate
               </CardTitle>
               <h4
-                className={`scroll-m-20 font-semibold text-base text-muted-foreground tracking-tight ${jetbrainsMono.className}`}
+                className={`scroll-m-20 font-semibold text-base text-muted-foreground tracking-tight ${jetBrainsMono.className}`}
               >
                 UNISAGRADO • 2022-2025
               </h4>
@@ -89,12 +84,12 @@ export function EducationSection() {
             </Badge>
             <div>
               <CardTitle
-                className={`scroll-m-20 font-semibold text-xl tracking-tight ${jetbrainsMono.className}`}
+                className={`scroll-m-20 font-semibold text-xl tracking-tight ${jetBrainsMono.className}`}
               >
                 Languages
               </CardTitle>
               <h4
-                className={`scroll-m-20 font-semibold text-base text-muted-foreground tracking-tight ${jetbrainsMono.className}`}
+                className={`scroll-m-20 font-semibold text-base text-muted-foreground tracking-tight ${jetBrainsMono.className}`}
               >
                 CNA • Ongoing
               </h4>
