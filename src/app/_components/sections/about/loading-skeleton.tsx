@@ -9,7 +9,7 @@ export function LoadingSkeleton() {
         <Skeleton className="h-5 w-32" />
       </div>
 
-      <Skeleton className="h-28 w-full rounded-lg" />
+      <Skeleton className="h-37.5 w-full rounded-lg" />
 
       <div className="mt-4 flex justify-center gap-1">
         {CONTRIBUTION_LEVELS.map((level) => (
