@@ -97,7 +97,7 @@ const jsonLd = {
       givenName: 'Anderson',
       familyName: 'Kaiti',
       url: 'https://andersonkaiti.com',
-      email: 'mailto:anderkaiti@gmail.com',
+      email: 'anderkaiti@gmail.com',
       jobTitle: 'Full-Stack Web Developer',
       description:
         'Full-Stack Developer formado em Ciência da Computação pela UNISAGRADO, especializado em React, Next.js, Node.js e TypeScript.',

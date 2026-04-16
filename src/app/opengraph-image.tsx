@@ -1,6 +1,8 @@
 import { JetBrains_Mono } from 'next/font/google'
 import { ImageResponse } from 'next/og'
 
+// Intentionally local — next/og runs in the Edge runtime and cannot share
+// the fonts module used by RSC/client components (src/lib/fonts.ts).
 const jetBrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   weight: ['400', '700'],
