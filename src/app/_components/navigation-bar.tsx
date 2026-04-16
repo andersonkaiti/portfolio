@@ -69,6 +69,7 @@ export function NavigationBar() {
             isOpen={isMobileMenuOpen}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           />
+          <DarkModeButton />
         </MobileNavHeader>
 
         <MobileNavMenu
@@ -92,7 +93,6 @@ export function NavigationBar() {
             </a>
           ))}
         </MobileNavMenu>
-        <DarkModeButton />
       </MobileNav>
     </Navbar>
   )

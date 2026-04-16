@@ -22,6 +22,11 @@ export function AnimatedThemeToggler({
 
     const newTheme = resolvedTheme === 'dark' ? 'light' : 'dark'
 
+    if (!document.startViewTransition) {
+      setTheme(newTheme)
+      return
+    }
+
     await document.startViewTransition(() => {
       flushSync(() => {
         setTheme(newTheme)
