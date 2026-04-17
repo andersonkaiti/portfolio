@@ -3,6 +3,7 @@
 # 🚀 Portfolio
 
 ### Portfólio pessoal desenvolvido com Next.js
+
 Apresentando projetos, experiências e habilidades como desenvolvedor Full-Stack
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.1.1-black?style=flat&logo=next.js)](https://nextjs.org/)
@@ -10,10 +11,9 @@ Apresentando projetos, experiências e habilidades como desenvolvedor Full-Stack
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4-38bdf8?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
 
-**[🌐 Ver Portfolio ao Vivo →](https://andersonkaiti.dev)**
+**[🌐 Ver Portfolio ao Vivo →](https://www.andersonkaiti.com)**
 
 </div>
-
 
 ## 📋 Sobre
 
@@ -27,10 +27,21 @@ Portfólio moderno e responsivo que consome a API do GitHub para exibir dinamica
 
 ---
 
+## 🏗️ Arquitetura
+
+```mermaid
+graph LR
+    GH["GitHub API"] -->|"ISR 1h"| SC["Server Components"]
+    SC --> Home["Home"]
+    SC --> Projects["projects"]
+```
+
+---
+
 ## 🛠️ Tecnologias
 
 | Categoria | Tecnologia | Versão | Descrição |
-|-----------|-----------|--------|-----------|
+| ----------- | ----------- | -------- | ----------- |
 | **Core** | [Next.js](https://nextjs.org/) | 16.1.1 | Framework React com SSR e ISR |
 | | [React](https://react.dev/) | 19.2.3 | Biblioteca para construção de interfaces |
 | | [TypeScript](https://www.typescriptlang.org/) | 5 | Superset tipado do JavaScript |
@@ -39,10 +50,10 @@ Portfólio moderno e responsivo que consome a API do GitHub para exibir dinamica
 | | [tw-animate-css](https://www.npmjs.com/package/tw-animate-css) | 1.3.5 | Animações CSS para Tailwind |
 | **UI & Animações** | [Radix UI](https://www.radix-ui.com/) | 1.x | Componentes primitivos acessíveis |
 | | [Motion](https://motion.dev/) | 12.23.24 | Biblioteca de animações para React |
-| | [Lenis](https://lenis.darkroom.engineering/) | 1.3.4 | Smooth scroll personalizado |
-| | [AOS](https://michalsnik.github.io/aos/) | 2.3.4 | Animate On Scroll |
-| **Data** | [TanStack Query](https://tanstack.com/query) | 5.90.12 | Gerenciamento de estado assíncrono |
-| | [Zod](https://zod.dev/) | 4.0.5 | Validação de schemas TypeScript-first |
+| | [cmdk](https://cmdk.paco.me/) | 1.1.1 | Componente de command palette |
+| **Data & Estado** | [Zod](https://zod.dev/) | 4.0.5 | Validação de schemas TypeScript-first |
+| | [nuqs](https://nuqs.47ng.com/) | 2.8.9 | Gerenciamento de estado via URL |
+| | [qss](https://github.com/lukeed/qss) | 3.0.0 | Serialização de query strings |
 | | [DayJS](https://day.js.org/) | 1.11.13 | Manipulação de datas |
 | **Utilities** | [CVA](https://cva.style/) | 0.7.1 | Gerenciamento de variantes CSS |
 | | [clsx](https://github.com/lukeed/clsx) | 2.1.1 | Combinação de classes CSS |
@@ -51,6 +62,7 @@ Portfólio moderno e responsivo que consome a API do GitHub para exibir dinamica
 | | [Tabler Icons](https://tabler.io/icons) | 3.34.0 | Biblioteca de ícones |
 | | [next-themes](https://github.com/pacocoursey/next-themes) | 0.4.6 | Gerenciamento de temas |
 | | [react-markdown](https://github.com/remarkjs/react-markdown) | 10.1.0 | Renderização de markdown |
+| | [react-github-calendar](https://github.com/grubersjoe/react-github-calendar) | 5.0.4 | Gráfico de contribuições do GitHub |
 | **DevTools** | [Biome](https://biomejs.dev/) | 2.3.11 | Linter e formatador rápido |
 | | [@t3-oss/env-nextjs](https://env.t3.gg/) | 0.13.8 | Validação de variáveis de ambiente |
 | | [React Compiler](https://react.dev/learn/react-compiler) | 1.0.0 | Compilador experimental do React |
@@ -64,6 +76,7 @@ Portfólio moderno e responsivo que consome a API do GitHub para exibir dinamica
 - Responsive design com dark mode
 - Smooth scroll e animações elegantes
 - Projetos dinâmicos da API do GitHub
+- Gráfico de contribuições do GitHub
 - ISR com revalidação a cada hora
 - Type-safe com TypeScript
 - Componentes acessíveis
