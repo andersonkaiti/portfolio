@@ -1,21 +1,24 @@
 import { getProjects } from '@http/get-projects'
 import type { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 import { NuqsAdapter } from 'nuqs/adapters/next/app'
 import { ProjectList } from './_components/project-list'
 
-export const metadata: Metadata = {
-  title: 'Anderson Kaiti | Projects',
-  description:
-    "Explore Anderson Kaiti's open-source projects built with React, Next.js, Node.js, TypeScript, and more.",
-  alternates: {
-    canonical: 'https://andersonkaiti.com/projects',
-  },
-  openGraph: {
-    title: 'Anderson Kaiti | Projects',
-    description:
-      "Explore Anderson Kaiti's open-source projects built with React, Next.js, Node.js, TypeScript, and more.",
-    url: 'https://andersonkaiti.com/projects',
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('metadata.projects')
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: {
+      canonical: 'https://andersonkaiti.com/projects',
+    },
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      url: 'https://andersonkaiti.com/projects',
+    },
+  }
 }
 
 export default async function ProjectsPage() {

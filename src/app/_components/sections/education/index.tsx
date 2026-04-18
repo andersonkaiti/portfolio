@@ -15,18 +15,19 @@ import {
 } from '@components/ui/section'
 import { jetBrainsMono } from '@lib/fonts'
 import { GraduationCap, Languages } from 'lucide-react'
+import { getTranslations } from 'next-intl/server'
 
-export function EducationSection() {
+export async function EducationSection() {
+  const t = await getTranslations('education')
+
   return (
     <SectionContainer id="education">
       <SectionHeader>
-        <SectionLabel>Learning</SectionLabel>
+        <SectionLabel>{t('label')}</SectionLabel>
 
-        <SectionTitle>Education</SectionTitle>
+        <SectionTitle>{t('title')}</SectionTitle>
 
-        <SectionSubtitle>
-          My formal education and language development
-        </SectionSubtitle>
+        <SectionSubtitle>{t('subtitle')}</SectionSubtitle>
       </SectionHeader>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -43,12 +44,12 @@ export function EducationSection() {
               <CardTitle
                 className={`scroll-m-20 font-semibold text-xl tracking-tight ${jetBrainsMono.className}`}
               >
-                Undergraduate
+                {t('degree.type')}
               </CardTitle>
               <h4
                 className={`scroll-m-20 font-semibold text-base text-muted-foreground tracking-tight ${jetBrainsMono.className}`}
               >
-                UNISAGRADO • 2022-2025
+                {t('degree.institution')}
               </h4>
             </div>
 
@@ -57,18 +58,16 @@ export function EducationSection() {
 
           <CardContent className="relative z-1 space-y-1">
             <CardTitle className="text-center text-base">
-              COMPUTER SCIENCE
+              {t('degree.title')}
             </CardTitle>
             <p className="text-center text-muted-foreground text-sm">
-              Completed Bachelor's Degree in Computer Science at UNISAGRADO.
-              Specialized in software development, algorithms, and data
-              structures.
+              {t('degree.description')}
             </p>
           </CardContent>
 
           <CardFooter className="z-1">
             <Badge className="mx-auto rounded-full border-emerald-500/20 bg-emerald-500/10 text-emerald-500">
-              Graduated
+              {t('degree.badge')}
             </Badge>
           </CardFooter>
         </Card>
@@ -86,12 +85,12 @@ export function EducationSection() {
               <CardTitle
                 className={`scroll-m-20 font-semibold text-xl tracking-tight ${jetBrainsMono.className}`}
               >
-                Languages
+                {t('languages.type')}
               </CardTitle>
               <h4
                 className={`scroll-m-20 font-semibold text-base text-muted-foreground tracking-tight ${jetBrainsMono.className}`}
               >
-                CNA • Ongoing
+                {t('languages.institution')}
               </h4>
             </div>
 
@@ -99,17 +98,17 @@ export function EducationSection() {
           </CardHeader>
 
           <CardContent className="z-1 space-y-1">
-            <CardTitle className="text-center text-base">ENGLISH</CardTitle>
+            <CardTitle className="text-center text-base">
+              {t('languages.title')}
+            </CardTitle>
             <p className="text-center text-muted-foreground text-sm">
-              Currently enrolled in the 3rd year of the English course at CNA,
-              developing communication skills for the international professional
-              environment.
+              {t('languages.description')}
             </p>
           </CardContent>
 
           <CardFooter className="z-1 h-full">
             <Badge className="mx-auto mt-auto rounded-full border-emerald-500/20 bg-emerald-500/10 text-emerald-500">
-              Level: Pre-Advanced (B2)
+              {t('languages.badge')}
             </Badge>
           </CardFooter>
         </Card>

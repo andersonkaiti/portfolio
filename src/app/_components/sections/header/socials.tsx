@@ -1,9 +1,15 @@
 import { FileUser, Github, Linkedin, MessageCircle } from 'lucide-react'
 
+export type SocialAriaLabelKey =
+  | 'social.github'
+  | 'social.linkedin'
+  | 'social.whatsapp'
+  | 'social.resume'
+
 export const links = [
   {
     id: 1,
-    ariaLabel: "Visit Anderson Kaiti's GitHub profile",
+    ariaLabelKey: 'social.github' as SocialAriaLabelKey,
     href: 'https://github.com/andersonkaiti',
     icon: Github,
     tooltip: (
@@ -15,7 +21,7 @@ export const links = [
   },
   {
     id: 2,
-    ariaLabel: 'Connect with Anderson Kaiti on LinkedIn',
+    ariaLabelKey: 'social.linkedin' as SocialAriaLabelKey,
     href: 'https://www.linkedin.com/in/anderson-kaiti-67906126a',
     icon: Linkedin,
     tooltip: (
@@ -27,7 +33,7 @@ export const links = [
   },
   {
     id: 3,
-    ariaLabel: 'Start a WhatsApp chat with Anderson Kaiti',
+    ariaLabelKey: 'social.whatsapp' as SocialAriaLabelKey,
     href: 'https://wa.me/14998053657',
     icon: MessageCircle,
     tooltip: (
@@ -39,7 +45,7 @@ export const links = [
   },
   {
     id: 4,
-    ariaLabel: "Download Anderson Kaiti's résumé",
+    ariaLabelKey: 'social.resume' as SocialAriaLabelKey,
     href: 'https://docs.google.com/document/d/1Ae_NK_wTcgf9sjNRkVO9S0F-z76MoTyq/edit?usp=sharing&ouid=110745851965910975930&rtpof=true&sd=true',
     icon: FileUser,
     tooltip: (

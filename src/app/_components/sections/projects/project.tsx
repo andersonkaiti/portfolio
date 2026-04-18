@@ -11,6 +11,11 @@ import Link from 'next/link'
 import { TopicLogoImage } from './topic-logo-image'
 import { getTopicLogo } from './topic-to-logo'
 
+interface ProjectProps extends IGithubRepository {
+  codeLabel: string
+  demoLabel: string
+}
+
 export function Project({
   name,
   description,
@@ -18,7 +23,9 @@ export function Project({
   homepage,
   topics,
   updated_at,
-}: IGithubRepository) {
+  codeLabel,
+  demoLabel,
+}: ProjectProps) {
   return (
     <AnimatedCard
       className="flex size-full flex-col gap-6 rounded-xl bg-background p-6"
@@ -61,14 +68,14 @@ export function Project({
       <div className="mt-auto flex gap-3 border-t border-dashed pt-2">
         <Button asChild size="sm" variant="ghost">
           <Link href={html_url} target="_blank">
-            Code <Github className="ml-0 size-3.5 opacity-50" />
+            {codeLabel} <Github className="ml-0 size-3.5 opacity-50" />
           </Link>
         </Button>
 
         {homepage && (
           <LinkPreview asChild url={homepage}>
             <Button size="sm" variant="ghost">
-              Demo
+              {demoLabel}
             </Button>
           </LinkPreview>
         )}

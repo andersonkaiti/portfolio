@@ -5,20 +5,21 @@ import {
   SectionSubtitle,
   SectionTitle,
 } from '@components/ui/section'
+import { getTranslations } from 'next-intl/server'
 import { Stack } from './stack'
 import { stacks } from './stacks'
 
-export function TechnologiesSection() {
+export async function TechnologiesSection() {
+  const t = await getTranslations('technologies')
+
   return (
     <SectionContainer id="technologies">
       <SectionHeader>
-        <SectionLabel>Stack</SectionLabel>
+        <SectionLabel>{t('label')}</SectionLabel>
 
-        <SectionTitle>Technologies</SectionTitle>
+        <SectionTitle>{t('title')}</SectionTitle>
 
-        <SectionSubtitle>
-          Tools and technologies I master to create complete solutions
-        </SectionSubtitle>
+        <SectionSubtitle>{t('subtitle')}</SectionSubtitle>
       </SectionHeader>
 
       <div className="grid grid-cols-1">

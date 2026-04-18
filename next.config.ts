@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next'
+import createNextIntlPlugin from 'next-intl/plugin'
 
 const nextConfig: NextConfig = {
   experimental: {
@@ -24,4 +25,6 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
 }
 
-export default nextConfig
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts')
+
+export default withNextIntl(nextConfig)

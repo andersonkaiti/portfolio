@@ -6,22 +6,24 @@ import {
   SectionTitle,
 } from '@components/ui/section'
 import { WorkExperience } from '@components/ui/work-experience'
-import { WORK_EXPERIENCES } from './experiences'
+import { getTranslations } from 'next-intl/server'
+import { getWorkExperiences } from './experiences'
 
-export function ExperiencesSection() {
+export async function ExperiencesSection() {
+  const t = await getTranslations('experiences')
+  const experiences = await getWorkExperiences()
+
   return (
     <SectionContainer id="experiences">
       <SectionHeader>
-        <SectionLabel>Journey</SectionLabel>
+        <SectionLabel>{t('label')}</SectionLabel>
 
-        <SectionTitle>Professional Experience</SectionTitle>
+        <SectionTitle>{t('title')}</SectionTitle>
 
-        <SectionSubtitle>
-          My career journey and impactful work experiences
-        </SectionSubtitle>
+        <SectionSubtitle>{t('subtitle')}</SectionSubtitle>
       </SectionHeader>
 
-      <WorkExperience data-aos="fade-up" experiences={WORK_EXPERIENCES} />
+      <WorkExperience data-aos="fade-up" experiences={experiences} />
     </SectionContainer>
   )
 }

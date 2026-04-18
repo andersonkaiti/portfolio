@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "introduction": "Início",
+    "about": "Sobre",
+    "experiences": "Experiência",
+    "projects": "Projetos",
+    "technologies": "Stack",
+    "education": "Formação",
+    "contact": "Contato"
+  },
+  "header": {
+    "available": "Disponível para novos desafios",
+    "title": "Oi, eu sou o Anderson Kaiti",
+    "role": "Desenvolvedor Full-Stack",
+    "description": "Cientista da Computação apaixonado por transformar ideias em produtos digitais. Especialista em <b>React</b>, <b>Next.js</b> e todo o ecossistema <b>TypeScript</b>.",
+    "social": {
+      "github": "Ver GitHub",
+      "linkedin": "Conectar no LinkedIn",
+      "whatsapp": "Conversar no WhatsApp",
+      "resume": "Baixar CV"
+    }
+  },
+  "about": {
+    "label": "Um pouco sobre mim",
+    "title": "Criando soluções que escalam",
+    "subtitle": "Trajetória e propósito",
+    "p1": "Sou formado em Ciência da Computação e foco em dar vida a aplicações web e mobile que sejam, acima de tudo, <b>escaláveis e resilientes</b>. Minha base técnica passa por <b>React</b>, <b>Next.js</b> e <b>Node.js</b>, sempre com o pé no <b>TypeScript</b>.",
+    "p2": "Não acredito apenas em 'escrever código'; acredito em entender o <i>porquê</i> das escolhas de arquitetura. Do design de um componente à modelagem do banco de dados, busco o equilíbrio entre entrega rápida e um código que não dê dor de cabeça no futuro."
+  },
+  "experiences": {
+    "label": "Carreira",
+    "title": "Onde já passei",
+    "subtitle": "Minha trajetória construindo tecnologia de ponta",
+    "solidTech": {
+      "title": "Desenvolvedor Full Stack",
+      "employmentType": "Freelance",
+      "employmentPeriod": "Fev 2026 – Abr 2026",
+      "description": "- **Ecossistemas Full Stack:** Criação de interfaces de alta performance com Next.js integradas a backends robustos em Node.js.\n- **Experiência em Smart TVs:** Desenvolvimento de sistemas de sinalização digital e testes médicos usando React Native (TVOS) e comunicação via WebSockets.\n- **Engajamento e Gamificação:** Implementação de feedbacks hápticos, sistemas de conquistas e rankings sociais.\n- **Fintech & Dashboards:** Criação de painéis administrativos complexos com checkout via Pix e gestão de assinaturas.\n- **Logística:** Desenvolvimento de apps para o fluxo completo: do cliente final ao painel de controle e entregador."
+    },
+    "funprev": {
+      "title": "Estágio de TI",
+      "employmentType": "Estágio",
+      "employmentPeriod": "Nov 2024 – Nov 2025",
+      "description": "- **Desenvolvimento Interno:** Evolução de sistemas legados e criação de novas features usando PHP e JavaScript.\n- **Infraestrutura e Redes:** Diagnóstico e resolução de problemas críticos de rede e servidores para garantir 100% de disponibilidade.\n- **Dados e SQL:** Manutenção de bases PostgreSQL, garantindo a integridade das informações e gerando relatórios estratégicos.\n- **Suporte Consultivo:** Apoio técnico especializado, focado em otimizar processos e reduzir o tempo de inatividade da equipe."
+    }
+  },
+  "technologies": {
+    "label": "Minha Stack",
+    "title": "Ferramentas",
+    "subtitle": "O que uso para construir soluções modernas e eficientes"
+  },
+  "projects": {
+    "label": "Portfólio",
+    "title": "Projetos em destaque",
+    "subtitle": "Uma amostra do que ando construindo recentemente",
+    "count": "{count} projetos encontrados",
+    "viewAll": "Explorar todos",
+    "search": "O que você está procurando?",
+    "clearSearch": "Limpar busca",
+    "filter": "Tecnologias",
+    "filterSearch": "Filtrar por stack...",
+    "noTechFound": "Nenhuma tecnologia encontrada.",
+    "noProjects": "Nenhum projeto por aqui ainda.",
+    "noProjectsFiltered": "Nenhum projeto corresponde aos filtros selecionados.",
+    "clearFilters": "Remover filtros",
+    "backToHome": "Voltar para o início",
+    "code": "Ver Código",
+    "demo": "Demo Online"
+  },
+  "education": {
+    "label": "Educação",
+    "title": "Formação Acadêmica",
+    "subtitle": "Base teórica e constante evolução",
+    "degree": {
+      "type": "Bacharelado",
+      "institution": "UNISAGRADO • 2022-2025",
+      "title": "CIÊNCIA DA COMPUTAÇÃO",
+      "description": "Foco em engenharia de software, estruturas de dados complexas e algoritmos aplicados ao mundo real.",
+      "badge": "Concluído"
+    },
+    "languages": {
+      "type": "Idiomas",
+      "institution": "CNA • Em andamento",
+      "title": "INGLÊS",
+      "description": "Focado em conversação e escrita técnica para colaboração em times globais.",
+      "badge": "Nível B2 (Intermediário Superior)"
+    }
+  },
+  "footer": {
+    "label": "Contato",
+    "title": "Bora conversar?",
+    "subtitle": "Estou sempre aberto a novos projetos, parcerias ou apenas para trocar uma ideia sobre tecnologia.",
+    "cta": "Me mande uma mensagem",
+    "tagline": "Feito com foco e café por Anderson Kaiti",
+    "githubLabel": "GitHub",
+    "linkedinLabel": "LinkedIn",
+    "emailLabel": "E-mail"
+  },
+  "metadata": {
+    "home": {
+      "title": "Anderson Kaiti | Full-Stack Developer",
+      "description": "Desenvolvedor Full-Stack focado em React, Node.js e TypeScript. Transformando problemas complexos em interfaces simples."
+    },
+    "projects": {
+      "title": "Projetos | Anderson Kaiti",
+      "description": "Confira o portfólio de projetos e experimentos desenvolvidos por Anderson Kaiti."
+    }
+  }
+}

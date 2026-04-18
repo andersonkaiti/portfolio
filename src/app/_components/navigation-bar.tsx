@@ -10,8 +10,10 @@ import {
   NavItems,
 } from '@components/ui/resizable-navbar'
 import { useLenis } from '@providers/lenis'
+import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { DarkModeButton } from './dark-mode-button'
+import { LanguageToggle } from './language-toggle'
 
 export interface NavItem {
   name: string
@@ -20,36 +22,16 @@ export interface NavItem {
 
 export function NavigationBar() {
   const { handleNavClick } = useLenis()
+  const t = useTranslations('nav')
 
   const navItems: NavItem[] = [
-    {
-      name: 'Introduction',
-      link: '#presentation',
-    },
-    {
-      name: 'About',
-      link: '#about',
-    },
-    {
-      name: 'Experiences',
-      link: '#experiences',
-    },
-    {
-      name: 'Projects',
-      link: '#projects',
-    },
-    {
-      name: 'Technologies',
-      link: '#technologies',
-    },
-    {
-      name: 'Education',
-      link: '#education',
-    },
-    {
-      name: 'Contact',
-      link: '#contact',
-    },
+    { name: t('introduction'), link: '#presentation' },
+    { name: t('about'), link: '#about' },
+    { name: t('experiences'), link: '#experiences' },
+    { name: t('projects'), link: '#projects' },
+    { name: t('technologies'), link: '#technologies' },
+    { name: t('education'), link: '#education' },
+    { name: t('contact'), link: '#contact' },
   ]
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -59,6 +41,7 @@ export function NavigationBar() {
       {/* Desktop Navigation */}
       <NavBody>
         <NavItems items={navItems} />
+        <LanguageToggle />
         <DarkModeButton />
       </NavBody>
 
@@ -69,7 +52,10 @@ export function NavigationBar() {
             isOpen={isMobileMenuOpen}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           />
-          <DarkModeButton />
+          <div className="flex items-center gap-2">
+            <LanguageToggle />
+            <DarkModeButton />
+          </div>
         </MobileNavHeader>
 
         <MobileNavMenu

@@ -4,6 +4,7 @@ import { Button } from '@components/ui/button'
 import type { IGithubRepository } from '@http/get-projects'
 import { ChevronLeft } from 'lucide-react'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 import { useAvailableTechs } from '../_hooks/use-available-techs'
 import { useProjectFilters } from '../_hooks/use-project-filters'
 import { Project } from './project'
@@ -15,6 +16,7 @@ interface ProjectListProps {
 }
 
 export function ProjectList({ projects }: ProjectListProps) {
+  const t = useTranslations('projects')
   const {
     q,
     setQ,
@@ -30,7 +32,7 @@ export function ProjectList({ projects }: ProjectListProps) {
     <div className="flex w-full flex-col items-center gap-8">
       <Button asChild variant="ghost" className="self-start">
         <Link href="/">
-          <ChevronLeft className="size-4" /> Back to home
+          <ChevronLeft className="size-4" /> {t('backToHome')}
         </Link>
       </Button>
 
@@ -47,20 +49,23 @@ export function ProjectList({ projects }: ProjectListProps) {
       {filteredProjects.length === 0 ? (
         <div className="flex flex-col items-center gap-4 py-16">
           <p className="text-muted-foreground text-sm">
-            {hasActiveFilters
-              ? 'No projects found for the applied filters.'
-              : 'No projects available.'}
+            {hasActiveFilters ? t('noProjectsFiltered') : t('noProjects')}
           </p>
           {hasActiveFilters && (
             <Button variant="outline" size="sm" onClick={clearFilters}>
-              Clear filters
+              {t('clearFilters')}
             </Button>
           )}
         </div>
       ) : (
         <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
           {filteredProjects.map((project) => (
-            <Project key={project.id} {...project} />
+            <Project
+              key={project.id}
+              {...project}
+              codeLabel={t('code')}
+              demoLabel={t('demo')}
+            />
           ))}
         </div>
       )}

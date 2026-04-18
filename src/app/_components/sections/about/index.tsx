@@ -5,43 +5,38 @@ import {
   SectionSubtitle,
   SectionTitle,
 } from '@components/ui/section'
+import { getTranslations } from 'next-intl/server'
 import { Suspense } from 'react'
 import { GithubGraph } from './github-graph'
 import { LoadingSkeleton } from './loading-skeleton'
 
-export function AboutSection() {
+export async function AboutSection() {
+  const t = await getTranslations('about')
+
   return (
     <SectionContainer id="about">
       <SectionHeader>
-        <SectionLabel>Contributions</SectionLabel>
+        <SectionLabel>{t('label')}</SectionLabel>
 
-        <SectionTitle>About Me</SectionTitle>
+        <SectionTitle>{t('title')}</SectionTitle>
 
-        <SectionSubtitle>Get to know me better</SectionSubtitle>
+        <SectionSubtitle>{t('subtitle')}</SectionSubtitle>
       </SectionHeader>
 
       <div className="space-y-4">
         <p className="text-justify text-base leading-6 sm:leading-7 md:leading-8">
-          I&apos;m Anderson Kaiti, a Computer Science graduate building
-          well-structured, <span className="text-primary">scalable</span> web
-          and mobile applications with{' '}
-          <span className="text-primary">React</span>,{' '}
-          <span className="text-primary">React Native</span>,{' '}
-          <span className="text-primary">Next.js</span>,{' '}
-          <span className="text-primary">Laravel</span>,{' '}
-          <span className="text-primary">TypeScript</span>, and{' '}
-          <span className="text-primary">TailwindCSS</span>. I care deeply about{' '}
-          <span className="text-primary">code quality</span>, clarity, and
-          long-term maintainability.
+          {t.rich('p1', {
+            b: (chunks) => <span className="text-primary">{chunks}</span>,
+          })}
         </p>
 
         <p className="text-justify text-base leading-6 sm:leading-7 md:leading-8">
-          My approach goes beyond making things work &mdash; I focus on
-          understanding <span className="italic text-primary">why</span> they
-          work and how they can evolve safely. From component design to data
-          flow and external integrations, I consistently apply{' '}
-          <span className="text-primary">best practices</span> to deliver
-          solutions that are performant, readable, and easy to extend.
+          {t.rich('p2', {
+            b: (chunks) => <span className="text-primary">{chunks}</span>,
+            i: (chunks) => (
+              <span className="italic text-primary">{chunks}</span>
+            ),
+          })}
         </p>
       </div>
 

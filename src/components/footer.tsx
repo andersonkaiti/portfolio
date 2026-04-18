@@ -1,6 +1,7 @@
 import { jetBrainsMono } from '@lib/fonts'
 import { Github, Linkedin, Mail } from 'lucide-react'
 import Link from 'next/link'
+import { getTranslations } from 'next-intl/server'
 import { Button } from './ui/button'
 import {
   SectionContainer,
@@ -10,43 +11,43 @@ import {
   SectionTitle,
 } from './ui/section'
 
-const socialLinks = [
-  {
-    label: "Anderson Kaiti's GitHub profile",
-    href: 'https://github.com/andersonkaiti',
-    icon: Github,
-  },
-  {
-    label: 'Connect with Anderson Kaiti on LinkedIn',
-    href: 'https://www.linkedin.com/in/anderson-kaiti-67906126a/',
-    icon: Linkedin,
-  },
-  {
-    label: 'Send email to Anderson Kaiti',
-    href: 'mailto:anderkaiti@gmail.com',
-    icon: Mail,
-  },
-]
+export async function Footer() {
+  const t = await getTranslations('footer')
 
-export function Footer() {
+  const socialLinks = [
+    {
+      label: t('githubLabel'),
+      href: 'https://github.com/andersonkaiti',
+      icon: Github,
+    },
+    {
+      label: t('linkedinLabel'),
+      href: 'https://www.linkedin.com/in/anderson-kaiti-67906126a/',
+      icon: Linkedin,
+    },
+    {
+      label: t('emailLabel'),
+      href: 'mailto:anderkaiti@gmail.com',
+      icon: Mail,
+    },
+  ]
+
   return (
     <div className="mx-auto max-w-7xl px-2 py-10 md:px-20 md:py-30">
       <SectionContainer id="contact">
         <SectionHeader>
-          <SectionLabel>Contact</SectionLabel>
+          <SectionLabel>{t('label')}</SectionLabel>
 
-          <SectionTitle>Let's Work Together</SectionTitle>
+          <SectionTitle>{t('title')}</SectionTitle>
 
-          <SectionSubtitle>
-            I'm always open to new opportunities and collaborations
-          </SectionSubtitle>
+          <SectionSubtitle>{t('subtitle')}</SectionSubtitle>
         </SectionHeader>
 
         <div className="flex justify-center">
           <Button asChild size="lg">
             <Link href="mailto:anderkaiti@gmail.com">
               <Mail className="size-4" />
-              <span className={jetBrainsMono.className}>Get in touch</span>
+              <span className={jetBrainsMono.className}>{t('cta')}</span>
             </Link>
           </Button>
         </div>
@@ -56,9 +57,7 @@ export function Footer() {
             <span className="font-mono text-sm tracking-wider text-primary">
               AK
             </span>
-            <p className="text-xs text-muted-foreground">
-              Crafted by Anderson Kaiti
-            </p>
+            <p className="text-xs text-muted-foreground">{t('tagline')}</p>
           </div>
 
           <div className="flex items-center gap-4">

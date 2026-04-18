@@ -3,7 +3,7 @@ import { Button } from '@components/ui/button'
 
 export function DarkModeButton() {
   return (
-    <Button asChild className="z-50 ml-auto size-9" variant="ghost">
+    <Button asChild className="relative size-9" variant="ghost">
       <AnimatedThemeToggler />
     </Button>
   )

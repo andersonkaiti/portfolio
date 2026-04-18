@@ -6,21 +6,22 @@ import {
   SectionTitle,
 } from '@components/ui/section'
 import { getProjects } from '@http/get-projects'
+import { getTranslations } from 'next-intl/server'
 import { Suspense } from 'react'
 import { ProjectList } from './project-list'
 import { ProjectSkeleton } from './project-skeleton'
 
-export function ProjectListSection() {
+export async function ProjectListSection() {
+  const t = await getTranslations('projects')
+
   return (
     <SectionContainer id="projects">
       <SectionHeader>
-        <SectionLabel>Work</SectionLabel>
+        <SectionLabel>{t('label')}</SectionLabel>
 
-        <SectionTitle>Projects</SectionTitle>
+        <SectionTitle>{t('title')}</SectionTitle>
 
-        <SectionSubtitle>
-          Some of the projects I have developed along my journey
-        </SectionSubtitle>
+        <SectionSubtitle>{t('subtitle')}</SectionSubtitle>
       </SectionHeader>
 
       <Suspense

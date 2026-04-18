@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "introduction": "Introduction",
+    "about": "About",
+    "experiences": "Experiences",
+    "projects": "Projects",
+    "technologies": "Technologies",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "header": {
+    "available": "Available for work",
+    "title": "Hi, I'm Anderson Kaiti",
+    "role": "Full-Stack Web Developer",
+    "description": "Computer Science graduate focused on web development, with experience in modern technologies like <b>React</b>, <b>Next.js</b>, <b>Node.js</b>, <b>TypeScript</b>, <b>PostgreSQL</b>, <b>TailwindCSS</b>, <b>Docker</b> and others.",
+    "social": {
+      "github": "Visit Anderson Kaiti's GitHub profile",
+      "linkedin": "Connect with Anderson Kaiti on LinkedIn",
+      "whatsapp": "Start a WhatsApp chat with Anderson Kaiti",
+      "resume": "Download Anderson Kaiti's résumé"
+    }
+  },
+  "about": {
+    "label": "Contributions",
+    "title": "About Me",
+    "subtitle": "Get to know me better",
+    "p1": "I'm Anderson Kaiti, a Computer Science graduate building well-structured, <b>scalable</b> web and mobile applications with <b>React</b>, <b>React Native</b>, <b>Next.js</b>, <b>Laravel</b>, <b>TypeScript</b>, and <b>TailwindCSS</b>. I care deeply about <b>code quality</b>, clarity, and long-term maintainability.",
+    "p2": "My approach goes beyond making things work — I focus on understanding <i>why</i> they work and how they can evolve safely. From component design to data flow and external integrations, I consistently apply <b>best practices</b> to deliver solutions that are performant, readable, and easy to extend."
+  },
+  "experiences": {
+    "label": "Journey",
+    "title": "Professional Experience",
+    "subtitle": "My career journey and impactful work experiences",
+    "solidTech": {
+      "title": "Full Stack Developer",
+      "employmentType": "Freelance",
+      "employmentPeriod": "Feb 2026 – Apr 2026",
+      "description": "- **Full Stack & Mobile:** Built scalable ecosystems integrating high-performance interfaces (React/Next.js) with backend systems (Node.js/Prisma).\n- **Smart TV:** Implemented digital signage and medical testing systems for Smart TVs using React Native TVOS with real-time WebSocket communication.\n- **Gamification & Social:** Developed training engines with haptic feedback, social feeds, rankings, and achievement systems.\n- **B2B & Financial:** Built admin dashboards with visual training builders and integrated financial modules for Pix checkout and subscription management.\n- **Logistics:** Developed features for logistics systems covering customer, delivery personnel, and control panel apps."
+    },
+    "funprev": {
+      "title": "IT Internship",
+      "employmentType": "Internship",
+      "employmentPeriod": "Nov 2024 – Nov 2025",
+      "description": "- **IT Infrastructure Troubleshooting:** Diagnosed and resolved issues in networks, devices, and IT infrastructure, ensuring system stability, security, and continuity.\n- **Web Development:** Developed, maintained, and implemented features in internal web systems using PHP and JavaScript.\n- **Data Management:** Managed data integrity and executed SQL queries, focusing on PostgreSQL and phpMyAdmin to support reporting and system updates.\n- **Hardware & Software Setup:** Installed and configured software and hardware, ensuring proper operation of the technological environment.\n- **Backup Management:** Performed periodic backups to ensure data integrity and availability.\n- **Technical Support:** Provided user support with logical troubleshooting to minimize downtime and operational impact.\n- **Network Administration:** Configured, monitored, and maintained network devices such as routers and switches.\n- **Process Optimization:** Improved processes and proposed practical solutions aligned with the organization's technological needs."
+    }
+  },
+  "technologies": {
+    "label": "Stack",
+    "title": "Technologies",
+    "subtitle": "Tools and technologies I master to create complete solutions"
+  },
+  "projects": {
+    "label": "Work",
+    "title": "Projects",
+    "subtitle": "Some of the projects I have developed along my journey",
+    "count": "{count} projects",
+    "viewAll": "View all",
+    "search": "Search projects...",
+    "clearSearch": "Clear search",
+    "filter": "Technologies",
+    "filterSearch": "Search technology...",
+    "noTechFound": "No technologies found.",
+    "noProjects": "No projects available.",
+    "noProjectsFiltered": "No projects found for the applied filters.",
+    "clearFilters": "Clear filters",
+    "backToHome": "Back to home",
+    "code": "Code",
+    "demo": "Demo"
+  },
+  "education": {
+    "label": "Learning",
+    "title": "Education",
+    "subtitle": "My formal education and language development",
+    "degree": {
+      "type": "Undergraduate",
+      "institution": "UNISAGRADO • 2022-2025",
+      "title": "COMPUTER SCIENCE",
+      "description": "Completed Bachelor's Degree in Computer Science at UNISAGRADO. Specialized in software development, algorithms, and data structures.",
+      "badge": "Graduated"
+    },
+    "languages": {
+      "type": "Languages",
+      "institution": "CNA • Ongoing",
+      "title": "ENGLISH",
+      "description": "Currently enrolled in the 3rd year of the English course at CNA, developing communication skills for the international professional environment.",
+      "badge": "Level: Pre-Advanced (B2)"
+    }
+  },
+  "footer": {
+    "label": "Contact",
+    "title": "Let's Work Together",
+    "subtitle": "I'm always open to new opportunities and collaborations",
+    "cta": "Get in touch",
+    "tagline": "Crafted by Anderson Kaiti",
+    "githubLabel": "Anderson Kaiti's GitHub profile",
+    "linkedinLabel": "Connect with Anderson Kaiti on LinkedIn",
+    "emailLabel": "Send email to Anderson Kaiti"
+  },
+  "metadata": {
+    "home": {
+      "title": "Anderson Kaiti | Full-Stack Developer",
+      "description": "Anderson Kaiti is a Full-Stack Developer with a degree in Computer Science, specializing in React, Next.js, Node.js, and TypeScript. Available for new opportunities."
+    },
+    "projects": {
+      "title": "Anderson Kaiti | Projects",
+      "description": "Explore Anderson Kaiti's open-source projects built with React, Next.js, Node.js, TypeScript, and more."
+    }
+  }
+}
