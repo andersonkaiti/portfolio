@@ -133,7 +133,13 @@ export function NavItems({ items, className, onItemClick }: NavItemsProps) {
           data-aos-delay={60 * idx}
           href={item.link}
           key={`link-${item.name}`}
-          onClick={() => {
+          onClick={(event) => {
+            if (item.link.startsWith('/')) {
+              onItemClick?.()
+              return
+            }
+
+            event.preventDefault()
             onItemClick?.()
             handleNavClick(item.link)
           }}

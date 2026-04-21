@@ -10,6 +10,7 @@ import {
   NavItems,
 } from '@components/ui/resizable-navbar'
 import { useLenis } from '@providers/lenis'
+import { usePathname } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { DarkModeButton } from './dark-mode-button'
@@ -23,15 +24,29 @@ export interface NavItem {
 export function NavigationBar() {
   const { handleNavClick } = useLenis()
   const t = useTranslations('nav')
+  const pathname = usePathname()
+  const isProjectPage = pathname.includes('/projects')
 
   const navItems: NavItem[] = [
-    { name: t('introduction'), link: '#presentation' },
-    { name: t('about'), link: '#about' },
-    { name: t('experiences'), link: '#experiences' },
-    { name: t('projects'), link: '#projects' },
-    { name: t('technologies'), link: '#technologies' },
-    { name: t('education'), link: '#education' },
-    { name: t('contact'), link: '#contact' },
+    {
+      name: t('introduction'),
+      link: isProjectPage ? '/#presentation' : '#presentation',
+    },
+    { name: t('about'), link: isProjectPage ? '/#about' : '#about' },
+    {
+      name: t('experiences'),
+      link: isProjectPage ? '/#experiences' : '#experiences',
+    },
+    { name: t('projects'), link: isProjectPage ? '/#projects' : '#projects' },
+    {
+      name: t('technologies'),
+      link: isProjectPage ? '/#technologies' : '#technologies',
+    },
+    {
+      name: t('education'),
+      link: isProjectPage ? '/#education' : '#education',
+    },
+    { name: t('contact'), link: isProjectPage ? '/#contact' : '#contact' },
   ]
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -70,6 +85,11 @@ export function NavigationBar() {
               href={item.link}
               key={`mobile-link-${item.name}`}
               onClick={(event) => {
+                if (item.link.startsWith('/')) {
+                  setIsMobileMenuOpen(false)
+                  return
+                }
+
                 event.preventDefault()
                 setIsMobileMenuOpen(false)
                 handleNavClick(item.link)
