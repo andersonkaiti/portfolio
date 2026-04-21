@@ -7,7 +7,10 @@ export function SectionContainer({
   ...props
 }: { children: React.ReactNode } & HTMLAttributes<HTMLDivElement>) {
   return (
-    <section className="w-full space-y-4 px-6 md:space-y-8" {...props}>
+    <section
+      className="w-full scroll-mt-[150px] space-y-4 px-6 md:space-y-8"
+      {...props}
+    >
       {children}
     </section>
   )
@@ -31,7 +34,7 @@ export function SectionLabel({
   return (
     <p
       className={cn(
-        'scroll-m-20 text-balance font-semibold tracking-wide uppercase text-primary text-sm md:text-base',
+        'text-balance font-semibold tracking-wide uppercase text-primary text-sm md:text-base',
         jetBrainsMono.className,
       )}
       {...rest}
@@ -46,10 +49,7 @@ export function SectionTitle({
   ...rest
 }: { children: React.ReactNode } & HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h2
-      className="scroll-m-20 text-balance text-3xl font-semibold md:text-5xl"
-      {...rest}
-    >
+    <h2 className="text-balance text-3xl font-semibold md:text-5xl" {...rest}>
       {children}
     </h2>
   )

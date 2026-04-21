@@ -42,12 +42,12 @@ export async function EducationSection() {
             </Badge>
             <div>
               <CardTitle
-                className={`scroll-m-20 font-semibold text-xl tracking-tight ${jetBrainsMono.className}`}
+                className={`font-semibold text-xl tracking-tight ${jetBrainsMono.className}`}
               >
                 {t('degree.type')}
               </CardTitle>
               <h4
-                className={`scroll-m-20 font-semibold text-base text-muted-foreground tracking-tight ${jetBrainsMono.className}`}
+                className={`font-semibold text-base text-muted-foreground tracking-tight ${jetBrainsMono.className}`}
               >
                 {t('degree.institution')}
               </h4>
@@ -83,12 +83,12 @@ export async function EducationSection() {
             </Badge>
             <div>
               <CardTitle
-                className={`scroll-m-20 font-semibold text-xl tracking-tight ${jetBrainsMono.className}`}
+                className={`font-semibold text-xl tracking-tight ${jetBrainsMono.className}`}
               >
                 {t('languages.type')}
               </CardTitle>
               <h4
-                className={`scroll-m-20 font-semibold text-base text-muted-foreground tracking-tight ${jetBrainsMono.className}`}
+                className={`font-semibold text-base text-muted-foreground tracking-tight ${jetBrainsMono.className}`}
               >
                 {t('languages.institution')}
               </h4>

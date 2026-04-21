@@ -8,7 +8,7 @@ export async function HeaderSection() {
 
   return (
     <header
-      className="mx-2 my-10 flex flex-col gap-6 text-center sm:mx-8 sm:my-16 md:mx-20 md:my-24 lg:mx-24 lg:my-24"
+      className="mx-2 my-10 flex scroll-mt-[150px] flex-col gap-6 text-center sm:mx-8 sm:my-16 md:mx-20 md:my-24 lg:mx-24 lg:my-24"
       id="presentation"
     >
       <div className="relative mx-auto w-fit">
@@ -19,7 +19,7 @@ export async function HeaderSection() {
           </span>
         </div>
 
-        <h1 className="scroll-m-20 text-balance text-center font-bold text-3xl xs:text-4xl tracking-tight sm:text-5xl">
+        <h1 className="text-balance text-center font-bold text-3xl xs:text-4xl tracking-tight sm:text-5xl">
           {t('title')}
         </h1>
       </div>
