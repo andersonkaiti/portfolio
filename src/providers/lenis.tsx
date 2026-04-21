@@ -13,7 +13,7 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
   function handleNavClick(link: string) {
     const element = document.querySelector(link)
     if (element instanceof HTMLElement) {
-      const top = element.getBoundingClientRect().top + window.scrollY - 120
+      const top = element.getBoundingClientRect().top + window.scrollY - 150
       window.scrollTo({ top, behavior: 'smooth' })
     }
   }
