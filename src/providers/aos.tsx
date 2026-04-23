@@ -23,10 +23,6 @@ export function AosProvider({ children }: { children: React.ReactNode }) {
       const elements = document.querySelectorAll('[data-aos]')
       for (const el of elements) {
         if (!observedSet.has(el)) {
-          const delay = el.getAttribute('data-aos-delay')
-          if (delay) {
-            ;(el as HTMLElement).style.transitionDelay = `${delay}ms`
-          }
           observer.observe(el)
           observedSet.add(el)
         }

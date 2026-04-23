@@ -35,6 +35,7 @@ export async function EducationSection() {
           className="border-none bg-transparent shadow-none"
           data-aos="fade-up"
           data-aos-delay={200}
+          style={{ transitionDelay: '200ms' }}
         >
           <CardHeader className="relative flex justify-center gap-2">
             <Badge className="border-emerald-500/20 bg-emerald-500/10 p-2">
@@ -76,6 +77,7 @@ export async function EducationSection() {
           className="border-none bg-transparent shadow-none"
           data-aos="fade-up"
           data-aos-delay={400}
+          style={{ transitionDelay: '400ms' }}
         >
           <CardHeader className="relative flex justify-center gap-2">
             <Badge className="border-emerald-500/20 bg-emerald-500/10 p-2">

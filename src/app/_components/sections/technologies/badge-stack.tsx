@@ -20,6 +20,7 @@ export function BadgeStack({ tech, index }: IBadgeStackProps) {
       data-aos="fade-up"
       data-aos-delay={40 * index}
       key={tech.name}
+      style={{ transitionDelay: `${40 * index}ms` }}
     >
       {typeof tech.logo === 'object' ? (
         <>

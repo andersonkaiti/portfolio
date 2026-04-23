@@ -82,6 +82,7 @@ export function NavigationBar() {
               className="relative text-neutral-600 dark:text-neutral-300"
               data-aos="fade-down"
               data-aos-delay={60 * index}
+              style={{ transitionDelay: `${60 * index}ms` }}
               href={item.link}
               key={`mobile-link-${item.name}`}
               onClick={(event) => {

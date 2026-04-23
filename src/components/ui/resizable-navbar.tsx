@@ -131,6 +131,7 @@ export function NavItems({ items, className, onItemClick }: NavItemsProps) {
           className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
           data-aos="fade-down"
           data-aos-delay={60 * idx}
+          style={{ transitionDelay: `${60 * idx}ms` }}
           href={item.link}
           key={`link-${item.name}`}
           onClick={(event) => {
