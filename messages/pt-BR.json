@@ -10,22 +10,22 @@
   },
   "header": {
     "available": "Disponível para novos desafios",
-    "title": "Oi, eu sou o Anderson Kaiti",
+    "title": "Olá, eu sou o Anderson Kaiti",
     "role": "Desenvolvedor Full-Stack",
-    "description": "Cientista da Computação apaixonado por transformar ideias em produtos digitais. Especialista em <b>React</b>, <b>Next.js</b> e todo o ecossistema <b>TypeScript</b>.",
+    "description": "Formado em Ciência da Computação e focado em desenvolvimento web, com experiência em tecnologias modernas como <b>React</b>, <b>Next.js</b>, <b>Node.js</b>, <b>TypeScript</b>, <b>PostgreSQL</b>, <b>TailwindCSS</b>, <b>Docker</b> e outras.",
     "social": {
-      "github": "Ver GitHub",
+      "github": "Ver perfil no GitHub",
       "linkedin": "Conectar no LinkedIn",
       "whatsapp": "Conversar no WhatsApp",
-      "resume": "Baixar CV"
+      "resume": "Baixar currículo"
     }
   },
   "about": {
     "label": "Um pouco sobre mim",
     "title": "Criando soluções que escalam",
     "subtitle": "Trajetória e propósito",
-    "p1": "Sou formado em Ciência da Computação e foco em dar vida a aplicações web e mobile que sejam, acima de tudo, <b>escaláveis e resilientes</b>. Minha base técnica passa por <b>React</b>, <b>Next.js</b> e <b>Node.js</b>, sempre com o pé no <b>TypeScript</b>.",
-    "p2": "Não acredito apenas em 'escrever código'; acredito em entender o <i>porquê</i> das escolhas de arquitetura. Do design de um componente à modelagem do banco de dados, busco o equilíbrio entre entrega rápida e um código que não dê dor de cabeça no futuro."
+    "p1": "Sou formado em Ciência da Computação e foco em desenvolver aplicações web e mobile que sejam, acima de tudo, <b>escaláveis e resilientes</b>. Minha base técnica inclui <b>React</b>, <b>Next.js</b> e <b>Node.js</b>, sempre com <b>TypeScript</b>.",
+    "p2": "Não acredito apenas em 'escrever código'; acredito em entender o <i>porquê</i> das escolhas de arquitetura. Do design de um componente à modelagem do banco de dados, busco o equilíbrio entre entrega rápida e um código que não gere dores de cabeça no futuro."
   },
   "experiences": {
     "label": "Carreira",
@@ -35,13 +35,13 @@
       "title": "Desenvolvedor Full Stack",
       "employmentType": "Freelance",
       "employmentPeriod": "Fev 2026 – Abr 2026",
-      "description": "- **Ecossistemas Full Stack:** Criação de interfaces de alta performance com Next.js integradas a backends robustos em Node.js.\n- **Experiência em Smart TVs:** Desenvolvimento de sistemas de sinalização digital e testes médicos usando React Native (TVOS) e comunicação via WebSockets.\n- **Engajamento e Gamificação:** Implementação de feedbacks hápticos, sistemas de conquistas e rankings sociais.\n- **Fintech & Dashboards:** Criação de painéis administrativos complexos com checkout via Pix e gestão de assinaturas.\n- **Logística:** Desenvolvimento de apps para o fluxo completo: do cliente final ao painel de controle e entregador."
+      "description": "- **Ecossistemas Full Stack:** Criação de interfaces de alta performance com Next.js integradas a backends robustos em Node.js e Prisma.\n- **Smart TV:** Desenvolvimento de sistemas de sinalização digital e testes médicos para Smart TVs usando React Native (TVOS) e comunicação em tempo real via WebSockets.\n- **Gamificação e engajamento:** Implementação de feedbacks hápticos, sistemas de conquistas, feeds sociais e rankings.\n- **Fintech e dashboards:** Criação de painéis administrativos complexos com checkout via Pix e gestão de assinaturas.\n- **Logística:** Desenvolvimento de aplicações para o fluxo completo: cliente final, painel de controle e entregador."
     },
     "funprev": {
-      "title": "Estágio de TI",
+      "title": "Estágio em TI",
       "employmentType": "Estágio",
       "employmentPeriod": "Nov 2024 – Nov 2025",
-      "description": "- **Desenvolvimento Interno:** Evolução de sistemas legados e criação de novas features usando PHP e JavaScript.\n- **Infraestrutura e Redes:** Diagnóstico e resolução de problemas críticos de rede e servidores para garantir 100% de disponibilidade.\n- **Dados e SQL:** Manutenção de bases PostgreSQL, garantindo a integridade das informações e gerando relatórios estratégicos.\n- **Suporte Consultivo:** Apoio técnico especializado, focado em otimizar processos e reduzir o tempo de inatividade da equipe."
+      "description": "- **Infraestrutura e redes:** Diagnóstico e resolução de problemas críticos em redes, dispositivos e infraestrutura de TI, garantindo estabilidade e continuidade.\n- **Desenvolvimento web:** Evolução de sistemas legados e criação de novas funcionalidades usando PHP e JavaScript.\n- **Gestão de dados:** Manutenção da integridade de dados e execução de consultas SQL em PostgreSQL e phpMyAdmin para relatórios e atualizações.\n- **Configuração de hardware e software:** Instalação e configuração de softwares e hardwares, assegurando o funcionamento adequado do ambiente tecnológico.\n- **Backup:** Realização de backups periódicos para garantir integridade e disponibilidade dos dados.\n- **Suporte técnico:** Atendimento a usuários com raciocínio lógico para minimizar inatividades e impactos operacionais.\n- **Administração de redes:** Configuração, monitoramento e manutenção de dispositivos de rede como roteadores e switches.\n- **Otimização de processos:** Melhoria de processos e proposta de soluções práticas alinhadas às necessidades tecnológicas da organização."
     }
   },
   "technologies": {
@@ -55,17 +55,17 @@
     "subtitle": "Uma amostra do que ando construindo recentemente",
     "count": "{count} projetos encontrados",
     "viewAll": "Explorar todos",
-    "search": "O que você está procurando?",
+    "search": "Pesquisar projetos...",
     "clearSearch": "Limpar busca",
     "filter": "Tecnologias",
-    "filterSearch": "Filtrar por stack...",
+    "filterSearch": "Pesquisar tecnologia...",
     "noTechFound": "Nenhuma tecnologia encontrada.",
-    "noProjects": "Nenhum projeto por aqui ainda.",
+    "noProjects": "Nenhum projeto disponível.",
     "noProjectsFiltered": "Nenhum projeto corresponde aos filtros selecionados.",
     "clearFilters": "Remover filtros",
     "backToHome": "Voltar para o início",
-    "code": "Ver Código",
-    "demo": "Demo Online"
+    "code": "Código",
+    "demo": "Demo"
   },
   "education": {
     "label": "Educação",
@@ -75,35 +75,35 @@
       "type": "Bacharelado",
       "institution": "UNISAGRADO • 2022-2025",
       "title": "CIÊNCIA DA COMPUTAÇÃO",
-      "description": "Foco em engenharia de software, estruturas de dados complexas e algoritmos aplicados ao mundo real.",
+      "description": "Bacharelado concluído em Ciência da Computação na UNISAGRADO. Especializado em desenvolvimento de software, algoritmos e estruturas de dados.",
       "badge": "Concluído"
     },
     "languages": {
       "type": "Idiomas",
       "institution": "CNA • Em andamento",
       "title": "INGLÊS",
-      "description": "Focado em conversação e escrita técnica para colaboração em times globais.",
+      "description": "Atualmente no 3º ano do curso de inglês no CNA, desenvolvendo habilidades de comunicação para o ambiente profissional internacional.",
       "badge": "Nível B2 (Intermediário Superior)"
     }
   },
   "footer": {
     "label": "Contato",
-    "title": "Bora conversar?",
+    "title": "Vamos trabalhar juntos?",
     "subtitle": "Estou sempre aberto a novos projetos, parcerias ou apenas para trocar uma ideia sobre tecnologia.",
-    "cta": "Me mande uma mensagem",
+    "cta": "Entre em contato",
     "tagline": "Feito com foco e café por Anderson Kaiti",
-    "githubLabel": "GitHub",
-    "linkedinLabel": "LinkedIn",
-    "emailLabel": "E-mail"
+    "githubLabel": "Perfil no GitHub",
+    "linkedinLabel": "Perfil no LinkedIn",
+    "emailLabel": "Enviar e-mail"
   },
   "metadata": {
     "home": {
-      "title": "Anderson Kaiti | Full-Stack Developer",
-      "description": "Desenvolvedor Full-Stack focado em React, Node.js e TypeScript. Transformando problemas complexos em interfaces simples."
+      "title": "Anderson Kaiti | Desenvolvedor Full-Stack",
+      "description": "Anderson Kaiti é um Desenvolvedor Full-Stack com graduação em Ciência da Computação, especializado em React, Next.js, Node.js e TypeScript. Disponível para novas oportunidades."
     },
     "projects": {
       "title": "Projetos | Anderson Kaiti",
-      "description": "Confira o portfólio de projetos e experimentos desenvolvidos por Anderson Kaiti."
+      "description": "Explore os projetos open-source de Anderson Kaiti, desenvolvidos com React, Next.js, Node.js, TypeScript e muito mais."
     }
   }
 }
