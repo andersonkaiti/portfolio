@@ -1,4 +1,5 @@
 'use client'
+
 import { cn } from '@lib/utils'
 import { Content, Root, Trigger } from '@radix-ui/react-hover-card'
 import {
@@ -70,7 +71,7 @@ export const LinkPreview = ({
 
   return (
     <Root closeDelay={100} onOpenChange={setOpen} openDelay={50}>
-      <Trigger asChild={asChild}>
+      <Trigger asChild>
         {asChild ? (
           children
         ) : (
