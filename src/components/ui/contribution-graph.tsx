@@ -30,6 +30,8 @@ const SUNDAY_DAY = 0
 const MIN_WEEKS_FOR_DECEMBER_HEADER = 2
 const TOOLTIP_OFFSET_X = 10
 const TOOLTIP_OFFSET_Y = 40
+const TOOLTIP_MAX_WIDTH = 224
+const TOOLTIP_SCREEN_MARGIN = 8
 
 const MONTHS = [
   'Jan',
@@ -372,8 +374,8 @@ export function ContributionGraph({
               shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.8 }
             }
             style={{
-              left: `${tooltipPosition.x + TOOLTIP_OFFSET_X}px`,
-              top: `${tooltipPosition.y - TOOLTIP_OFFSET_Y}px`,
+              left: `clamp(${TOOLTIP_SCREEN_MARGIN}px, ${tooltipPosition.x + TOOLTIP_OFFSET_X}px, calc(100vw - ${TOOLTIP_MAX_WIDTH + TOOLTIP_SCREEN_MARGIN}px))`,
+              top: `${Math.max(TOOLTIP_SCREEN_MARGIN, tooltipPosition.y - TOOLTIP_OFFSET_Y)}px`,
             }}
             transition={
               shouldReduceMotion ? { duration: 0 } : { duration: 0.2 }
