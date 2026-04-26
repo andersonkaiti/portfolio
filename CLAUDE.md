@@ -59,6 +59,15 @@ All GitHub data is fetched in async Server Components with Next.js ISR (`revalid
 
 Biome (not ESLint/Prettier): 2-space indent, single quotes, semicolons only as needed, 80-char line width. Always run `pnpm format` before committing.
 
+## Git Hooks
+
+Husky (`prepare: husky install`) installs two hooks:
+
+- **pre-commit** — lint-staged runs `biome check --write` on every staged `*.{ts,tsx}` file (configured in `.lintstagedrc.json`)
+- **commit-msg** — commitlint validates the message against `@commitlint/config-conventional` + `gitmoji` (`commitlint.config.ts`)
+
+Commits that don't follow the convention below are rejected automatically.
+
 ## Commit Convention
 
 Follows [iuricode/padroes-de-commits](https://github.com/iuricode/padroes-de-commits) combined with Conventional Commits. Format:
