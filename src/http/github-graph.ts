@@ -34,7 +34,7 @@ export async function generateGitHubContributionData(
   const response = await fetch('https://api.github.com/graphql', {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${env.NEXT_PUBLIC_GITHUB_TOKEN}`,
+      Authorization: `Bearer ${env.GITHUB_TOKEN}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({

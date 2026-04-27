@@ -46,7 +46,7 @@ export async function getProjects() {
     'https://api.github.com/users/andersonkaiti/repos?per_page=100&page=1',
     {
       headers: {
-        Authorization: `Bearer ${env.NEXT_PUBLIC_GITHUB_TOKEN}`,
+        Authorization: `Bearer ${env.GITHUB_TOKEN}`,
       },
       next: {
         revalidate: 3600,
