@@ -2,7 +2,16 @@
 
 import { Tooltip as TooltipPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
+import { createContext, useContext, useRef, useState } from 'react'
 import { cn } from '@/lib/utils'
+
+interface TooltipContextValue {
+  onTouchTrigger: () => void
+}
+
+const TooltipContext = createContext<TooltipContextValue>({
+  onTouchTrigger: () => {},
+})
 
 function TooltipProvider({
   delayDuration = 0,
@@ -18,13 +27,53 @@ function TooltipProvider({
 }
 
 function Tooltip({ ...props }: ComponentProps<typeof TooltipPrimitive.Root>) {
-  return <TooltipPrimitive.Root data-slot="tooltip" {...props} />
+  const [open, setOpen] = useState(false)
+  const isTouchRef = useRef(false)
+
+  function onTouchTrigger() {
+    isTouchRef.current = true
+    setOpen((prev) => !prev)
+    setTimeout(() => {
+      isTouchRef.current = false
+    }, 0)
+  }
+
+  function handleOpenChange(value: boolean) {
+    if (!value && isTouchRef.current) return
+    setOpen(value)
+  }
+
+  return (
+    <TooltipContext.Provider value={{ onTouchTrigger }}>
+      <TooltipPrimitive.Root
+        data-slot="tooltip"
+        {...props}
+        open={open}
+        onOpenChange={handleOpenChange}
+      />
+    </TooltipContext.Provider>
+  )
 }
 
 function TooltipTrigger({
+  onPointerDown,
   ...props
 }: ComponentProps<typeof TooltipPrimitive.Trigger>) {
-  return <TooltipPrimitive.Trigger data-slot="tooltip-trigger" {...props} />
+  const { onTouchTrigger } = useContext(TooltipContext)
+
+  return (
+    <TooltipPrimitive.Trigger
+      data-slot="tooltip-trigger"
+      onPointerDown={(e) => {
+        if (e.pointerType !== 'mouse') {
+          e.preventDefault()
+          onTouchTrigger()
+        }
+        onPointerDown?.(e)
+      }}
+      {...props}
+    />
+  )
 }
 
 function TooltipContent({
