@@ -2,6 +2,7 @@
   "nav": {
     "introduction": "Introduction",
     "about": "About",
+    "solutions": "Solutions",
     "experiences": "Experiences",
     "projects": "Projects",
     "technologies": "Technologies",
@@ -10,7 +11,7 @@
   },
   "header": {
     "available": "Available for work",
-    "title": "Hi, I'm Anderson Kaiti",
+    "title": "Anderson Kaiti",
     "role": "Full-Stack Web Developer",
     "description": "Computer Science graduate focused on web development, with experience in modern technologies like <b>React</b>, <b>Next.js</b>, <b>Node.js</b>, <b>TypeScript</b>, <b>PostgreSQL</b>, <b>TailwindCSS</b>, <b>Docker</b> and others.",
     "social": {
@@ -21,16 +22,75 @@
     }
   },
   "about": {
-    "label": "Contributions",
-    "title": "About Me",
-    "subtitle": "Get to know me better",
-    "p1": "I'm Anderson Kaiti, a Computer Science graduate building well-structured, <b>scalable</b> web and mobile applications with <b>React</b>, <b>React Native</b>, <b>Next.js</b>, <b>Laravel</b>, <b>TypeScript</b>, and <b>TailwindCSS</b>. I care deeply about <b>code quality</b>, clarity, and long-term maintainability.",
-    "p2": "My approach goes beyond making things work — I focus on understanding <i>why</i> they work and how they can evolve safely. From component design to data flow and external integrations, I consistently apply <b>best practices</b> to deliver solutions that are performant, readable, and easy to extend."
+    "label": "About",
+    "title": "Code that survives the <accent>next release</accent>",
+    "p1": "I'm a Computer Science graduate focused on building web and mobile applications that are, above all, <b>scalable and resilient</b>. My technical foundation includes <b>React</b>, <b>Next.js</b> and <b>Node.js</b>, always with <b>TypeScript</b>.",
+    "p2": "I don't just believe in 'writing code'; I believe in understanding the <i>why</i> behind architectural choices. From component design to database modeling, I seek the balance between fast delivery and code that won't cause headaches in the future.",
+    "stat1Value": "4+",
+    "stat1Label": "Years developing",
+    "stat2Value": "2",
+    "stat2Label": "Experiences",
+    "stat3Value": "20+",
+    "stat3Label": "Projects delivered",
+    "stat4Value": "100%",
+    "stat4Label": "Commitment"
+  },
+  "solutions": {
+    "label": "What I build",
+    "title": "Not just a stack, but <accent>problems solved</accent>",
+    "subtitle": "Five areas I've already shipped to production.",
+    "s1": {
+      "num": "01",
+      "title": "High-Performance Full-Stack Interfaces",
+      "desc": "Web applications with scalable front-ends integrated to Node.js and Prisma backends, focused on DX and performance.",
+      "b1": "SSR and SSG with Next.js for peak performance and SEO.",
+      "b2": "Componentized UI with TailwindCSS, shadcn/ui and React.",
+      "b3": "Type-safe validation with Zod, TanStack Query and React Hook Form."
+    },
+    "s2": {
+      "num": "02",
+      "title": "Smart TV & Digital Signage",
+      "desc": "Systems for Smart TVs with React Native TVOS, real-time communication via WebSockets and remotely managed dynamic content.",
+      "b1": "Interfaces adapted for remote control and TV experience.",
+      "b2": "Bidirectional real-time communication with WebSockets.",
+      "b3": "Digital signage and integrated medical testing systems."
+    },
+    "s3": {
+      "num": "03",
+      "title": "Gamification & Engagement",
+      "desc": "Gamification mechanics with haptic feedback, achievements, social feeds and rankings for sports coaching platforms.",
+      "b1": "Haptic feedback and animations for immersive experiences.",
+      "b2": "Achievement systems, rankings and scoring.",
+      "b3": "Social feeds and real-time interactions between users."
+    },
+    "s4": {
+      "num": "04",
+      "title": "Fintech & Admin Dashboards",
+      "desc": "B2B dashboards with Pix checkout, subscription management and visual training plan builders.",
+      "b1": "Pix checkout integration and subscription management.",
+      "b2": "Admin dashboards with analytics and access control.",
+      "b3": "Visual training plan builder for coaches."
+    },
+    "s5": {
+      "num": "05",
+      "title": "Logistics & Tracking",
+      "desc": "Applications covering the complete logistics flow: customer app, control panel and delivery person interface.",
+      "b1": "Customer app for orders and real-time tracking.",
+      "b2": "Control panel for delivery and route management.",
+      "b3": "Delivery person app with confirmation and status updates."
+    }
   },
   "experiences": {
     "label": "Journey",
-    "title": "Professional Experience",
-    "subtitle": "My career journey and impactful work experiences",
+    "title": "Professional <accent>experience</accent>",
+    "subtitle": "My career journey building cutting-edge technology",
+    "borebi": {
+      "companyName": "Borebi City Hall",
+      "title": "Full Stack Development Intern",
+      "employmentType": "Internship",
+      "employmentPeriod": "Apr 2026 – Present",
+      "description": "- **Internal systems:** Built 4 internal web systems with Laravel and unified 3 into a single application — eliminating code duplication and reducing maintenance surface.\n- **Modern frontend:** Developing the frontend with React and TypeScript via Inertia.js — SPAs with fluid navigation integrated into the Laravel backend without a separate API layer.\n- **Database and routes:** Modeled and maintain a database with 13 domain entities and implement over 50 routes with authentication, role-based access control and input validation.\n- **Requirements gathering:** Gathering requirements with non-technical public servants and digitalizing workflows replacing manual paper processes — covering registration, enrollment, analysis, appeal and reimbursement.\n- **Evolutionary maintenance:** Refactoring critical sections of legacy systems and conducting deployment and evolutionary maintenance of production systems with Git and code review."
+    },
     "solidTech": {
       "title": "Full Stack Developer",
       "employmentType": "Freelance",
@@ -41,13 +101,13 @@
       "title": "IT Internship",
       "employmentType": "Internship",
       "employmentPeriod": "Nov 2024 – Nov 2025",
-      "description": "- **IT Infrastructure Troubleshooting:** Diagnosed and resolved issues in networks, devices, and IT infrastructure, ensuring system stability, security, and continuity.\n- **Web Development:** Developed, maintained, and implemented features in internal web systems using PHP and JavaScript.\n- **Data Management:** Managed data integrity and executed SQL queries, focusing on PostgreSQL and phpMyAdmin to support reporting and system updates.\n- **Hardware & Software Setup:** Installed and configured software and hardware, ensuring proper operation of the technological environment.\n- **Backup Management:** Performed periodic backups to ensure data integrity and availability.\n- **Technical Support:** Provided user support with logical troubleshooting to minimize downtime and operational impact.\n- **Network Administration:** Configured, monitored, and maintained network devices such as routers and switches.\n- **Process Optimization:** Improved processes and proposed practical solutions aligned with the organization's technological needs."
+      "description": "- **IT Infrastructure Troubleshooting:** Diagnosed and resolved issues in networks, devices, and IT infrastructure, ensuring system stability, security, and continuity.\n- **Web Development:** Developed, maintained, and implemented features in internal web systems using PHP and JavaScript.\n- **Data Management:** Managed data integrity and executed SQL queries, focusing on PostgreSQL and phpMyAdmin to support reporting and system updates.\n- **Hardware & Software Setup:** Installed and configured software and hardware, ensuring proper operation of the technological environment.\n- **Technical Support:** Provided user support with logical troubleshooting to minimize downtime and operational impact.\n- **Network Administration:** Configured, monitored, and maintained network devices such as routers and switches."
     }
   },
   "technologies": {
     "label": "Stack",
-    "title": "Technologies",
-    "subtitle": "Tools and technologies I master to create complete solutions"
+    "title": "Technical <accent>skills</accent>",
+    "subtitle": "The tools I use day to day, by layer."
   },
   "projects": {
     "label": "Work",
@@ -72,29 +132,37 @@
     "title": "Education",
     "subtitle": "My formal education and language development",
     "degree": {
-      "type": "Undergraduate",
-      "institution": "UNISAGRADO • 2022-2025",
-      "title": "COMPUTER SCIENCE",
-      "description": "Completed Bachelor's Degree in Computer Science at UNISAGRADO. Specialized in software development, algorithms, and data structures.",
+      "period": "2022 — 2025",
+      "institution": "UNISAGRADO",
+      "title": "Computer Science",
+      "description": "Bachelor's degree completed, focused on software development, algorithms and data structures.",
       "badge": "Graduated"
     },
     "languages": {
-      "type": "Languages",
-      "institution": "CNA • Ongoing",
-      "title": "ENGLISH",
-      "description": "Completed the C1 level and advancing to C2 in the English course at CNA, refining communication skills for the international professional environment.",
-      "badge": "Level: Advanced (C1) • Advancing to C2"
+      "period": "Ongoing",
+      "institution": "CNA",
+      "title": "English",
+      "description": "C1 level completed and advancing to C2, focused on communication in international professional settings.",
+      "badge": "C1 → C2"
     }
   },
   "footer": {
     "label": "Contact",
-    "title": "Let's Work Together",
-    "subtitle": "I'm always open to new opportunities and collaborations",
-    "cta": "Get in touch",
-    "tagline": "Crafted by Anderson Kaiti",
-    "githubLabel": "Anderson Kaiti's GitHub profile",
-    "linkedinLabel": "Connect with Anderson Kaiti on LinkedIn",
-    "emailLabel": "Send email to Anderson Kaiti"
+    "title": "Let's <accent>work together?</accent>",
+    "subtitle": "I'm open to full-stack roles, remote or hybrid. Reach out and I'll reply quickly.",
+    "tagline": "Crafted by Anderson Kaiti · 2026",
+    "rows": {
+      "email": "E-mail",
+      "whatsapp": "WhatsApp",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    },
+    "values": {
+      "email": "anderkaiti@gmail.com",
+      "whatsapp": "+55 14 99805-3657",
+      "linkedin": "andersonkaiti",
+      "github": "andersonkaiti"
+    }
   },
   "metadata": {
     "home": {
