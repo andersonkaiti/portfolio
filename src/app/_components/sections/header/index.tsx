@@ -1,66 +1,59 @@
-import { Button } from '@components/ui/button'
-import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
-import { links } from './socials'
 
 export async function HeaderSection() {
   const t = await getTranslations('header')
 
   return (
     <header
-      className="mx-2 my-10 flex scroll-mt-[150px] flex-col gap-6 text-center sm:mx-8 sm:my-16 md:mx-20 md:my-24 lg:mx-24 lg:my-24"
+      className="flex scroll-mt-[150px] flex-col items-center gap-8 text-center"
       id="presentation"
     >
-      <div className="relative mx-auto w-fit">
-        <div className="-top-8 -translate-x-1/2 absolute left-1/2 flex items-center gap-2 sm:gap-3">
-          <div className="size-2 animate-pulse rounded-full bg-green-500 sm:size-3" />
-          <span className="font-medium text-green-700 text-xs sm:text-sm dark:text-green-400">
-            {t('available')}
-          </span>
-        </div>
+      <div
+        className="flex items-center gap-2.5 sm:gap-3"
+        data-aos="fade-up"
+        data-aos-delay={100}
+        style={{ transitionDelay: '100ms' }}
+        suppressHydrationWarning
+      >
+        <div className="size-2 animate-pulse rounded-full bg-green-500 sm:size-2.5" />
+        <span className="font-medium text-green-700 text-xs sm:text-sm dark:text-green-400 tracking-wide">
+          {t('available')}
+        </span>
+      </div>
 
-        <h1 className="text-balance text-center font-bold text-3xl xs:text-4xl tracking-tight sm:text-5xl">
+      <div
+        className="flex flex-col gap-5"
+        data-aos="fade-up"
+        data-aos-delay={200}
+        style={{ transitionDelay: '200ms' }}
+        suppressHydrationWarning
+      >
+        <h1 className="text-balance font-bold tracking-tight text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05]">
           {t('title')}
         </h1>
+
+        <div className="flex items-center justify-center gap-4">
+          <div className="h-px w-10 bg-primary/40 sm:w-14" />
+          <p className="font-mono text-[11px] sm:text-xs font-medium tracking-[0.3em] text-primary uppercase">
+            {t('role')}
+          </p>
+          <div className="h-px w-10 bg-primary/40 sm:w-14" />
+        </div>
       </div>
 
-      <div className="mt-3 flex items-center justify-center gap-4">
-        <div className="h-px w-12 bg-primary/40" />
-        <p className="font-mono text-xs font-medium tracking-[0.3em] text-primary uppercase">
-          {t('role')}
-        </p>
-        <div className="h-px w-12 bg-primary/40" />
-      </div>
-
-      <p className="mx-auto mt-3 max-w-2xl text-balance font-base text-base leading-6 sm:mt-4 sm:text-lg sm:leading-7 md:text-xl md:leading-8">
+      <p
+        className="max-w-xl text-balance text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8"
+        data-aos="fade-up"
+        data-aos-delay={300}
+        style={{ transitionDelay: '300ms' }}
+        suppressHydrationWarning
+      >
         {t.rich('description', {
           b: (chunks) => (
-            <span className="font-semibold text-primary">{chunks}</span>
+            <span className="font-semibold text-foreground">{chunks}</span>
           ),
         })}
       </p>
-
-      <div className="mx-auto mt-8 flex flex-wrap items-center justify-center gap-5 text-muted-foreground sm:mt-10 sm:gap-8">
-        {links.map(({ id, ariaLabelKey, href, icon: Icon }) => (
-          <Button
-            asChild
-            key={id}
-            variant="ghost"
-            size="icon"
-            className="border border-border hover:border-primary"
-          >
-            <Link
-              aria-label={t(ariaLabelKey)}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary"
-            >
-              <Icon className="size-5" />
-            </Link>
-          </Button>
-        ))}
-      </div>
     </header>
   )
 }
