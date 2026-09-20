@@ -1,7 +1,0 @@
-import type { UserConfig } from '@commitlint/types'
-
-const configuration: UserConfig = {
-  extends: ['@commitlint/config-conventional', 'gitmoji'],
-}
-
-export default configuration
