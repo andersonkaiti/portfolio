@@ -6,10 +6,34 @@ export async function getWorkExperiences(): Promise<ExperienceItemType[]> {
 
   return [
     {
+      id: 'prefeitura-borebi-1',
+      companyName: t('borebi.companyName'),
+      companyLogo: undefined,
+      isCurrentEmployer: true,
+      positions: [
+        {
+          id: 'prefeitura-borebi-1-1',
+          title: t('borebi.title'),
+          employmentPeriod: t('borebi.employmentPeriod'),
+          employmentType: t('borebi.employmentType'),
+          description: t('borebi.description'),
+          skills: [
+            'Laravel',
+            'PHP',
+            'React',
+            'TypeScript',
+            'Inertia.js',
+            'MySQL',
+            'Git',
+          ],
+        },
+      ],
+    },
+    {
       id: 'solid-tech-1',
       companyName: 'Solid Tech',
       companyLogo: undefined,
-      isCurrentEmployer: true,
+      isCurrentEmployer: false,
       positions: [
         {
           id: 'solid-tech-1-1',
@@ -17,7 +41,6 @@ export async function getWorkExperiences(): Promise<ExperienceItemType[]> {
           employmentPeriod: t('solidTech.employmentPeriod'),
           employmentType: t('solidTech.employmentType'),
           description: t('solidTech.description'),
-          icon: 'code',
           skills: [
             'React',
             'Next.js',
@@ -26,12 +49,7 @@ export async function getWorkExperiences(): Promise<ExperienceItemType[]> {
             'React Native',
             'TVOS',
             'WebSockets',
-            'Digital Signage',
-            'Gamification',
-            'Pix',
-            'Logistics',
           ],
-          isExpanded: true,
         },
       ],
     },
@@ -47,20 +65,7 @@ export async function getWorkExperiences(): Promise<ExperienceItemType[]> {
           employmentPeriod: t('funprev.employmentPeriod'),
           employmentType: t('funprev.employmentType'),
           description: t('funprev.description'),
-          icon: 'code',
-          skills: [
-            'PHP',
-            'JavaScript',
-            'PostgreSQL',
-            'phpMyAdmin',
-            'Technical Support',
-            'Troubleshooting',
-            'Network Administration',
-            'Hardware & Software Setup',
-            'Backup Management',
-            'Process Optimization',
-          ],
-          isExpanded: true,
+          skills: ['PHP', 'JavaScript', 'PostgreSQL', 'phpMyAdmin'],
         },
       ],
     },

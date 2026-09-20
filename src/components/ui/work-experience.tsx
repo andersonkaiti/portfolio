@@ -1,31 +1,9 @@
-import {
-  BriefcaseBusinessIcon,
-  ChevronsDownUpIcon,
-  ChevronsUpDownIcon,
-  CodeXmlIcon,
-  DraftingCompassIcon,
-  GraduationCapIcon,
-} from 'lucide-react'
+import { Separator } from '@components/ui/separator'
+import { jetBrainsMono } from '@lib/fonts'
+import { cn } from 'cn'
 import Image from 'next/image'
 import type React from 'react'
 import ReactMarkdown from 'react-markdown'
-
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from '@/components/ui/collapsible'
-import { Separator } from '@/components/ui/separator'
-import { cn } from '@/lib/utils'
-
-const iconMap = {
-  code: CodeXmlIcon,
-  design: DraftingCompassIcon,
-  business: BriefcaseBusinessIcon,
-  education: GraduationCapIcon,
-} as const
-
-export type ExperiencePositionIconType = keyof typeof iconMap
 
 export type ExperiencePositionItemType = {
   id: string
@@ -33,9 +11,7 @@ export type ExperiencePositionItemType = {
   employmentPeriod: string
   employmentType?: string
   description?: string
-  icon?: ExperiencePositionIconType
   skills?: string[]
-  isExpanded?: boolean
 }
 
 export type ExperienceItemType = {
@@ -55,142 +31,120 @@ export function WorkExperience({
   className,
   ...props
 }: WorkExperienceProps) {
+  const rows = experiences.flatMap((exp) =>
+    exp.positions.map((pos) => ({ exp, pos })),
+  )
+
   return (
-    <div {...props} className={cn('bg-transparent px-4 rounded-md', className)}>
-      {experiences.map((experience) => (
-        <ExperienceItem experience={experience} key={experience.id} />
+    <div {...props} className={cn('border-t border-border', className)}>
+      {rows.map(({ exp, pos }, index) => (
+        <ExperienceRow
+          key={pos.id}
+          experience={exp}
+          position={pos}
+          index={index}
+        />
       ))}
     </div>
   )
 }
 
-export function ExperienceItem({
+function ExperienceRow({
   experience,
+  position,
+  index,
 }: {
   experience: ExperienceItemType
-}) {
-  return (
-    <div className="space-y-4 py-4">
-      <div className="not-prose flex items-center gap-3">
-        <div
-          aria-hidden
-          className="flex size-6 shrink-0 items-center justify-center"
-        >
-          {experience.companyLogo ? (
-            <Image
-              alt={experience.companyName}
-              className="rounded-full"
-              height={24}
-              quality={100}
-              src={experience.companyLogo}
-              unoptimized
-              width={24}
-            />
-          ) : (
-            <span className="flex size-2 rounded-full bg-emerald-500" />
-          )}
-        </div>
-
-        <h3 className="font-medium text-foreground text-lg leading-snug">
-          {experience.companyName}
-        </h3>
-
-        {experience.isCurrentEmployer && (
-          <span className="relative flex items-center justify-center">
-            <span className="absolute inline-flex size-3 animate-ping rounded-full bg-info opacity-50" />
-            <span className="relative inline-flex size-2 rounded-full bg-info" />
-            <span className="sr-only">Current Employer</span>
-          </span>
-        )}
-      </div>
-
-      <div className="relative space-y-4 before:absolute before:left-3 before:h-full before:w-px before:bg-border">
-        {experience.positions.map((position) => (
-          <ExperiencePositionItem key={position.id} position={position} />
-        ))}
-      </div>
-    </div>
-  )
-}
-
-export function ExperiencePositionItem({
-  position,
-}: {
   position: ExperiencePositionItemType
+  index: number
 }) {
-  const ExperienceIcon = iconMap[position.icon || 'business']
-
   return (
-    <Collapsible asChild defaultOpen={position.isExpanded}>
-      <div className="relative last:before:absolute last:before:h-full last:before:w-4 last:before:bg-background">
-        <CollapsibleTrigger
-          className={cn(
-            'group/experience not-prose block w-full cursor-pointer select-none text-left',
-            'before:-top-1 before:-right-1 before:-bottom-1.5 relative before:absolute before:left-7 before:rounded-lg hover:before:bg-muted/50',
-          )}
-        >
-          <div className="relative z-1 mb-1 flex items-center gap-3">
-            <div
-              aria-hidden
-              className="flex size-6 shrink-0 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-500"
+    <div
+      data-aos="fade-up"
+      data-aos-delay={index * 80}
+      style={{ transitionDelay: `${index * 80}ms` }}
+      suppressHydrationWarning
+    >
+      <div className="group/row border-b border-border transition-colors duration-400 ease-[cubic-bezier(.25,0,.35,1)] hover:bg-accent/30">
+        <div className="grid grid-cols-1 gap-4 px-2 py-9 transition-[translate] duration-400 ease-[cubic-bezier(.25,0,.35,1)] sm:px-0 md:grid-cols-[minmax(0,190px)_1fr] md:gap-10 md:group-hover/row:translate-x-4">
+          <div className="flex flex-row items-center gap-3 md:flex-col md:items-start md:gap-2.5">
+            <span
+              className={cn(
+                'text-[12.5px] uppercase leading-relaxed tracking-[.14em] text-muted-foreground',
+                jetBrainsMono.className,
+              )}
             >
-              <ExperienceIcon className="size-4" />
-            </div>
+              {position.employmentPeriod}
+            </span>
 
-            <h4 className="flex-1 text-balance font-medium text-base text-foreground">
-              {position.title}
-            </h4>
+            <div className="flex items-center gap-2">
+              {experience.companyLogo && (
+                <Image
+                  alt={experience.companyName}
+                  className="size-4 rounded-full"
+                  height={16}
+                  quality={100}
+                  src={experience.companyLogo}
+                  unoptimized
+                  width={16}
+                />
+              )}
 
-            <div
-              aria-hidden
-              className="shrink-0 text-muted-foreground [&_svg]:size-4"
-            >
-              <ChevronsDownUpIcon className="hidden group-data-[state=open]/experience:block" />
-              <ChevronsUpDownIcon className="hidden group-data-[state=closed]/experience:block" />
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs text-emerald-500">
+                {position.employmentType}
+                {experience.isCurrentEmployer && (
+                  <span className="relative flex size-2 items-center justify-center">
+                    <span className="absolute inline-flex size-3 animate-ping rounded-full bg-emerald-500/50" />
+                    <span className="relative inline-flex size-1.5 rounded-full bg-emerald-500" />
+                  </span>
+                )}
+              </span>
             </div>
           </div>
 
-          <div className="relative z-1 flex items-center gap-2 pl-9 text-muted-foreground text-sm">
-            {position.employmentType && (
-              <>
-                <dl className="text-emerald-500">
-                  <dt className="sr-only">Employment Type</dt>
-                  <dd>{position.employmentType}</dd>
-                </dl>
+          <div className="flex flex-col gap-3.5">
+            <div className="flex flex-col gap-1">
+              <h3 className="text-2xl font-semibold tracking-tight">
+                {position.title}
+              </h3>
+              <div
+                className={cn(
+                  'font-semibold text-primary',
+                  jetBrainsMono.className,
+                )}
+              >
+                {experience.companyName}
+                {position.employmentType && (
+                  <>
+                    <Separator
+                      className="mx-2 inline-block bg-primary/40 data-[orientation=vertical]:h-3.5"
+                      orientation="vertical"
+                    />
+                    {position.employmentType}
+                  </>
+                )}
+              </div>
+            </div>
 
-                <Separator
-                  className="bg-emerald-500 data-[orientation=vertical]:h-4"
-                  orientation="vertical"
-                />
-              </>
+            {position.description && (
+              <Prose>
+                <ReactMarkdown>{position.description}</ReactMarkdown>
+              </Prose>
             )}
 
-            <dl className="text-emerald-500">
-              <dt className="sr-only">Employment Period</dt>
-              <dd>{position.employmentPeriod}</dd>
-            </dl>
+            {Array.isArray(position.skills) && position.skills.length > 0 && (
+              <ul className="flex flex-wrap gap-1.5">
+                {position.skills.map((skill, i) => (
+                  <li className="flex" key={`${position.id}-${i}`}>
+                    <Skill>{skill}</Skill>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
-        </CollapsibleTrigger>
-
-        <CollapsibleContent className="overflow-hidden duration-100 data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
-          {position.description && (
-            <Prose className="pt-2 pl-9">
-              <ReactMarkdown>{position.description}</ReactMarkdown>
-            </Prose>
-          )}
-
-          {Array.isArray(position.skills) && position.skills.length > 0 && (
-            <ul className="not-prose flex flex-wrap gap-1.5 pt-2 pl-9">
-              {position.skills.map((skill, index) => (
-                <li className="flex" key={`${position.id}-${index}`}>
-                  <Skill>{skill}</Skill>
-                </li>
-              ))}
-            </ul>
-          )}
-        </CollapsibleContent>
+        </div>
       </div>
-    </Collapsible>
+    </div>
   )
 }
 
@@ -198,9 +152,10 @@ function Prose({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       className={cn(
-        'prose prose-sm prose-emerald-500 dark:prose-invert max-w-none font-mono text-foreground',
-        'prose-a:wrap-break-word prose-a:font-medium prose-a:text-foreground prose-a:underline prose-a:underline-offset-4',
-        'prose-code:rounded-md prose-code:border prose-code:bg-muted/50 prose-code:px-[0.3rem] prose-code:py-[0.2rem] prose-code:font-normal prose-code:text-sm prose-code:before:content-none prose-code:after:content-none',
+        'prose prose-sm dark:prose-invert max-w-none text-muted-foreground',
+        'prose-ul:my-1 prose-li:my-1 prose-li:leading-relaxed',
+        'prose-strong:font-medium prose-strong:text-foreground',
+        'prose-a:font-medium prose-a:text-foreground prose-a:underline prose-a:underline-offset-4',
         className,
       )}
       {...props}
@@ -212,7 +167,7 @@ function Skill({ className, ...props }: React.ComponentProps<'span'>) {
   return (
     <span
       className={cn(
-        'inline-flex items-center rounded-lg border bg-emerald-500/15 px-1.5 py-0.5 font-mono text-emerald-500 text-xs',
+        'inline-flex items-center rounded-lg border border-emerald-500/20 bg-emerald-500/10 px-2 py-0.5 font-mono text-emerald-500 text-xs',
         className,
       )}
       {...props}

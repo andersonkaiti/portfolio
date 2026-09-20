@@ -2,7 +2,6 @@ import {
   SectionContainer,
   SectionHeader,
   SectionLabel,
-  SectionSubtitle,
   SectionTitle,
 } from '@components/ui/section'
 import { WorkExperience } from '@components/ui/work-experience'
@@ -15,15 +14,16 @@ export async function ExperiencesSection() {
 
   return (
     <SectionContainer id="experiences">
-      <SectionHeader>
+      <SectionHeader side="left">
         <SectionLabel>{t('label')}</SectionLabel>
-
-        <SectionTitle>{t('title')}</SectionTitle>
-
-        <SectionSubtitle>{t('subtitle')}</SectionSubtitle>
+        <SectionTitle>
+          {t.rich('title', {
+            accent: (chunks) => <span className="text-primary">{chunks}</span>,
+          })}
+        </SectionTitle>
       </SectionHeader>
 
-      <WorkExperience data-aos="fade-up" experiences={experiences} />
+      <WorkExperience experiences={experiences} />
     </SectionContainer>
   )
 }
