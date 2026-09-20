@@ -2,6 +2,10 @@ import { jetBrainsMono } from '@lib/fonts'
 import { cn } from '@lib/utils'
 import type { HTMLAttributes } from 'react'
 
+export function SectionBar() {
+  return <span className="block h-0.5 w-[52px] bg-primary" />
+}
+
 export function SectionContainer({
   children,
   ...props
@@ -18,10 +22,22 @@ export function SectionContainer({
 
 export function SectionHeader({
   children,
+  side = 'center',
   ...rest
-}: { children: React.ReactNode } & HTMLAttributes<HTMLDivElement>) {
+}: {
+  children: React.ReactNode
+  side?: 'center' | 'left'
+} & HTMLAttributes<HTMLDivElement>) {
   return (
-    <header className="space-y-4 mb-8 text-center" {...rest}>
+    <header
+      className={cn(
+        'mb-8',
+        side === 'left'
+          ? 'flex flex-col items-start gap-3 text-left'
+          : 'space-y-4 text-center',
+      )}
+      {...rest}
+    >
       {children}
     </header>
   )

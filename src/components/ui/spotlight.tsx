@@ -28,7 +28,7 @@ export function Spotlight({
   return (
     <motion.div
       animate={{ opacity: 1 }}
-      className="pointer-events-none absolute inset-0 h-full w-full overflow-hidden"
+      className="pointer-events-none absolute inset-0 hidden h-full w-full overflow-hidden sm:block"
       initial={{ opacity: 0 }}
       transition={{ duration: 1.5 }}
     >
