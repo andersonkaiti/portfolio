@@ -5,7 +5,7 @@ import {
   SectionTitle,
 } from '@components/ui/section'
 import { jetBrainsMono } from '@lib/fonts'
-import { cn } from '@lib/utils'
+import { cn } from 'cn'
 import { getTranslations } from 'next-intl/server'
 
 function EducationRow({

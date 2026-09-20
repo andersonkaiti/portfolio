@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from '@lib/utils'
+import { cn } from 'cn'
 import { motion, useMotionValue, useTransform } from 'motion/react'
 import { useTheme } from 'next-themes'
 import { useEffect, useRef, useState } from 'react'

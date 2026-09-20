@@ -1,8 +1,8 @@
 'use client'
 
-import { cn } from '@lib/utils'
 import { useLenis } from '@providers/lenis'
 import { IconMenu2, IconX } from '@tabler/icons-react'
+import { cn } from 'cn'
 import {
   AnimatePresence,
   motion,

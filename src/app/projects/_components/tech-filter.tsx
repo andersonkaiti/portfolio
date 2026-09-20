@@ -9,8 +9,8 @@ import {
   CommandList,
 } from '@components/ui/command'
 import { Popover, PopoverContent, PopoverTrigger } from '@components/ui/popover'
-import { cn } from '@lib/utils'
 import { getTopicDisplayName } from '@utils/get-topic-display-name'
+import { cn } from 'cn'
 import { Check, ChevronDown } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { TopicLogoImage } from './topic-logo-image'

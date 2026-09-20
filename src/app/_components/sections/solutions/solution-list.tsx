@@ -6,7 +6,7 @@ import {
   CollapsibleTrigger,
 } from '@components/ui/collapsible'
 import { jetBrainsMono } from '@lib/fonts'
-import { cn } from '@lib/utils'
+import { cn } from 'cn'
 import { ChevronDown } from 'lucide-react'
 import { useState } from 'react'
 

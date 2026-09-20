@@ -1,7 +1,7 @@
 'use client'
 
-import { cn } from '@lib/utils'
 import { Content, Root, Trigger } from '@radix-ui/react-hover-card'
+import { cn } from 'cn'
 import {
   AnimatePresence,
   motion,

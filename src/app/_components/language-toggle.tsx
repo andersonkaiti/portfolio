@@ -2,7 +2,7 @@
 
 import { Button } from '@components/ui/button'
 import { Popover, PopoverContent, PopoverTrigger } from '@components/ui/popover'
-import { cn } from '@lib/utils'
+import { cn } from 'cn'
 import { setCookie } from 'cookies-next'
 import { Check, Languages, Loader2 } from 'lucide-react'
 import { useRouter } from 'next/navigation'

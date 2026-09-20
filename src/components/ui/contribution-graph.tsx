@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from '@lib/utils'
+import { cn } from 'cn'
 import { motion, useReducedMotion } from 'motion/react'
 import type React from 'react'
 import { useMemo, useState } from 'react'

@@ -1,5 +1,5 @@
 import { jetBrainsMono } from '@lib/fonts'
-import { cn } from '@lib/utils'
+import { cn } from 'cn'
 import { getTranslations } from 'next-intl/server'
 
 export async function Footer() {

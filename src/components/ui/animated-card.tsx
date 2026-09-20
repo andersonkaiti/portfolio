@@ -1,7 +1,7 @@
 'use client'
 
-import { cn } from '@lib/utils'
 import { Root } from '@radix-ui/react-slot'
+import { cn } from 'cn'
 import { motion, useMotionTemplate, useMotionValue } from 'motion/react'
 
 type Variant = {

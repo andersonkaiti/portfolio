@@ -6,7 +6,7 @@ import {
   SectionTitle,
 } from '@components/ui/section'
 import { jetBrainsMono } from '@lib/fonts'
-import { cn } from '@lib/utils'
+import { cn } from 'cn'
 import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
