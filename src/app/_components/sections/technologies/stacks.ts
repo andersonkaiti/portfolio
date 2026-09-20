@@ -1,5 +1,13 @@
 import type { LucideIcon } from 'lucide-react'
-import { Cloud, Database, Globe } from 'lucide-react'
+import {
+  Cloud,
+  Code2,
+  Database,
+  Globe,
+  Server,
+  TestTube2,
+  Wrench,
+} from 'lucide-react'
 
 export interface ITheme {
   dark: string
@@ -21,13 +29,20 @@ export interface IStack {
 export const stacks: IStack[] = [
   {
     id: 1,
-    category: 'Front-end',
-    icon: Globe,
+    category: 'Linguagens',
+    icon: Code2,
     technologies: [
       { name: 'HTML5', logo: '/assets/html5.svg' },
       { name: 'CSS3', logo: '/assets/css_old.svg' },
       { name: 'JavaScript', logo: '/assets/javascript.svg' },
       { name: 'TypeScript', logo: '/assets/typescript.svg' },
+    ],
+  },
+  {
+    id: 2,
+    category: 'Front-end',
+    icon: Globe,
+    technologies: [
       {
         name: 'React.js',
         logo: {
@@ -37,7 +52,6 @@ export const stacks: IStack[] = [
       },
       { name: 'Next.js', logo: '/assets/nextjs.svg' },
       { name: 'TailwindCSS', logo: '/assets/tailwindcss.svg' },
-      { name: 'React Query', logo: '/assets/reactquery.svg' },
       {
         name: 'Shadcn/ui',
         logo: {
@@ -46,8 +60,9 @@ export const stacks: IStack[] = [
         },
       },
       { name: 'Vite', logo: '/assets/vitejs.svg' },
-      { name: 'Zod', logo: '/assets/zod.svg' },
+      { name: 'React Query', logo: '/assets/reactquery.svg' },
       { name: 'React Hook Form', logo: '/assets/react_hook_form.svg' },
+      { name: 'Zod', logo: '/assets/zod.svg' },
       {
         name: 'Styled Components',
         logo: {
@@ -62,19 +77,12 @@ export const stacks: IStack[] = [
           light: '/assets/nuqs/nuqs-light.svg',
         },
       },
-      {
-        name: 'Cypress',
-        logo: {
-          dark: '/assets/cypress/cypress-dark.svg',
-          light: '/assets/cypress/cypress-light.svg',
-        },
-      },
     ],
   },
   {
-    id: 2,
-    category: 'Back-end & Databases',
-    icon: Database,
+    id: 3,
+    category: 'Back-end',
+    icon: Server,
     technologies: [
       { name: 'Node.js', logo: '/assets/nodejs.svg' },
       {
@@ -91,6 +99,14 @@ export const stacks: IStack[] = [
           light: '/assets/fastify/fastify-light.svg',
         },
       },
+    ],
+  },
+  {
+    id: 4,
+    category: 'Bancos de dados & ORMs',
+    icon: Database,
+    technologies: [
+      { name: 'PostgreSQL', logo: '/assets/postgresql.svg' },
       { name: 'MySQL', logo: '/assets/mysql.svg' },
       { name: 'MongoDB', logo: '/assets/mongodb.svg' },
       {
@@ -107,13 +123,40 @@ export const stacks: IStack[] = [
           light: '/assets/drizzle/drizzle-light.svg',
         },
       },
-      { name: 'Vitest', logo: '/assets/vitest.svg' },
     ],
   },
   {
-    id: 3,
-    category: 'Cloud & DevOps',
+    id: 5,
+    category: 'Testes & qualidade',
+    icon: TestTube2,
+    technologies: [
+      { name: 'Vitest', logo: '/assets/vitest.svg' },
+      {
+        name: 'Cypress',
+        logo: {
+          dark: '/assets/cypress/cypress-dark.svg',
+          light: '/assets/cypress/cypress-light.svg',
+        },
+      },
+    ],
+  },
+  {
+    id: 6,
+    category: 'Cloud & Serverless',
     icon: Cloud,
+    technologies: [
+      { name: 'Serverless', logo: '/assets/serverless.svg' },
+      { name: 'AWS Lambda', logo: '/assets/aws/lambda.svg' },
+      { name: 'Amazon API Gateway', logo: '/assets/aws/apigateway.svg' },
+      { name: 'Amazon DynamoDB', logo: '/assets/aws/dynamodb.svg' },
+      { name: 'Amazon S3', logo: '/assets/aws/s3.svg' },
+      { name: 'Amazon Cognito', logo: '/assets/aws/cognito.svg' },
+    ],
+  },
+  {
+    id: 7,
+    category: 'Tooling',
+    icon: Wrench,
     technologies: [
       {
         name: 'Vercel',
@@ -126,12 +169,6 @@ export const stacks: IStack[] = [
       { name: 'Firebase', logo: '/assets/firebase.svg' },
       { name: 'Git', logo: '/assets/git.svg' },
       { name: 'Docker', logo: '/assets/docker.svg' },
-      { name: 'AWS Lambda', logo: '/assets/aws/lambda.svg' },
-      { name: 'Amazon S3', logo: '/assets/aws/s3.svg' },
-      { name: 'Amazon DynamoDB', logo: '/assets/aws/dynamodb.svg' },
-      { name: 'Amazon Cognito', logo: '/assets/aws/cognito.svg' },
-      { name: 'Amazon API Gateway', logo: '/assets/aws/apigateway.svg' },
-      { name: 'Serverless', logo: '/assets/serverless.svg' },
     ],
   },
 ]

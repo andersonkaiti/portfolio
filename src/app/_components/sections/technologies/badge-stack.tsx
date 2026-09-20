@@ -21,6 +21,7 @@ export function BadgeStack({ tech, index }: IBadgeStackProps) {
       data-aos-delay={40 * index}
       key={tech.name}
       style={{ transitionDelay: `${40 * index}ms` }}
+      suppressHydrationWarning
     >
       {typeof tech.logo === 'object' ? (
         <>

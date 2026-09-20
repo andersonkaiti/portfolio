@@ -14,17 +14,19 @@ export async function TechnologiesSection() {
 
   return (
     <SectionContainer id="technologies">
-      <SectionHeader>
+      <SectionHeader side="left">
         <SectionLabel>{t('label')}</SectionLabel>
-
-        <SectionTitle>{t('title')}</SectionTitle>
-
+        <SectionTitle>
+          {t.rich('title', {
+            accent: (chunks) => <span className="text-primary">{chunks}</span>,
+          })}
+        </SectionTitle>
         <SectionSubtitle>{t('subtitle')}</SectionSubtitle>
       </SectionHeader>
 
-      <div className="grid grid-cols-1">
-        {stacks.map((stack) => (
-          <Stack key={stack.id} stack={stack} />
+      <div className="border-t border-border">
+        {stacks.map((stack, index) => (
+          <Stack key={stack.id} stack={stack} index={index} />
         ))}
       </div>
     </SectionContainer>
