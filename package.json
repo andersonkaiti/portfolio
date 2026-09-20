@@ -22,6 +22,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
+    "cn": "^0.3.0",
     "cookies-next": "^6.1.1",
     "dayjs": "^1.11.13",
     "lucide-react": "^0.525.0",
@@ -57,9 +58,15 @@
     "typescript": "^5"
   },
   "commitlint": {
-    "extends": ["@commitlint/config-conventional", "gitmoji"],
+    "extends": [
+      "@commitlint/config-conventional",
+      "gitmoji"
+    ],
     "rules": {
-      "scope-empty": [2, "never"]
+      "scope-empty": [
+        2,
+        "never"
+      ]
     }
   },
   "lint-staged": {
