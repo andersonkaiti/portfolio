@@ -1,4 +1,3 @@
-import { AnimatedCard } from '@components/ui/animated-card'
 import { Button } from '@components/ui/button'
 import { LinkPreview } from '@components/ui/link-preview'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@components/ui/tooltip'
@@ -14,6 +13,7 @@ import { getTopicLogo } from './topic-to-logo'
 interface ProjectProps extends IGithubRepository {
   codeLabel: string
   demoLabel: string
+  index: number
 }
 
 export function Project({
@@ -25,61 +25,68 @@ export function Project({
   updated_at,
   codeLabel,
   demoLabel,
+  index,
 }: ProjectProps) {
   return (
-    <AnimatedCard
-      className="flex size-full flex-col gap-6 rounded-xl bg-background p-6"
-      variant="revealed-pointer"
+    <div
+      data-aos="fade-up"
+      data-aos-delay={index * 80}
+      style={{ transitionDelay: `${index * 80}ms` }}
+      suppressHydrationWarning
     >
-      <div className="space-y-2 py-2">
-        <h3 className="font-medium text-base">{formatTitle(name)}</h3>
+      <div className="group/card relative flex size-full flex-col gap-6 border border-border p-6 transition-[border-color,background-color] duration-300 ease-out hover:border-primary/30 hover:bg-accent/20 overflow-hidden">
+        {/* linha que sobe à esquerda no hover */}
+        <span className="pointer-events-none absolute bottom-0 left-0 w-0.5 bg-primary h-0 transition-[height] duration-500 ease-out group-hover/card:h-full" />
+        <div className="space-y-2">
+          <div className="flex items-start justify-between gap-2">
+            <h3 className="font-semibold text-base leading-snug">
+              {formatTitle(name)}
+            </h3>
+            <time className="shrink-0 text-xs text-muted-foreground">
+              {dayjs(updated_at).format('MMM YYYY')}
+            </time>
+          </div>
 
-        <time className="text-sm text-muted-foreground">
-          {dayjs(updated_at).format('DD MMM YYYY')}
-        </time>
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            {description}
+          </p>
+        </div>
 
-        <p className="mt-4 text-muted-foreground text-sm text-justify">
-          {description}
-        </p>
+        <div className="flex flex-wrap items-center gap-3">
+          {topics.map((topic) => {
+            const logo = getTopicLogo(topic)
+
+            if (!logo) {
+              return null
+            }
+
+            return (
+              <Tooltip key={topic}>
+                <TooltipTrigger>
+                  <TopicLogoImage logo={logo} topic={topic} size={22} />
+                </TooltipTrigger>
+                <TooltipContent>{formatTopic(topic)}</TooltipContent>
+              </Tooltip>
+            )
+          })}
+        </div>
+
+        <div className="mt-auto flex gap-3 border-t border-border pt-4">
+          <Button asChild size="sm" variant="ghost">
+            <Link href={html_url} target="_blank">
+              {codeLabel} <Github className="ml-0 size-3.5 opacity-50" />
+            </Link>
+          </Button>
+
+          {homepage && (
+            <LinkPreview asChild url={homepage}>
+              <Button size="sm" variant="ghost">
+                {demoLabel}
+              </Button>
+            </LinkPreview>
+          )}
+        </div>
       </div>
-
-      <div className="flex flex-wrap items-center gap-3">
-        {topics.map((topic) => {
-          const logo = getTopicLogo(topic)
-
-          if (!logo) {
-            return null
-          }
-
-          return (
-            <Tooltip key={topic}>
-              <TooltipTrigger>
-                <div className="cursor-pointer transition-all hover:scale-110">
-                  <TopicLogoImage logo={logo} topic={topic} size={24} />
-                </div>
-              </TooltipTrigger>
-
-              <TooltipContent>{formatTopic(topic)}</TooltipContent>
-            </Tooltip>
-          )
-        })}
-      </div>
-
-      <div className="mt-auto flex gap-3 border-t border-dashed pt-2">
-        <Button asChild size="sm" variant="ghost">
-          <Link href={html_url} target="_blank">
-            {codeLabel} <Github className="ml-0 size-3.5 opacity-50" />
-          </Link>
-        </Button>
-
-        {homepage && (
-          <LinkPreview asChild url={homepage}>
-            <Button size="sm" variant="ghost">
-              {demoLabel}
-            </Button>
-          </LinkPreview>
-        )}
-      </div>
-    </AnimatedCard>
+    </div>
   )
 }

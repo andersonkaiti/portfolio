@@ -14,7 +14,11 @@ export async function ProjectList({ projects }: ProjectListProps) {
   const latestsProjects = projects.slice(0, 2)
 
   return (
-    <div className="flex flex-col gap-4" data-aos="fade-up">
+    <div
+      className="flex flex-col gap-4"
+      data-aos="fade-up"
+      suppressHydrationWarning
+    >
       <div className="flex items-center justify-between">
         <span className="text-sm text-muted-foreground">
           {t('count', { count: projects.length })}
@@ -28,10 +32,11 @@ export async function ProjectList({ projects }: ProjectListProps) {
       </div>
 
       <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-        {latestsProjects.map((project) => (
+        {latestsProjects.map((project, index) => (
           <Project
             key={project.id}
             {...project}
+            index={index}
             codeLabel={t('code')}
             demoLabel={t('demo')}
           />

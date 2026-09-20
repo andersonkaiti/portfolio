@@ -59,10 +59,11 @@ export function ProjectList({ projects }: ProjectListProps) {
         </div>
       ) : (
         <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, index) => (
             <Project
               key={project.id}
               {...project}
+              index={index}
               codeLabel={t('code')}
               demoLabel={t('demo')}
             />

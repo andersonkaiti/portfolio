@@ -16,11 +16,9 @@ export async function ProjectListSection() {
 
   return (
     <SectionContainer id="projects">
-      <SectionHeader>
+      <SectionHeader side="left">
         <SectionLabel>{t('label')}</SectionLabel>
-
         <SectionTitle>{t('title')}</SectionTitle>
-
         <SectionSubtitle>{t('subtitle')}</SectionSubtitle>
       </SectionHeader>
 
