@@ -126,6 +126,12 @@ export const stacks: IStack[] = [
       { name: 'Firebase', logo: '/assets/firebase.svg' },
       { name: 'Git', logo: '/assets/git.svg' },
       { name: 'Docker', logo: '/assets/docker.svg' },
+      { name: 'AWS Lambda', logo: '/assets/aws/lambda.svg' },
+      { name: 'Amazon S3', logo: '/assets/aws/s3.svg' },
+      { name: 'Amazon DynamoDB', logo: '/assets/aws/dynamodb.svg' },
+      { name: 'Amazon Cognito', logo: '/assets/aws/cognito.svg' },
+      { name: 'Amazon API Gateway', logo: '/assets/aws/apigateway.svg' },
+      { name: 'Serverless', logo: '/assets/serverless.svg' },
     ],
   },
 ]
