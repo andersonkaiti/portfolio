@@ -198,3 +198,29 @@
     transform: translate(-50%, -40%) scale(1);
   }
 }
+
+@keyframes solution-row-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes solution-content-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+[data-state="open"] .ak-solution-content {
+  animation: solution-content-reveal 0.35s cubic-bezier(0.25, 0, 0.35, 1) both;
+}

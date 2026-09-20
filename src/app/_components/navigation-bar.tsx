@@ -34,6 +34,10 @@ export function NavigationBar() {
     },
     { name: t('about'), link: isProjectPage ? '/#about' : '#about' },
     {
+      name: t('solutions'),
+      link: isProjectPage ? '/#solutions' : '#solutions',
+    },
+    {
       name: t('experiences'),
       link: isProjectPage ? '/#experiences' : '#experiences',
     },
@@ -83,6 +87,7 @@ export function NavigationBar() {
               data-aos="fade-down"
               data-aos-delay={60 * index}
               style={{ transitionDelay: `${60 * index}ms` }}
+              suppressHydrationWarning
               href={item.link}
               key={`mobile-link-${item.name}`}
               onClick={(event) => {
