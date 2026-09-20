@@ -121,17 +121,18 @@ export function NavItems({ items, className, onItemClick }: NavItemsProps) {
   return (
     <motion.div
       className={cn(
-        'absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 font-medium text-sm text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2',
+        'absolute inset-0 hidden flex-1 flex-row items-center justify-center font-medium text-sm text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex',
         className,
       )}
       onMouseLeave={() => setHovered(null)}
     >
       {items.map((item, idx) => (
         <a
-          className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+          className="relative px-2.5 py-2 text-neutral-600 dark:text-neutral-300"
           data-aos="fade-down"
           data-aos-delay={60 * idx}
           style={{ transitionDelay: `${60 * idx}ms` }}
+          suppressHydrationWarning
           href={item.link}
           key={`link-${item.name}`}
           onClick={(event) => {

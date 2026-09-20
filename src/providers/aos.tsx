@@ -29,10 +29,8 @@ export function AosProvider({ children }: { children: React.ReactNode }) {
       }
     }
 
-    // Initial observation
     observeElements()
 
-    // Watch for new elements added dynamically (e.g., via Suspense)
     const mutationObserver = new MutationObserver(() => {
       observeElements()
     })
