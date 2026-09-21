@@ -27,10 +27,10 @@ export function Stack({ stack, index }: IStackProps) {
       style={{ transitionDelay: `${index * 60}ms` }}
       suppressHydrationWarning
     >
-      <div className="group grid grid-cols-1 gap-4 border-b border-border py-[22px] transition-colors duration-250 ease-[cubic-bezier(.25,0,.35,1)] hover:bg-accent/40 md:grid-cols-[minmax(0,200px)_1fr] md:gap-8">
+      <div className="group grid grid-cols-1 gap-4 border-b border-border py-[22px] transition-colors duration-250 ease-[cubic-bezier(.25,0,.35,1)] hover:bg-foreground/5 dark:hover:bg-accent/40 md:grid-cols-[minmax(0,200px)_1fr] md:gap-8">
         <span
           className={cn(
-            'pt-[5px] text-[11.5px] font-medium uppercase leading-relaxed tracking-[.16em] text-muted-foreground transition-colors duration-250 group-hover:text-white',
+            'pt-[5px] text-[11.5px] font-medium uppercase leading-relaxed tracking-[.16em] text-muted-foreground transition-colors duration-250 group-hover:text-foreground dark:group-hover:text-white',
             jetBrainsMono.className,
           )}
         >
@@ -40,7 +40,7 @@ export function Stack({ stack, index }: IStackProps) {
         <div className="flex flex-wrap items-center gap-y-3">
           {stack.technologies.map((tech, i) => (
             <div key={tech.name} className="flex items-center">
-              <div className="flex cursor-default items-center gap-2 text-muted-foreground transition-colors duration-250 group-hover:text-white">
+              <div className="flex cursor-default items-center gap-2 text-muted-foreground transition-colors duration-250 group-hover:text-foreground dark:group-hover:text-white">
                 {typeof tech.logo === 'object' ? (
                   <>
                     <Image
@@ -78,7 +78,7 @@ export function Stack({ stack, index }: IStackProps) {
               </div>
 
               {i < stack.technologies.length - 1 && (
-                <span className="mx-4 text-muted-foreground/40 transition-colors duration-250 group-hover:text-white/30">
+                <span className="mx-4 text-muted-foreground/40 transition-colors duration-250 group-hover:text-foreground/30 dark:group-hover:text-white/30">
                   ·
                 </span>
               )}
