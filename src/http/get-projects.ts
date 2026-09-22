@@ -41,6 +41,36 @@ export const githubReposResponseSchema = z.array(githubRepoSchema)
 
 export interface IGithubRepository extends z.infer<typeof githubRepoSchema> {}
 
+function normalizeHomepage(url: string | null): string | null {
+  if (!url) {
+    return null
+  }
+
+  return url.startsWith('http') ? url : `https://${url}`
+}
+
+function isVisibleProject(project: IGithubRepository): boolean {
+  return (
+    project.topics.length > 0 &&
+    !project.topics.includes('course') &&
+    !!project.description
+  )
+}
+
+function byDemoFirstThenRecent(
+  a: IGithubRepository,
+  b: IGithubRepository,
+): number {
+  const aHasDemo = !!a.homepage
+  const bHasDemo = !!b.homepage
+
+  if (aHasDemo !== bHasDemo) {
+    return aHasDemo ? -1 : 1
+  }
+
+  return dayjs(b.pushed_at).diff(a.pushed_at)
+}
+
 export async function getProjects() {
   const response = await fetch(
     'https://api.github.com/users/andersonkaiti/repos?per_page=100&page=1',
@@ -56,16 +86,11 @@ export async function getProjects() {
 
   const allProjects: IGithubRepository[] = await response.json()
 
-  const filteredProjects = allProjects.filter(
-    (project) =>
-      project.topics.length > 0 &&
-      !project.topics.includes('course') &&
-      !!project.description,
-  )
-
-  const sortedProjects = filteredProjects.sort(
-    ({ pushed_at: one }, { pushed_at: two }) => dayjs(two).diff(one),
-  )
-
-  return sortedProjects
+  return allProjects
+    .filter(isVisibleProject)
+    .map((project) => ({
+      ...project,
+      homepage: normalizeHomepage(project.homepage),
+    }))
+    .sort(byDemoFirstThenRecent)
 }
