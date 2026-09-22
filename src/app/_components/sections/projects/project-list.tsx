@@ -38,7 +38,6 @@ export async function ProjectList({ projects }: ProjectListProps) {
             {...project}
             index={index}
             codeLabel={t('code')}
-            demoLabel={t('demo')}
           />
         ))}
       </div>
