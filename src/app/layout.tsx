@@ -1,5 +1,6 @@
 import { Footer } from '@components/footer'
 import { TooltipProvider } from '@components/ui/tooltip'
+import { jetBrainsMono } from '@lib/fonts'
 import { AosProvider } from '@providers/aos'
 import { LenisProvider } from '@providers/lenis'
 import { Analytics } from '@vercel/analytics/next'
@@ -113,10 +114,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${MontserratSans.variable} relative antialiased transition-colors`}
-      >
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${MontserratSans.variable} ${jetBrainsMono.variable}`}
+    >
+      <body className="relative antialiased transition-colors">
         <Suspense fallback={null}>
           <I18nProvider>
             <LenisProvider>
