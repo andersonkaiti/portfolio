@@ -19,7 +19,7 @@ export function ProjectPreview({ src, alt, href }: ProjectPreviewProps) {
     <Link
       href={href}
       target="_blank"
-      className="-mx-6 -mt-6 block overflow-hidden"
+      className="-mx-6 -mt-6 block"
       tabIndex={-1}
       aria-hidden
     >
@@ -32,11 +32,14 @@ export function ProjectPreview({ src, alt, href }: ProjectPreviewProps) {
           fill
           sizes="(max-width: 768px) 100vw, 400px"
           className={cn(
-            'object-cover transition-[transform,opacity] duration-500 group-hover/card:scale-105',
-            loaded ? 'opacity-100' : 'opacity-0',
+            'object-cover scale-[1.04] transition-transform duration-700 ease-in-out group-hover/card:scale-[1.08]',
+            loaded
+              ? 'opacity-100'
+              : 'opacity-0 transition-opacity duration-400',
           )}
           onLoad={() => setLoaded(true)}
         />
+
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-linear-to-t from-background/70 to-transparent" />
       </div>
     </Link>

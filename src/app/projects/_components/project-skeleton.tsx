@@ -7,8 +7,10 @@ const TOPIC_SKELETONS = Array.from(
 
 export function ProjectSkeleton() {
   return (
-    <div className="flex size-full flex-col gap-6 border border-border p-6">
-      <div className="space-y-2">
+    <div className="flex size-full flex-col gap-6 border border-border overflow-hidden">
+      <Skeleton className="aspect-video w-full rounded-none bg-skeleton" />
+
+      <div className="space-y-2 px-6">
         <div className="flex items-start justify-between gap-2">
           <Skeleton className="h-5 w-3/4 rounded-md bg-skeleton" />
           <Skeleton className="h-4 w-16 rounded-md bg-skeleton" />
@@ -21,7 +23,7 @@ export function ProjectSkeleton() {
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center gap-3">
+      <div className="flex flex-wrap items-center gap-3 px-6">
         {TOPIC_SKELETONS.map((skeletonId) => (
           <Skeleton
             key={skeletonId}
@@ -30,8 +32,7 @@ export function ProjectSkeleton() {
         ))}
       </div>
 
-      <div className="mt-auto flex gap-3 border-t border-border pt-4">
-        <Skeleton className="h-8 w-20 rounded-md bg-skeleton" />
+      <div className="mt-auto flex gap-3 border-t border-border px-6 pb-6 pt-4">
         <Skeleton className="h-8 w-20 rounded-md bg-skeleton" />
       </div>
     </div>

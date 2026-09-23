@@ -5,7 +5,7 @@ import { formatTitle } from '@utils/format-title'
 import { formatTopic } from '@utils/format-topic'
 import { getPreviewSrc } from '@utils/get-preview-src'
 import dayjs from 'dayjs'
-import { Github } from 'lucide-react'
+import { Github, ImageIcon } from 'lucide-react'
 import Link from 'next/link'
 import { ProjectPreview } from '../../../projects/_components/project-preview'
 import { TopicLogoImage } from './topic-logo-image'
@@ -35,15 +35,17 @@ export function Project({
       style={{ transitionDelay: `${index * 80}ms` }}
       suppressHydrationWarning
     >
-      <div className="group/card relative flex size-full flex-col gap-6 border border-border p-6 transition-[border-color,background-color] duration-300 ease-out hover:border-primary/30 hover:bg-accent/20 overflow-hidden">
-        <span className="pointer-events-none absolute bottom-0 left-0 w-0.5 bg-primary h-0 transition-[height] duration-500 ease-out group-hover/card:h-full" />
-
-        {previewSrc && (
+      <div className="group/card relative flex size-full flex-col gap-6 border border-border p-6 transition-[border-color,background-color] duration-500 ease-in-out hover:border-primary/30 hover:bg-accent/20 overflow-hidden">
+        {previewSrc ? (
           <ProjectPreview
             src={previewSrc}
             alt={`${formatTitle(name)} preview`}
             href={homepage ?? ''}
           />
+        ) : (
+          <div className="-mx-6 -mt-6 flex aspect-video w-[calc(100%+3rem)] items-center justify-center bg-accent/30">
+            <ImageIcon className="size-8 text-muted-foreground/30" />
+          </div>
         )}
 
         <div className="space-y-2">
@@ -71,7 +73,7 @@ export function Project({
 
             return (
               <Tooltip key={topic}>
-                <TooltipTrigger>
+                <TooltipTrigger aria-label={formatTopic(topic)}>
                   <TopicLogoImage logo={logo} topic={topic} size={22} />
                 </TooltipTrigger>
                 <TooltipContent>{formatTopic(topic)}</TooltipContent>
@@ -86,6 +88,13 @@ export function Project({
               {codeLabel} <Github className="ml-0 size-3.5 opacity-50" />
             </Link>
           </Button>
+          {homepage && (
+            <Button asChild size="sm" variant="ghost">
+              <Link href={homepage} target="_blank" rel="noopener noreferrer">
+                Demo
+              </Link>
+            </Button>
+          )}
         </div>
       </div>
     </div>

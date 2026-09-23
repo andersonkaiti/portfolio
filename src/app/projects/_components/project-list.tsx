@@ -2,7 +2,7 @@
 
 import { Button } from '@components/ui/button'
 import type { IGithubRepository } from '@http/get-projects'
-import { ChevronLeft } from 'lucide-react'
+import { ChevronLeft, SearchX } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { useAvailableTechs } from '../_hooks/use-available-techs'
@@ -47,8 +47,9 @@ export function ProjectList({ projects }: ProjectListProps) {
       </div>
 
       {filteredProjects.length === 0 ? (
-        <div className="flex flex-col items-center gap-4 py-16">
-          <p className="text-muted-foreground text-sm">
+        <div className="flex flex-col items-center gap-3 py-20 text-center">
+          <SearchX className="size-10 text-muted-foreground/40" />
+          <p className="font-medium text-foreground text-sm">
             {hasActiveFilters ? t('noProjectsFiltered') : t('noProjects')}
           </p>
           {hasActiveFilters && (

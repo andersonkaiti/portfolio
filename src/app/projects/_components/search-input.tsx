@@ -19,6 +19,7 @@ export function SearchInput({ value, onChange }: SearchInputProps) {
       <Input
         type="text"
         placeholder={t('search')}
+        aria-label={t('search')}
         value={value}
         onChange={(event) => onChange(event.target.value || null)}
         className="pl-9 pr-8"
