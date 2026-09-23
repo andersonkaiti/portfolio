@@ -62,12 +62,12 @@ export async function ContactSection() {
             style={{ transitionDelay: `${index * 50}ms` }}
             suppressHydrationWarning
           >
-            <div className="group/row border-b border-border transition-colors duration-[250ms] ease-[cubic-bezier(.25,0,.35,1)] hover:bg-accent/30">
+            <div className="group/row border-b border-border transition-colors duration-250 ease-[cubic-bezier(.25,0,.35,1)] hover:bg-accent/30">
               <Link
                 href={row.href}
                 target={row.external ? '_blank' : undefined}
                 rel={row.external ? 'noopener noreferrer' : undefined}
-                className="grid grid-cols-[minmax(0,140px)_1fr_auto] items-center gap-4 px-3 py-6 text-inherit no-underline transition-[translate] duration-[250ms] ease-[cubic-bezier(.25,0,.35,1)] group-hover/row:translate-x-4 sm:px-2 sm:grid-cols-[minmax(0,180px)_1fr_auto] sm:gap-7"
+                className="grid grid-cols-[minmax(0,140px)_1fr_auto] items-center gap-4 px-3 py-6 text-inherit no-underline transition-[translate] duration-250 ease-[cubic-bezier(.25,0,.35,1)] group-hover/row:translate-x-4 sm:px-2 sm:grid-cols-[minmax(0,180px)_1fr_auto] sm:gap-7"
               >
                 <span
                   className={cn(
@@ -77,7 +77,7 @@ export async function ContactSection() {
                 >
                   {row.label}
                 </span>
-                <span className="truncate text-base text-foreground sm:text-[17.5px]">
+                <span className="truncate text-base text-foreground sm:text-lg">
                   {row.value}
                 </span>
                 <ArrowUpRight className="size-4 shrink-0 text-primary" />

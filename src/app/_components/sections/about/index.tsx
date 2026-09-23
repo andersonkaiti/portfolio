@@ -16,11 +16,13 @@ function Stat({
   label,
   className,
   aosDelay,
+  aosAnchor,
 }: {
   value: string
   label: string
   className?: string
   aosDelay?: number
+  aosAnchor?: string
 }) {
   return (
     <div
@@ -30,12 +32,13 @@ function Stat({
       )}
       data-aos="fade-up"
       data-aos-delay={aosDelay}
+      data-aos-anchor={aosAnchor}
       style={aosDelay ? { transitionDelay: `${aosDelay}ms` } : undefined}
       suppressHydrationWarning
     >
       <strong
         className={cn(
-          'block text-3xl font-normal leading-none tracking-tight text-primary md:text-4xl',
+          'block text-4xl font-medium leading-none tracking-tight text-primary md:text-5xl',
           jetBrainsMono.className,
         )}
       >
@@ -77,7 +80,7 @@ export async function AboutSection() {
             </SectionTitle>
           </SectionHeader>
 
-          <p className="text-base leading-7 text-muted-foreground md:leading-8">
+          <p className="text-base leading-7 text-muted-foreground md:text-lg md:leading-8">
             {t.rich('p1', {
               b: (chunks) => (
                 <span className="font-medium text-foreground">{chunks}</span>
@@ -85,7 +88,7 @@ export async function AboutSection() {
             })}
           </p>
 
-          <p className="text-base leading-7 text-muted-foreground md:leading-8">
+          <p className="text-base leading-7 text-muted-foreground md:text-lg md:leading-8">
             {t.rich('p2', {
               b: (chunks) => (
                 <span className="font-medium text-foreground">{chunks}</span>
@@ -97,27 +100,34 @@ export async function AboutSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 border border-border bg-card">
+        <div
+          id="stats-grid"
+          className="grid grid-cols-2 border border-border bg-card"
+        >
           <Stat
             aosDelay={100}
+            aosAnchor="#stats-grid"
             value={t('stat1Value')}
             label={t('stat1Label')}
             className="border-b border-r border-border"
           />
           <Stat
             aosDelay={200}
+            aosAnchor="#stats-grid"
             value={t('stat2Value')}
             label={t('stat2Label')}
             className="border-b border-border"
           />
           <Stat
             aosDelay={300}
+            aosAnchor="#stats-grid"
             value={t('stat3Value')}
             label={t('stat3Label')}
             className="border-r border-border"
           />
           <Stat
             aosDelay={400}
+            aosAnchor="#stats-grid"
             value={t('stat4Value')}
             label={t('stat4Label')}
           />

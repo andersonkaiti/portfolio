@@ -12,7 +12,7 @@ export function SectionContainer({
 }: { children: React.ReactNode } & HTMLAttributes<HTMLDivElement>) {
   return (
     <section
-      className="w-full scroll-mt-[150px] space-y-4 px-6 md:space-y-8"
+      className="w-full scroll-mt-[150px] space-y-8 px-6 md:space-y-12"
       {...props}
     >
       {children}
@@ -31,7 +31,6 @@ export function SectionHeader({
   return (
     <header
       className={cn(
-        'mb-8',
         side === 'left'
           ? 'flex flex-col items-start gap-3 text-left'
           : 'space-y-4 text-center',
@@ -65,7 +64,10 @@ export function SectionTitle({
   ...rest
 }: { children: React.ReactNode } & HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h2 className="text-balance text-3xl font-semibold md:text-5xl" {...rest}>
+    <h2
+      className="text-balance text-4xl font-semibold tracking-tight md:text-6xl"
+      {...rest}
+    >
       {children}
     </h2>
   )
@@ -76,7 +78,10 @@ export function SectionSubtitle({
   ...rest
 }: { children: React.ReactNode } & HTMLAttributes<HTMLParagraphElement>) {
   return (
-    <p className="text-balance leading-7 text-muted-foreground" {...rest}>
+    <p
+      className="text-balance text-base leading-7 text-muted-foreground md:text-lg md:leading-8"
+      {...rest}
+    >
       {children}
     </p>
   )

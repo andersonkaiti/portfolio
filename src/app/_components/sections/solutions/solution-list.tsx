@@ -24,11 +24,6 @@ export function SolutionList({ items }: { items: SolutionItem[] }) {
   return (
     <div className="border-t border-border">
       {items.map((item, index) => (
-        /*
-         * O data-aos fica neste wrapper externo, cujo className não muda
-         * entre re-renders (só openIndex muda). React não toca no classList
-         * → aos-animate persiste mesmo após o acordeão abrir/fechar.
-         */
         <div
           key={item.num}
           data-aos="fade-up"
@@ -40,10 +35,9 @@ export function SolutionList({ items }: { items: SolutionItem[] }) {
             open={openIndex === index}
             onOpenChange={(open) => setOpenIndex(open ? index : null)}
           >
-            {/* className dinâmico fica aqui, separado do data-aos */}
             <div
               className={cn(
-                'group border-b border-border transition-[background-color,border-color] duration-[400ms] ease-[cubic-bezier(.25,0,.35,1)]',
+                'group border-b border-border transition-[background-color,border-color] duration-400 ease-[cubic-bezier(.25,0,.35,1)]',
                 openIndex === index
                   ? 'border-primary/30 bg-accent/20'
                   : 'hover:bg-accent/30',
@@ -54,7 +48,7 @@ export function SolutionList({ items }: { items: SolutionItem[] }) {
                   className="group/btn flex w-full cursor-pointer items-center px-2 py-[22px] text-left focus-visible:outline-none sm:px-1"
                   type="button"
                 >
-                  <div className="flex flex-1 items-center gap-4 transition-[translate] duration-[250ms] group-hover/btn:translate-x-3 sm:gap-5">
+                  <div className="flex flex-1 items-center gap-4 transition-[translate] duration-250 group-hover/btn:translate-x-3 sm:gap-5">
                     <span
                       className={cn(
                         'w-7 shrink-0 text-sm text-primary',
@@ -63,7 +57,7 @@ export function SolutionList({ items }: { items: SolutionItem[] }) {
                     >
                       {item.num}
                     </span>
-                    <span className="flex-1 text-lg font-semibold tracking-tight sm:text-xl">
+                    <span className="flex-1 text-xl font-semibold tracking-tight sm:text-2xl">
                       {item.title}
                     </span>
                   </div>
@@ -76,9 +70,9 @@ export function SolutionList({ items }: { items: SolutionItem[] }) {
                 </button>
               </CollapsibleTrigger>
 
-              <CollapsibleContent className="overflow-hidden duration-[350ms] data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
+              <CollapsibleContent className="overflow-hidden duration-350 data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
                 <div className="ak-solution-content pb-7 pl-8 pr-2 sm:pl-12 sm:pr-1">
-                  <p className="mb-4 max-w-[46rem] text-base leading-[1.75] text-muted-foreground">
+                  <p className="mb-4 max-w-184 text-base leading-[1.75] text-muted-foreground">
                     {item.desc}
                   </p>
                   <ul className="mb-5 flex flex-col gap-2 pl-5">

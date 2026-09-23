@@ -1,7 +1,15 @@
+import { ArrowRight, Github, Linkedin, MessageCircle } from 'lucide-react'
+import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
 
 export async function HeaderSection() {
   const t = await getTranslations('header')
+  const tFooter = await getTranslations('footer')
+
+  const githubUrl = `https://github.com/${tFooter('values.github')}`
+  const linkedinUrl = `https://linkedin.com/in/${tFooter('values.linkedin')}`
+  const whatsappNumber = tFooter('values.whatsapp').replace(/\D/g, '')
+  const whatsappUrl = `https://wa.me/${whatsappNumber}`
 
   return (
     <header
@@ -42,7 +50,7 @@ export async function HeaderSection() {
       </div>
 
       <p
-        className="max-w-xl text-balance text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8"
+        className="max-w-xl text-balance text-center text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8"
         data-aos="fade-up"
         data-aos-delay={300}
         style={{ transitionDelay: '300ms' }}
@@ -54,6 +62,52 @@ export async function HeaderSection() {
           ),
         })}
       </p>
+
+      <div
+        className="flex flex-col items-center gap-4"
+        data-aos="fade-up"
+        data-aos-delay={400}
+        style={{ transitionDelay: '400ms' }}
+        suppressHydrationWarning
+      >
+        <a
+          href="#contact"
+          className="group inline-flex h-11 items-center justify-center gap-2.5 rounded-full border border-foreground/25 px-7 text-sm font-semibold text-foreground transition-all duration-300 hover:bg-foreground hover:text-background active:scale-95"
+        >
+          {t('cta')}
+          <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+        </a>
+
+        <div className="flex items-center gap-0.5">
+          <Link
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={t('social.github')}
+            className="flex size-10 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <Github className="size-5" />
+          </Link>
+          <Link
+            href={linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={t('social.linkedin')}
+            className="flex size-10 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <Linkedin className="size-5" />
+          </Link>
+          <Link
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={t('social.whatsapp')}
+            className="flex size-10 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <MessageCircle className="size-5" />
+          </Link>
+        </div>
+      </div>
     </header>
   )
 }

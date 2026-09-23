@@ -104,7 +104,7 @@ function ExperienceRow({
 
           <div className="flex flex-col gap-3.5">
             <div className="flex flex-col gap-1">
-              <h3 className="text-2xl font-semibold tracking-tight">
+              <h3 className="text-xl font-semibold tracking-tight sm:text-2xl">
                 {position.title}
               </h3>
               <div
