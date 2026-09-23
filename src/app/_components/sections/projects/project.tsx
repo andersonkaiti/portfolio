@@ -6,8 +6,8 @@ import { formatTopic } from '@utils/format-topic'
 import { getPreviewSrc } from '@utils/get-preview-src'
 import dayjs from 'dayjs'
 import { Github } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
+import { ProjectPreview } from '../../../projects/_components/project-preview'
 import { TopicLogoImage } from './topic-logo-image'
 import { getTopicLogo } from './topic-to-logo'
 
@@ -39,24 +39,11 @@ export function Project({
         <span className="pointer-events-none absolute bottom-0 left-0 w-0.5 bg-primary h-0 transition-[height] duration-500 ease-out group-hover/card:h-full" />
 
         {previewSrc && (
-          <Link
+          <ProjectPreview
+            src={previewSrc}
+            alt={`${formatTitle(name)} preview`}
             href={homepage ?? ''}
-            target="_blank"
-            className="-mx-6 -mt-6 block overflow-hidden"
-            tabIndex={-1}
-            aria-hidden
-          >
-            <div className="relative aspect-video w-full overflow-hidden">
-              <Image
-                src={previewSrc}
-                alt={`${formatTitle(name)} preview`}
-                fill
-                sizes="(max-width: 768px) 100vw, 400px"
-                className="object-cover transition-transform duration-500 group-hover/card:scale-105"
-              />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-linear-to-t from-background/70 to-transparent" />
-            </div>
-          </Link>
+          />
         )}
 
         <div className="space-y-2">
