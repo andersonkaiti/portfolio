@@ -14,6 +14,7 @@
     "title": "Anderson Kaiti",
     "role": "Full-Stack Web Developer",
     "description": "Computer Science graduate focused on web development, with experience in modern technologies like <b>React</b>, <b>Next.js</b>, <b>Node.js</b>, <b>TypeScript</b>, <b>PostgreSQL</b>, <b>TailwindCSS</b>, <b>Docker</b> and others.",
+    "cta": "Get in touch",
     "social": {
       "github": "Visit Anderson Kaiti's GitHub profile",
       "linkedin": "Connect with Anderson Kaiti on LinkedIn",
@@ -29,11 +30,11 @@
     "stat1Value": "4+",
     "stat1Label": "Years developing",
     "stat2Value": "2",
-    "stat2Label": "Experiences",
+    "stat2Label": "Companies",
     "stat3Value": "20+",
     "stat3Label": "Projects delivered",
-    "stat4Value": "100%",
-    "stat4Label": "Commitment"
+    "stat4Value": "5",
+    "stat4Label": "Domains shipped"
   },
   "solutions": {
     "label": "What I build",
@@ -164,7 +165,7 @@
       "github": "andersonkaiti"
     }
   },
-  "metadata": {
+"metadata": {
     "home": {
       "title": "Anderson Kaiti | Full-Stack Developer",
       "description": "Anderson Kaiti is a Full-Stack Developer with a degree in Computer Science, specializing in React, Next.js, Node.js, and TypeScript. Available for new opportunities."
