@@ -17,6 +17,7 @@ export interface ITheme {
 export interface ITechnology {
   name: string
   logo: ITheme | string
+  featured?: boolean
 }
 
 export interface IStack {
@@ -29,13 +30,13 @@ export interface IStack {
 export const stacks: IStack[] = [
   {
     id: 1,
-    category: 'Linguagens',
+    category: 'Languages',
     icon: Code2,
     technologies: [
+      { name: 'TypeScript', logo: '/assets/typescript.svg', featured: true },
+      { name: 'JavaScript', logo: '/assets/javascript.svg', featured: true },
       { name: 'HTML5', logo: '/assets/html5.svg' },
       { name: 'CSS3', logo: '/assets/css_old.svg' },
-      { name: 'JavaScript', logo: '/assets/javascript.svg' },
-      { name: 'TypeScript', logo: '/assets/typescript.svg' },
     ],
   },
   {
@@ -49,9 +50,10 @@ export const stacks: IStack[] = [
           dark: '/assets/react/react-dark.svg',
           light: '/assets/react/react-light.svg',
         },
+        featured: true,
       },
-      { name: 'Next.js', logo: '/assets/nextjs.svg' },
-      { name: 'TailwindCSS', logo: '/assets/tailwindcss.svg' },
+      { name: 'Next.js', logo: '/assets/nextjs.svg', featured: true },
+      { name: 'TailwindCSS', logo: '/assets/tailwindcss.svg', featured: true },
       {
         name: 'Shadcn/ui',
         logo: {
@@ -84,7 +86,15 @@ export const stacks: IStack[] = [
     category: 'Back-end',
     icon: Server,
     technologies: [
-      { name: 'Node.js', logo: '/assets/nodejs.svg' },
+      { name: 'Node.js', logo: '/assets/nodejs.svg', featured: true },
+      {
+        name: 'Fastify',
+        logo: {
+          dark: '/assets/fastify/fastify-dark.svg',
+          light: '/assets/fastify/fastify-light.svg',
+        },
+        featured: true,
+      },
       {
         name: 'Express.js',
         logo: {
@@ -92,30 +102,24 @@ export const stacks: IStack[] = [
           light: '/assets/express/express-light.svg',
         },
       },
-      {
-        name: 'Fastify',
-        logo: {
-          dark: '/assets/fastify/fastify-dark.svg',
-          light: '/assets/fastify/fastify-light.svg',
-        },
-      },
     ],
   },
   {
     id: 4,
-    category: 'Bancos de dados & ORMs',
+    category: 'Databases & ORMs',
     icon: Database,
     technologies: [
-      { name: 'PostgreSQL', logo: '/assets/postgresql.svg' },
-      { name: 'MySQL', logo: '/assets/mysql.svg' },
-      { name: 'MongoDB', logo: '/assets/mongodb.svg' },
+      { name: 'PostgreSQL', logo: '/assets/postgresql.svg', featured: true },
       {
         name: 'Prisma',
         logo: {
           dark: '/assets/prisma/prisma-dark.svg',
           light: '/assets/prisma/prisma-light.svg',
         },
+        featured: true,
       },
+      { name: 'MySQL', logo: '/assets/mysql.svg' },
+      { name: 'MongoDB', logo: '/assets/mongodb.svg' },
       {
         name: 'Drizzle',
         logo: {
@@ -127,10 +131,10 @@ export const stacks: IStack[] = [
   },
   {
     id: 5,
-    category: 'Testes & qualidade',
+    category: 'Testing & Quality',
     icon: TestTube2,
     technologies: [
-      { name: 'Vitest', logo: '/assets/vitest.svg' },
+      { name: 'Vitest', logo: '/assets/vitest.svg', featured: true },
       {
         name: 'Cypress',
         logo: {
@@ -145,11 +149,11 @@ export const stacks: IStack[] = [
     category: 'Cloud & Serverless',
     icon: Cloud,
     technologies: [
+      { name: 'AWS Lambda', logo: '/assets/aws/lambda.svg', featured: true },
+      { name: 'Amazon S3', logo: '/assets/aws/s3.svg', featured: true },
       { name: 'Serverless', logo: '/assets/serverless.svg' },
-      { name: 'AWS Lambda', logo: '/assets/aws/lambda.svg' },
       { name: 'Amazon API Gateway', logo: '/assets/aws/apigateway.svg' },
       { name: 'Amazon DynamoDB', logo: '/assets/aws/dynamodb.svg' },
-      { name: 'Amazon S3', logo: '/assets/aws/s3.svg' },
       { name: 'Amazon Cognito', logo: '/assets/aws/cognito.svg' },
     ],
   },
@@ -159,16 +163,21 @@ export const stacks: IStack[] = [
     icon: Wrench,
     technologies: [
       {
+        name: 'Docker',
+        logo: '/assets/docker.svg',
+        featured: true,
+      },
+      {
         name: 'Vercel',
         logo: {
           dark: '/assets/vercel/vercel-dark.svg',
           light: '/assets/vercel/vercel-light.svg',
         },
+        featured: true,
       },
+      { name: 'Git', logo: '/assets/git.svg' },
       { name: 'Azure', logo: '/assets/azure.svg' },
       { name: 'Firebase', logo: '/assets/firebase.svg' },
-      { name: 'Git', logo: '/assets/git.svg' },
-      { name: 'Docker', logo: '/assets/docker.svg' },
     ],
   },
 ]

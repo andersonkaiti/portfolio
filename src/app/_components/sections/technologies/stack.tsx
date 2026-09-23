@@ -1,21 +1,10 @@
 import { jetBrainsMono } from '@lib/fonts'
 import { cn } from 'cn'
 import Image from 'next/image'
+import type { IStack } from './stacks'
 
 interface IStackProps {
-  stack: {
-    id: number
-    category: string
-    technologies: {
-      name: string
-      logo:
-        | {
-            dark: string
-            light: string
-          }
-        | string
-    }[]
-  }
+  stack: IStack
   index: number
 }
 
@@ -40,7 +29,14 @@ export function Stack({ stack, index }: IStackProps) {
         <div className="flex flex-wrap items-center gap-y-3">
           {stack.technologies.map((tech, i) => (
             <div key={tech.name} className="flex items-center">
-              <div className="flex cursor-default items-center gap-2 text-muted-foreground transition-colors duration-250 group-hover:text-foreground dark:group-hover:text-white">
+              <div
+                className={cn(
+                  'flex cursor-default items-center gap-2 transition-colors duration-250',
+                  tech.featured
+                    ? 'text-foreground'
+                    : 'text-muted-foreground group-hover:text-foreground dark:group-hover:text-white',
+                )}
+              >
                 {typeof tech.logo === 'object' ? (
                   <>
                     <Image
@@ -69,7 +65,8 @@ export function Stack({ stack, index }: IStackProps) {
                 )}
                 <span
                   className={cn(
-                    'text-[15.5px] font-medium',
+                    'text-[15.5px]',
+                    tech.featured ? 'font-semibold' : 'font-medium',
                     jetBrainsMono.className,
                   )}
                 >
