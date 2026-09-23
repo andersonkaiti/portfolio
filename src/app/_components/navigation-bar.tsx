@@ -28,27 +28,19 @@ export function NavigationBar() {
   const isProjectPage = pathname.includes('/projects')
 
   const navItems: NavItem[] = [
-    {
-      name: t('introduction'),
-      link: isProjectPage ? '/#presentation' : '#presentation',
-    },
     { name: t('about'), link: isProjectPage ? '/#about' : '#about' },
     {
       name: t('solutions'),
       link: isProjectPage ? '/#solutions' : '#solutions',
     },
     {
-      name: t('experiences'),
-      link: isProjectPage ? '/#experiences' : '#experiences',
-    },
-    { name: t('projects'), link: isProjectPage ? '/#projects' : '#projects' },
-    {
       name: t('technologies'),
       link: isProjectPage ? '/#technologies' : '#technologies',
     },
+    { name: t('projects'), link: isProjectPage ? '/#projects' : '#projects' },
     {
-      name: t('education'),
-      link: isProjectPage ? '/#education' : '#education',
+      name: t('experiences'),
+      link: isProjectPage ? '/#experiences' : '#experiences',
     },
     { name: t('contact'), link: isProjectPage ? '/#contact' : '#contact' },
   ]
@@ -83,7 +75,7 @@ export function NavigationBar() {
         >
           {navItems.map((item: NavItem, index: number) => (
             <a
-              className="relative text-neutral-600 dark:text-neutral-300"
+              className="relative text-muted-foreground transition-colors hover:text-foreground"
               data-aos="fade-down"
               data-aos-delay={60 * index}
               style={{ transitionDelay: `${60 * index}ms` }}

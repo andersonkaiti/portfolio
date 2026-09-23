@@ -99,9 +99,6 @@ export function NavBody({ children, className, visible }: NavBodyProps) {
         visible && 'bg-white/80 dark:bg-neutral-950/80',
         className,
       )}
-      style={{
-        minWidth: '800px',
-      }}
       transition={{
         type: 'spring',
         stiffness: 200,
@@ -128,7 +125,7 @@ export function NavItems({ items, className, onItemClick }: NavItemsProps) {
     >
       {items.map((item, idx) => (
         <a
-          className="relative px-2.5 py-2 text-neutral-600 dark:text-neutral-300"
+          className="relative px-2.5 py-2 text-muted-foreground transition-colors hover:text-foreground"
           data-aos="fade-down"
           data-aos-delay={60 * idx}
           style={{ transitionDelay: `${60 * idx}ms` }}
@@ -236,13 +233,16 @@ export function MobileNavToggle({
   isOpen: boolean
   onClick: () => void
 }) {
-  return isOpen ? (
-    <IconX
-      className="cursor-pointer text-black dark:text-white"
+  return (
+    <button
+      type="button"
       onClick={onClick}
-    />
-  ) : (
-    <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
+      className="flex size-11 cursor-pointer items-center justify-center text-black dark:text-white"
+      aria-label={isOpen ? 'Close menu' : 'Open menu'}
+      aria-expanded={isOpen}
+    >
+      {isOpen ? <IconX className="size-5" /> : <IconMenu2 className="size-5" />}
+    </button>
   )
 }
 
