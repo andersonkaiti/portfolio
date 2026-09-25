@@ -49,11 +49,15 @@ export function SectionLabel({
   return (
     <p
       className={cn(
-        'text-balance font-semibold tracking-wide uppercase text-primary text-sm md:text-base',
+        'inline-flex items-center gap-2.5 text-balance font-semibold tracking-wide uppercase text-primary text-sm md:text-base',
         jetBrainsMono.className,
       )}
       {...rest}
     >
+      <span
+        aria-hidden="true"
+        className="inline-block size-1.5 shrink-0 rotate-45 bg-primary"
+      />
       {children}
     </p>
   )

@@ -27,7 +27,7 @@ function Stat({
   return (
     <div
       className={cn(
-        'border-border bg-background p-5 transition-colors duration-400 ease-[cubic-bezier(.25,0,.35,1)] hover:bg-accent/40 md:p-8',
+        'group/stat relative overflow-hidden border-border bg-background p-5 transition-colors duration-400 ease-[cubic-bezier(.25,0,.35,1)] hover:bg-accent/40 md:p-8',
         className,
       )}
       data-aos="fade-up"
@@ -36,9 +36,13 @@ function Stat({
       style={aosDelay ? { transitionDelay: `${aosDelay}ms` } : undefined}
       suppressHydrationWarning
     >
+      <span
+        aria-hidden="true"
+        className="absolute left-0 top-0 h-8 w-px origin-top scale-y-0 bg-primary transition-transform duration-400 ease-[cubic-bezier(.25,0,.35,1)] group-hover/stat:scale-y-100"
+      />
       <strong
         className={cn(
-          'block text-4xl font-medium leading-none tracking-tight text-primary md:text-5xl',
+          'block text-4xl font-medium leading-none tracking-tight text-primary tabular-nums md:text-5xl',
           jetBrainsMono.className,
         )}
       >

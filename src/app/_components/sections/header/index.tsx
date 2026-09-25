@@ -13,18 +13,38 @@ export async function HeaderSection() {
 
   return (
     <header
-      className="flex scroll-mt-[150px] flex-col items-center gap-8 text-center"
+      className="relative flex w-full scroll-mt-[150px] flex-col items-center gap-8 px-5 py-8 text-center sm:px-10 sm:py-12"
       id="presentation"
     >
+      <span
+        aria-hidden="true"
+        className="ak-crop pointer-events-none absolute left-0 top-0 size-4 border-l border-t border-primary/40 sm:size-6"
+      />
+      <span
+        aria-hidden="true"
+        className="ak-crop pointer-events-none absolute right-0 top-0 size-4 border-r border-t border-primary/40 sm:size-6"
+      />
+      <span
+        aria-hidden="true"
+        className="ak-crop pointer-events-none absolute bottom-0 left-0 size-4 border-b border-l border-primary/40 sm:size-6"
+      />
+      <span
+        aria-hidden="true"
+        className="ak-crop pointer-events-none absolute bottom-0 right-0 size-4 border-b border-r border-primary/40 sm:size-6"
+      />
+
       <div
-        className="flex items-center gap-2.5 sm:gap-3"
+        className="inline-flex items-center gap-2.5 rounded-full border border-border bg-background/50 px-3.5 py-1.5 backdrop-blur-sm"
         data-aos="fade-up"
         data-aos-delay={100}
         style={{ transitionDelay: '100ms' }}
         suppressHydrationWarning
       >
-        <div className="size-2 animate-pulse rounded-full bg-green-500 sm:size-2.5" />
-        <span className="font-medium text-green-700 text-xs sm:text-sm dark:text-green-400 tracking-wide">
+        <span className="relative flex size-2">
+          <span className="absolute inline-flex size-full animate-ping rounded-full bg-green-500/60" />
+          <span className="relative inline-flex size-2 rounded-full bg-green-500" />
+        </span>
+        <span className="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-green-700 sm:text-xs dark:text-green-400">
           {t('available')}
         </span>
       </div>
@@ -41,11 +61,11 @@ export async function HeaderSection() {
         </h1>
 
         <div className="flex items-center justify-center gap-4">
-          <div className="h-px w-10 bg-primary/40 sm:w-14" />
+          <div className="ak-rule-draw h-px w-10 origin-right bg-primary/40 sm:w-16" />
           <p className="font-mono text-[11px] sm:text-xs font-medium tracking-[0.3em] text-primary uppercase">
             {t('role')}
           </p>
-          <div className="h-px w-10 bg-primary/40 sm:w-14" />
+          <div className="ak-rule-draw h-px w-10 origin-left bg-primary/40 sm:w-16" />
         </div>
       </div>
 
