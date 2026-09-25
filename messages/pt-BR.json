@@ -13,7 +13,7 @@
     "available": "Disponível para novos desafios",
     "title": "Anderson Kaiti",
     "role": "Desenvolvedor Full-Stack",
-    "description": "Formado em Ciência da Computação e focado em desenvolvimento web, com experiência em tecnologias modernas como <b>React</b>, <b>Next.js</b>, <b>Node.js</b>, <b>TypeScript</b>, <b>PostgreSQL</b>, <b>TailwindCSS</b>, <b>Docker</b> e outras.",
+    "description": "Formado em Ciência da Computação, construo aplicações full-stack com <b>React</b>, <b>Next.js</b>, <b>Node.js</b> e <b>TypeScript</b> — com foco em <b>autenticação</b>, <b>AWS serverless</b> e <b>testes</b>.",
     "cta": "Fale comigo",
     "social": {
       "github": "Ver perfil no GitHub",
@@ -25,25 +25,25 @@
   "about": {
     "label": "Sobre",
     "title": "Código que sobrevive ao <accent>próximo release</accent>",
-    "p1": "Sou formado em Ciência da Computação e foco em desenvolver aplicações web e mobile que sejam, acima de tudo, <b>escaláveis e resilientes</b>. Minha base técnica inclui <b>React</b>, <b>Next.js</b> e <b>Node.js</b>, sempre com <b>TypeScript</b>.",
-    "p2": "Não acredito apenas em 'escrever código'; acredito em entender o <i>porquê</i> das escolhas de arquitetura. Do design de um componente à modelagem do banco de dados, busco o equilíbrio entre entrega rápida e um código que não gere dores de cabeça no futuro.",
+    "p1": "Formado em Ciência da Computação, construo aplicações web e mobile <b>escaláveis e resilientes</b> em <b>React</b>, <b>Next.js</b> e <b>Node.js</b> — sempre com <b>TypeScript</b>.",
+    "p2": "Me importo com o <i>porquê</i> por trás da arquitetura — de <b>autenticação e controle de acesso</b> à modelagem de dados e <b>testes automatizados</b> — equilibrando entrega rápida com código que não dói depois.",
     "stat1Value": "4+",
     "stat1Label": "Anos desenvolvendo",
     "stat2Value": "2",
     "stat2Label": "Empresas",
     "stat3Value": "20+",
     "stat3Label": "Projetos entregues",
-    "stat4Value": "5",
+    "stat4Value": "6",
     "stat4Label": "Domínios entregues"
   },
   "solutions": {
     "label": "O que eu construo",
     "title": "Não uma stack, e sim <accent>problemas resolvidos</accent>",
-    "subtitle": "Cinco frentes que eu já entreguei em produção.",
+    "subtitle": "Seis frentes que eu já entreguei em produção.",
     "s1": {
       "num": "01",
       "title": "Interfaces Full-Stack de Alta Performance",
-      "desc": "Aplicações web com front-ends escaláveis integrados a backends em Node.js e Prisma, com foco em DX e performance.",
+      "desc": "Front-ends escaláveis ligados a back-ends em Node.js e Prisma, com foco em DX e performance.",
       "b1": "SSR e SSG com Next.js para performance máxima e SEO.",
       "b2": "UI componentizada com TailwindCSS, shadcn/ui e React.",
       "b3": "Validação type-safe com Zod, TanStack Query e React Hook Form."
@@ -51,7 +51,7 @@
     "s2": {
       "num": "02",
       "title": "Smart TV & Sinalização Digital",
-      "desc": "Sistemas para Smart TVs com React Native TVOS, comunicação em tempo real via WebSockets e conteúdo dinâmico gerenciado remotamente.",
+      "desc": "Apps para Smart TV em React Native TVOS com WebSockets em tempo real e conteúdo gerenciado remotamente.",
       "b1": "Interfaces adaptadas para controle remoto e experiência TV.",
       "b2": "Comunicação bidirecional em tempo real com WebSockets.",
       "b3": "Sistemas de sinalização digital e testes médicos integrados."
@@ -59,7 +59,7 @@
     "s3": {
       "num": "03",
       "title": "Gamificação & Engajamento",
-      "desc": "Mecânicas de gamificação com feedbacks hápticos, conquistas, feeds sociais e rankings para plataformas de coaching esportivo.",
+      "desc": "Gamificação com feedback háptico, conquistas, feeds sociais e rankings para coaching esportivo.",
       "b1": "Feedbacks hápticos e animações para experiências imersivas.",
       "b2": "Sistemas de conquistas, rankings e pontuação.",
       "b3": "Feeds sociais e interações em tempo real entre usuários."
@@ -67,7 +67,7 @@
     "s4": {
       "num": "04",
       "title": "Fintech & Painéis Administrativos",
-      "desc": "Dashboards B2B com checkout via Pix, gestão de assinaturas e construtores visuais de planos de treinamento.",
+      "desc": "Dashboards B2B com checkout via Pix, assinaturas e construtores visuais de planos de treino.",
       "b1": "Integração de checkout via Pix e gestão de assinaturas.",
       "b2": "Painéis administrativos com analytics e controle de acesso.",
       "b3": "Construtor visual de planos de treinamento para coaches."
@@ -75,10 +75,18 @@
     "s5": {
       "num": "05",
       "title": "Logística & Rastreamento",
-      "desc": "Aplicações cobrindo o fluxo completo de logística: app do cliente, painel de controle e interface do entregador.",
+      "desc": "O fluxo completo de logística: app do cliente, painel de controle e interface do entregador.",
       "b1": "App do cliente para pedidos e rastreamento em tempo real.",
       "b2": "Painel de controle para gestão de entregas e rotas.",
       "b3": "App do entregador com confirmação e status de entrega."
+    },
+    "s6": {
+      "num": "06",
+      "title": "Autenticação & Segurança",
+      "desc": "Autenticação e controle de acesso seguros — de RBAC em produção a OAuth2, rotação de JWT e Cognito.",
+      "b1": "Controle de acesso por perfil (RBAC) e validação de entrada em rotas de produção.",
+      "b2": "OAuth2 e JWT com rotação de access/refresh tokens.",
+      "b3": "Autenticação serverless com AWS Cognito, Lambda e API Gateway."
     }
   },
   "experiences": {
@@ -90,19 +98,19 @@
       "title": "Estagiário de Desenvolvimento Full Stack",
       "employmentType": "Estágio",
       "employmentPeriod": "Abr 2026 – o momento",
-      "description": "- **Sistemas internos:** Construí 4 sistemas web internos com Laravel e unifiquei 3 em uma aplicação única — eliminando duplicação de código e reduzindo a superfície de manutenção.\n- **Frontend moderno:** Desenvolvo o frontend com React e TypeScript via Inertia.js — SPAs com navegação fluida integradas ao backend Laravel sem camada de API separada.\n- **Banco de dados e rotas:** Modelei e mantenho um banco de dados com 13 entidades de domínio e implemento mais de 50 rotas com autenticação, controle de acesso por perfil e validação de entrada.\n- **Levantamento de requisitos:** Levanto requisitos com servidores públicos não técnicos e digitalizo fluxos que substituem processos manuais em papel — cobrindo cadastro, inscrição, análise, recurso e reembolso.\n- **Manutenção evolutiva:** Refatoro trechos críticos de sistemas legados e conduzo deploy e manutenção evolutiva dos sistemas em produção com Git e code review."
+      "description": "- Construí 4 sistemas web internos em **Laravel** e unifiquei 3 em uma aplicação só, reduzindo duplicação e manutenção.\n- Frontend em **React + TypeScript via Inertia.js**, sobre um modelo de **13 entidades** com **mais de 50 rotas** (autenticação, RBAC, validação).\n- Digitalizei fluxos públicos em papel e conduzo deploy e manutenção evolutiva em produção."
     },
     "solidTech": {
       "title": "Desenvolvedor Full Stack",
       "employmentType": "Freelance",
       "employmentPeriod": "Fev 2026 – Abr 2026",
-      "description": "- **Ecossistemas Full Stack:** Criação de interfaces de alta performance com Next.js integradas a backends robustos em Node.js e Prisma.\n- **Smart TV:** Desenvolvimento de sistemas de sinalização digital e testes médicos para Smart TVs usando React Native (TVOS) e comunicação em tempo real via WebSockets.\n- **Gamificação e engajamento:** Implementação de feedbacks hápticos, sistemas de conquistas, feeds sociais e rankings.\n- **Fintech e dashboards:** Criação de painéis administrativos complexos com checkout via Pix e gestão de assinaturas.\n- **Logística:** Desenvolvimento de aplicações para o fluxo completo: cliente final, painel de controle e entregador."
+      "description": "- Ecossistemas full-stack escaláveis: front-ends **React/Next.js** sobre back-ends **Node.js/Prisma**.\n- Apps de **sinalização digital** e testes médicos para **Smart TV** em **React Native TVOS** com WebSockets em tempo real.\n- Gamificação (feedback háptico, feeds, rankings), dashboards B2B com checkout **Pix** e apps completos de logística."
     },
     "funprev": {
       "title": "Estágio em TI",
       "employmentType": "Estágio",
       "employmentPeriod": "Nov 2024 – Nov 2025",
-      "description": "- **Infraestrutura e redes:** Diagnóstico e resolução de problemas críticos em redes, dispositivos e infraestrutura de TI, garantindo estabilidade e continuidade.\n- **Desenvolvimento web:** Evolução de sistemas legados e criação de novas funcionalidades usando PHP e JavaScript.\n- **Gestão de dados:** Manutenção da integridade de dados e execução de consultas SQL em PostgreSQL e phpMyAdmin para relatórios e atualizações.\n- **Configuração de hardware e software:** Instalação e configuração de softwares e hardwares, assegurando o funcionamento adequado do ambiente tecnológico.\n- **Suporte técnico:** Atendimento a usuários com raciocínio lógico para minimizar inatividades e impactos operacionais.\n- **Administração de redes:** Configuração, monitoramento e manutenção de dispositivos de rede como roteadores e switches."
+      "description": "- Diagnóstico e correção de problemas de redes, dispositivos e infraestrutura, mantendo os sistemas estáveis e seguros.\n- Desenvolvimento e manutenção de sistemas web internos em **PHP** e **JavaScript**, com **SQL** em PostgreSQL/phpMyAdmin.\n- Configuração de hardware, software e dispositivos de rede, e suporte técnico a usuários."
     }
   },
   "technologies": {
@@ -165,7 +173,7 @@
       "github": "andersonkaiti"
     }
   },
-"metadata": {
+  "metadata": {
     "home": {
       "title": "Anderson Kaiti | Desenvolvedor Full-Stack",
       "description": "Anderson Kaiti é um Desenvolvedor Full-Stack com graduação em Ciência da Computação, especializado em React, Next.js, Node.js e TypeScript. Disponível para novas oportunidades."

@@ -13,7 +13,7 @@
     "available": "Available for work",
     "title": "Anderson Kaiti",
     "role": "Full-Stack Web Developer",
-    "description": "Computer Science graduate focused on web development, with experience in modern technologies like <b>React</b>, <b>Next.js</b>, <b>Node.js</b>, <b>TypeScript</b>, <b>PostgreSQL</b>, <b>TailwindCSS</b>, <b>Docker</b> and others.",
+    "description": "Computer Science graduate building full-stack apps with <b>React</b>, <b>Next.js</b>, <b>Node.js</b> and <b>TypeScript</b> — focused on <b>authentication</b>, <b>AWS serverless</b> and <b>testing</b>.",
     "cta": "Get in touch",
     "social": {
       "github": "Visit Anderson Kaiti's GitHub profile",
@@ -25,25 +25,25 @@
   "about": {
     "label": "About",
     "title": "Code that survives the <accent>next release</accent>",
-    "p1": "I'm a Computer Science graduate focused on building web and mobile applications that are, above all, <b>scalable and resilient</b>. My technical foundation includes <b>React</b>, <b>Next.js</b> and <b>Node.js</b>, always with <b>TypeScript</b>.",
-    "p2": "I don't just believe in 'writing code'; I believe in understanding the <i>why</i> behind architectural choices. From component design to database modeling, I seek the balance between fast delivery and code that won't cause headaches in the future.",
+    "p1": "Computer Science graduate building <b>scalable, resilient</b> web and mobile apps on <b>React</b>, <b>Next.js</b> and <b>Node.js</b> — always <b>TypeScript</b>.",
+    "p2": "I care about the <i>why</i> behind architecture — from <b>authentication and access control</b> to data models and <b>automated tests</b> — balancing fast delivery with code that won't hurt later.",
     "stat1Value": "4+",
     "stat1Label": "Years developing",
     "stat2Value": "2",
     "stat2Label": "Companies",
     "stat3Value": "20+",
     "stat3Label": "Projects delivered",
-    "stat4Value": "5",
+    "stat4Value": "6",
     "stat4Label": "Domains shipped"
   },
   "solutions": {
     "label": "What I build",
     "title": "Not just a stack, but <accent>problems solved</accent>",
-    "subtitle": "Five areas I've already shipped to production.",
+    "subtitle": "Six areas I've already shipped to production.",
     "s1": {
       "num": "01",
       "title": "High-Performance Full-Stack Interfaces",
-      "desc": "Web applications with scalable front-ends integrated to Node.js and Prisma backends, focused on DX and performance.",
+      "desc": "Scalable front-ends wired to Node.js and Prisma back-ends, tuned for DX and performance.",
       "b1": "SSR and SSG with Next.js for peak performance and SEO.",
       "b2": "Componentized UI with TailwindCSS, shadcn/ui and React.",
       "b3": "Type-safe validation with Zod, TanStack Query and React Hook Form."
@@ -51,7 +51,7 @@
     "s2": {
       "num": "02",
       "title": "Smart TV & Digital Signage",
-      "desc": "Systems for Smart TVs with React Native TVOS, real-time communication via WebSockets and remotely managed dynamic content.",
+      "desc": "Smart TV apps in React Native TVOS with real-time WebSockets and remotely managed content.",
       "b1": "Interfaces adapted for remote control and TV experience.",
       "b2": "Bidirectional real-time communication with WebSockets.",
       "b3": "Digital signage and integrated medical testing systems."
@@ -59,7 +59,7 @@
     "s3": {
       "num": "03",
       "title": "Gamification & Engagement",
-      "desc": "Gamification mechanics with haptic feedback, achievements, social feeds and rankings for sports coaching platforms.",
+      "desc": "Gamification with haptics, achievements, social feeds and rankings for sports coaching.",
       "b1": "Haptic feedback and animations for immersive experiences.",
       "b2": "Achievement systems, rankings and scoring.",
       "b3": "Social feeds and real-time interactions between users."
@@ -67,7 +67,7 @@
     "s4": {
       "num": "04",
       "title": "Fintech & Admin Dashboards",
-      "desc": "B2B dashboards with Pix checkout, subscription management and visual training plan builders.",
+      "desc": "B2B dashboards with Pix checkout, subscriptions and visual training-plan builders.",
       "b1": "Pix checkout integration and subscription management.",
       "b2": "Admin dashboards with analytics and access control.",
       "b3": "Visual training plan builder for coaches."
@@ -75,10 +75,18 @@
     "s5": {
       "num": "05",
       "title": "Logistics & Tracking",
-      "desc": "Applications covering the complete logistics flow: customer app, control panel and delivery person interface.",
+      "desc": "The full logistics flow: customer app, control panel and delivery-person interface.",
       "b1": "Customer app for orders and real-time tracking.",
       "b2": "Control panel for delivery and route management.",
       "b3": "Delivery person app with confirmation and status updates."
+    },
+    "s6": {
+      "num": "06",
+      "title": "Authentication & Security",
+      "desc": "Secure auth and access control — from production RBAC to OAuth2, JWT rotation and Cognito.",
+      "b1": "Role-based access control and input validation on production routes.",
+      "b2": "OAuth2 and JWT with access/refresh token rotation.",
+      "b3": "Serverless auth with AWS Cognito, Lambda and API Gateway."
     }
   },
   "experiences": {
@@ -90,19 +98,19 @@
       "title": "Full Stack Development Intern",
       "employmentType": "Internship",
       "employmentPeriod": "Apr 2026 – Present",
-      "description": "- **Internal systems:** Built 4 internal web systems with Laravel and unified 3 into a single application — eliminating code duplication and reducing maintenance surface.\n- **Modern frontend:** Developing the frontend with React and TypeScript via Inertia.js — SPAs with fluid navigation integrated into the Laravel backend without a separate API layer.\n- **Database and routes:** Modeled and maintain a database with 13 domain entities and implement over 50 routes with authentication, role-based access control and input validation.\n- **Requirements gathering:** Gathering requirements with non-technical public servants and digitalizing workflows replacing manual paper processes — covering registration, enrollment, analysis, appeal and reimbursement.\n- **Evolutionary maintenance:** Refactoring critical sections of legacy systems and conducting deployment and evolutionary maintenance of production systems with Git and code review."
+      "description": "- Built 4 internal web systems in **Laravel** and unified 3 into one app, cutting duplication and maintenance.\n- Frontend in **React + TypeScript via Inertia.js**, over a **13-entity** model with **50+ routes** (auth, RBAC, validation).\n- Digitalized paper-based public workflows and run deployment and evolutionary maintenance in production."
     },
     "solidTech": {
       "title": "Full Stack Developer",
       "employmentType": "Freelance",
       "employmentPeriod": "Feb 2026 – Apr 2026",
-      "description": "- **Full Stack & Mobile:** Built scalable ecosystems integrating high-performance interfaces (React/Next.js) with backend systems (Node.js/Prisma).\n- **Smart TV:** Implemented digital signage and medical testing systems for Smart TVs using React Native TVOS with real-time WebSocket communication.\n- **Gamification & Social:** Developed training engines with haptic feedback, social feeds, rankings, and achievement systems.\n- **B2B & Financial:** Built admin dashboards with visual training builders and integrated financial modules for Pix checkout and subscription management.\n- **Logistics:** Developed features for logistics systems covering customer, delivery personnel, and control panel apps."
+      "description": "- Scalable full-stack ecosystems: **React/Next.js** front-ends on **Node.js/Prisma** back-ends.\n- **Smart TV** signage and medical-testing apps in **React Native TVOS** with real-time WebSockets.\n- Gamification (haptics, feeds, rankings), B2B dashboards with **Pix** checkout, and full logistics apps."
     },
     "funprev": {
       "title": "IT Internship",
       "employmentType": "Internship",
       "employmentPeriod": "Nov 2024 – Nov 2025",
-      "description": "- **IT Infrastructure Troubleshooting:** Diagnosed and resolved issues in networks, devices, and IT infrastructure, ensuring system stability, security, and continuity.\n- **Web Development:** Developed, maintained, and implemented features in internal web systems using PHP and JavaScript.\n- **Data Management:** Managed data integrity and executed SQL queries, focusing on PostgreSQL and phpMyAdmin to support reporting and system updates.\n- **Hardware & Software Setup:** Installed and configured software and hardware, ensuring proper operation of the technological environment.\n- **Technical Support:** Provided user support with logical troubleshooting to minimize downtime and operational impact.\n- **Network Administration:** Configured, monitored, and maintained network devices such as routers and switches."
+      "description": "- Diagnosed and fixed network, device and infrastructure issues, keeping systems stable and secure.\n- Built and maintained internal web systems in **PHP** and **JavaScript**, with **SQL** on PostgreSQL/phpMyAdmin.\n- Configured hardware, software and network devices, and provided technical support to users."
     }
   },
   "technologies": {
@@ -165,7 +173,7 @@
       "github": "andersonkaiti"
     }
   },
-"metadata": {
+  "metadata": {
     "home": {
       "title": "Anderson Kaiti | Full-Stack Developer",
       "description": "Anderson Kaiti is a Full-Stack Developer with a degree in Computer Science, specializing in React, Next.js, Node.js, and TypeScript. Available for new opportunities."
