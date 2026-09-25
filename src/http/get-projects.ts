@@ -50,24 +50,10 @@ function normalizeHomepage(url: string | null): string | null {
 }
 
 function isVisibleProject(project: IGithubRepository): boolean {
-  return (
-    project.topics.length > 0 &&
-    !project.topics.includes('course') &&
-    !!project.description
-  )
+  return project.topics.length > 0 && !!project.description
 }
 
-function byDemoFirstThenRecent(
-  a: IGithubRepository,
-  b: IGithubRepository,
-): number {
-  const aHasDemo = !!a.homepage
-  const bHasDemo = !!b.homepage
-
-  if (aHasDemo !== bHasDemo) {
-    return aHasDemo ? -1 : 1
-  }
-
+function firstThenRecent(a: IGithubRepository, b: IGithubRepository): number {
   return dayjs(b.pushed_at).diff(a.pushed_at)
 }
 
@@ -92,5 +78,5 @@ export async function getProjects() {
       ...project,
       homepage: normalizeHomepage(project.homepage),
     }))
-    .sort(byDemoFirstThenRecent)
+    .sort(firstThenRecent)
 }

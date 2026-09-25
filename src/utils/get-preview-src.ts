@@ -16,6 +16,6 @@ export function getPreviewSrc(url: string | null | undefined): string | null {
     'viewport.width': 1920,
     'viewport.height': 1080,
     waitUntil: 'networkidle0',
-    waitFor: 1500,
+    waitFor: 2000,
   })}`
 }

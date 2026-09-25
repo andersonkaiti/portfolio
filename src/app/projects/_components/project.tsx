@@ -26,7 +26,7 @@ export function Project({
   codeLabel,
   index,
 }: ProjectProps) {
-  const previewSrc = getPreviewSrc(homepage)
+  const previewSrc = getPreviewSrc(homepage ?? html_url)
 
   return (
     <div
@@ -40,7 +40,7 @@ export function Project({
           <ProjectPreview
             src={previewSrc}
             alt={`${formatTitle(name)} preview`}
-            href={homepage ?? ''}
+            href={homepage ?? html_url}
           />
         ) : (
           <div className="-mx-6 -mt-6 flex aspect-video w-[calc(100%+3rem)] items-center justify-center bg-accent/30">
