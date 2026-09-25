@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-25T00:00:00.000Z",
+  "title": "Design System: Anderson Kaiti Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "signal-emerald": {
+        "role": "primary",
+        "displayName": "Signal Emerald",
+        "canonical": "oklch(69.6% 0.17 162.48)",
+        "tonalRamp": [
+          "oklch(0.20 0.06 162.48)",
+          "oklch(0.30 0.09 162.48)",
+          "oklch(0.40 0.12 162.48)",
+          "oklch(0.50 0.15 162.48)",
+          "oklch(0.60 0.17 162.48)",
+          "oklch(0.696 0.17 162.48)",
+          "oklch(0.80 0.13 162.48)",
+          "oklch(0.92 0.06 162.48)"
+        ]
+      },
+      "graphite-ink": {
+        "role": "primary",
+        "displayName": "Graphite Ink",
+        "canonical": "oklch(0.21 0.006 285.885)",
+        "tonalRamp": [
+          "oklch(0.141 0.005 285.8)",
+          "oklch(0.21 0.006 285.9)",
+          "oklch(0.30 0.006 285.9)",
+          "oklch(0.40 0.008 285.9)",
+          "oklch(0.52 0.012 285.9)",
+          "oklch(0.65 0.014 286.0)",
+          "oklch(0.80 0.008 286.0)",
+          "oklch(0.92 0.004 286.3)"
+        ]
+      },
+      "cool-ash": {
+        "role": "neutral",
+        "displayName": "Cool Ash",
+        "canonical": "oklch(0.552 0.016 285.938)",
+        "tonalRamp": [
+          "oklch(0.20 0.008 286.0)",
+          "oklch(0.30 0.012 286.0)",
+          "oklch(0.40 0.014 286.0)",
+          "oklch(0.552 0.016 285.9)",
+          "oklch(0.65 0.015 286.0)",
+          "oklch(0.75 0.012 286.0)",
+          "oklch(0.85 0.008 286.0)",
+          "oklch(0.95 0.004 286.0)"
+        ]
+      },
+      "available-green": {
+        "role": "tertiary",
+        "displayName": "Available Green",
+        "canonical": "#22c55e",
+        "tonalRamp": [
+          "oklch(0.30 0.10 149.6)",
+          "oklch(0.40 0.13 149.6)",
+          "oklch(0.50 0.16 149.6)",
+          "oklch(0.60 0.18 149.6)",
+          "oklch(0.723 0.192 149.6)",
+          "oklch(0.80 0.15 149.6)",
+          "oklch(0.88 0.10 149.6)",
+          "oklch(0.95 0.05 149.6)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero name only — one per page."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles (h2); accent words wrap in the primary token."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Paragraph copy in Cool Ash; emphasis shifts to foreground."
+      },
+      "label": {
+        "displayName": "Mono Label",
+        "purpose": "Uppercase JetBrains Mono eyebrows, stat captions, timestamps, status."
+      },
+      "metric": {
+        "displayName": "Mono Metric",
+        "purpose": "Large stat numerals in the primary token."
+      }
+    },
+    "shadows": [
+      {
+        "name": "rest-lift",
+        "value": "0 1px 2px rgba(0,0,0,0.05)",
+        "purpose": "Buttons and inputs at rest — barely perceptible."
+      },
+      {
+        "name": "card-sm",
+        "value": "0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px -1px rgba(0,0,0,0.1)",
+        "purpose": "shadcn Card default; used sparingly."
+      },
+      {
+        "name": "floating-chrome",
+        "value": "0 0 24px rgba(34,42,53,0.06), 0 1px 1px rgba(0,0,0,0.05), 0 0 0 1px rgba(34,42,53,0.04), 0 0 4px rgba(34,42,53,0.08), 0 16px 68px rgba(47,48,55,0.05), 0 1px 0 rgba(255,255,255,0.1) inset",
+        "purpose": "The scroll-condensed floating navbar and mobile menu only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "reveal",
+        "value": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        "purpose": "Scroll fade-up reveal (0.8s, translateY 20px, fires once via IntersectionObserver)."
+      },
+      {
+        "name": "ledger-ease",
+        "value": "cubic-bezier(0.25, 0, 0.35, 1)",
+        "purpose": "Interactive/state transitions, 200-500ms."
+      },
+      {
+        "name": "navbar-spring",
+        "value": "spring(stiffness 200, damping 50)",
+        "purpose": "Navbar condensing into its 40%-width pill on scroll."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Section Label (Eyebrow)",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "The monospace uppercase eyebrow that opens every section, in the live primary token.",
+      "html": "<p class=\"ds-eyebrow\">Stack</p>",
+      "css": ".ds-eyebrow { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--primary, oklch(0.21 0.006 285.885)); margin: 0; }"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Default action button; background follows the theme-split primary token.",
+      "html": "<button class=\"ds-btn-primary\">Get in touch</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 36px; padding: 8px 16px; border: none; border-radius: 8px; background: var(--primary, oklch(0.21 0.006 285.885)); color: var(--primary-foreground, oklch(0.985 0 0)); font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; cursor: pointer; box-shadow: 0 1px 2px rgba(0,0,0,0.05); transition: background 0.2s cubic-bezier(0.25,0,0.35,1); } .ds-btn-primary:hover { background: color-mix(in oklch, var(--primary, oklch(0.21 0.006 285.885)) 90%, transparent); } .ds-btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring, oklch(0.705 0.015 286.067)) 50%, transparent); }"
+    },
+    {
+      "name": "Contact CTA Pill",
+      "kind": "button",
+      "refersTo": "cta-pill",
+      "description": "Signature hero call-to-action; inverts to solid foreground on hover.",
+      "html": "<a class=\"ds-cta\" href=\"#contact\">Get in touch <svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"/><polyline points=\"12 5 19 12 12 19\"/></svg></a>",
+      "css": ".ds-cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 44px; padding: 0 28px; border-radius: 9999px; border: 1px solid color-mix(in oklch, var(--foreground, oklch(0.141 0.005 285.823)) 25%, transparent); background: transparent; color: var(--foreground, oklch(0.141 0.005 285.823)); font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: background 0.3s, color 0.3s, transform 0.1s; } .ds-cta:hover { background: var(--foreground, oklch(0.141 0.005 285.823)); color: var(--background, oklch(1 0 0)); } .ds-cta:hover svg { transform: translateX(2px); } .ds-cta:active { transform: scale(0.95); } .ds-cta svg { transition: transform 0.2s; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "project-card",
+      "description": "Sharp-cornered, border-drawn project tile; border and fill shift on hover.",
+      "html": "<article class=\"ds-project-card\"><div class=\"ds-project-media\"></div><div class=\"ds-project-head\"><h3>Portfolio</h3><time>Sep 2026</time></div><p class=\"ds-project-desc\">A precise, border-drawn portfolio with a single live emerald signal.</p><div class=\"ds-project-foot\"><span>Code</span><span>Demo</span></div></article>",
+      "css": ".ds-project-card { display: flex; flex-direction: column; gap: 24px; padding: 24px; border: 1px solid var(--border, oklch(0.92 0.004 286.32)); border-radius: 0; background: transparent; overflow: hidden; transition: border-color 0.5s ease-in-out, background-color 0.5s ease-in-out; } .ds-project-card:hover { border-color: color-mix(in oklch, var(--primary, oklch(0.21 0.006 285.885)) 30%, transparent); background: color-mix(in oklch, var(--accent, oklch(0.967 0.001 286.375)) 20%, transparent); } .ds-project-media { aspect-ratio: 16/9; margin: -24px -24px 0; background: color-mix(in oklch, var(--accent, oklch(0.967 0.001 286.375)) 30%, transparent); } .ds-project-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; } .ds-project-head h3 { margin: 0; font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 600; line-height: 1.3; } .ds-project-head time { flex-shrink: 0; font-size: 0.75rem; color: var(--muted-foreground, oklch(0.552 0.016 285.938)); } .ds-project-desc { margin: 0; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; line-height: 1.6; color: var(--muted-foreground, oklch(0.552 0.016 285.938)); } .ds-project-foot { display: flex; gap: 12px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border, oklch(0.92 0.004 286.32)); font-size: 0.8125rem; color: var(--muted-foreground, oklch(0.552 0.016 285.938)); }"
+    },
+    {
+      "name": "Stat Cell",
+      "kind": "custom",
+      "refersTo": "stat-cell",
+      "description": "One flat, bordered cell of the ledger grid: mono metric over a tiny uppercase caption.",
+      "html": "<div class=\"ds-stat\"><strong>20+</strong><span>Projects delivered</span></div>",
+      "css": ".ds-stat { padding: 20px; border: 1px solid var(--border, oklch(0.92 0.004 286.32)); background: var(--card, oklch(1 0 0)); transition: background-color 0.4s cubic-bezier(0.25,0,0.35,1); } .ds-stat:hover { background: color-mix(in oklch, var(--accent, oklch(0.967 0.001 286.375)) 40%, transparent); } .ds-stat strong { display: block; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 2.25rem; font-weight: 500; line-height: 1; letter-spacing: -0.01em; color: var(--primary, oklch(0.21 0.006 285.885)); } .ds-stat span { display: block; margin-top: 12px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--muted-foreground, oklch(0.552 0.016 285.938)); }"
+    },
+    {
+      "name": "Technology Badge",
+      "kind": "chip",
+      "refersTo": "tech-badge",
+      "description": "Pill-shaped technology chip with logo and name.",
+      "html": "<div class=\"ds-tech-badge\"><span class=\"ds-tech-dot\"></span>TypeScript</div>",
+      "css": ".ds-tech-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border, oklch(0.92 0.004 286.32)); border-radius: 9999px; background: var(--background, oklch(1 0 0)); font-family: 'Montserrat', sans-serif; font-size: 0.8125rem; white-space: nowrap; cursor: pointer; } .ds-tech-dot { width: 20px; height: 20px; border-radius: 4px; background: color-mix(in oklch, var(--muted-foreground, oklch(0.552 0.016 285.938)) 30%, transparent); }"
+    },
+    {
+      "name": "Search Input",
+      "kind": "input",
+      "refersTo": "input-search",
+      "description": "Standard field with leading search icon and focus ring.",
+      "html": "<div class=\"ds-search\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><line x1=\"21\" y1=\"21\" x2=\"16.65\" y2=\"16.65\"/></svg><input type=\"text\" placeholder=\"Search projects...\"/></div>",
+      "css": ".ds-search { position: relative; display: flex; align-items: center; } .ds-search svg { position: absolute; left: 12px; color: var(--muted-foreground, oklch(0.552 0.016 285.938)); pointer-events: none; } .ds-search input { height: 36px; width: 100%; padding: 4px 12px 4px 36px; border: 1px solid var(--input, oklch(0.92 0.004 286.32)); border-radius: 8px; background: transparent; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; color: var(--foreground, oklch(0.141 0.005 285.823)); box-shadow: 0 1px 2px rgba(0,0,0,0.05); outline: none; transition: color 0.2s, box-shadow 0.2s, border-color 0.2s; } .ds-search input::placeholder { color: var(--muted-foreground, oklch(0.552 0.016 285.938)); } .ds-search input:focus-visible { border-color: var(--ring, oklch(0.705 0.015 286.067)); box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring, oklch(0.705 0.015 286.067)) 50%, transparent); }"
+    },
+    {
+      "name": "Nav Item",
+      "kind": "nav",
+      "refersTo": "nav-item",
+      "description": "Navigation link with an animated rounded hover pill.",
+      "html": "<a class=\"ds-nav-item\" href=\"#about\">About</a>",
+      "css": ".ds-nav-item { position: relative; padding: 8px 10px; border-radius: 9999px; font-family: 'Montserrat', sans-serif; font-size: 0.875rem; font-weight: 500; color: var(--muted-foreground, oklch(0.552 0.016 285.938)); text-decoration: none; transition: color 0.2s, background-color 0.2s; } .ds-nav-item:hover { color: var(--foreground, oklch(0.141 0.005 285.823)); background: color-mix(in oklch, var(--muted-foreground, oklch(0.552 0.016 285.938)) 12%, transparent); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Engineering Ledger",
+    "overview": "The portfolio reads like a precise, well-kept engineering ledger. Content sits inside ruled cells and hairline-bordered grids; monospace annotations label everything the way a spec sheet labels its rows; and the whole surface stays near-monochrome so a single live emerald signal can mean something when it appears. The personality is precise and confident — restraint that reads as competence, not timidity. Two shape languages coexist on purpose: structural content is rectilinear and border-drawn, while interactive chrome is fully rounded. Depth is flat by doctrine — surfaces rest on the page and are separated by borders, not shadows, with shadow reserved for things that genuinely float or respond to a pointer. The explicit anti-reference is the generic gradient SaaS template.",
+    "keyCharacteristics": [
+      "Near-monochrome zinc canvas; emerald is the one live signal, and it is rare.",
+      "Monospace (JetBrains Mono) for labels, metrics, and annotations; Montserrat for everything read as prose.",
+      "Border-drawn grids and cells instead of shadowed panels.",
+      "Sharp corners for content, full-round pills for controls.",
+      "Motion is a single, calm reveal — never decorative churn."
+    ],
+    "rules": [
+      {
+        "name": "The Split-Primary Rule",
+        "body": "primary is Graphite Ink in light mode and Signal Emerald in dark mode. Never hardcode green for accents in light mode, and never assume the accent is green regardless of theme — bind to the primary token and let the theme decide.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Signal Rule",
+        "body": "Emerald (and the availability green) together occupy a tiny fraction of any screen. If accent color starts appearing on more than a handful of elements per viewport, it has stopped being a signal.",
+        "section": "colors"
+      },
+      {
+        "name": "The Monospace-Annotation Rule",
+        "body": "Anything that labels, measures, or timestamps is JetBrains Mono, uppercase where it's an eyebrow or caption. Prose and headings are never monospace.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Structural surfaces are flat and bordered at rest. Elevation is earned by floating (the navbar) or by a pointer (hover), never applied decoratively to a static card.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do bind accents to the primary token so the Split-Primary Rule holds (Graphite Ink in light, Signal Emerald in dark).",
+      "Do draw structure with hairline border-border grids and cells; keep structural surfaces flat.",
+      "Do use JetBrains Mono, uppercase, for eyebrows, metrics, timestamps, and status — and Montserrat for all prose and headings.",
+      "Do keep the two shape languages honest: sharp corners for content, rounded-full for interactive chrome.",
+      "Do reveal content with the single 0.8s fade-up on scroll, staggered — one calm reveal, not competing animations.",
+      "Do reserve elevation for the floating navbar and pointer hover."
+    ],
+    "donts": [
+      "Don't hardcode green for accents in light mode, or assume the accent is green regardless of theme.",
+      "Don't spend emerald (or the availability green) on more than a few elements per viewport — its rarity is the signal.",
+      "Don't reach for gradient hero washes, glassmorphism, or generic SaaS-template polish; the bordered monospace precision is the identity.",
+      "Don't add drop shadows to static cards to create depth — use borders and tonal fills.",
+      "Don't round the sharp-cornered content cells (stats, project cards) or square off the pills (nav, CTA, badges).",
+      "Don't set body copy or headings in the monospace font."
+    ]
+  }
+}
