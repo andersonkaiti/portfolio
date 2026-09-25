@@ -1,11 +1,13 @@
 import { Button } from '@components/ui/button'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@components/ui/tooltip'
 import type { IGithubRepository } from '@http/get-projects'
+import { jetBrainsMono } from '@lib/fonts'
 import { formatTitle } from '@utils/format-title'
 import { formatTopic } from '@utils/format-topic'
 import { getPreviewSrc } from '@utils/get-preview-src'
+import { cn } from 'cn'
 import dayjs from 'dayjs'
-import { Github, ImageIcon } from 'lucide-react'
+import { ArrowUpRight, Github, ImageIcon } from 'lucide-react'
 import Link from 'next/link'
 import { ProjectPreview } from '../../../projects/_components/project-preview'
 import { TopicLogoImage } from './topic-logo-image'
@@ -13,6 +15,7 @@ import { getTopicLogo } from './topic-to-logo'
 
 interface ProjectProps extends IGithubRepository {
   codeLabel: string
+  demoLabel: string
   index: number
 }
 
@@ -24,6 +27,7 @@ export function Project({
   topics,
   updated_at,
   codeLabel,
+  demoLabel,
   index,
 }: ProjectProps) {
   const previewSrc = getPreviewSrc(homepage ?? html_url)
@@ -53,7 +57,12 @@ export function Project({
             <h3 className="font-semibold text-base leading-snug">
               {formatTitle(name)}
             </h3>
-            <time className="shrink-0 text-xs text-muted-foreground">
+            <time
+              className={cn(
+                'shrink-0 text-[11px] uppercase tracking-[0.1em] text-muted-foreground tabular-nums',
+                jetBrainsMono.className,
+              )}
+            >
               {dayjs(updated_at).format('MMM YYYY')}
             </time>
           </div>
@@ -91,7 +100,8 @@ export function Project({
           {homepage && (
             <Button asChild size="sm" variant="ghost">
               <Link href={homepage} target="_blank" rel="noopener noreferrer">
-                Demo
+                {demoLabel}{' '}
+                <ArrowUpRight className="ml-0 size-3.5 opacity-50" />
               </Link>
             </Button>
           )}

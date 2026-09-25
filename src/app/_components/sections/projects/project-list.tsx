@@ -1,5 +1,7 @@
 import { Button } from '@components/ui/button'
 import type { IGithubRepository } from '@http/get-projects'
+import { jetBrainsMono } from '@lib/fonts'
+import { cn } from 'cn'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
@@ -20,7 +22,12 @@ export async function ProjectList({ projects }: ProjectListProps) {
       suppressHydrationWarning
     >
       <div className="flex items-center justify-between">
-        <span className="text-sm text-muted-foreground">
+        <span
+          className={cn(
+            'text-xs uppercase tracking-[0.14em] text-muted-foreground tabular-nums',
+            jetBrainsMono.className,
+          )}
+        >
           {t('count', { count: projects.length })}
         </span>
 
@@ -38,6 +45,7 @@ export async function ProjectList({ projects }: ProjectListProps) {
             {...project}
             index={index}
             codeLabel={t('code')}
+            demoLabel={t('demo')}
           />
         ))}
       </div>

@@ -2,6 +2,8 @@
 
 import { Button } from '@components/ui/button'
 import type { IGithubRepository } from '@http/get-projects'
+import { jetBrainsMono } from '@lib/fonts'
+import { cn } from 'cn'
 import { ChevronLeft, SearchX } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
@@ -29,21 +31,32 @@ export function ProjectList({ projects }: ProjectListProps) {
   const availableTechs = useAvailableTechs(projects)
 
   return (
-    <div className="flex w-full flex-col items-center gap-8">
+    <div className="flex w-full flex-col gap-8">
       <Button asChild variant="ghost" className="self-start">
         <Link href="/">
           <ChevronLeft className="size-4" /> {t('backToHome')}
         </Link>
       </Button>
 
-      <div className="flex w-full items-center gap-2">
-        <SearchInput value={q} onChange={setQ} />
+      <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <span
+          className={cn(
+            'shrink-0 text-xs uppercase tracking-[0.14em] text-muted-foreground tabular-nums',
+            jetBrainsMono.className,
+          )}
+        >
+          {t('count', { count: filteredProjects.length })}
+        </span>
 
-        <TechFilter
-          availableTechs={availableTechs}
-          selected={tech}
-          onToggle={toggleTech}
-        />
+        <div className="flex items-center gap-2 sm:max-w-md sm:flex-1">
+          <SearchInput value={q} onChange={setQ} />
+
+          <TechFilter
+            availableTechs={availableTechs}
+            selected={tech}
+            onToggle={toggleTech}
+          />
+        </div>
       </div>
 
       {filteredProjects.length === 0 ? (
@@ -66,6 +79,7 @@ export function ProjectList({ projects }: ProjectListProps) {
               {...project}
               index={index}
               codeLabel={t('code')}
+              demoLabel={t('demo')}
             />
           ))}
         </div>
