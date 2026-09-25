@@ -53,7 +53,7 @@ Validated via `@t3-oss/env-nextjs` in `src/config/env.ts`. The app will throw at
 
 ### Data Fetching Pattern
 
-All GitHub data is fetched in async Server Components with Next.js ISR (`revalidate: 3600`) — no client-side fetching. Projects are filtered (must have topics, no `course` topic, must have a description) and sorted by `pushed_at`. The GitHub contributions graph is fetched server-side in `GithubGraph` (async RSC).
+All GitHub data is fetched in async Server Components with Next.js ISR (`revalidate: 3600`) — no client-side fetching. Projects are filtered (must have topics and a description) and sorted by `pushed_at` (most recently pushed first). The GitHub contributions graph is fetched server-side in `GithubGraph` (async RSC).
 
 ### Formatting
 
