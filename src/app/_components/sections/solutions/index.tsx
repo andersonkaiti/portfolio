@@ -47,6 +47,13 @@ export async function SolutionsSection() {
       bullets: [t('s5.b1'), t('s5.b2'), t('s5.b3')],
       tags: ['React Native', 'Next.js', 'Node.js', 'Real-time'],
     },
+    {
+      num: t('s6.num'),
+      title: t('s6.title'),
+      desc: t('s6.desc'),
+      bullets: [t('s6.b1'), t('s6.b2'), t('s6.b3')],
+      tags: ['OAuth2', 'JWT', 'RBAC', 'AWS Cognito', 'Node.js'],
+    },
   ]
 
   return (
