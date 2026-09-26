@@ -4,6 +4,8 @@ import { getTranslations } from 'next-intl/server'
 import { NuqsAdapter } from 'nuqs/adapters/next/app'
 import { ProjectList } from './_components/project-list'
 
+export const instant = false
+
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('metadata.projects')
 
