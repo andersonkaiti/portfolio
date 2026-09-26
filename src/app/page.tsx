@@ -8,6 +8,8 @@ import { ProjectListSection } from './_components/sections/projects'
 import { SolutionsSection } from './_components/sections/solutions'
 import { TechnologiesSection } from './_components/sections/technologies'
 
+export const instant = false
+
 export default function Home() {
   return (
     <>
