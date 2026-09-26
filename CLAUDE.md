@@ -16,10 +16,10 @@ pnpm format     # Lint and format with Biome (biome check --write)
 Requires a `.env.local` with:
 
 ```txt
-NEXT_PUBLIC_GITHUB_TOKEN=<github_pat>
+GITHUB_TOKEN=<github_pat>
 ```
 
-Validated via `@t3-oss/env-nextjs` in `src/config/env.ts`. The app will throw at startup if the variable is missing.
+Validated via `@t3-oss/env-nextjs` in `src/config/env.ts`. `GITHUB_TOKEN` is a **server-only** variable (never `NEXT_PUBLIC_`) so the PAT is never exposed to the client bundle. The app will throw at startup if the variable is missing or empty.
 
 ## Architecture
 
@@ -36,6 +36,8 @@ Validated via `@t3-oss/env-nextjs` in `src/config/env.ts`. The app will throw at
 | `@lib/*` | `src/lib/*` |
 | `@providers/*` | `src/providers/*` |
 | `@utils/*` | `src/utils/*` |
+| `@assets/*` | `src/assets/*` |
+| `@/*` | `src/*` |
 
 ### Key Directories
 

@@ -8,6 +8,19 @@
   "files": {
     "includes": ["**", "!node_modules", "!.next/*"]
   },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true
+    }
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
   "javascript": {
     "formatter": {
       "semicolons": "asNeeded",

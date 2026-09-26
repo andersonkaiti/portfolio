@@ -88,7 +88,7 @@ const createDayData = (
   currentDate: Date,
   contributionData: ContributionData[],
 ): ContributionData => {
-  const dateString = currentDate.toISOString().split('T')[0]
+  const dateString = currentDate.toISOString().slice(0, 10)
   const existingData = contributionData.find((d) => d.date === dateString)
   return {
     date: dateString,
@@ -147,7 +147,7 @@ const calculateMonthHeaders = (startDate: Date, targetYear?: number) => {
           }))
       ) {
         headers.push({
-          month: MONTHS[currentMonth],
+          month: MONTHS[currentMonth] ?? '',
           colspan: weekCount,
           startWeek: monthStartWeek,
         })
@@ -173,7 +173,7 @@ const calculateMonthHeaders = (startDate: Date, targetYear?: number) => {
       }))
   ) {
     headers.push({
-      month: MONTHS[currentMonth],
+      month: MONTHS[currentMonth] ?? '',
       colspan: weekCount,
       startWeek: monthStartWeek,
     })

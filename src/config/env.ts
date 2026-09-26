@@ -3,7 +3,7 @@ import { z } from 'zod'
 
 export const env = createEnv({
   server: {
-    GITHUB_TOKEN: z.string(),
+    GITHUB_TOKEN: z.string().min(1),
   },
   client: {},
   runtimeEnv: {
