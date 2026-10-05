@@ -1,5 +1,4 @@
 import { Button } from '@components/ui/button'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@components/ui/tooltip'
 import type { IGithubRepository } from '@http/get-projects'
 import { jetBrainsMono } from '@lib/fonts'
 import { formatTitle } from '@utils/format-title'
@@ -72,7 +71,7 @@ export function Project({
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap items-center gap-4">
           {topics.map((topic) => {
             const logo = getTopicLogo(topic)
 
@@ -81,12 +80,12 @@ export function Project({
             }
 
             return (
-              <Tooltip key={topic}>
-                <TooltipTrigger aria-label={formatTopic(topic)}>
-                  <TopicLogoImage logo={logo} topic={topic} size={22} />
-                </TooltipTrigger>
-                <TooltipContent>{formatTopic(topic)}</TooltipContent>
-              </Tooltip>
+              <span key={topic} className="inline-flex items-center gap-2">
+                <TopicLogoImage logo={logo} topic={topic} size={16} />
+                <span className="text-xs leading-none text-muted-foreground">
+                  {formatTopic(topic)}
+                </span>
+              </span>
             )
           })}
         </div>

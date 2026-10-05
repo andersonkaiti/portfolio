@@ -2,9 +2,10 @@
 
 import { Button } from '@components/ui/button'
 import { Popover, PopoverContent, PopoverTrigger } from '@components/ui/popover'
+import { jetBrainsMono } from '@lib/fonts'
 import { cn } from 'cn'
 import { setCookie } from 'cookies-next'
-import { Check, Languages, Loader2 } from 'lucide-react'
+import { Check, Loader2 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { useLocale } from 'next-intl'
 import { useTransition } from 'react'
@@ -43,7 +44,14 @@ export function LanguageToggle() {
           {isPending ? (
             <Loader2 className="size-4 animate-spin" />
           ) : (
-            <Languages className="size-4" />
+            <span
+              className={cn(
+                'text-[11px] font-medium uppercase tracking-widest',
+                jetBrainsMono.className,
+              )}
+            >
+              {locale === 'pt-BR' ? 'PT' : 'EN'}
+            </span>
           )}
         </Button>
       </PopoverTrigger>
