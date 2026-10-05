@@ -50,7 +50,7 @@ function Stat({
       </strong>
       <span
         className={cn(
-          'mt-3 block text-[10px] uppercase leading-relaxed tracking-[.15em] text-muted-foreground md:mt-4 md:text-[11.5px] md:tracking-[.22em]',
+          'mt-3 block text-xs uppercase leading-relaxed tracking-[.15em] text-muted-foreground md:mt-4 md:tracking-[.22em]',
           jetBrainsMono.className,
         )}
       >
