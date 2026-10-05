@@ -58,7 +58,7 @@ export function Project({
             </h3>
             <time
               className={cn(
-                'shrink-0 text-[11px] uppercase tracking-[0.1em] text-muted-foreground tabular-nums',
+                'shrink-0 text-[11px] uppercase tracking-widest text-muted-foreground tabular-nums',
                 jetBrainsMono.className,
               )}
             >

@@ -52,8 +52,10 @@ export function NavigationBar() {
       {/* Desktop Navigation */}
       <NavBody>
         <NavItems items={navItems} />
-        <LanguageToggle />
-        <DarkModeButton />
+        <div className="ml-auto flex items-center gap-1">
+          <LanguageToggle />
+          <DarkModeButton />
+        </div>
       </NavBody>
 
       {/* Mobile Navigation */}
