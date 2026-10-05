@@ -18,10 +18,10 @@ export default function Home() {
       <main className="mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center gap-16 px-2 py-10 md:gap-40 md:px-20 md:py-30">
         <HeaderSection />
         <AboutSection />
-        <SolutionsSection />
-        <TechnologiesSection />
         <ProjectListSection />
         <ExperiencesSection />
+        <TechnologiesSection />
+        <SolutionsSection />
         <EducationSection />
         <ContactSection />
       </main>

@@ -29,18 +29,18 @@ export function NavigationBar() {
 
   const navItems: NavItem[] = [
     { name: t('about'), link: isProjectPage ? '/#about' : '#about' },
+    { name: t('projects'), link: isProjectPage ? '/#projects' : '#projects' },
     {
-      name: t('solutions'),
-      link: isProjectPage ? '/#solutions' : '#solutions',
+      name: t('experiences'),
+      link: isProjectPage ? '/#experiences' : '#experiences',
     },
     {
       name: t('technologies'),
       link: isProjectPage ? '/#technologies' : '#technologies',
     },
-    { name: t('projects'), link: isProjectPage ? '/#projects' : '#projects' },
     {
-      name: t('experiences'),
-      link: isProjectPage ? '/#experiences' : '#experiences',
+      name: t('solutions'),
+      link: isProjectPage ? '/#solutions' : '#solutions',
     },
     { name: t('contact'), link: isProjectPage ? '/#contact' : '#contact' },
   ]
