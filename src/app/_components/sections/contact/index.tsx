@@ -18,13 +18,13 @@ export async function ContactSection() {
     {
       label: t('rows.email'),
       value: t('values.email'),
-      href: 'mailto:anderkaiti@gmail.com',
+      href: `mailto:${t('values.email')}`,
       external: false,
     },
     {
       label: t('rows.whatsapp'),
       value: t('values.whatsapp'),
-      href: 'https://wa.me/14998053657',
+      href: `https://wa.me/${t('values.whatsapp').replace(/\D/g, '')}`,
       external: true,
     },
     {
