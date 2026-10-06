@@ -65,7 +65,7 @@ export function Stack({ stack, index }: IStackProps) {
                 )}
                 <span
                   className={cn(
-                    'text-[15.5px]',
+                    'text-base',
                     tech.featured ? 'font-semibold' : 'font-medium',
                     jetBrainsMono.className,
                   )}

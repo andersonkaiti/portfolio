@@ -90,7 +90,7 @@ export function SolutionList({ items }: { items: SolutionItem[] }) {
                       <span
                         key={tag}
                         className={cn(
-                          'inline-flex items-center rounded-lg border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-1 text-xs text-emerald-500',
+                          'inline-flex items-center rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-1 text-xs text-emerald-500',
                           jetBrainsMono.className,
                         )}
                       >
