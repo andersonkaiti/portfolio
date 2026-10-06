@@ -38,6 +38,8 @@ export function ProjectList({ projects }: ProjectListProps) {
         </Link>
       </Button>
 
+      <h1 className="text-3xl font-bold tracking-tight">{t('title')}</h1>
+
       <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <span
           className={cn(
