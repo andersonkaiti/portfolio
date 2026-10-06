@@ -392,7 +392,8 @@ export function ContributionGraph({
         )}
 
       {showLegend && (
-        <div className="mt-4 flex items-center justify-center text-foreground/70 text-xs">
+        <div className="mt-4 flex items-center justify-center gap-2 text-foreground/70 text-xs">
+          <span>Less</span>
           <div className="flex items-center gap-1">
             {CONTRIBUTION_LEVELS.map((level) => (
               <div
@@ -401,6 +402,7 @@ export function ContributionGraph({
               />
             ))}
           </div>
+          <span>More</span>
         </div>
       )}
     </div>
