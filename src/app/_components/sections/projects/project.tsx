@@ -34,8 +34,8 @@ export function Project({
   return (
     <div
       data-aos="fade-up"
-      data-aos-delay={index * 80}
-      style={{ transitionDelay: `${index * 80}ms` }}
+      data-aos-delay={(index % 3) * 80}
+      style={{ transitionDelay: `${(index % 3) * 80}ms` }}
       suppressHydrationWarning
     >
       <div className="group/card relative flex size-full flex-col gap-6 border border-border p-6 transition-[border-color,background-color] duration-500 ease-in-out hover:border-primary/30 hover:bg-accent/20 overflow-hidden">
@@ -58,7 +58,7 @@ export function Project({
             </h3>
             <time
               className={cn(
-                'shrink-0 text-[11px] uppercase tracking-[0.1em] text-muted-foreground tabular-nums',
+                'shrink-0 text-[11px] uppercase tracking-widest text-muted-foreground tabular-nums',
                 jetBrainsMono.className,
               )}
             >
@@ -92,13 +92,23 @@ export function Project({
 
         <div className="mt-auto flex gap-3 border-t border-border pt-4">
           <Button asChild size="sm" variant="ghost">
-            <Link href={html_url} target="_blank">
+            <Link
+              href={html_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${codeLabel} — ${formatTitle(name)}`}
+            >
               {codeLabel} <Github className="ml-0 size-3.5 opacity-50" />
             </Link>
           </Button>
           {homepage && (
             <Button asChild size="sm" variant="ghost">
-              <Link href={homepage} target="_blank" rel="noopener noreferrer">
+              <Link
+                href={homepage}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${demoLabel} — ${formatTitle(name)}`}
+              >
                 {demoLabel}{' '}
                 <ArrowUpRight className="ml-0 size-3.5 opacity-50" />
               </Link>

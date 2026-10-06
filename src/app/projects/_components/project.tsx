@@ -92,13 +92,23 @@ export function Project({
 
         <div className="mt-auto flex gap-3 border-t border-border pt-4">
           <Button asChild size="sm" variant="ghost">
-            <Link href={html_url} target="_blank">
+            <Link
+              href={html_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${codeLabel} — ${formatTitle(name)}`}
+            >
               {codeLabel} <Github className="ml-0 size-3.5 opacity-50" />
             </Link>
           </Button>
           {homepage && (
             <Button asChild size="sm" variant="ghost">
-              <Link href={homepage} target="_blank" rel="noopener noreferrer">
+              <Link
+                href={homepage}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${demoLabel} — ${formatTitle(name)}`}
+              >
                 {demoLabel}{' '}
                 <ArrowUpRight className="ml-0 size-3.5 opacity-50" />
               </Link>
