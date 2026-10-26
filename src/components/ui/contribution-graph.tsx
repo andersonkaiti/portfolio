@@ -24,6 +24,9 @@ const DAYS_IN_WEEK = 7
 const DAY_MS = 86_400_000
 const MOBILE_WEEKS = 26
 const MIN_WEEKS_BEFORE_FIRST_MONTH = 2
+const DIM_MAX_LEVEL = 1
+const WAVE_COLUMN_STEP = 0.07
+const WAVE_ROW_STEP = 0.04
 const TOOLTIP_OFFSET_X = 10
 const TOOLTIP_OFFSET_Y = 40
 const TOOLTIP_MAX_WIDTH = 224
@@ -246,8 +249,16 @@ export function ContributionGraph({
                     Math.floor(index / DAYS_IN_WEEK) < hiddenWeeks &&
                       'max-sm:hidden',
                     CONTRIBUTION_COLORS[dayData.level],
+                    dayData.level <= DIM_MAX_LEVEL && 'ak-cell',
                   )}
                   key={dayData.date}
+                  style={
+                    dayData.level <= DIM_MAX_LEVEL
+                      ? ({
+                          '--d': `${(Math.floor(index / DAYS_IN_WEEK) * WAVE_COLUMN_STEP + (index % DAYS_IN_WEEK) * WAVE_ROW_STEP).toFixed(2)}s`,
+                        } as React.CSSProperties)
+                      : undefined
+                  }
                   aria-label={`${formatDate(dayData.date)}: ${getContributionText(dayData.count)}`}
                   onMouseEnter={(e) => handleDayHover(dayData, e)}
                   onMouseLeave={handleDayLeave}
