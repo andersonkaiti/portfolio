@@ -120,8 +120,8 @@
   },
   "footer": {
     "label": "Contact",
-    "title": "Hiring a full-stack developer?",
-    "subtitle": "I'm open to remote, hybrid or on-site roles. Send me the role and I'll reply with how I'd approach it.",
+    "title": "Picture your next release shipping without the 2 a.m. surprises.",
+    "subtitle": "Let's work together.",
     "tagline": "© Anderson Kaiti · Bauru, Brazil",
     "rows": {
       "email": "E-mail",
@@ -138,7 +138,7 @@
     "emailCta": "Email me",
     "whatsappCta": "WhatsApp",
     "psLabel": "P.S.",
-    "ps": "Short on time? Start with the Borebi migration or the AWS report generator. They show how I think better than any skills list."
+    "ps": "857 requests became 77. LCP went from 2.4 s to 0.6 s. I can do the same kind of work for your product, and I'm available now."
   },
   "metadata": {
     "home": {

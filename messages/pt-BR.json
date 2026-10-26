@@ -120,8 +120,8 @@
   },
   "footer": {
     "label": "Contato",
-    "title": "Contratando um desenvolvedor full-stack?",
-    "subtitle": "Estou aberto a vagas remotas, híbridas ou presenciais. Me envie a vaga e eu respondo com como eu abordaria.",
+    "title": "Imagine seu próximo release no ar sem as surpresas das 2 da manhã.",
+    "subtitle": "Vamos trabalhar juntos.",
     "tagline": "© Anderson Kaiti · Bauru, Brasil",
     "rows": {
       "email": "E-mail",
@@ -138,7 +138,7 @@
     "emailCta": "Me envie um e-mail",
     "whatsappCta": "WhatsApp",
     "psLabel": "P.S.",
-    "ps": "Sem tempo? Comece pela migração da Borebi ou pelo gerador de relatórios na AWS. Eles mostram como eu penso melhor do que qualquer lista de skills."
+    "ps": "857 requisições viraram 77. O LCP foi de 2,4 s para 0,6 s. Posso fazer o mesmo tipo de trabalho no seu produto, e estou disponível agora."
   },
   "metadata": {
     "home": {
