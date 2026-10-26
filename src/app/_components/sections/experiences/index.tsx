@@ -16,9 +16,9 @@ export async function ExperiencesSection() {
     <SectionContainer id="experiences">
       <SectionHeader side="left">
         <SectionLabel>{t('label')}</SectionLabel>
-        <SectionTitle>
+        <SectionTitle className="sr-only">
           {t.rich('title', {
-            accent: (chunks) => <span className="text-primary">{chunks}</span>,
+            accent: (chunks) => <span>{chunks}</span>,
           })}
         </SectionTitle>
       </SectionHeader>
