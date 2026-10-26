@@ -234,7 +234,7 @@
     "a4": "Não. Back-ends em Fastify e Node, PostgreSQL com Prisma/Drizzle e pipelines em AWS Lambda estão todos no meu GitHub."
   },
   "risk": {
-    "text": "Quer avaliar meu trabalho antes de decidir? Me envie uma tarefa pequena ou vamos fazer pair por 30 minutos.",
+    "text": "Ainda em dúvida? Eu apresento qualquer projeto do meu GitHub, ao vivo. Arquitetura, trade-offs e o que eu mudaria. Peça uma sessão de 30 minutos.",
     "cta": "Vamos conversar"
   },
   "faq": {
