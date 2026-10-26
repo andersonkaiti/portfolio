@@ -13,10 +13,10 @@
   "hero": {
     "available": "Available for work",
     "title": "Anderson Kaiti",
-    "headlinePre": "Hire a junior",
-    "headlineAccent": "without the gamble.",
-    "subtitle": "Full-stack developer in Node.js and React/Next.js, all in TypeScript. Judge my work before you commit.",
-    "cta": "Start with a small task",
+    "headlinePre": "Junior Full-Stack Developer.",
+    "headlineAccent": "Code that survives the next release.",
+    "subtitle": "React, Next.js and Node.js in TypeScript, with authentication, AWS serverless and automated tests from day one.",
+    "cta": "Let's talk",
     "linkedin": "LinkedIn",
     "artLabel": "Isometric diagram of three stacked layers: interface, API and database",
     "layerUi": "React · Next.js",
@@ -27,7 +27,8 @@
       "linkedin": "Connect with Anderson Kaiti on LinkedIn",
       "whatsapp": "Start a WhatsApp chat with Anderson Kaiti",
       "resume": "Download Anderson Kaiti's résumé"
-    }
+    },
+    "note": "Open to remote or hybrid · Brazil & international · Replies within [24h]"
   },
   "about": {
     "label": "About",

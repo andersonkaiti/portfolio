@@ -31,7 +31,7 @@ export async function HeroSection() {
         </Reveal>
 
         <Reveal delay={200}>
-          <h1 className="mt-10 text-balance font-bold leading-[0.96] tracking-[-0.04em] text-[clamp(44px,min(6.9vw,8.8vh),96px)]">
+          <h1 className="mt-10 text-balance font-bold leading-[0.96] tracking-[-0.04em] text-[clamp(36px,min(4.2vw,6vh),60px)]">
             {t('headlinePre')}{' '}
             <span
               className="ak-underline-draw"
@@ -74,6 +74,17 @@ export async function HeroSection() {
             {t('linkedin')}
             <ArrowUpRight aria-hidden="true" className="size-5" />
           </Link>
+        </Reveal>
+
+        <Reveal delay={500}>
+          <p
+            className={cn(
+              'mt-6 text-[13px] text-muted-foreground',
+              jetBrainsMono.className,
+            )}
+          >
+            {t('note')}
+          </p>
         </Reveal>
       </div>
 
