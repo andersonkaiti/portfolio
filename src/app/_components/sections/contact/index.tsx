@@ -1,91 +1,95 @@
-import {
-  SectionContainer,
-  SectionHeader,
-  SectionLabel,
-  SectionSubtitle,
-  SectionTitle,
-} from '@components/ui/section'
-import { jetBrainsMono } from '@lib/fonts'
-import { cn } from 'cn'
-import { ArrowUpRight } from 'lucide-react'
-import Link from 'next/link'
+import { IsoDeco } from '@components/iso/iso-deco'
+import { AnimatedText } from '@components/ui/animated-text'
+import { Reveal } from '@components/ui/reveal'
 import { getTranslations } from 'next-intl/server'
 
 export async function ContactSection() {
   const t = await getTranslations('footer')
 
-  const contactRows = [
-    {
-      label: t('rows.email'),
-      value: t('values.email'),
-      href: `mailto:${t('values.email')}`,
-      external: false,
-    },
-    {
-      label: t('rows.whatsapp'),
-      value: t('values.whatsapp'),
-      href: `https://wa.me/${t('values.whatsapp').replace(/\D/g, '')}`,
-      external: true,
-    },
-    {
-      label: t('rows.linkedin'),
-      value: t('values.linkedin'),
-      href: 'https://www.linkedin.com/in/andersonkaiti/',
-      external: true,
-    },
-    {
-      label: t('rows.github'),
-      value: t('values.github'),
-      href: 'https://github.com/andersonkaiti',
-      external: true,
-    },
-  ]
+  const email = t('values.email')
+  const linkedinUrl = `https://www.linkedin.com/in/${t('values.linkedin')}/`
+  const githubUrl = `https://github.com/${t('values.github')}`
+  const whatsappUrl = `https://wa.me/${t('values.whatsapp').replace(/\D/g, '')}`
+
+  const outlined =
+    'ak-btn inline-flex min-h-14 items-center rounded-full border-[1.5px] border-on-signal px-8 text-lg font-semibold text-on-signal no-underline hover:bg-on-signal hover:text-[#f2f4f1]'
 
   return (
-    <SectionContainer id="contact">
-      <SectionHeader side="left">
-        <SectionLabel>{t('label')}</SectionLabel>
-        <SectionTitle>
-          {t.rich('title', {
-            accent: (chunks) => <span className="text-primary">{chunks}</span>,
-          })}
-        </SectionTitle>
-        <SectionSubtitle>{t('subtitle')}</SectionSubtitle>
-      </SectionHeader>
+    <section
+      id="contact"
+      className="ak-on-signal relative scroll-mt-[120px] overflow-hidden bg-signal text-on-signal selection:bg-on-signal selection:text-signal"
+    >
+      <IsoDeco
+        className="absolute top-1/2 right-10 -mt-[208px] hidden w-[480px] lg:block"
+        style={{ ['--iso-bg' as string]: 'var(--signal)' }}
+      />
 
-      <div className="border-t border-border">
-        {contactRows.map((row, index) => (
-          <div
-            key={row.label}
-            data-aos="fade-up"
-            data-aos-delay={index * 50}
-            style={{ transitionDelay: `${index * 50}ms` }}
-            suppressHydrationWarning
+      <div className="mx-auto w-full max-w-7xl px-6 pt-20 pb-12">
+        <Reveal>
+          <AnimatedText
+            as="h2"
+            className="max-w-[11em] text-balance font-display text-[clamp(34px,4.6vw,60px)] leading-none font-bold tracking-[-0.035em]"
           >
-            <div className="group/row border-b border-border transition-colors duration-250 ease-[cubic-bezier(.25,0,.35,1)] hover:bg-accent/30">
-              <Link
-                href={row.href}
-                target={row.external ? '_blank' : undefined}
-                rel={row.external ? 'noopener noreferrer' : undefined}
-                className="grid grid-cols-[minmax(0,140px)_1fr_auto] items-center gap-4 px-3 py-6 text-inherit no-underline transition-[translate] duration-250 ease-[cubic-bezier(.25,0,.35,1)] group-hover/row:translate-x-4 sm:px-2 sm:grid-cols-[minmax(0,180px)_1fr_auto] sm:gap-7"
-              >
-                <span
-                  className={cn(
-                    'text-[11.5px] font-medium uppercase tracking-[.16em] text-muted-foreground',
-                    jetBrainsMono.className,
-                  )}
-                >
-                  {row.label}
-                </span>
-                <span className="truncate text-base text-foreground sm:text-lg">
-                  {row.value}
-                </span>
-                <ArrowUpRight className="size-4 shrink-0 text-primary" />
-              </Link>
-            </div>
-          </div>
-        ))}
+            {t('title')}
+          </AnimatedText>
+        </Reveal>
+
+        <Reveal delay={80}>
+          <p className="mt-7 max-w-[30em] text-[22px] leading-[1.45] text-[#2a3a12]">
+            {t('subtitle')}
+          </p>
+        </Reveal>
+
+        <Reveal delay={160} className="mt-10 flex flex-wrap gap-4">
+          <a
+            href={`mailto:${email}`}
+            className="ak-btn inline-flex min-h-14 items-center rounded-full bg-on-signal px-8 text-lg font-semibold text-[#f2f4f1] no-underline"
+          >
+            {t('emailCta')}
+          </a>
+          <a
+            href={linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={outlined}
+          >
+            {t('rows.linkedin')}
+          </a>
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={outlined}
+          >
+            {t('whatsappCta')}
+          </a>
+        </Reveal>
+
+        <Reveal delay={200} className="mt-8 flex flex-wrap gap-x-7 gap-y-2">
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-11 items-center text-[17px] underline underline-offset-4"
+          >
+            {t('rows.github')}
+          </a>
+        </Reveal>
+
+        <Reveal
+          delay={240}
+          className="mt-16 max-w-[42em] border-t border-on-signal/30 pt-8 text-lg text-[#2a3a12]"
+        >
+          <strong className="font-semibold text-on-signal">
+            {t('psLabel')}
+          </strong>{' '}
+          {t('ps')}
+        </Reveal>
+
+        <p className="mt-14 font-mono text-[15px] text-[#2a3a12]">
+          {t('tagline')}
+        </p>
       </div>
-    </SectionContainer>
+    </section>
   )
 }

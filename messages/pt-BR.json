@@ -146,9 +146,9 @@
   },
   "footer": {
     "label": "Contato",
-    "title": "Vamos <accent>trabalhar juntos?</accent>",
-    "subtitle": "Estou aberto a vagas full-stack, remotas ou híbridas. Me chame e respondo rápido.",
-    "tagline": "Feito por Anderson Kaiti · 2026",
+    "title": "Contratando um desenvolvedor full-stack?",
+    "subtitle": "Estou aberto a vagas remotas, híbridas ou presenciais. Me envie a vaga e eu respondo com como eu abordaria.",
+    "tagline": "© Anderson Kaiti · Bauru, Brasil",
     "rows": {
       "email": "E-mail",
       "whatsapp": "WhatsApp",
@@ -160,7 +160,11 @@
       "whatsapp": "+55 14 99805-3657",
       "linkedin": "andersonkaiti",
       "github": "andersonkaiti"
-    }
+    },
+    "emailCta": "Me envie um e-mail",
+    "whatsappCta": "WhatsApp",
+    "psLabel": "P.S.",
+    "ps": "Sem tempo? Comece pela migração da Borebi ou pelo gerador de relatórios na AWS. Eles mostram como eu penso melhor do que qualquer lista de skills."
   },
   "metadata": {
     "home": {

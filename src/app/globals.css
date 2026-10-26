@@ -290,6 +290,11 @@ body {
   vector-effect: non-scaling-stroke;
 }
 
+.ak-on-signal .ak-iso-face {
+  fill: var(--signal);
+  stroke: rgb(16 20 18 / 0.6);
+}
+
 .ak-iso-dash {
   stroke: var(--dash);
   stroke-width: 1;

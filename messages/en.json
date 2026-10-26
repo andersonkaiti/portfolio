@@ -146,9 +146,9 @@
   },
   "footer": {
     "label": "Contact",
-    "title": "Let's <accent>work together?</accent>",
-    "subtitle": "I'm open to full-stack roles, remote or hybrid. Reach out and I'll reply quickly.",
-    "tagline": "Crafted by Anderson Kaiti · 2026",
+    "title": "Hiring a full-stack developer?",
+    "subtitle": "I'm open to remote, hybrid or on-site roles. Send me the role and I'll reply with how I'd approach it.",
+    "tagline": "© Anderson Kaiti · Bauru, Brazil",
     "rows": {
       "email": "E-mail",
       "whatsapp": "WhatsApp",
@@ -160,7 +160,11 @@
       "whatsapp": "+55 14 99805-3657",
       "linkedin": "andersonkaiti",
       "github": "andersonkaiti"
-    }
+    },
+    "emailCta": "Email me",
+    "whatsappCta": "WhatsApp",
+    "psLabel": "P.S.",
+    "ps": "Short on time? Start with the Borebi migration or the AWS report generator. They show how I think better than any skills list."
   },
   "metadata": {
     "home": {
