@@ -248,5 +248,9 @@
     "a2": "Internships where I shipped to production and migrated legacy systems, which is the kind of work most teams need done.",
     "q3": "“But can he work in English?”",
     "a3": "Yes. C1 certified, and this site and my repos are in English."
+  },
+  "risk": {
+    "text": "Want to check my work before committing? Send me a small task or let's pair for 30 minutes.",
+    "cta": "Let's talk"
   }
 }
