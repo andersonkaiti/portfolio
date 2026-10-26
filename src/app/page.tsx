@@ -1,30 +1,31 @@
-import { Spotlight } from '@components/ui/spotlight'
-import { AboutSection } from './_components/sections/about'
 import { ContactSection } from './_components/sections/contact'
-import { EducationSection } from './_components/sections/education'
 import { ExperiencesSection } from './_components/sections/experiences'
-import { HeaderSection } from './_components/sections/header'
+import { FaqSection } from './_components/sections/faq'
+import { HeroSection } from './_components/sections/hero'
+import { PainSection } from './_components/sections/pain'
 import { ProjectListSection } from './_components/sections/projects'
+import { ProofSection } from './_components/sections/proof'
+import { RiskSection } from './_components/sections/risk'
 import { SolutionsSection } from './_components/sections/solutions'
-import { TechnologiesSection } from './_components/sections/technologies'
+import { StepsSection } from './_components/sections/steps'
+import { WorkSection } from './_components/sections/work'
 
 export const instant = false
 
 export default function Home() {
   return (
-    <>
-      <Spotlight />
-
-      <main className="mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center gap-16 px-2 py-10 md:gap-40 md:px-20 md:py-30">
-        <HeaderSection />
-        <AboutSection />
-        <ProjectListSection />
-        <ExperiencesSection />
-        <TechnologiesSection />
-        <SolutionsSection />
-        <EducationSection />
-        <ContactSection />
-      </main>
-    </>
+    <main className="flex min-h-screen flex-col">
+      <HeroSection />
+      <PainSection />
+      <StepsSection />
+      <SolutionsSection />
+      <ProofSection />
+      <ExperiencesSection />
+      <ProjectListSection />
+      <WorkSection />
+      <RiskSection />
+      <FaqSection />
+      <ContactSection />
+    </main>
   )
 }

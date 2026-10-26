@@ -1,23 +1,17 @@
-import { Footer } from '@components/footer'
 import { TooltipProvider } from '@components/ui/tooltip'
-import { jetBrainsMono } from '@lib/fonts'
+import { bricolage, instrumentSans, jetBrainsMono } from '@lib/fonts'
 import { AosProvider } from '@providers/aos'
 import { LenisProvider } from '@providers/lenis'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
-import { Montserrat } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import { getLocale, getMessages, getTranslations } from 'next-intl/server'
 import { ThemeProvider } from 'next-themes'
 import { Suspense } from 'react'
 import { NavigationBar } from './_components/navigation-bar'
+import { ScrollProgress } from './_components/scroll-progress'
 import './globals.css'
-
-const MontserratSans = Montserrat({
-  variable: '--font-montserrat-sans',
-  subsets: ['latin'],
-})
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale().catch(() => 'en')
@@ -117,7 +111,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${MontserratSans.variable} ${jetBrainsMono.variable}`}
+      className={`${instrumentSans.variable} ${bricolage.variable} ${jetBrainsMono.variable}`}
     >
       <body className="relative antialiased transition-colors">
         <Suspense fallback={null}>
@@ -131,11 +125,10 @@ export default function RootLayout({
               >
                 <AosProvider>
                   <TooltipProvider>
+                    <ScrollProgress />
                     <NavigationBar />
 
                     {children}
-
-                    <Footer />
                   </TooltipProvider>
                 </AosProvider>
               </ThemeProvider>
