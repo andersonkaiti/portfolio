@@ -194,6 +194,7 @@
     "contributionsLabel": "contributions in the last year",
     "weeksLabel": "weeks with activity",
     "weeksValue": "{active} of {total}",
+    "currentStreakLabel": "current streak",
     "streakLabel": "longest streak",
     "streakValue": "{days} days",
     "bestLabel": "best day",

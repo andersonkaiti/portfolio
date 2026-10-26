@@ -33,10 +33,19 @@ function getStats(data: IContributionData[]) {
     longest = Math.max(longest, streak)
   }
 
+  const lastIndex = days.length - 1
+  const startIndex = days[lastIndex]?.count === 0 ? lastIndex - 1 : lastIndex
+  let current = 0
+
+  for (let index = startIndex; index >= 0 && days[index]?.count; index--) {
+    current++
+  }
+
   return {
     total,
     best,
     longest,
+    current,
     totalWeeks: weeks.size,
     activeWeeks: [...weeks.values()].filter(Boolean).length,
   }
@@ -68,6 +77,10 @@ export async function GithubGraph() {
         total: stats.totalWeeks,
       }),
       label: t('weeksLabel'),
+    },
+    {
+      value: t('streakValue', { days: stats.current }),
+      label: t('currentStreakLabel'),
     },
     {
       value: t('streakValue', { days: stats.longest }),

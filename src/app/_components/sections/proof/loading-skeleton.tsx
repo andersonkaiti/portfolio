@@ -1,6 +1,6 @@
 import { Skeleton } from '@components/ui/skeleton'
 
-const SUMMARY_WIDTHS = ['w-32', 'w-36', 'w-16']
+const SUMMARY_WIDTHS = ['w-32', 'w-24', 'w-36', 'w-16']
 const CONTRIBUTION_LEVELS = [0, 1, 2, 3, 4]
 
 export function LoadingSkeleton() {
