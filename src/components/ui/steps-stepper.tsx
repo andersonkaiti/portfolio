@@ -7,6 +7,8 @@ const NUMBER_DURATION = 0.7
 const LIGHT_DELAY = 0.4
 const FILL_DURATION = 0.7
 const STEP_PAUSE = 0.15
+const MOBILE_QUERY = '(max-width: 767px)'
+const MOBILE_THRESHOLD = 0.35
 
 export function StepsStepper({
   children,
@@ -21,7 +23,39 @@ export function StepsStepper({
 
   useEffect(() => {
     const root = ref.current
-    if (!inView || reduce || !root) {
+    if (reduce || !root) {
+      return
+    }
+
+    if (window.matchMedia(MOBILE_QUERY).matches) {
+      root.setAttribute('data-armed', '')
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) {
+              continue
+            }
+
+            const step = entry.target as HTMLElement
+
+            step.style.transitionDelay = '0ms'
+            step.setAttribute('data-shown', '')
+            step.setAttribute('data-played', '')
+            observer.unobserve(step)
+          }
+        },
+        { threshold: MOBILE_THRESHOLD },
+      )
+
+      for (const step of root.querySelectorAll<HTMLElement>('[data-step]')) {
+        observer.observe(step)
+      }
+
+      return () => observer.disconnect()
+    }
+
+    if (!inView) {
       return
     }
 
