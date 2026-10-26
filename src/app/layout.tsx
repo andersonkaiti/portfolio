@@ -10,6 +10,7 @@ import { getLocale, getMessages, getTranslations } from 'next-intl/server'
 import { ThemeProvider } from 'next-themes'
 import { Suspense } from 'react'
 import { NavigationBar } from './_components/navigation-bar'
+import { ScrollFade } from './_components/scroll-fade'
 import { ScrollProgress } from './_components/scroll-progress'
 import './globals.css'
 
@@ -126,6 +127,7 @@ export default function RootLayout({
                 <AosProvider>
                   <TooltipProvider>
                     <ScrollProgress />
+                    <ScrollFade />
                     <NavigationBar />
 
                     {children}
