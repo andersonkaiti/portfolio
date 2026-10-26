@@ -8,7 +8,7 @@ import { Suspense } from 'react'
 import { GithubGraph } from './github-graph'
 import { LoadingSkeleton } from './loading-skeleton'
 
-const STATS = ['stat1', 'stat2', 'stat3'] as const
+const STATS = ['stat1', 'stat2', 'stat3', 'stat4'] as const
 
 export async function ProofSection() {
   const t = await getTranslations('proof')
