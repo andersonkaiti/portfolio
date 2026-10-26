@@ -252,5 +252,20 @@
   "risk": {
     "text": "Want to check my work before committing? Send me a small task or let's pair for 30 minutes.",
     "cta": "Let's talk"
+  },
+  "faq": {
+    "title": "FAQ",
+    "q1": "Do you work remotely?",
+    "a1": "Yes, and also hybrid or on-site.",
+    "q2": "What do you work with?",
+    "a2": "TypeScript end to end: React, Next.js, Node.js, Fastify, PostgreSQL, Prisma/Drizzle and AWS serverless.",
+    "q3": "Do you write tests?",
+    "a3": "Yes, with Vitest and Cypress.",
+    "q4": "Can I see real code?",
+    "a4": "Yes, my GitHub is linked and the project repos are public.",
+    "q5": "How do I reach you?",
+    "a5": "Email or WhatsApp. Both are in the contact section below.",
+    "q6": "Are you a fit for a junior role?",
+    "a6": "Yes. I’m a junior, and I’m upfront about it."
   }
 }

@@ -252,5 +252,20 @@
   "risk": {
     "text": "Quer avaliar meu trabalho antes de decidir? Me envie uma tarefa pequena ou vamos fazer pair por 30 minutos.",
     "cta": "Vamos conversar"
+  },
+  "faq": {
+    "title": "FAQ",
+    "q1": "Você trabalha remotamente?",
+    "a1": "Sim, e também híbrido ou presencial.",
+    "q2": "Com o que você trabalha?",
+    "a2": "TypeScript de ponta a ponta: React, Next.js, Node.js, Fastify, PostgreSQL, Prisma/Drizzle e AWS serverless.",
+    "q3": "Você escreve testes?",
+    "a3": "Sim, com Vitest e Cypress.",
+    "q4": "Posso ver código real?",
+    "a4": "Sim, meu GitHub está linkado e os repositórios dos projetos são públicos.",
+    "q5": "Como falo com você?",
+    "a5": "E-mail ou WhatsApp. Os dois estão na seção de contato abaixo.",
+    "q6": "Você serve para uma vaga júnior?",
+    "a6": "Sim. Sou júnior e deixo isso claro."
   }
 }

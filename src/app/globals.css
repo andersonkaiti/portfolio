@@ -640,6 +640,10 @@ body {
   transform: translateX(8px);
 }
 
+details[open] > summary .ak-plus {
+  transform: rotate(45deg);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .ak-pulse-dot {
     animation: none;
