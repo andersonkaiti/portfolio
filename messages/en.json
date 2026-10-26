@@ -31,17 +31,8 @@
   },
   "about": {
     "label": "About",
-    "title": "Code that survives the <accent>next release</accent>",
-    "p1": "Computer Science graduate building <b>scalable, resilient</b> web and mobile apps on <b>React</b>, <b>Next.js</b> and <b>Node.js</b> — always <b>TypeScript</b>.",
-    "p2": "I care about the <i>why</i> behind architecture — from <b>authentication and access control</b> to data models and <b>automated tests</b> — balancing fast delivery with code that won't hurt later.",
-    "stat1Value": "4+",
-    "stat1Label": "Years developing",
-    "stat2Value": "2",
-    "stat2Label": "Companies",
-    "stat3Value": "20+",
-    "stat3Label": "Projects delivered",
-    "stat4Value": "6",
-    "stat4Label": "Domains shipped"
+    "statement": "Most portfolios show screens. Few show what happens when requirements change.",
+    "body": "I build the parts that break first: authentication, access control, data models and tests."
   },
   "solutions": {
     "label": "What I build",
@@ -125,25 +116,6 @@
     "ctaButton": "Let's talk",
     "code": "Code",
     "demo": "Demo"
-  },
-  "education": {
-    "label": "Learning",
-    "title": "Education",
-    "subtitle": "My formal education and language development",
-    "degree": {
-      "period": "2022 — 2025",
-      "institution": "UNISAGRADO",
-      "title": "Computer Science",
-      "description": "Bachelor's degree completed, focused on software development, algorithms and data structures.",
-      "badge": "Graduated"
-    },
-    "languages": {
-      "period": "Ongoing",
-      "institution": "CNA",
-      "title": "English",
-      "description": "C1 level completed and advancing to C2, focused on communication in international professional settings.",
-      "badge": "C1 → C2"
-    }
   },
   "footer": {
     "label": "Contact",

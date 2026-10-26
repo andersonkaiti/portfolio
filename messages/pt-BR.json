@@ -31,17 +31,8 @@
   },
   "about": {
     "label": "Sobre",
-    "title": "Código que sobrevive ao <accent>próximo release</accent>",
-    "p1": "Formado em Ciência da Computação, construo aplicações web e mobile <b>escaláveis e resilientes</b> em <b>React</b>, <b>Next.js</b> e <b>Node.js</b> — sempre com <b>TypeScript</b>.",
-    "p2": "Me importo com o <i>porquê</i> por trás da arquitetura — de <b>autenticação e controle de acesso</b> à modelagem de dados e <b>testes automatizados</b> — equilibrando entrega rápida com código que não dói depois.",
-    "stat1Value": "4+",
-    "stat1Label": "Anos desenvolvendo",
-    "stat2Value": "2",
-    "stat2Label": "Empresas",
-    "stat3Value": "20+",
-    "stat3Label": "Projetos entregues",
-    "stat4Value": "6",
-    "stat4Label": "Domínios entregues"
+    "statement": "A maioria dos portfólios mostra telas. Poucos mostram o que acontece quando os requisitos mudam.",
+    "body": "Eu construo as partes que quebram primeiro: autenticação, controle de acesso, modelos de dados e testes."
   },
   "solutions": {
     "label": "O que eu construo",
@@ -125,25 +116,6 @@
     "ctaButton": "Vamos conversar",
     "code": "Código",
     "demo": "Demo"
-  },
-  "education": {
-    "label": "Formação",
-    "title": "Educação",
-    "subtitle": "Base teórica e constante evolução",
-    "degree": {
-      "period": "2022 — 2025",
-      "institution": "UNISAGRADO",
-      "title": "Ciência da Computação",
-      "description": "Bacharelado concluído com foco em desenvolvimento de software, algoritmos e estruturas de dados.",
-      "badge": "Graduado"
-    },
-    "languages": {
-      "period": "Em andamento",
-      "institution": "CNA",
-      "title": "Inglês",
-      "description": "Nível C1 concluído e avançando para C2, com foco em comunicação em ambiente profissional internacional.",
-      "badge": "C1 → C2"
-    }
   },
   "footer": {
     "label": "Contato",
