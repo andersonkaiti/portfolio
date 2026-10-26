@@ -9,12 +9,18 @@
     "education": "Education",
     "contact": "Contact"
   },
-  "header": {
+  "hero": {
     "available": "Available for work",
     "title": "Anderson Kaiti",
-    "role": "Full-Stack Web Developer",
-    "description": "Computer Science graduate building full-stack apps with <b>React</b>, <b>Next.js</b>, <b>Node.js</b> and <b>TypeScript</b> — focused on <b>authentication</b>, <b>AWS serverless</b> and <b>testing</b>.",
-    "cta": "Get in touch",
+    "headlinePre": "Hire a junior",
+    "headlineAccent": "without the gamble.",
+    "subtitle": "Full-stack developer in Node.js and React/Next.js, all in TypeScript. Judge my work before you commit.",
+    "cta": "Start with a small task",
+    "linkedin": "LinkedIn",
+    "artLabel": "Isometric diagram of three stacked layers: interface, API and database",
+    "layerUi": "React · Next.js",
+    "layerApi": "Node.js · Fastify",
+    "layerDb": "PostgreSQL",
     "social": {
       "github": "Visit Anderson Kaiti's GitHub profile",
       "linkedin": "Connect with Anderson Kaiti on LinkedIn",

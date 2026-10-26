@@ -9,12 +9,18 @@
     "education": "Formação",
     "contact": "Contato"
   },
-  "header": {
-    "available": "Disponível para novos desafios",
+  "hero": {
+    "available": "Disponível para trabalhar",
     "title": "Anderson Kaiti",
-    "role": "Desenvolvedor Full-Stack",
-    "description": "Formado em Ciência da Computação, construo aplicações full-stack com <b>React</b>, <b>Next.js</b>, <b>Node.js</b> e <b>TypeScript</b> — com foco em <b>autenticação</b>, <b>AWS serverless</b> e <b>testes</b>.",
-    "cta": "Fale comigo",
+    "headlinePre": "Contrate um júnior",
+    "headlineAccent": "sem apostar às cegas.",
+    "subtitle": "Desenvolvedor full-stack em Node.js e React/Next.js, tudo em TypeScript. Avalie meu trabalho antes de se comprometer.",
+    "cta": "Comece com uma tarefa pequena",
+    "linkedin": "LinkedIn",
+    "artLabel": "Diagrama isométrico de três camadas empilhadas: interface, API e banco de dados",
+    "layerUi": "React · Next.js",
+    "layerApi": "Node.js · Fastify",
+    "layerDb": "PostgreSQL",
     "social": {
       "github": "Ver perfil no GitHub",
       "linkedin": "Conectar no LinkedIn",
