@@ -4,7 +4,7 @@ import { jetBrainsMono } from '@lib/fonts'
 import { cn } from 'cn'
 import { getTranslations } from 'next-intl/server'
 
-const INCLUDES = ['i1', 'i2', 'i3', 'i4'] as const
+const INCLUDES = ['i1', 'i2', 'i3', 'i4', 'i5', 'i6'] as const
 
 const ROWS = [
   ['bonus', 'bonusValue'],
@@ -13,7 +13,7 @@ const ROWS = [
   ['languages', 'languagesValue'],
 ] as const
 
-const OBJECTIONS = ['1', '2', '3'] as const
+const OBJECTIONS = ['1', '2', '3', '4'] as const
 
 export async function WorkSection() {
   const t = await getTranslations('work')
