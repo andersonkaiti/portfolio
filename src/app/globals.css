@@ -336,8 +336,32 @@ body {
   pointer-events: none;
 }
 
+.ak-lit-line {
+  fill: none;
+  stroke: var(--primary);
+  stroke-linecap: round;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .ak-sheen {
   animation: ak-sheen 5.4s ease-in-out calc(var(--sd, 0) * 1s) infinite;
+}
+
+[data-played] .ak-lit {
+  animation: ak-sheen 3.6s ease-in-out calc(var(--sd, 0) * 1s) infinite;
+}
+
+[data-played] .ak-lit-rim {
+  animation: ak-rim 3.2s ease-in-out calc(0.2s + var(--sd, 0) * 1s) infinite;
+}
+
+[data-played] .ak-lit-run {
+  animation: ak-run 3.2s linear 0.6s infinite;
+}
+
+[data-played] .ak-lit-glow {
+  animation: ak-glow 3s ease-in-out 0.8s infinite;
 }
 
 .ak-beacon {
@@ -356,6 +380,40 @@ body {
   }
   40% {
     opacity: 0;
+  }
+}
+
+@keyframes ak-rim {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  14% {
+    opacity: 1;
+  }
+  34% {
+    opacity: 0;
+  }
+}
+
+@keyframes ak-run {
+  from {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  to {
+    stroke-dashoffset: -1;
+    opacity: 1;
+  }
+}
+
+@keyframes ak-glow {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.28;
   }
 }
 
@@ -414,6 +472,156 @@ body {
   70%,
   100% {
     box-shadow: 0 0 0 8px transparent;
+  }
+}
+
+.ak-step-fill {
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.ak-iso-detail {
+  fill: none;
+  stroke: var(--dash);
+  stroke-width: 0.6;
+  stroke-linejoin: round;
+  opacity: 0.55;
+  vector-effect: non-scaling-stroke;
+}
+
+.ak-lock-ring,
+.ak-db-ripple {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+}
+
+.ak-steps[data-armed] .ak-check-stroke {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+[data-played] .ak-check-stroke {
+  animation: ak-draw 0.8s cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+[data-played] .ak-lock-ring {
+  animation: ak-ring 3.2s ease-out 0.9s infinite both;
+}
+
+[data-played] .ak-db-ripple {
+  animation: ak-ripple 3.2s ease-out 0.1s infinite both;
+}
+
+[data-played] .ak-lock-body {
+  animation: ak-thunk 1.4s ease-in-out both;
+}
+
+[data-played] .ak-db-disc {
+  animation: ak-wave 1.1s ease-in-out calc(var(--i) * 0.14s) 2 both;
+}
+
+[data-played] .ak-check-body {
+  animation: ak-press 0.6s ease-in-out 0.75s both;
+}
+
+[data-played] .ak-check-inset {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ak-inset 1.2s ease-in-out 0.2s both;
+}
+
+@keyframes ak-thunk {
+  0%,
+  78% {
+    transform: translateY(0);
+  }
+  88% {
+    transform: translateY(2.5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes ak-wave {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  45% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes ak-press {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  45% {
+    transform: translateY(2px);
+  }
+}
+
+@keyframes ak-inset {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.14);
+  }
+}
+
+@keyframes ak-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes ak-ring {
+  from {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+
+@keyframes ak-ripple {
+  from {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.45);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-played] .ak-check-stroke,
+  [data-played] .ak-lock-body,
+  [data-played] .ak-db-disc,
+  [data-played] .ak-check-body,
+  [data-played] .ak-check-inset,
+  [data-played] .ak-lock-ring,
+  [data-played] .ak-db-ripple,
+  [data-played] .ak-lit,
+  [data-played] .ak-lit-rim,
+  [data-played] .ak-lit-run,
+  [data-played] .ak-lit-glow {
+    animation: none;
+  }
+
+  .ak-step-fill {
+    transform: scaleX(1);
+    transition: none;
   }
 }
 

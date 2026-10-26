@@ -196,5 +196,23 @@
     "q2": "Will I write tests, or leave you the cleanup?",
     "q3": "Can I work on a system that already exists and must keep running?",
     "q4": "Will I ship, or wait to be told every step?"
+  },
+  "steps": {
+    "title": "How I de-risk the bet",
+    "s1": {
+      "tag": "Security",
+      "title": "Secure the base",
+      "desc": "Auth, RBAC and validation first."
+    },
+    "s2": {
+      "tag": "Data",
+      "title": "Model the data",
+      "desc": "Schemas that survive change."
+    },
+    "s3": {
+      "tag": "Quality",
+      "title": "Test it",
+      "desc": "Vitest and Cypress, wired into CI."
+    }
   }
 }

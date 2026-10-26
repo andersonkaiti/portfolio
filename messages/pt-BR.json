@@ -196,5 +196,23 @@
     "q2": "Vou escrever testes, ou deixar a limpeza para você?",
     "q3": "Consigo trabalhar em um sistema que já existe e precisa continuar no ar?",
     "q4": "Vou entregar, ou esperar que digam cada passo?"
+  },
+  "steps": {
+    "title": "Como eu reduzo o risco da aposta",
+    "s1": {
+      "tag": "Segurança",
+      "title": "Proteger a base",
+      "desc": "Primeiro autenticação, RBAC e validação."
+    },
+    "s2": {
+      "tag": "Dados",
+      "title": "Modelar os dados",
+      "desc": "Schemas que sobrevivem a mudanças."
+    },
+    "s3": {
+      "tag": "Qualidade",
+      "title": "Testar",
+      "desc": "Vitest e Cypress, integrados ao CI."
+    }
   }
 }
