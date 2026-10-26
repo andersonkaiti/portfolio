@@ -448,6 +448,27 @@ body {
   }
 }
 
+.ak-num-char {
+  opacity: 0;
+  clip-path: inset(100% 0 0 0);
+  filter: blur(10px);
+  transform: translateY(0.18em);
+}
+
+[data-shown] .ak-num-char {
+  animation: ak-num-in 0.7s cubic-bezier(0.16, 1, 0.3, 1)
+    calc(var(--i, 0) * 0.1s) both;
+}
+
+@keyframes ak-num-in {
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
 .ak-step-fill {
   transform: scaleX(0);
   transform-origin: left center;
@@ -588,8 +609,16 @@ body {
   [data-played] .ak-lit,
   [data-played] .ak-lit-rim,
   [data-played] .ak-lit-run,
-  [data-played] .ak-lit-glow {
+  [data-played] .ak-lit-glow,
+  [data-shown] .ak-num-char {
     animation: none;
+  }
+
+  .ak-num-char {
+    opacity: 1;
+    clip-path: none;
+    filter: none;
+    transform: none;
   }
 
   .ak-step-fill {

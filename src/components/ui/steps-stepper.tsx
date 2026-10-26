@@ -3,7 +3,10 @@
 import { animate, useInView, useReducedMotion } from 'motion/react'
 import { type ReactNode, useEffect, useRef } from 'react'
 
-const STEP_DURATION = 1.2
+const NUMBER_DURATION = 0.7
+const LIGHT_DELAY = 0.4
+const FILL_DURATION = 0.7
+const STEP_PAUSE = 0.15
 
 export function StepsStepper({
   children,
@@ -29,27 +32,34 @@ export function StepsStepper({
     root.setAttribute('data-armed', '')
 
     for (const step of root.querySelectorAll<HTMLElement>('[data-step]')) {
-      const duration = STEP_DURATION
       const fill = step.querySelector<HTMLElement>('[data-step-fill]')
+
+      timers.push(
+        window.setTimeout(
+          () => step.setAttribute('data-shown', ''),
+          time * 1000,
+        ),
+        window.setTimeout(
+          () => step.setAttribute('data-played', ''),
+          (time + LIGHT_DELAY) * 1000,
+        ),
+      )
 
       if (fill) {
         controls.push(
           animate(
             fill,
             { scaleX: [0, 1] },
-            { delay: time + duration - 0.1, duration: 0.9, ease: 'easeInOut' },
+            {
+              delay: time + NUMBER_DURATION,
+              duration: FILL_DURATION,
+              ease: 'easeInOut',
+            },
           ),
         )
       }
 
-      timers.push(
-        window.setTimeout(
-          () => step.setAttribute('data-played', ''),
-          (time + duration) * 1000,
-        ),
-      )
-
-      time += duration + (fill ? 0.7 : 0)
+      time += NUMBER_DURATION + (fill ? FILL_DURATION : 0) + STEP_PAUSE
     }
 
     return () => {

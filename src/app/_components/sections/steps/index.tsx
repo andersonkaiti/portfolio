@@ -5,6 +5,7 @@ import { StepsStepper } from '@components/ui/steps-stepper'
 import { jetBrainsMono } from '@lib/fonts'
 import { cn } from 'cn'
 import { getTranslations } from 'next-intl/server'
+import { StepNumber } from './step-number'
 
 const STEPS = [
   { key: 's1', icon: LockIcon },
@@ -40,7 +41,7 @@ export async function StepsSection() {
 
             <div className="relative col-start-1 row-start-1 flex items-center gap-5 md:col-auto md:row-auto md:w-full md:justify-center">
               <span className="relative z-10 font-display text-[56px] leading-[0.9] font-bold tracking-[-0.04em] text-primary md:bg-background md:px-5 md:text-[72px]">
-                {String(index + 1).padStart(2, '0')}
+                <StepNumber value={String(index + 1).padStart(2, '0')} />
               </span>
               {index < STEPS.length - 1 && (
                 <span
