@@ -239,17 +239,17 @@
   },
   "faq": {
     "title": "FAQ",
-    "q1": "Você trabalha remotamente?",
-    "a1": "Sim, e também híbrido ou presencial.",
-    "q2": "Com o que você trabalha?",
-    "a2": "TypeScript de ponta a ponta: React, Next.js, Node.js, Fastify, PostgreSQL, Prisma/Drizzle e AWS serverless.",
-    "q3": "Você escreve testes?",
-    "a3": "Sim, com Vitest e Cypress.",
-    "q4": "Posso ver código real?",
-    "a4": "Sim, meu GitHub está linkado e os repositórios dos projetos são públicos.",
-    "q5": "Como falo com você?",
-    "a5": "E-mail ou WhatsApp. Os dois estão na seção de contato abaixo.",
-    "q6": "Você serve para uma vaga júnior?",
-    "a6": "Sim. Sou júnior e deixo isso claro."
+    "q1": "Remoto ou híbrido?",
+    "a1": "Os dois. Moro em Bauru, no Brasil, e estou aberto a equipes brasileiras e internacionais.",
+    "q2": "Senioridade?",
+    "a2": "Júnior, com experiência em produção em 3 organizações.",
+    "q3": "Stack principal?",
+    "a3": "TypeScript, React/Next.js, Node.js (Fastify), PostgreSQL, AWS serverless.",
+    "q4": "Você escreve testes?",
+    "a4": "Sim: Vitest e Cypress.",
+    "q5": "Idiomas?",
+    "a5": "Português (nativo), inglês C1.",
+    "q6": "Como falo com você?",
+    "a6": "E-mail, LinkedIn ou WhatsApp."
   }
 }

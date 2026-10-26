@@ -3,7 +3,7 @@ import { SectionTitle } from '@components/ui/section'
 import { getTranslations } from 'next-intl/server'
 import { FaqItem } from './faq-item'
 
-const ITEMS = ['1', '2', '3', '4', '6', '5'] as const
+const ITEMS = ['1', '2', '3', '4', '5', '6'] as const
 
 export async function FaqSection() {
   const t = await getTranslations('faq')
