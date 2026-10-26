@@ -10,7 +10,7 @@ import {
   useScroll,
 } from 'motion/react'
 
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 
 interface NavbarProps {
   children: React.ReactNode
@@ -51,11 +51,7 @@ interface MobileNavMenuProps {
 }
 
 export function Navbar({ children, className }: NavbarProps) {
-  const ref = useRef<HTMLDivElement>(null)
-  const { scrollY } = useScroll({
-    target: ref,
-    offset: ['start start', 'end start'],
-  })
+  const { scrollY } = useScroll()
   const [visible, setVisible] = useState<boolean>(false)
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
@@ -67,10 +63,7 @@ export function Navbar({ children, className }: NavbarProps) {
   })
 
   return (
-    <motion.div
-      className={cn('sticky inset-x-0 top-5 z-40 w-full', className)}
-      ref={ref}
-    >
+    <motion.div className={cn('sticky inset-x-0 top-5 z-40 w-full', className)}>
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
           ? React.cloneElement(
@@ -94,8 +87,9 @@ export function NavBody({ children, className, visible }: NavBodyProps) {
         width: visible ? '70%' : '100%',
         y: visible ? 20 : 0,
       }}
+      data-visible={visible ? 'true' : 'false'}
       className={cn(
-        'relative z-60 mx-auto hidden min-h-17 w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent p-4 lg:flex dark:bg-transparent',
+        'group/nav relative z-60 mx-auto hidden min-h-17 w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent p-4 lg:flex dark:bg-transparent',
         visible && 'bg-white/80 dark:bg-neutral-950/80',
         className,
       )}

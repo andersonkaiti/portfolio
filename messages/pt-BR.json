@@ -2,12 +2,13 @@
   "nav": {
     "introduction": "Início",
     "about": "Sobre",
-    "solutions": "Soluções",
+    "solutions": "O que eu construo",
     "experiences": "Experiência",
     "projects": "Projetos",
     "technologies": "Stack",
-    "education": "Formação",
-    "contact": "Contato"
+    "contact": "Contato",
+    "faq": "FAQ",
+    "cta": "Vamos conversar"
   },
   "hero": {
     "available": "Disponível para trabalhar",

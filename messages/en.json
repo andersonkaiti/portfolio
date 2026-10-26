@@ -2,12 +2,13 @@
   "nav": {
     "introduction": "Introduction",
     "about": "About",
-    "solutions": "Solutions",
-    "experiences": "Experiences",
+    "solutions": "What I build",
+    "experiences": "Experience",
     "projects": "Projects",
     "technologies": "Technologies",
-    "education": "Education",
-    "contact": "Contact"
+    "contact": "Contact",
+    "faq": "FAQ",
+    "cta": "Let's talk"
   },
   "hero": {
     "available": "Available for work",
