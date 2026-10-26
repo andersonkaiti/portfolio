@@ -6,16 +6,26 @@ import { getTranslations } from 'next-intl/server'
 
 export async function PainSection() {
   const t = await getTranslations('pain')
-  const questions = [t('q1'), t('q2'), t('q3'), t('q4')]
+  const questions = [t('q1'), t('q2'), t('q3'), t('q4'), t('q5')]
 
   return (
     <SectionContainer className="space-y-0 pt-16 pb-4 md:pt-20">
       <Reveal>
         <SectionTitle>{t('title')}</SectionTitle>
       </Reveal>
-      <p className="mt-1 max-w-[26em] text-lg text-body">{t('subtitle')}</p>
+      <p className="mt-1 max-w-[40em] text-lg text-body">{t('subtitle')}</p>
+      <p className="mt-4 max-w-[40em] text-lg font-medium">{t('closing')}</p>
 
-      <div className="mt-14 grid grid-cols-[repeat(auto-fit,minmax(min(420px,100%),1fr))] gap-x-16 gap-y-12">
+      <p
+        className={cn(
+          'mt-16 text-sm font-medium uppercase tracking-[0.04em] text-muted-foreground',
+          jetBrainsMono.className,
+        )}
+      >
+        {t('worry')}
+      </p>
+
+      <div className="mt-6 grid grid-cols-[repeat(auto-fit,minmax(min(420px,100%),1fr))] gap-x-16 gap-y-12">
         {questions.map((question, index) => (
           <Reveal
             key={question}

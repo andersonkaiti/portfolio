@@ -151,12 +151,15 @@
     }
   },
   "pain": {
-    "title": "I know hiring a junior is a bet.",
-    "subtitle": "So these are the questions I'd ask in your place.",
-    "q1": "Can I handle auth and permissions, or only happy-path screens?",
-    "q2": "Will I write tests, or leave you the cleanup?",
-    "q3": "Can I work on a system that already exists and must keep running?",
-    "q4": "Will I ship, or wait to be told every step?"
+    "title": "Hiring a junior is a bet. I make it a safe one.",
+    "subtitle": "I've shipped to production in two public institutions and one product company. I measure what I build and I care about the why behind the architecture: auth, access control, data models, tests.",
+    "q1": "Will they need months of hand-holding?",
+    "q2": "Will their code survive code review?",
+    "q3": "Do they understand auth, permissions and data, or just UI?",
+    "q4": "Can they ship, or only finish tutorials?",
+    "closing": "Fast delivery, without code that hurts later.",
+    "worry": "What teams worry about when hiring a junior",
+    "q5": "Will they communicate clearly with an international team?"
   },
   "steps": {
     "title": "How I de-risk the bet",

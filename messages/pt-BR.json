@@ -151,12 +151,15 @@
     }
   },
   "pain": {
-    "title": "Sei que contratar um júnior é uma aposta.",
-    "subtitle": "Então estas são as perguntas que eu faria no seu lugar.",
-    "q1": "Consigo lidar com autenticação e permissões, ou só com telas do caminho feliz?",
-    "q2": "Vou escrever testes, ou deixar a limpeza para você?",
-    "q3": "Consigo trabalhar em um sistema que já existe e precisa continuar no ar?",
-    "q4": "Vou entregar, ou esperar que digam cada passo?"
+    "title": "Contratar um júnior é uma aposta. Eu a transformo em uma aposta segura.",
+    "subtitle": "Já entreguei para produção em duas instituições públicas e em uma empresa de produto. Eu meço o que construo e me importo com o porquê da arquitetura: autenticação, controle de acesso, modelos de dados, testes.",
+    "q1": "Vai precisar de meses de acompanhamento?",
+    "q2": "O código vai sobreviver ao code review?",
+    "q3": "Entende de autenticação, permissões e dados, ou só de interface?",
+    "q4": "Consegue entregar, ou só termina tutoriais?",
+    "closing": "Entrega rápida, sem código que machuca depois.",
+    "worry": "O que as equipes temem ao contratar um júnior",
+    "q5": "Vai se comunicar bem com uma equipe internacional?"
   },
   "steps": {
     "title": "Como eu reduzo o risco da aposta",
