@@ -106,11 +106,11 @@
     "subtitle": "As ferramentas que uso no dia a dia, por camada."
   },
   "projects": {
-    "label": "Portfólio",
+    "label": "Projetos",
     "title": "Projetos em destaque",
     "subtitle": "Uma amostra do que ando construindo recentemente",
     "count": "{count} projetos encontrados",
-    "viewAll": "Explorar todos",
+    "viewAll": "Ver todos os projetos",
     "search": "Pesquisar projetos...",
     "clearSearch": "Limpar busca",
     "filter": "Tecnologias",
@@ -119,7 +119,9 @@
     "noProjects": "Nenhum projeto disponível.",
     "noProjectsFiltered": "Nenhum projeto corresponde aos filtros selecionados.",
     "clearFilters": "Remover filtros",
-    "backToHome": "Voltar para o início",
+    "backToHome": "Voltar",
+    "ctaTitle": "Contratando um desenvolvedor full-stack?",
+    "ctaButton": "Vamos conversar",
     "code": "Código",
     "demo": "Demo"
   },

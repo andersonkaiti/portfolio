@@ -106,11 +106,11 @@
     "subtitle": "The tools I use day to day, by layer."
   },
   "projects": {
-    "label": "Work",
+    "label": "Projects",
     "title": "Projects",
     "subtitle": "Some of the projects I have developed along my journey",
     "count": "{count} projects",
-    "viewAll": "View all",
+    "viewAll": "View all projects",
     "search": "Search projects...",
     "clearSearch": "Clear search",
     "filter": "Technologies",
@@ -119,7 +119,9 @@
     "noProjects": "No projects available.",
     "noProjectsFiltered": "No projects found for the applied filters.",
     "clearFilters": "Clear filters",
-    "backToHome": "Back to home",
+    "backToHome": "Back",
+    "ctaTitle": "Hiring a full-stack developer?",
+    "ctaButton": "Let's talk",
     "code": "Code",
     "demo": "Demo"
   },

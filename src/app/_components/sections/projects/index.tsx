@@ -1,8 +1,6 @@
 import {
   SectionContainer,
-  SectionHeader,
   SectionLabel,
-  SectionSubtitle,
   SectionTitle,
 } from '@components/ui/section'
 import { getProjects } from '@http/get-projects'
@@ -15,16 +13,16 @@ export async function ProjectListSection() {
   const t = await getTranslations('projects')
 
   return (
-    <SectionContainer id="projects">
-      <SectionHeader side="left">
+    <SectionContainer id="projects" className="pt-12">
+      <div className="space-y-3">
         <SectionLabel>{t('label')}</SectionLabel>
-        <SectionTitle>{t('title')}</SectionTitle>
-        <SectionSubtitle>{t('subtitle')}</SectionSubtitle>
-      </SectionHeader>
+        <SectionTitle className="sr-only">{t('title')}</SectionTitle>
+      </div>
 
       <Suspense
         fallback={
-          <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="flex flex-col gap-16">
+            <ProjectSkeleton />
             <ProjectSkeleton />
             <ProjectSkeleton />
           </div>

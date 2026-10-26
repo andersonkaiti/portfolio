@@ -1,7 +1,5 @@
-import { Button } from '@components/ui/button'
+import { Reveal } from '@components/ui/reveal'
 import type { IGithubRepository } from '@http/get-projects'
-import { jetBrainsMono } from '@lib/fonts'
-import { cn } from 'cn'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
@@ -13,42 +11,25 @@ interface ProjectListProps {
 
 export async function ProjectList({ projects }: ProjectListProps) {
   const t = await getTranslations('projects')
-  const latestsProjects = projects.slice(0, 2)
+  const latestsProjects = projects.slice(0, 3)
 
   return (
-    <div
-      className="flex flex-col gap-4"
-      data-aos="fade-up"
-      suppressHydrationWarning
-    >
-      <div className="flex items-center justify-between">
-        <span
-          className={cn(
-            'text-xs uppercase tracking-[0.14em] text-muted-foreground tabular-nums',
-            jetBrainsMono.className,
-          )}
-        >
-          {t('count', { count: projects.length })}
-        </span>
-
-        <Button asChild variant="ghost" size="sm">
-          <Link href="/projects">
-            {t('viewAll')} <ArrowRight className="size-3.5" />
-          </Link>
-        </Button>
-      </div>
-
-      <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-        {latestsProjects.map((project, index) => (
-          <Project
-            key={project.id}
-            {...project}
-            index={index}
-            codeLabel={t('code')}
-            demoLabel={t('demo')}
-          />
+    <div>
+      <div>
+        {latestsProjects.map((project) => (
+          <Project key={project.id} {...project} demoLabel={t('demo')} />
         ))}
       </div>
+
+      <Reveal className="mt-14 flex justify-center">
+        <Link
+          href="/projects"
+          className="ak-btn inline-flex min-h-16 items-center gap-3.5 rounded-full border-[1.5px] border-foreground px-8 text-[17px] font-semibold text-foreground no-underline hover:bg-foreground hover:text-background"
+        >
+          {t('viewAll')}
+          <ArrowRight aria-hidden="true" className="size-5" />
+        </Link>
+      </Reveal>
     </div>
   )
 }
