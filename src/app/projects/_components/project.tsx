@@ -1,22 +1,20 @@
-import { Button } from '@components/ui/button'
+import { ProjectReveal } from '@components/ui/project-reveal'
 import type { IGithubRepository } from '@http/get-projects'
-import { jetBrainsMono } from '@lib/fonts'
 import { formatTitle } from '@utils/format-title'
 import { formatTopic } from '@utils/format-topic'
 import { getPreviewSrc } from '@utils/get-preview-src'
-import { cn } from 'cn'
-import dayjs from 'dayjs'
-import { ArrowUpRight, Github, ImageIcon } from 'lucide-react'
+import { ArrowUpRight, ImageIcon } from 'lucide-react'
 import Link from 'next/link'
 import { ProjectPreview } from './project-preview'
 import { TopicLogoImage } from './topic-logo-image'
 import { getTopicLogo } from './topic-to-logo'
 
 interface ProjectProps extends IGithubRepository {
-  codeLabel: string
   demoLabel: string
-  index: number
 }
+
+const LINK_CLASS =
+  'inline-flex items-center gap-1.5 border-b-[1.5px] border-foreground pb-0.5 text-sm font-semibold text-foreground no-underline transition-colors hover:border-primary hover:text-primary'
 
 export function Project({
   name,
@@ -24,54 +22,39 @@ export function Project({
   html_url,
   homepage,
   topics,
-  updated_at,
-  codeLabel,
   demoLabel,
-  index,
 }: ProjectProps) {
   const previewSrc = getPreviewSrc(homepage ?? html_url)
 
   return (
-    <div
-      data-aos="fade-up"
-      data-aos-delay={(index % 3) * 80}
-      style={{ transitionDelay: `${(index % 3) * 80}ms` }}
-      suppressHydrationWarning
-    >
-      <div className="group/card relative flex size-full flex-col gap-6 border border-border p-6 transition-[border-color,background-color] duration-500 ease-in-out hover:border-primary/30 hover:bg-accent/20 overflow-hidden">
-        {previewSrc ? (
-          <ProjectPreview
-            src={previewSrc}
-            alt={`${formatTitle(name)} preview`}
-            href={homepage ?? html_url}
-          />
-        ) : (
-          <div className="-mx-6 -mt-6 flex aspect-video w-[calc(100%+3rem)] items-center justify-center bg-accent/30">
-            <ImageIcon className="size-8 text-muted-foreground/30" />
-          </div>
-        )}
-
-        <div className="space-y-2">
-          <div className="flex items-start justify-between gap-2">
-            <h3 className="font-semibold text-base leading-snug">
-              {formatTitle(name)}
-            </h3>
-            <time
-              className={cn(
-                'shrink-0 text-[11px] uppercase tracking-widest text-muted-foreground tabular-nums',
-                jetBrainsMono.className,
-              )}
-            >
-              {dayjs(updated_at).format('MMM YYYY')}
-            </time>
-          </div>
-
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            {description}
-          </p>
+    <ProjectReveal
+      imageRadius={16}
+      className="flex flex-col gap-5"
+      image={
+        <div className="group/card relative aspect-[16/10] overflow-hidden rounded-2xl bg-ph">
+          {previewSrc ? (
+            <ProjectPreview
+              src={previewSrc}
+              alt={`${formatTitle(name)} preview`}
+              href={homepage ?? html_url}
+              bleed={false}
+            />
+          ) : (
+            <div className="flex size-full items-center justify-center">
+              <ImageIcon className="size-8 text-muted-foreground/40" />
+            </div>
+          )}
         </div>
+      }
+    >
+      <div className="flex flex-col gap-3">
+        <h2 className="text-2xl leading-tight font-bold tracking-[-0.02em]">
+          {formatTitle(name)}
+        </h2>
 
-        <div className="flex flex-wrap items-center gap-4">
+        <p className="text-[17px] text-body">{description}</p>
+
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           {topics.map((topic) => {
             const logo = getTopicLogo(topic)
 
@@ -82,7 +65,7 @@ export function Project({
             return (
               <span key={topic} className="inline-flex items-center gap-2">
                 <TopicLogoImage logo={logo} topic={topic} size={16} />
-                <span className="text-xs leading-none text-muted-foreground">
+                <span className="text-sm leading-none text-foreground">
                   {formatTopic(topic)}
                 </span>
               </span>
@@ -90,32 +73,20 @@ export function Project({
           })}
         </div>
 
-        <div className="mt-auto flex gap-3 border-t border-border pt-4">
-          <Button asChild size="sm" variant="ghost">
+        {homepage && (
+          <div className="pt-1">
             <Link
-              href={html_url}
+              href={homepage}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`${codeLabel} — ${formatTitle(name)}`}
+              aria-label={`${demoLabel} — ${formatTitle(name)}`}
+              className={LINK_CLASS}
             >
-              {codeLabel} <Github className="ml-0 size-3.5 opacity-50" />
+              {demoLabel} <ArrowUpRight className="size-3.5" />
             </Link>
-          </Button>
-          {homepage && (
-            <Button asChild size="sm" variant="ghost">
-              <Link
-                href={homepage}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${demoLabel} — ${formatTitle(name)}`}
-              >
-                {demoLabel}{' '}
-                <ArrowUpRight className="ml-0 size-3.5 opacity-50" />
-              </Link>
-            </Button>
-          )}
-        </div>
+          </div>
+        )}
       </div>
-    </div>
+    </ProjectReveal>
   )
 }

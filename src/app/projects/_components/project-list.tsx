@@ -1,10 +1,11 @@
 'use client'
 
 import { Button } from '@components/ui/button'
+import { Reveal } from '@components/ui/reveal'
 import type { IGithubRepository } from '@http/get-projects'
 import { jetBrainsMono } from '@lib/fonts'
 import { cn } from 'cn'
-import { ChevronLeft, SearchX } from 'lucide-react'
+import { ArrowLeft, SearchX } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { useAvailableTechs } from '../_hooks/use-available-techs'
@@ -32,13 +33,23 @@ export function ProjectList({ projects }: ProjectListProps) {
 
   return (
     <div className="flex w-full flex-col gap-8">
-      <Button asChild variant="ghost" className="self-start">
-        <Link href="/">
-          <ChevronLeft className="size-4" /> {t('backToHome')}
+      <Reveal>
+        <Link
+          href="/"
+          className={cn(
+            'inline-flex min-h-11 items-center gap-2.5 text-sm text-muted-foreground no-underline transition-colors hover:text-foreground',
+            jetBrainsMono.className,
+          )}
+        >
+          <ArrowLeft className="size-[18px]" /> {t('backToHome')}
         </Link>
-      </Button>
+      </Reveal>
 
-      <h1 className="text-3xl font-bold tracking-tight">{t('title')}</h1>
+      <Reveal delay={80}>
+        <h1 className="font-display text-[clamp(40px,6vw,72px)] leading-[0.98] font-bold tracking-[-0.035em]">
+          {t('title')}
+        </h1>
+      </Reveal>
 
       <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <span
@@ -74,15 +85,9 @@ export function ProjectList({ projects }: ProjectListProps) {
           )}
         </div>
       ) : (
-        <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-          {filteredProjects.map((project, index) => (
-            <Project
-              key={project.id}
-              {...project}
-              index={index}
-              codeLabel={t('code')}
-              demoLabel={t('demo')}
-            />
+        <div className="mt-10 grid w-full grid-cols-[repeat(auto-fit,minmax(min(440px,100%),1fr))] gap-x-12 gap-y-[72px]">
+          {filteredProjects.map((project) => (
+            <Project key={project.id} {...project} demoLabel={t('demo')} />
           ))}
         </div>
       )}
