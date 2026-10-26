@@ -221,5 +221,32 @@
     "streakValue": "{days} days",
     "bestLabel": "best day",
     "source": "Source: <github>GitHub</github> · updated {date}"
+  },
+  "work": {
+    "title": "Work with me",
+    "openTo": "Open to",
+    "openToValue": "Full-stack roles (Node.js + React)",
+    "format": "Format",
+    "formatValue": "Remote, hybrid or on-site",
+    "languages": "Languages",
+    "languagesValue": "Portuguese (native), English (C1, advancing to C2)",
+    "includes": "Includes",
+    "i1": "Full-stack delivery (React/Next.js + Node.js, TypeScript)",
+    "i2": "Auth, RBAC and validation by default",
+    "i3": "Tests included (Vitest, Cypress, CI)",
+    "i4": "Cloud-ready (AWS serverless, Docker)",
+    "bonus": "Bonus",
+    "bonusValue": "A small task or a 30-min pair session before you decide",
+    "cost": "Cost to try",
+    "costValue": "$0"
+  },
+  "objections": {
+    "title": "Straight answers",
+    "q1": "“But he's a junior.”",
+    "a1": "Junior in years, not in scope. I've owned authentication, payments and production deployments on real systems.",
+    "q2": "“But he's only done internships.”",
+    "a2": "Internships where I shipped to production and migrated legacy systems, which is the kind of work most teams need done.",
+    "q3": "“But can he work in English?”",
+    "a3": "Yes. C1 certified, and this site and my repos are in English."
   }
 }

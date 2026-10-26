@@ -221,5 +221,32 @@
     "streakValue": "{days} dias",
     "bestLabel": "melhor dia",
     "source": "Fonte: <github>GitHub</github> · atualizado em {date}"
+  },
+  "work": {
+    "title": "Trabalhe comigo",
+    "openTo": "Aberto a",
+    "openToValue": "Vagas full-stack (Node.js + React)",
+    "format": "Formato",
+    "formatValue": "Remoto, híbrido ou presencial",
+    "languages": "Idiomas",
+    "languagesValue": "Português (nativo), inglês (C1, evoluindo para C2)",
+    "includes": "Inclui",
+    "i1": "Entrega full-stack (React/Next.js + Node.js, TypeScript)",
+    "i2": "Autenticação, RBAC e validação por padrão",
+    "i3": "Testes incluídos (Vitest, Cypress, CI)",
+    "i4": "Pronto para a nuvem (AWS serverless, Docker)",
+    "bonus": "Bônus",
+    "bonusValue": "Uma tarefa pequena ou 30 min de pair antes de você decidir",
+    "cost": "Custo para testar",
+    "costValue": "R$ 0"
+  },
+  "objections": {
+    "title": "Respostas diretas",
+    "q1": "“Mas ele é júnior.”",
+    "a1": "Júnior em anos, não em escopo. Já fui responsável por autenticação, pagamentos e deploys em produção em sistemas reais.",
+    "q2": "“Mas ele só fez estágios.”",
+    "a2": "Estágios em que entreguei para produção e migrei sistemas legados, que é o tipo de trabalho que a maioria das equipes precisa.",
+    "q3": "“Mas ele consegue trabalhar em inglês?”",
+    "a3": "Sim. Certificado C1, e este site e meus repositórios estão em inglês."
   }
 }
