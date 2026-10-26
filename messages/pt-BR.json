@@ -44,55 +44,36 @@
   },
   "solutions": {
     "label": "O que eu construo",
-    "title": "Não uma stack, e sim <accent>problemas resolvidos</accent>",
-    "subtitle": "Seis frentes que eu já entreguei em produção.",
+    "title": "O que eu construo",
     "s1": {
       "num": "01",
-      "title": "Interfaces Full-Stack de Alta Performance",
-      "desc": "Front-ends escaláveis ligados a back-ends em Node.js e Prisma, com foco em DX e performance.",
-      "b1": "SSR e SSG com Next.js para performance máxima e SEO.",
-      "b2": "UI componentizada com TailwindCSS, shadcn/ui e React.",
-      "b3": "Validação type-safe com Zod, TanStack Query e React Hook Form."
+      "title": "Interfaces full-stack de alta performance",
+      "desc": "Front-ends em React/Next.js sobre APIs Node.js tipadas, validadas de ponta a ponta com Zod."
     },
     "s2": {
       "num": "02",
-      "title": "Smart TV & Sinalização Digital",
-      "desc": "Apps para Smart TV em React Native TVOS com WebSockets em tempo real e conteúdo gerenciado remotamente.",
-      "b1": "Interfaces adaptadas para controle remoto e experiência TV.",
-      "b2": "Comunicação bidirecional em tempo real com WebSockets.",
-      "b3": "Sistemas de sinalização digital e testes médicos integrados."
+      "title": "Smart TV e sinalização digital",
+      "desc": "Apps React Native TVOS com WebSockets em tempo real para sinalização e exames médicos."
     },
     "s3": {
       "num": "03",
-      "title": "Gamificação & Engajamento",
-      "desc": "Gamificação com feedback háptico, conquistas, feeds sociais e rankings para coaching esportivo.",
-      "b1": "Feedbacks hápticos e animações para experiências imersivas.",
-      "b2": "Sistemas de conquistas, rankings e pontuação.",
-      "b3": "Feeds sociais e interações em tempo real entre usuários."
+      "title": "Gamificação e engajamento",
+      "desc": "Haptics, feeds e rankings em uma plataforma de saúde e fitness."
     },
     "s4": {
       "num": "04",
-      "title": "Fintech & Painéis Administrativos",
-      "desc": "Dashboards B2B com checkout via Pix, assinaturas e construtores visuais de planos de treino.",
-      "b1": "Integração de checkout via Pix e gestão de assinaturas.",
-      "b2": "Painéis administrativos com analytics e controle de acesso.",
-      "b3": "Construtor visual de planos de treinamento para coaches."
+      "title": "Fintech e dashboards administrativos",
+      "desc": "Dashboards B2B com checkout via Pix."
     },
     "s5": {
       "num": "05",
-      "title": "Logística & Rastreamento",
-      "desc": "O fluxo completo de logística: app do cliente, painel de controle e interface do entregador.",
-      "b1": "App do cliente para pedidos e rastreamento em tempo real.",
-      "b2": "Painel de controle para gestão de entregas e rotas.",
-      "b3": "App do entregador com confirmação e status de entrega."
+      "title": "Logística e rastreamento",
+      "desc": "O fluxo logístico completo: app do cliente, painel de controle e interface do entregador."
     },
     "s6": {
       "num": "06",
-      "title": "Autenticação & Segurança",
-      "desc": "Autenticação e controle de acesso seguros — de RBAC em produção a OAuth2, rotação de JWT e Cognito.",
-      "b1": "Controle de acesso por perfil (RBAC) e validação de entrada em rotas de produção.",
-      "b2": "OAuth2 e JWT com rotação de access/refresh tokens.",
-      "b3": "Autenticação serverless com AWS Cognito, Lambda e API Gateway."
+      "title": "Autenticação e segurança",
+      "desc": "Login social OAuth (Apple, Google, Facebook), RBAC e validação em sistemas do setor público."
     }
   },
   "experiences": {

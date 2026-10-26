@@ -44,55 +44,36 @@
   },
   "solutions": {
     "label": "What I build",
-    "title": "Not just a stack, but <accent>problems solved</accent>",
-    "subtitle": "Six areas I've already shipped to production.",
+    "title": "What I build",
     "s1": {
       "num": "01",
       "title": "High-Performance Full-Stack Interfaces",
-      "desc": "Scalable front-ends wired to Node.js and Prisma back-ends, tuned for DX and performance.",
-      "b1": "SSR and SSG with Next.js for peak performance and SEO.",
-      "b2": "Componentized UI with TailwindCSS, shadcn/ui and React.",
-      "b3": "Type-safe validation with Zod, TanStack Query and React Hook Form."
+      "desc": "React/Next.js front ends over typed Node.js APIs, validated end to end with Zod."
     },
     "s2": {
       "num": "02",
       "title": "Smart TV & Digital Signage",
-      "desc": "Smart TV apps in React Native TVOS with real-time WebSockets and remotely managed content.",
-      "b1": "Interfaces adapted for remote control and TV experience.",
-      "b2": "Bidirectional real-time communication with WebSockets.",
-      "b3": "Digital signage and integrated medical testing systems."
+      "desc": "React Native TVOS apps with real-time WebSockets for signage and medical testing."
     },
     "s3": {
       "num": "03",
       "title": "Gamification & Engagement",
-      "desc": "Gamification with haptics, achievements, social feeds and rankings for sports coaching.",
-      "b1": "Haptic feedback and animations for immersive experiences.",
-      "b2": "Achievement systems, rankings and scoring.",
-      "b3": "Social feeds and real-time interactions between users."
+      "desc": "Haptics, feeds and rankings in a health and fitness platform."
     },
     "s4": {
       "num": "04",
       "title": "Fintech & Admin Dashboards",
-      "desc": "B2B dashboards with Pix checkout, subscriptions and visual training-plan builders.",
-      "b1": "Pix checkout integration and subscription management.",
-      "b2": "Admin dashboards with analytics and access control.",
-      "b3": "Visual training plan builder for coaches."
+      "desc": "B2B dashboards with Pix checkout."
     },
     "s5": {
       "num": "05",
       "title": "Logistics & Tracking",
-      "desc": "The full logistics flow: customer app, control panel and delivery-person interface.",
-      "b1": "Customer app for orders and real-time tracking.",
-      "b2": "Control panel for delivery and route management.",
-      "b3": "Delivery person app with confirmation and status updates."
+      "desc": "The full logistics flow: customer app, control panel and delivery-person interface."
     },
     "s6": {
       "num": "06",
       "title": "Authentication & Security",
-      "desc": "Secure auth and access control — from production RBAC to OAuth2, JWT rotation and Cognito.",
-      "b1": "Role-based access control and input validation on production routes.",
-      "b2": "OAuth2 and JWT with access/refresh token rotation.",
-      "b3": "Serverless auth with AWS Cognito, Lambda and API Gateway."
+      "desc": "OAuth social login (Apple, Google, Facebook), RBAC and validation on public-sector systems."
     }
   },
   "experiences": {

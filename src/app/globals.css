@@ -238,32 +238,6 @@
   }
 }
 
-@keyframes solution-row-reveal {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes solution-content-reveal {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-[data-state="open"] .ak-solution-content {
-  animation: solution-content-reveal 0.35s cubic-bezier(0.25, 0, 0.35, 1) both;
-}
-
 /* ── Browser surfaces ─────────────────────────────────────────── */
 ::selection {
   background-color: var(--signal);
@@ -648,6 +622,22 @@ body {
 
 .ak-btn:active {
   transform: scale(0.96);
+}
+
+.ak-row {
+  transition: border-color 0.25s;
+}
+
+.ak-row .ak-row-title {
+  transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.ak-row:hover {
+  border-bottom-color: var(--foreground);
+}
+
+.ak-row:hover .ak-row-title {
+  transform: translateX(8px);
 }
 
 @media (prefers-reduced-motion: reduce) {

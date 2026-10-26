@@ -1,74 +1,44 @@
-import {
-  SectionContainer,
-  SectionHeader,
-  SectionLabel,
-  SectionSubtitle,
-  SectionTitle,
-} from '@components/ui/section'
+import { Reveal } from '@components/ui/reveal'
+import { SectionBand, SectionTitle } from '@components/ui/section'
+import { jetBrainsMono } from '@lib/fonts'
+import { cn } from 'cn'
 import { getTranslations } from 'next-intl/server'
-import { SolutionList } from './solution-list'
+
+const KEYS = ['s1', 's2', 's3', 's4', 's5', 's6'] as const
 
 export async function SolutionsSection() {
   const t = await getTranslations('solutions')
 
-  const items = [
-    {
-      num: t('s1.num'),
-      title: t('s1.title'),
-      desc: t('s1.desc'),
-      bullets: [t('s1.b1'), t('s1.b2'), t('s1.b3')],
-      tags: ['Next.js', 'React', 'Node.js', 'Prisma', 'TypeScript'],
-    },
-    {
-      num: t('s2.num'),
-      title: t('s2.title'),
-      desc: t('s2.desc'),
-      bullets: [t('s2.b1'), t('s2.b2'), t('s2.b3')],
-      tags: ['React Native', 'TVOS', 'WebSockets', 'Digital Signage'],
-    },
-    {
-      num: t('s3.num'),
-      title: t('s3.title'),
-      desc: t('s3.desc'),
-      bullets: [t('s3.b1'), t('s3.b2'), t('s3.b3')],
-      tags: ['React Native', 'Gamification', 'WebSockets', 'UX'],
-    },
-    {
-      num: t('s4.num'),
-      title: t('s4.title'),
-      desc: t('s4.desc'),
-      bullets: [t('s4.b1'), t('s4.b2'), t('s4.b3')],
-      tags: ['Next.js', 'Pix', 'Node.js', 'Dashboard'],
-    },
-    {
-      num: t('s5.num'),
-      title: t('s5.title'),
-      desc: t('s5.desc'),
-      bullets: [t('s5.b1'), t('s5.b2'), t('s5.b3')],
-      tags: ['React Native', 'Next.js', 'Node.js', 'Real-time'],
-    },
-    {
-      num: t('s6.num'),
-      title: t('s6.title'),
-      desc: t('s6.desc'),
-      bullets: [t('s6.b1'), t('s6.b2'), t('s6.b3')],
-      tags: ['OAuth2', 'JWT', 'RBAC', 'AWS Cognito', 'Node.js'],
-    },
-  ]
-
   return (
-    <SectionContainer id="solutions">
-      <SectionHeader side="left">
-        <SectionLabel>{t('label')}</SectionLabel>
-        <SectionTitle>
-          {t.rich('title', {
-            accent: (chunks) => <span className="text-primary">{chunks}</span>,
-          })}
-        </SectionTitle>
-        <SectionSubtitle>{t('subtitle')}</SectionSubtitle>
-      </SectionHeader>
+    <SectionBand id="solutions" innerClassName="max-w-7xl py-14 md:py-20">
+      <Reveal>
+        <SectionTitle>{t('title')}</SectionTitle>
+      </Reveal>
 
-      <SolutionList items={items} />
-    </SectionContainer>
+      <div className="mt-12">
+        {KEYS.map((key, index) => (
+          <Reveal
+            key={key}
+            delay={Math.min(index, 5) * 80}
+            className="ak-row grid grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))] items-baseline gap-x-8 gap-y-2 border-b border-dash/35 py-7 last:border-b-0"
+          >
+            <div className="flex items-center gap-5">
+              <span
+                className={cn(
+                  'text-base text-primary',
+                  jetBrainsMono.className,
+                )}
+              >
+                {t(`${key}.num`)}
+              </span>
+              <h3 className="ak-row-title text-2xl font-bold tracking-[-0.02em]">
+                {t(`${key}.title`)}
+              </h3>
+            </div>
+            <p className="text-body">{t(`${key}.desc`)}</p>
+          </Reveal>
+        ))}
+      </div>
+    </SectionBand>
   )
 }
