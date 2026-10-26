@@ -38,7 +38,10 @@ export function WorkExperience({
       {rows.map(({ exp, pos }, index) => (
         <div
           key={pos.id}
-          className="grid grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))] gap-x-12 gap-y-4 border-b border-dash/35 py-9 last:border-b-0"
+          className={cn(
+            'grid grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))] gap-x-12 gap-y-4 border-b border-dash/35 py-9 last:border-b-0',
+            exp.isCurrentEmployer && 'ak-live-row',
+          )}
           data-aos="fade-up"
           data-aos-delay={index * 80}
           style={{ transitionDelay: `${index * 80}ms` }}
@@ -51,10 +54,17 @@ export function WorkExperience({
             <p className="mt-1.5 text-muted-foreground">{exp.companyName}</p>
             <p
               className={cn(
-                'mt-1 text-[15px] text-muted-foreground',
+                'mt-1 flex items-center gap-2.5 text-[15px] text-muted-foreground',
+                exp.isCurrentEmployer && 'text-foreground',
                 jetBrainsMono.className,
               )}
             >
+              {exp.isCurrentEmployer && (
+                <span
+                  aria-hidden="true"
+                  className="ak-pulse-dot block size-2 shrink-0 rounded-full bg-primary text-primary"
+                />
+              )}
               {pos.employmentPeriod}
             </p>
           </div>

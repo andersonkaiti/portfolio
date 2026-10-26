@@ -637,6 +637,37 @@ body {
   );
 }
 
+.ak-live-row {
+  position: relative;
+}
+
+.ak-live-row::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(
+      90deg,
+      transparent,
+      var(--primary) 50%,
+      transparent
+    )
+    no-repeat;
+  background-size: 30% 100%;
+  animation: ak-live-sweep 4.5s ease-in-out infinite;
+}
+
+@keyframes ak-live-sweep {
+  from {
+    background-position: -40% 0;
+  }
+  to {
+    background-position: 140% 0;
+  }
+}
+
 .ak-btn {
   transition:
     transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
@@ -765,5 +796,10 @@ details[open] > summary .ak-plus {
   .ak-underline-draw {
     animation: none;
     background-size: 100% 0.15em;
+  }
+
+  .ak-live-row::after {
+    animation: none;
+    background-position: 50% 0;
   }
 }
