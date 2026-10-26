@@ -1,5 +1,6 @@
 import { ContributionGraph } from '@components/ui/contribution-graph'
 import { CountUp } from '@components/ui/count-up'
+import { FlameIcon } from '@components/ui/flame-icon'
 import { LinkPreview } from '@components/ui/link-preview'
 import {
   generateGitHubContributionData,
@@ -81,6 +82,7 @@ export async function GithubGraph() {
     {
       value: t('streakValue', { days: stats.current }),
       label: t('currentStreakLabel'),
+      flame: stats.current > 0,
     },
     {
       value: t('streakValue', { days: stats.longest }),
@@ -109,7 +111,8 @@ export async function GithubGraph() {
         <div className="flex flex-wrap gap-x-12 gap-y-6">
           {summary.map((item) => (
             <div key={item.label}>
-              <div className="font-display text-[32px] leading-none font-bold tracking-[-0.03em]">
+              <div className="flex items-center gap-2 font-display text-[32px] leading-none font-bold tracking-[-0.03em]">
+                {item.flame && <FlameIcon className="size-8 shrink-0" />}
                 <CountUp value={item.value} />
               </div>
               <div

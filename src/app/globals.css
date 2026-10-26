@@ -643,7 +643,68 @@ details[open] > summary .ak-plus {
   transform: rotate(45deg);
 }
 
+.ak-flame-body,
+.ak-flame-core {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+
+.ak-flame-body {
+  animation: ak-sway 2.2s ease-in-out infinite;
+}
+
+.ak-flame-core {
+  animation: ak-core 1.3s ease-in-out infinite;
+}
+
+.ak-ember {
+  opacity: 0;
+  animation: ak-ember 2.6s ease-out var(--d, 0s) infinite;
+}
+
+@keyframes ak-sway {
+  0%,
+  100% {
+    transform: scale(1, 1) skewX(0deg);
+  }
+  35% {
+    transform: scale(1.04, 1.1) skewX(-3deg);
+  }
+  70% {
+    transform: scale(0.97, 1.03) skewX(2.5deg);
+  }
+}
+
+@keyframes ak-core {
+  0%,
+  100% {
+    transform: scale(1, 1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(0.9, 1.18);
+    opacity: 0.7;
+  }
+}
+
+@keyframes ak-ember {
+  0% {
+    opacity: 0;
+    transform: translateY(2px) scale(0.6);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-7px) scale(0.3);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .ak-flame-body,
+  .ak-flame-core,
+  .ak-ember,
   .ak-pulse-dot {
     animation: none;
   }
