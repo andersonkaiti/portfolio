@@ -15,19 +15,15 @@ export interface ContributionData {
 export interface ContributionGraphProps
   extends React.HTMLAttributes<HTMLDivElement> {
   data?: ContributionData[]
-  year?: number
-  startDate?: Date
-  endDate?: Date
   showLegend?: boolean
+  caption?: React.ReactNode
   showTooltips?: boolean
 }
 
-const WEEKS_IN_YEAR = 53
 const DAYS_IN_WEEK = 7
-const JANUARY_MONTH = 0
-const DECEMBER_MONTH = 11
-const SUNDAY_DAY = 0
-const MIN_WEEKS_FOR_DECEMBER_HEADER = 2
+const DAY_MS = 86_400_000
+const MOBILE_WEEKS = 26
+const MIN_WEEKS_BEFORE_FIRST_MONTH = 2
 const TOOLTIP_OFFSET_X = 10
 const TOOLTIP_OFFSET_Y = 40
 const TOOLTIP_MAX_WIDTH = 224
@@ -48,10 +44,8 @@ const MONTHS = [
   'Dec',
 ]
 
-const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-
 const CONTRIBUTION_COLORS = [
-  'bg-primary/5',
+  'bg-primary/10',
   'bg-primary/20',
   'bg-primary/40',
   'bg-primary/60',
@@ -64,131 +58,69 @@ const LEVEL_2 = 2
 const LEVEL_3 = 3
 const LEVEL_4 = 4
 const CONTRIBUTION_LEVELS = [LEVEL_0, LEVEL_1, LEVEL_2, LEVEL_3, LEVEL_4]
-const DAY_1 = 1
-const DAY_31 = 31
-
-const isDateInValidRange = (
-  currentDate: Date,
-  startDate: Date,
-  endDate: Date,
-  targetYear?: number,
-) => {
-  const isInRange = currentDate >= startDate && currentDate <= endDate
-  if (!targetYear) return isInRange
-  const isPreviousYearDecember =
-    currentDate.getFullYear() === targetYear - 1 &&
-    currentDate.getMonth() === DECEMBER_MONTH
-  const isNextYearJanuary =
-    currentDate.getFullYear() === targetYear + 1 &&
-    currentDate.getMonth() === JANUARY_MONTH
-  return isInRange || isPreviousYearDecember || isNextYearJanuary
+const toUtc = (dateString: string) => {
+  const [year, month, day] = dateString.split('-').map(Number)
+  return Date.UTC(year ?? 0, (month ?? 1) - 1, day ?? 1)
 }
 
-const createDayData = (
-  currentDate: Date,
-  contributionData: ContributionData[],
-): ContributionData => {
-  const dateString = currentDate.toISOString().slice(0, 10)
-  const existingData = contributionData.find((d) => d.date === dateString)
-  return {
-    date: dateString,
-    count: existingData?.count ?? LEVEL_0,
-    level: existingData?.level ?? LEVEL_0,
+const toKey = (time: number) => new Date(time).toISOString().slice(0, 10)
+
+interface Layout {
+  days: ContributionData[]
+  weeks: number
+  months: { month: string; startWeek: number }[]
+}
+
+const buildLayout = (data: ContributionData[]): Layout => {
+  if (data.length === 0) {
+    return { days: [], weeks: 0, months: [] }
   }
-}
 
-interface MonthHeaderCheck {
-  currentYear: number
-  targetYear: number
-  currentMonth: number
-  startDateDay: number
-  weekCount: number
-}
-const shouldShowMonthHeader = ({
-  currentYear,
-  targetYear,
-  currentMonth,
-  startDateDay,
-  weekCount,
-}: MonthHeaderCheck) =>
-  currentYear === targetYear ||
-  (currentYear === targetYear - 1 &&
-    currentMonth === DECEMBER_MONTH &&
-    startDateDay !== SUNDAY_DAY &&
-    weekCount >= MIN_WEEKS_FOR_DECEMBER_HEADER)
+  const byDate = new Map(data.map((day) => [day.date, day]))
+  const times = data.map((day) => toUtc(day.date))
+  const first = Math.min(...times)
+  const last = Math.max(...times)
+  const firstSunday = first - new Date(first).getUTCDay() * DAY_MS
+  const weeks = Math.floor((last - firstSunday) / DAY_MS / DAYS_IN_WEEK) + 1
 
-const calculateMonthHeaders = (startDate: Date, targetYear?: number) => {
-  const headers: { month: string; colspan: number; startWeek: number }[] = []
-  const firstSunday = new Date(startDate)
-  firstSunday.setDate(startDate.getDate() - startDate.getDay())
+  const days: ContributionData[] = []
 
-  let currentMonth = -1
-  let currentYear = -1
-  let monthStartWeek = 0
-  let weekCount = 0
+  for (let index = 0; index < weeks * DAYS_IN_WEEK; index++) {
+    const time = firstSunday + index * DAY_MS
+    const found =
+      time < first || time > last ? undefined : byDate.get(toKey(time))
 
-  for (let weekNumber = 0; weekNumber < WEEKS_IN_YEAR; weekNumber++) {
-    const weekDate = new Date(firstSunday)
-    weekDate.setDate(firstSunday.getDate() + weekNumber * DAYS_IN_WEEK)
+    days.push(found ?? { date: '', count: LEVEL_0, level: LEVEL_0 })
+  }
 
-    const monthKey = weekDate.getMonth()
-    const yearKey = weekDate.getFullYear()
+  const months: Layout['months'] = []
+  let previous = -1
 
-    if (monthKey !== currentMonth || yearKey !== currentYear) {
-      if (
-        currentMonth !== -1 &&
-        (targetYear === undefined ||
-          shouldShowMonthHeader({
-            currentYear,
-            targetYear,
-            currentMonth,
-            startDateDay: startDate.getDay(),
-            weekCount,
-          }))
-      ) {
-        headers.push({
-          month: MONTHS[currentMonth] ?? '',
-          colspan: weekCount,
-          startWeek: monthStartWeek,
-        })
-      }
-      currentMonth = monthKey
-      currentYear = yearKey
-      monthStartWeek = weekNumber
-      weekCount = 1
-    } else {
-      weekCount++
+  for (let week = 0; week < weeks; week++) {
+    const sunday = new Date(firstSunday + week * DAYS_IN_WEEK * DAY_MS)
+    const month = sunday.getUTCMonth()
+
+    if (month !== previous) {
+      months.push({ month: MONTHS[month] ?? '', startWeek: week })
+      previous = month
     }
   }
 
-  if (
-    currentMonth !== -1 &&
-    (targetYear === undefined ||
-      shouldShowMonthHeader({
-        currentYear,
-        targetYear,
-        currentMonth,
-        startDateDay: startDate.getDay(),
-        weekCount,
-      }))
-  ) {
-    headers.push({
-      month: MONTHS[currentMonth] ?? '',
-      colspan: weekCount,
-      startWeek: monthStartWeek,
-    })
-  }
+  const trimmed = months.filter((entry, index) => {
+    const next = months[index + 1]
+    return (
+      !next || next.startWeek - entry.startWeek >= MIN_WEEKS_BEFORE_FIRST_MONTH
+    )
+  })
 
-  return headers
+  return { days, weeks, months: trimmed }
 }
 
 export function ContributionGraph({
   data = [],
-  year,
-  startDate: customStartDate,
-  endDate: customEndDate,
   className,
   showLegend = true,
+  caption,
   showTooltips = true,
   ...divProps
 }: ContributionGraphProps) {
@@ -196,59 +128,14 @@ export function ContributionGraph({
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 })
   const shouldReduceMotion = useReducedMotion()
 
-  const yearData = useMemo(() => {
-    const effectiveYear = year ?? new Date().getFullYear()
-    const startDate =
-      customStartDate ?? new Date(effectiveYear, JANUARY_MONTH, DAY_1)
-    const endDate =
-      customEndDate ?? new Date(effectiveYear, DECEMBER_MONTH, DAY_31)
-    const days: ContributionData[] = []
-
-    const firstSunday = new Date(startDate)
-    firstSunday.setDate(startDate.getDate() - startDate.getDay())
-
-    for (let weekNum = 0; weekNum < WEEKS_IN_YEAR; weekNum++) {
-      for (let day = 0; day < DAYS_IN_WEEK; day++) {
-        const currentDate = new Date(firstSunday)
-        currentDate.setDate(
-          firstSunday.getDate() + weekNum * DAYS_IN_WEEK + day,
-        )
-
-        if (
-          isDateInValidRange(
-            currentDate,
-            startDate,
-            endDate,
-            customStartDate ? undefined : effectiveYear,
-          )
-        ) {
-          days.push(createDayData(currentDate, data))
-        } else {
-          days.push({
-            date: '',
-            count: LEVEL_0,
-            level: LEVEL_0,
-          })
-        }
-      }
-    }
-
-    return days
-  }, [data, year, customStartDate, customEndDate])
-
-  const displayYear =
-    year ??
-    (customStartDate ? customStartDate.getFullYear() : new Date().getFullYear())
-  const effectiveStartDate =
-    customStartDate ?? new Date(displayYear, JANUARY_MONTH, DAY_1)
-  const monthHeaders = useMemo(
-    () =>
-      calculateMonthHeaders(
-        effectiveStartDate,
-        customStartDate ? undefined : displayYear,
-      ),
-    [effectiveStartDate, customStartDate, displayYear],
-  )
+  const {
+    days: yearData,
+    weeks,
+    months: monthHeaders,
+  } = useMemo(() => buildLayout(data), [data])
+  const hiddenWeeks = Math.max(0, weeks - MOBILE_WEEKS)
+  const lastDay = [...yearData].reverse().find((day) => day.date)
+  const displayYear = lastDay ? lastDay.date.slice(0, 4) : ''
 
   const handleDayHover = (day: ContributionData, event: React.MouseEvent) => {
     if (showTooltips && day.date) {
@@ -287,73 +174,93 @@ export function ContributionGraph({
 
   return (
     <div className={cn('contribution-graph', className)} {...divProps}>
-      <div className="overflow-x-auto">
-        <table className="w-full border-separate border-spacing-1 text-xs">
-          <caption className="sr-only">
-            Contribution Graph for {displayYear}
-          </caption>
-
-          <thead>
-            <tr className="h-3">
-              <td className="w-7 min-w-7" />
-              {monthHeaders.map((header) => (
-                <td
-                  className="relative text-left text-foreground"
-                  colSpan={header.colspan}
-                  key={`${header.month}-${header.startWeek}`}
-                >
-                  <span className="absolute top-0 left-1">{header.month}</span>
-                </td>
-              ))}
-            </tr>
-          </thead>
-
-          <tbody>
-            {Array.from({ length: DAYS_IN_WEEK }, (_, dayIndex) => (
-              <tr className="h-3.5" key={DAYS[dayIndex]}>
-                <td className="relative w-7 min-w-7 text-foreground">
-                  {dayIndex % 2 === 0 && (
-                    <span className="absolute -bottom-0.5 left-0 text-xs">
-                      {DAYS[dayIndex]}
-                    </span>
-                  )}
-                </td>
-
-                {Array.from({ length: WEEKS_IN_YEAR }, (_, w) => {
-                  const dayData = yearData[w * DAYS_IN_WEEK + dayIndex]
-                  const cellKey = `${dayData?.date ?? 'empty'}-${w}-${dayIndex}`
-                  if (!dayData?.date) {
-                    return (
-                      <td className="size-3.5 p-0" key={cellKey}>
-                        <div className="size-3.5" />
-                      </td>
-                    )
-                  }
-
-                  return (
-                    <td
-                      className="size-3.5 cursor-pointer p-0"
-                      key={cellKey}
-                      onMouseEnter={(e) => handleDayHover(dayData, e)}
-                      onMouseLeave={handleDayLeave}
-                      title={
-                        showTooltips
-                          ? `${formatDate(dayData.date)}: ${getContributionText(dayData.count)}`
-                          : undefined
-                      }
-                    >
-                      <div
-                        className={`size-3.5 rounded-xs ${
-                          CONTRIBUTION_COLORS[dayData.level]
-                        } hover:ring-2 hover:ring-background`}
-                      />
-                    </td>
-                  )
-                })}
-              </tr>
+      <div className="overflow-x-auto pb-2">
+        <div className="grid grid-cols-1 sm:min-w-[884px] sm:grid-cols-[36px_1fr] sm:gap-x-2">
+          <div className="max-sm:hidden" />
+          <div
+            aria-hidden="true"
+            className="relative h-5 font-mono text-xs text-muted-foreground [--off:0] [--tot:var(--w)] max-sm:[--off:var(--h)] max-sm:[--tot:26]"
+            style={
+              {
+                '--w': weeks,
+                '--h': hiddenWeeks,
+              } as React.CSSProperties
+            }
+          >
+            {monthHeaders.map((header) => (
+              <span
+                className={cn(
+                  'absolute top-0',
+                  header.startWeek < hiddenWeeks && 'max-sm:hidden',
+                )}
+                key={`${header.month}-${header.startWeek}`}
+                style={{
+                  left: `calc((${header.startWeek} - var(--off)) / var(--tot) * 100%)`,
+                }}
+              >
+                {header.month}
+              </span>
             ))}
-          </tbody>
-        </table>
+          </div>
+
+          <div
+            aria-hidden="true"
+            className="grid grid-rows-7 gap-1 font-mono text-[11px] text-muted-foreground max-sm:hidden"
+          >
+            {['', 'Mon', '', 'Wed', '', 'Fri', ''].map((day, index) => (
+              <span
+                className="flex items-center"
+                key={`${day}-${DAYS_IN_WEEK + index}`}
+              >
+                {day}
+              </span>
+            ))}
+          </div>
+
+          <ul
+            aria-label={`Contribution Graph for ${displayYear}`}
+            className="m-0 grid grid-flow-col grid-rows-7 list-none gap-px p-0 sm:gap-1"
+            style={{
+              gridAutoColumns: '1fr',
+            }}
+          >
+            {yearData.map((dayData, index) => {
+              if (!dayData.date) {
+                return (
+                  <li
+                    aria-hidden="true"
+                    className={cn(
+                      'aspect-square',
+                      Math.floor(index / DAYS_IN_WEEK) < hiddenWeeks &&
+                        'max-sm:hidden',
+                    )}
+                    key={`empty-${Math.floor(index / DAYS_IN_WEEK)}-${index % DAYS_IN_WEEK}`}
+                  />
+                )
+              }
+
+              return (
+                <li
+                  className={cn(
+                    'aspect-square cursor-pointer rounded-[2px] hover:ring-2 hover:ring-foreground/40 sm:rounded-[3px]',
+                    Math.floor(index / DAYS_IN_WEEK) < hiddenWeeks &&
+                      'max-sm:hidden',
+                    CONTRIBUTION_COLORS[dayData.level],
+                  )}
+                  key={dayData.date}
+                  aria-label={`${formatDate(dayData.date)}: ${getContributionText(dayData.count)}`}
+                  onMouseEnter={(e) => handleDayHover(dayData, e)}
+                  onMouseLeave={handleDayLeave}
+                  title={
+                    showTooltips
+                      ? `${formatDate(dayData.date)}: ${getContributionText(dayData.count)}`
+                      : undefined
+                  }
+                />
+              )
+            })}
+          </ul>
+        </div>
       </div>
 
       {showTooltips &&
@@ -392,17 +299,23 @@ export function ContributionGraph({
         )}
 
       {showLegend && (
-        <div className="mt-4 flex items-center justify-center gap-2 text-foreground/70 text-xs">
-          <span>Less</span>
-          <div className="flex items-center gap-1">
-            {CONTRIBUTION_LEVELS.map((level) => (
-              <div
-                className={`size-3 rounded-sm ${CONTRIBUTION_COLORS[level]}`}
-                key={level}
-              />
-            ))}
-          </div>
-          <span>More</span>
+        <div className="mt-5 flex flex-wrap items-center justify-between gap-x-8 gap-y-3 font-mono text-sm text-muted-foreground">
+          <span>{caption}</span>
+          <span className="inline-flex items-center gap-2">
+            <span>Less</span>
+            <div className="flex items-center gap-1">
+              {CONTRIBUTION_LEVELS.map((level) => (
+                <div
+                  className={cn(
+                    'size-3.5 rounded-[3px]',
+                    CONTRIBUTION_COLORS[level],
+                  )}
+                  key={level}
+                />
+              ))}
+            </div>
+            <span>More</span>
+          </span>
         </div>
       )}
     </div>

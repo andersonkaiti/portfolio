@@ -195,5 +195,29 @@
       "title": "Test it",
       "desc": "Vitest and Cypress, wired into CI."
     }
+  },
+  "proof": {
+    "label": "Proof",
+    "title": "Proof",
+    "stat1Value": "4+",
+    "stat1Label": "Years building software",
+    "stat2Value": "3",
+    "stat2Label": "Organizations",
+    "stat3Value": "20+",
+    "stat3Label": "Projects",
+    "stat4Value": "6",
+    "stat4Label": "Domains",
+    "consistency": "Consistency",
+    "stat1Note": "Web, mobile and Smart TV",
+    "stat2Note": "Borebi City Hall · Solid Tech · Funprev Bauru",
+    "stat3Note": "Internal systems, apps and AWS flows",
+    "stat4Note": "Fintech · Logistics · Health · Signage · Auth · Web",
+    "contributionsLabel": "contributions in the last year",
+    "weeksLabel": "weeks with activity",
+    "weeksValue": "{active} of {total}",
+    "streakLabel": "longest streak",
+    "streakValue": "{days} days",
+    "bestLabel": "best day",
+    "source": "Source: <github>GitHub</github> · updated {date}"
   }
 }
