@@ -672,6 +672,39 @@ body {
   );
 }
 
+.ak-hero-check {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ak-check-cycle 5.4s ease-in-out calc(var(--d, 0) * 1s) infinite
+    both;
+}
+
+@keyframes ak-check-cycle {
+  0% {
+    stroke-dashoffset: 1;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  12% {
+    opacity: 1;
+  }
+  18%,
+  30% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+    transform: scale(1);
+  }
+  40%,
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
 .ak-live-row {
   position: relative;
 }
@@ -831,6 +864,12 @@ details[open] > summary .ak-plus {
   .ak-underline-draw {
     animation: none;
     background-size: 100% 0.15em;
+  }
+
+  .ak-hero-check {
+    animation: none;
+    stroke-dashoffset: 0;
+    opacity: 1;
   }
 
   .ak-live-row::after {

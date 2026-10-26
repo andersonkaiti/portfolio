@@ -24,6 +24,8 @@ const layerZ = (index: number) => -index * LAYER_STEP
 
 const delayOf = (index: number) => START_DELAY + (2 - index) * STEP_DELAY
 
+const sheenOf = (index: number) => 0.8 + (2 - index) * 0.7
+
 export function IsoHeroArt({ label, layers }: IsoHeroArtProps) {
   const [width, depth, height] = SLAB_SIZE
 
@@ -44,7 +46,12 @@ export function IsoHeroArt({ label, layers }: IsoHeroArtProps) {
         SLAB_ORIGIN,
       )
 
-      return { text, index, edgeX, edgeY }
+      const [centerX, centerY] = project(
+        [width / 2, depth / 2, layerZ(index) + height],
+        SLAB_ORIGIN,
+      )
+
+      return { text, index, edgeX, edgeY, centerX, centerY }
     })
     .reverse()
 
@@ -68,7 +75,7 @@ export function IsoHeroArt({ label, layers }: IsoHeroArtProps) {
         />
       ))}
 
-      {stack.map(({ text, index, edgeX, edgeY }) => (
+      {stack.map(({ text, index, edgeX, edgeY, centerX, centerY }) => (
         <g key={text}>
           <IsoBox
             at={[0, 0, layerZ(index)]}
@@ -76,7 +83,19 @@ export function IsoHeroArt({ label, layers }: IsoHeroArtProps) {
             origin={SLAB_ORIGIN}
             className="ak-iso-drop"
             delay={delayOf(index)}
-            sheen={0.8 + (2 - index) * 0.7}
+            sheen={sheenOf(index)}
+          />
+          <path
+            className="ak-hero-check"
+            d={`M${centerX - 13} ${centerY}L${centerX - 5} ${centerY + 9}L${centerX + 13} ${centerY - 10}`}
+            fill="none"
+            pathLength="1"
+            stroke="var(--primary)"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="3.5"
+            style={{ '--d': sheenOf(index) } as CSSProperties}
+            vectorEffect="non-scaling-stroke"
           />
           <g
             className="ak-iso-fade"
