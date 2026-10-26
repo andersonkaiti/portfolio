@@ -78,19 +78,19 @@
       "title": "Full Stack Development Intern",
       "employmentType": "Internship",
       "employmentPeriod": "Apr 2026 – Present",
-      "description": "- Built 4 internal web systems in **Laravel** and unified 3 into one app, cutting duplication and maintenance.\n- Frontend in **React + TypeScript via Inertia.js**, over a **13-entity** model with **50+ routes** (auth, RBAC, validation).\n- Digitalized paper-based public workflows and run deployment and evolutionary maintenance in production."
+      "description": "- Cut duplicated code and maintenance by unifying 3 of 4 internal **Laravel** systems into one app.\n- Gave staff one **React + TypeScript** (**Inertia.js**) interface over **13 entities** and **50+ routes**, with auth, RBAC and validation.\n- Replaced paper-based public workflows with digital ones, now running in production."
     },
     "solidTech": {
       "title": "Full Stack Developer",
       "employmentType": "Freelance",
       "employmentPeriod": "Feb 2026 – Apr 2026",
-      "description": "- Scalable full-stack ecosystems: **React/Next.js** front-ends on **Node.js/Prisma** back-ends.\n- **Smart TV** signage and medical-testing apps in **React Native TVOS** with real-time WebSockets.\n- Gamification (haptics, feeds, rankings), B2B dashboards with **Pix** checkout, and full logistics apps."
+      "description": "- Shipped **Smart TV** signage and medical-testing apps in **React Native TVOS** with real-time WebSockets, reaching [INSERT metric].\n- Delivered B2B dashboards with **Pix** checkout and logistics apps on **Node.js/Prisma**."
     },
     "funprev": {
       "title": "IT Internship",
       "employmentType": "Internship",
       "employmentPeriod": "Nov 2024 – Nov 2025",
-      "description": "- Diagnosed and fixed network, device and infrastructure issues, keeping systems stable and secure.\n- Built and maintained internal web systems in **PHP** and **JavaScript**, with **SQL** on PostgreSQL/phpMyAdmin.\n- Configured hardware, software and network devices, and provided technical support to users."
+      "description": "- Kept internal web systems (**PHP**/**JavaScript** on **PostgreSQL**) maintained, and the network and devices stable and secure."
     }
   },
   "technologies": {

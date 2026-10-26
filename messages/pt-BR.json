@@ -78,19 +78,19 @@
       "title": "Estagiário de Desenvolvimento Full Stack",
       "employmentType": "Estágio",
       "employmentPeriod": "Abr 2026 – o momento",
-      "description": "- Construí 4 sistemas web internos em **Laravel** e unifiquei 3 em uma aplicação só, reduzindo duplicação e manutenção.\n- Frontend em **React + TypeScript via Inertia.js**, sobre um modelo de **13 entidades** com **mais de 50 rotas** (autenticação, RBAC, validação).\n- Digitalizei fluxos públicos em papel e conduzo deploy e manutenção evolutiva em produção."
+      "description": "- Reduzi código duplicado e manutenção ao unificar 3 de 4 sistemas internos em **Laravel** em uma única aplicação.\n- Dei à equipe uma interface única em **React + TypeScript** (**Inertia.js**) sobre **13 entidades** e **mais de 50 rotas**, com autenticação, RBAC e validação.\n- Troquei fluxos públicos em papel por fluxos digitais, hoje rodando em produção."
     },
     "solidTech": {
       "title": "Desenvolvedor Full Stack",
       "employmentType": "Freelance",
       "employmentPeriod": "Fev 2026 – Abr 2026",
-      "description": "- Ecossistemas full-stack escaláveis: front-ends **React/Next.js** sobre back-ends **Node.js/Prisma**.\n- Apps de **sinalização digital** e testes médicos para **Smart TV** em **React Native TVOS** com WebSockets em tempo real.\n- Gamificação (feedback háptico, feeds, rankings), dashboards B2B com checkout **Pix** e apps completos de logística."
+      "description": "- Entreguei apps de sinalização digital e testes médicos para **Smart TV** em **React Native TVOS** com WebSockets em tempo real, alcançando [INSERIR métrica].\n- Entreguei dashboards B2B com checkout **Pix** e apps de logística em **Node.js/Prisma**."
     },
     "funprev": {
       "title": "Estágio em TI",
       "employmentType": "Estágio",
       "employmentPeriod": "Nov 2024 – Nov 2025",
-      "description": "- Diagnóstico e correção de problemas de redes, dispositivos e infraestrutura, mantendo os sistemas estáveis e seguros.\n- Desenvolvimento e manutenção de sistemas web internos em **PHP** e **JavaScript**, com **SQL** em PostgreSQL/phpMyAdmin.\n- Configuração de hardware, software e dispositivos de rede, e suporte técnico a usuários."
+      "description": "- Mantive sistemas web internos (**PHP**/**JavaScript** sobre **PostgreSQL**) em funcionamento, e a rede e os dispositivos estáveis e seguros."
     }
   },
   "technologies": {
