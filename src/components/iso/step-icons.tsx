@@ -12,12 +12,22 @@ interface IconProps {
 }
 
 const CROP = {
-  LOCK: { viewBox: '14 14 44 56', width: 68, height: 87 },
+  LOCK: { viewBox: '14 11 44 59', width: 68, height: 91 },
   DB: { viewBox: '14 6 44 62', width: 68, height: 96 },
   CHECK: { viewBox: '8 23 56 40', width: 87, height: 62 },
 } as const
 
 const LOCK_BOX = boxFaces({ size: [22, 22, 22], origin: [36, 47] })
+const LOCK_INSET = boxFaces({
+  at: [4, 4, 0],
+  size: [14, 14, 22],
+  origin: [36, 47],
+}).top
+const LOCK_COLLARS = [
+  boxFaces({ at: [0, 9, 22], size: [5, 5, 3], origin: [36, 47] }),
+  boxFaces({ at: [9, 0, 22], size: [5, 5, 3], origin: [36, 47] }),
+]
+const SHACKLE = 'M24 29V24a12 12 0 0 1 24 0v5H42V24a6 6 0 0 0-12 0v5Z'
 const CHECK_BOX = boxFaces({ size: [28, 28, 10], origin: [36, 34] })
 const CHECK_INSET = boxFaces({
   at: [5, 5, 0],
@@ -40,18 +50,40 @@ export function LockIcon({ compact = false }: IconProps) {
         <path className="ak-lit [--sd:0.25]" d={LOCK_BOX.right} />
         <path className="ak-lit [--sd:0.5]" d={LOCK_BOX.left} />
       </g>
+      <path className="ak-iso-detail ak-lock-body" d={LOCK_INSET} />
+      <path
+        className="ak-iso-detail ak-lock-body"
+        d="M18.4 42.6 L31.6 49.2 L31.6 62.4 L18.4 55.8 Z"
+      />
+      <path
+        className="ak-iso-detail ak-lock-body"
+        d="M39.3 53.05 L54.7 45.35 M39.3 57.45 L54.7 49.75"
+        strokeLinecap="round"
+      />
+      {LOCK_COLLARS.map((collar) => (
+        <g className="ak-lock-body" key={collar.top}>
+          <path className="ak-iso-face" d={collar.left} />
+          <path className="ak-iso-face" d={collar.right} />
+          <path className="ak-iso-face" d={collar.top} />
+        </g>
+      ))}
       <g>
-        <path
-          className="ak-iso-face ak-lock-shackle"
-          fill="none"
-          d="M27 32V24a9 9 0 0 1 18 0v8"
-          strokeLinecap="round"
-        />
+        <path className="ak-iso-face" d={SHACKLE} strokeLinejoin="round" />
       </g>
       <g>
+        <path
+          className="ak-lit-line ak-lit-run"
+          d={SHACKLE}
+          pathLength="1"
+          strokeDasharray="0.14 0.86"
+          strokeLinejoin="round"
+          strokeWidth="1.4"
+        />
+      </g>
+      <g className="ak-lock-body">
         <circle
           cx="25"
-          cy="52"
+          cy="51"
           r="3.2"
           className="ak-lock-ring"
           fill="none"
@@ -60,16 +92,16 @@ export function LockIcon({ compact = false }: IconProps) {
         />
         <circle
           cx="25"
-          cy="52"
+          cy="51"
           r="3.2"
           className="fill-signal"
           stroke="var(--dash)"
           strokeWidth=".8"
         />
         <path
-          d="M25 55v6"
+          d="M25 54.2v3.6"
           stroke="var(--dash)"
-          strokeWidth="1.2"
+          strokeWidth="1.4"
           strokeLinecap="round"
           vectorEffect="non-scaling-stroke"
         />
