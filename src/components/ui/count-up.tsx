@@ -1,13 +1,19 @@
 'use client'
 
-import { animate, useInView, useReducedMotion } from 'motion/react'
+import { useInView, useReducedMotion } from 'motion/react'
 import { useLocale } from 'next-intl'
-import { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 
 interface CountUpProps {
   value: string | number
   suffix?: string
 }
+
+const CELL = '1.1em'
+const DURATION = 1.5
+const STAGGER = 0.07
+const EASE = 'cubic-bezier(0.16, 1, 0.3, 1)'
+const DIGIT_COUNT = 10
 
 function parseValue(value: string | number, extraSuffix: string) {
   if (typeof value === 'number') {
@@ -26,47 +32,100 @@ function parseValue(value: string | number, extraSuffix: string) {
   }
 }
 
+interface RollingDigitProps {
+  digit: number
+  active: boolean
+  delay: number
+  instant: boolean
+}
+
+function RollingDigit({ digit, active, delay, instant }: RollingDigitProps) {
+  const strip = Array.from(
+    { length: DIGIT_COUNT + digit + 1 },
+    (_, index) => index % DIGIT_COUNT,
+  )
+  const end = DIGIT_COUNT + digit
+
+  return (
+    <span
+      className="relative inline-block overflow-hidden"
+      style={{ height: CELL, lineHeight: CELL }}
+    >
+      <span className="invisible">0</span>
+      <span
+        className="absolute inset-x-0 top-0 flex flex-col will-change-transform"
+        style={{
+          transform: `translateY(calc(${active ? -end : 0} * ${CELL}))`,
+          transition: instant
+            ? 'none'
+            : `transform ${DURATION}s ${EASE} ${delay}s`,
+        }}
+      >
+        {strip.map((value, index) => (
+          <span
+            className="block text-center"
+            key={`${index}-${value}`}
+            style={{ height: CELL, lineHeight: CELL }}
+          >
+            {value}
+          </span>
+        ))}
+      </span>
+    </span>
+  )
+}
+
 export function CountUp({ value, suffix: extraSuffix = '' }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null)
   const inView = useInView(ref, { once: true, amount: 0.6 })
   const reduce = useReducedMotion()
   const locale = useLocale()
   const parsed = parseValue(value, extraSuffix)
-  const [current, setCurrent] = useState(0)
-
-  const target = parsed?.target ?? 0
-
-  useEffect(() => {
-    if (!inView || reduce) {
-      return
-    }
-
-    const control = animate(0, target, {
-      duration: 1.6,
-      ease: 'easeOut',
-      onUpdate: (latest) => setCurrent(Math.round(latest)),
-    })
-
-    return () => control.stop()
-  }, [inView, reduce, target])
 
   if (!parsed) {
     return <span ref={ref}>{value}</span>
   }
 
-  const format = new Intl.NumberFormat(locale)
-  const final = `${format.format(target)}${parsed.suffix}`
-  const shown = reduce ? target : current
+  const formatted = new Intl.NumberFormat(locale).format(parsed.target)
+  const final = `${formatted}${parsed.suffix}`
+  const active = inView || Boolean(reduce)
+  const chars = Array.from(final)
+  const digitTotal = chars.filter((char) => /\d/.test(char)).length
+  let digitIndex = 0
 
   return (
-    <span ref={ref} className="inline-grid tabular-nums">
-      <span aria-hidden="true" className="invisible col-start-1 row-start-1">
-        {final}
-      </span>
+    <span
+      className="inline-flex items-center tabular-nums"
+      ref={ref}
+      style={{ lineHeight: CELL }}
+    >
       <span className="sr-only">{final}</span>
-      <span aria-hidden="true" className="col-start-1 row-start-1">
-        {format.format(shown)}
-        {parsed.suffix}
+      <span aria-hidden="true" className="inline-flex items-center">
+        {chars.map((char, index) => {
+          if (!/\d/.test(char)) {
+            return (
+              <span
+                className="whitespace-pre"
+                key={`${index}-${char}`}
+                style={{ height: CELL, lineHeight: CELL }}
+              >
+                {char}
+              </span>
+            )
+          }
+
+          const delay = reduce ? 0 : (digitTotal - 1 - digitIndex++) * STAGGER
+
+          return (
+            <RollingDigit
+              active={active}
+              delay={delay}
+              digit={Number(char)}
+              instant={Boolean(reduce)}
+              key={`${index}-${char}`}
+            />
+          )
+        })}
       </span>
     </span>
   )
