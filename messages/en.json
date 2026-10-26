@@ -162,22 +162,23 @@
     "q5": "Will they communicate clearly with an international team?"
   },
   "steps": {
-    "title": "How I de-risk the bet",
+    "title": "My method: baseline, build, prove.",
     "s1": {
-      "tag": "Security",
-      "title": "Secure the base",
-      "desc": "Auth, RBAC and validation first."
+      "tag": "Baseline",
+      "title": "Measure the starting point",
+      "desc": "Where the page starts, in numbers."
     },
     "s2": {
-      "tag": "Data",
-      "title": "Model the data",
-      "desc": "Schemas that survive change."
+      "tag": "Build",
+      "title": "Build the fix",
+      "desc": "The change itself, shipped."
     },
     "s3": {
-      "tag": "Quality",
-      "title": "Test it",
-      "desc": "Vitest and Cypress, wired into CI."
-    }
+      "tag": "Prove",
+      "title": "Show the numbers",
+      "desc": "Before and after, no “it feels faster”."
+    },
+    "note": "I measure the starting point, build the fix, then show the numbers. That's how a legacy Joomla site went from 2.4 s to 0.6 s LCP. No guesswork and no “it feels faster”."
   },
   "proof": {
     "label": "Proof",

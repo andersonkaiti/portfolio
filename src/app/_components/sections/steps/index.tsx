@@ -21,6 +21,11 @@ export async function StepsSection() {
       <Reveal>
         <SectionTitle className="md:text-center">{t('title')}</SectionTitle>
       </Reveal>
+      <Reveal>
+        <p className="mx-auto mt-2 max-w-[44em] text-lg text-body md:text-center">
+          {t('note')}
+        </p>
+      </Reveal>
 
       <StepsStepper className="ak-steps mt-6 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-14 md:mt-4 md:gap-x-16">
         {STEPS.map(({ key, icon: Icon }, index) => (

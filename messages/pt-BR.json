@@ -162,22 +162,23 @@
     "q5": "Vai se comunicar bem com uma equipe internacional?"
   },
   "steps": {
-    "title": "Como eu reduzo o risco da aposta",
+    "title": "Meu método: medir, construir, provar.",
     "s1": {
-      "tag": "Segurança",
-      "title": "Proteger a base",
-      "desc": "Primeiro autenticação, RBAC e validação."
+      "tag": "Medir",
+      "title": "Medir o ponto de partida",
+      "desc": "De onde a página parte, em números."
     },
     "s2": {
-      "tag": "Dados",
-      "title": "Modelar os dados",
-      "desc": "Schemas que sobrevivem a mudanças."
+      "tag": "Construir",
+      "title": "Construir a correção",
+      "desc": "A mudança em si, entregue."
     },
     "s3": {
-      "tag": "Qualidade",
-      "title": "Testar",
-      "desc": "Vitest e Cypress, integrados ao CI."
-    }
+      "tag": "Provar",
+      "title": "Mostrar os números",
+      "desc": "Antes e depois, sem “parece mais rápido”."
+    },
+    "note": "Eu meço o ponto de partida, construo a correção e depois mostro os números. Foi assim que um site legado em Joomla foi de 2,4 s para 0,6 s de LCP. Sem achismo e sem “parece mais rápido”."
   },
   "proof": {
     "label": "Resultados",
