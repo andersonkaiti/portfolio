@@ -1,21 +1,51 @@
+import { AnimatedText } from '@components/ui/animated-text'
 import { jetBrainsMono } from '@lib/fonts'
 import { cn } from 'cn'
 import type { HTMLAttributes } from 'react'
 
-export function SectionBar() {
-  return <span className="block h-0.5 w-[52px] bg-primary" />
-}
-
 export function SectionContainer({
   children,
+  className,
   ...props
-}: { children: React.ReactNode } & HTMLAttributes<HTMLDivElement>) {
+}: { children: React.ReactNode } & HTMLAttributes<HTMLElement>) {
   return (
     <section
-      className="w-full scroll-mt-[150px] space-y-8 px-6 md:space-y-12"
+      className={cn(
+        'mx-auto w-full max-w-7xl scroll-mt-[120px] space-y-8 px-6 py-14 md:space-y-10 md:py-20',
+        className,
+      )}
       {...props}
     >
       {children}
+    </section>
+  )
+}
+
+export function SectionBand({
+  children,
+  className,
+  innerClassName,
+  ...props
+}: {
+  children: React.ReactNode
+  innerClassName?: string
+} & HTMLAttributes<HTMLElement>) {
+  return (
+    <section
+      className={cn(
+        'ak-band relative scroll-mt-[120px] overflow-hidden',
+        className,
+      )}
+      {...props}
+    >
+      <div
+        className={cn(
+          'mx-auto w-full max-w-7xl px-6 py-14 md:py-20',
+          innerClassName,
+        )}
+      >
+        {children}
+      </div>
     </section>
   )
 }
@@ -44,20 +74,18 @@ export function SectionHeader({
 
 export function SectionLabel({
   children,
+  className,
   ...rest
 }: { children: React.ReactNode } & HTMLAttributes<HTMLParagraphElement>) {
   return (
     <p
       className={cn(
-        'inline-flex items-center gap-2.5 text-balance font-semibold tracking-wide uppercase text-primary text-sm md:text-base',
+        'text-balance text-sm font-medium uppercase tracking-[0.04em] text-muted-foreground',
         jetBrainsMono.className,
+        className,
       )}
       {...rest}
     >
-      <span
-        aria-hidden="true"
-        className="inline-block size-1.5 shrink-0 rotate-45 bg-primary"
-      />
       {children}
     </p>
   )
@@ -65,13 +93,24 @@ export function SectionLabel({
 
 export function SectionTitle({
   children,
+  className,
   ...rest
 }: { children: React.ReactNode } & HTMLAttributes<HTMLHeadingElement>) {
+  const titleClass = cn(
+    'text-balance font-bold leading-[1.04] tracking-[-0.03em] text-[clamp(30px,3.6vw,44px)]',
+    className,
+  )
+
+  if (typeof children === 'string') {
+    return (
+      <AnimatedText as="h2" className={titleClass}>
+        {children}
+      </AnimatedText>
+    )
+  }
+
   return (
-    <h2
-      className="text-balance text-4xl font-semibold tracking-tight md:text-6xl"
-      {...rest}
-    >
+    <h2 className={titleClass} {...rest}>
       {children}
     </h2>
   )
@@ -83,7 +122,7 @@ export function SectionSubtitle({
 }: { children: React.ReactNode } & HTMLAttributes<HTMLParagraphElement>) {
   return (
     <p
-      className="text-balance text-base leading-7 text-muted-foreground md:text-lg md:leading-8"
+      className="max-w-[36em] text-balance text-base leading-7 text-body md:text-lg"
       {...rest}
     >
       {children}

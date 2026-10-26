@@ -188,5 +188,13 @@
       "title": "Projetos | Anderson Kaiti",
       "description": "Explore os projetos open-source de Anderson Kaiti, desenvolvidos com React, Next.js, Node.js, TypeScript e muito mais."
     }
+  },
+  "pain": {
+    "title": "Sei que contratar um júnior é uma aposta.",
+    "subtitle": "Então estas são as perguntas que eu faria no seu lugar.",
+    "q1": "Consigo lidar com autenticação e permissões, ou só com telas do caminho feliz?",
+    "q2": "Vou escrever testes, ou deixar a limpeza para você?",
+    "q3": "Consigo trabalhar em um sistema que já existe e precisa continuar no ar?",
+    "q4": "Vou entregar, ou esperar que digam cada passo?"
   }
 }

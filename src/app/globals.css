@@ -417,6 +417,16 @@ body {
   }
 }
 
+.ak-band {
+  background: linear-gradient(
+    180deg,
+    var(--background) 0,
+    var(--panel) 180px,
+    var(--panel) calc(100% - 180px),
+    var(--background) 100%
+  );
+}
+
 .ak-btn {
   transition:
     transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
