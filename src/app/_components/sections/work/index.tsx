@@ -3,6 +3,7 @@ import { SectionContainer, SectionTitle } from '@components/ui/section'
 import { jetBrainsMono } from '@lib/fonts'
 import { cn } from 'cn'
 import { getTranslations } from 'next-intl/server'
+import type { CSSProperties } from 'react'
 
 const INCLUDES = ['i1', 'i2', 'i3', 'i4', 'i5', 'i6'] as const
 
@@ -38,9 +39,21 @@ export async function WorkSection() {
                 {t('includes')}
               </span>
               <ul className="flex min-w-[200px] flex-1 flex-col gap-1.5 font-medium">
-                {INCLUDES.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span className="text-primary">✓</span>
+                {INCLUDES.map((item, index) => (
+                  <li key={item} className="flex gap-2.5">
+                    <svg
+                      aria-hidden="true"
+                      className="ak-tick mt-[5px] size-[18px] shrink-0 text-primary"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2.6"
+                      style={{ '--i': index } as CSSProperties}
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M4 12.5l5 5L20 6.5" pathLength="1" />
+                    </svg>
                     {t(item)}
                   </li>
                 ))}

@@ -469,6 +469,32 @@ body {
   }
 }
 
+.ak-tick path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.aos-animate .ak-tick {
+  animation: ak-tick-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1)
+    calc(0.35s + var(--i, 0) * 0.14s) both;
+}
+
+.aos-animate .ak-tick path {
+  animation: ak-draw 0.55s cubic-bezier(0.65, 0, 0.35, 1)
+    calc(0.35s + var(--i, 0) * 0.14s) both;
+}
+
+@keyframes ak-tick-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .ak-step-fill {
   transform: scaleX(0);
   transform-origin: left center;
@@ -612,6 +638,15 @@ body {
   [data-played] .ak-lit-glow,
   [data-shown] .ak-num-char {
     animation: none;
+  }
+
+  .aos-animate .ak-tick,
+  .aos-animate .ak-tick path {
+    animation: none;
+  }
+
+  .ak-tick path {
+    stroke-dashoffset: 0;
   }
 
   .ak-num-char {
