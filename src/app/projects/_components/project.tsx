@@ -1,9 +1,10 @@
+import { ProjectPlaceholder } from '@components/ui/project-placeholder'
 import { ProjectReveal } from '@components/ui/project-reveal'
 import type { IGithubRepository } from '@http/get-projects'
 import { formatTitle } from '@utils/format-title'
 import { formatTopic } from '@utils/format-topic'
 import { getPreviewSrc } from '@utils/get-preview-src'
-import { ArrowUpRight, ImageIcon } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 import { ProjectPreview } from './project-preview'
 import { TopicLogoImage } from './topic-logo-image'
@@ -19,30 +20,27 @@ const LINK_CLASS =
 export function Project({
   name,
   description,
-  html_url,
   homepage,
   topics,
   demoLabel,
 }: ProjectProps) {
-  const previewSrc = getPreviewSrc(homepage ?? html_url)
+  const previewSrc = getPreviewSrc(homepage)
 
   return (
     <ProjectReveal
       imageRadius={16}
       className="flex flex-col gap-5"
       image={
-        <div className="group/card relative aspect-[16/10] overflow-hidden rounded-2xl bg-ph">
-          {previewSrc ? (
+        <div className="group/card relative aspect-16/10 overflow-hidden rounded-2xl bg-ph">
+          {previewSrc && homepage ? (
             <ProjectPreview
               src={previewSrc}
               alt={`${formatTitle(name)} preview`}
-              href={homepage ?? html_url}
+              href={homepage}
               bleed={false}
             />
           ) : (
-            <div className="flex size-full items-center justify-center">
-              <ImageIcon className="size-8 text-muted-foreground/40" />
-            </div>
+            <ProjectPlaceholder />
           )}
         </div>
       }

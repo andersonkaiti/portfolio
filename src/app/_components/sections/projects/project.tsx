@@ -1,3 +1,4 @@
+import { ProjectPlaceholder } from '@components/ui/project-placeholder'
 import { ProjectReveal } from '@components/ui/project-reveal'
 import type { IGithubRepository } from '@http/get-projects'
 import { jetBrainsMono } from '@lib/fonts'
@@ -6,7 +7,6 @@ import { formatTopic } from '@utils/format-topic'
 import { getPreviewSrc } from '@utils/get-preview-src'
 import { cn } from 'cn'
 import dayjs from 'dayjs'
-import { ImageIcon } from 'lucide-react'
 import Link from 'next/link'
 import { ProjectPreview } from '../../../projects/_components/project-preview'
 import { TopicLogoImage } from './topic-logo-image'
@@ -22,30 +22,27 @@ const LINK_CLASS =
 export function Project({
   name,
   description,
-  html_url,
   homepage,
   topics,
   updated_at,
   demoLabel,
 }: ProjectProps) {
-  const previewSrc = getPreviewSrc(homepage ?? html_url)
+  const previewSrc = getPreviewSrc(homepage)
   return (
     <ProjectReveal
       imageRadius={12}
       className="grid grid-cols-[repeat(auto-fit,minmax(min(420px,100%),1fr))] items-center gap-x-12 gap-y-8 py-10"
       image={
         <div className="group/card relative aspect-16/10 overflow-hidden rounded-xl bg-ph">
-          {previewSrc ? (
+          {previewSrc && homepage ? (
             <ProjectPreview
               src={previewSrc}
               alt={`${formatTitle(name)} preview`}
-              href={homepage ?? html_url}
+              href={homepage}
               bleed={false}
             />
           ) : (
-            <div className="flex size-full items-center justify-center">
-              <ImageIcon className="size-8 text-muted-foreground/40" />
-            </div>
+            <ProjectPlaceholder />
           )}
         </div>
       }
