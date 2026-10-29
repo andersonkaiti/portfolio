@@ -1,4 +1,10 @@
 {
+  "graph": {
+    "label": "Gráfico de contribuições de {year}",
+    "less": "Menos",
+    "more": "Mais",
+    "contributions": "{count, plural, =0 {Nenhuma contribuição} one {# contribuição} other {# contribuições}}"
+  },
   "nav": {
     "introduction": "Início",
     "about": "Sobre",

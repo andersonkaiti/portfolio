@@ -2,6 +2,7 @@
 
 import { cn } from 'cn'
 import { motion, useReducedMotion } from 'motion/react'
+import { useLocale, useTranslations } from 'next-intl'
 import type React from 'react'
 import { useMemo, useState, useSyncExternalStore } from 'react'
 import { createPortal } from 'react-dom'
@@ -32,21 +33,6 @@ const TOOLTIP_OFFSET_Y = 40
 const TOOLTIP_MAX_WIDTH = 224
 const TOOLTIP_SCREEN_MARGIN = 8
 
-const MONTHS = [
-  'Jan',
-  'Feb',
-  'Mar',
-  'Apr',
-  'May',
-  'Jun',
-  'Jul',
-  'Aug',
-  'Sep',
-  'Oct',
-  'Nov',
-  'Dec',
-]
-
 const CONTRIBUTION_COLORS = [
   'bg-primary/10',
   'bg-primary/20',
@@ -61,6 +47,8 @@ const LEVEL_2 = 2
 const LEVEL_3 = 3
 const LEVEL_4 = 4
 const CONTRIBUTION_LEVELS = [LEVEL_0, LEVEL_1, LEVEL_2, LEVEL_3, LEVEL_4]
+const MONDAY_UTC = Date.UTC(2024, 0, 1)
+const WEEKDAY_ROWS = [1, 3, 5]
 const subscribeNoop = () => () => {}
 const getClientSnapshot = () => true
 const getServerSnapshot = () => false
@@ -75,7 +63,7 @@ const toKey = (time: number) => new Date(time).toISOString().slice(0, 10)
 interface Layout {
   days: ContributionData[]
   weeks: number
-  months: { month: string; startWeek: number }[]
+  months: { month: number; startWeek: number }[]
 }
 
 const buildLayout = (data: ContributionData[]): Layout => {
@@ -108,7 +96,7 @@ const buildLayout = (data: ContributionData[]): Layout => {
     const month = sunday.getUTCMonth()
 
     if (month !== previous) {
-      months.push({ month: MONTHS[month] ?? '', startWeek: week })
+      months.push({ month, startWeek: week })
       previous = month
     }
   }
@@ -131,6 +119,8 @@ export function ContributionGraph({
   showTooltips = true,
   ...divProps
 }: ContributionGraphProps) {
+  const t = useTranslations('graph')
+  const locale = useLocale()
   const [hoveredDay, setHoveredDay] = useState<ContributionData | null>(null)
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 })
   const shouldReduceMotion = useReducedMotion()
@@ -149,6 +139,22 @@ export function ContributionGraph({
   const lastDay = [...yearData].reverse().find((day) => day.date)
   const displayYear = lastDay ? lastDay.date.slice(0, 4) : ''
 
+  const monthFormatter = useMemo(
+    () => new Intl.DateTimeFormat(locale, { month: 'short', timeZone: 'UTC' }),
+    [locale],
+  )
+  const weekdayLabels = useMemo(() => {
+    const formatter = new Intl.DateTimeFormat(locale, {
+      weekday: 'short',
+      timeZone: 'UTC',
+    })
+    return Array.from({ length: DAYS_IN_WEEK }, (_, row) =>
+      WEEKDAY_ROWS.includes(row)
+        ? formatter.format(MONDAY_UTC + (row - 1) * DAY_MS)
+        : '',
+    )
+  }, [locale])
+
   const handleDayHover = (day: ContributionData, event: React.MouseEvent) => {
     if (showTooltips && day.date) {
       setHoveredDay(day)
@@ -166,7 +172,7 @@ export function ContributionGraph({
     }
     const [yearStr, monthStr, dayStr] = dateString.split('-')
     const date = new Date(Number(yearStr), Number(monthStr) - 1, Number(dayStr))
-    return date.toLocaleDateString('en-US', {
+    return date.toLocaleDateString(locale, {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
@@ -174,15 +180,7 @@ export function ContributionGraph({
     })
   }
 
-  const getContributionText = (count: number) => {
-    if (count === LEVEL_0) {
-      return 'No contributions'
-    }
-    if (count === LEVEL_1) {
-      return '1 contribution'
-    }
-    return `${count} contributions`
-  }
+  const getContributionText = (count: number) => t('contributions', { count })
 
   return (
     <div className={cn('contribution-graph', className)} {...divProps}>
@@ -205,12 +203,12 @@ export function ContributionGraph({
                   'absolute top-0',
                   header.startWeek < hiddenWeeks && 'max-sm:hidden',
                 )}
-                key={`${header.month}-${header.startWeek}`}
+                key={`${monthFormatter.format(Date.UTC(2024, header.month, 1))}-${header.startWeek}`}
                 style={{
                   left: `calc((${header.startWeek} - var(--off)) / var(--tot) * 100%)`,
                 }}
               >
-                {header.month}
+                {monthFormatter.format(Date.UTC(2024, header.month, 1))}
               </span>
             ))}
           </div>
@@ -219,7 +217,7 @@ export function ContributionGraph({
             aria-hidden="true"
             className="grid grid-rows-7 gap-1 font-mono text-[11px] text-muted-foreground max-sm:hidden"
           >
-            {['', 'Mon', '', 'Wed', '', 'Fri', ''].map((day, index) => (
+            {weekdayLabels.map((day, index) => (
               <span
                 className="flex items-center"
                 key={`${day}-${DAYS_IN_WEEK + index}`}
@@ -231,7 +229,7 @@ export function ContributionGraph({
 
           {isClient ? (
             <ul
-              aria-label={`Contribution Graph for ${displayYear}`}
+              aria-label={t('label', { year: displayYear })}
               className="m-0 grid grid-flow-col grid-rows-7 list-none gap-px p-0 sm:gap-1"
               style={{
                 gridAutoColumns: '1fr',
@@ -335,7 +333,7 @@ export function ContributionGraph({
         <div className="mt-5 flex flex-wrap items-center justify-between gap-x-8 gap-y-3 font-mono text-sm text-muted-foreground">
           <span>{caption}</span>
           <span className="inline-flex items-center gap-2">
-            <span>Less</span>
+            <span>{t('less')}</span>
             <div className="flex items-center gap-1">
               {CONTRIBUTION_LEVELS.map((level) => (
                 <div
@@ -347,7 +345,7 @@ export function ContributionGraph({
                 />
               ))}
             </div>
-            <span>More</span>
+            <span>{t('more')}</span>
           </span>
         </div>
       )}
