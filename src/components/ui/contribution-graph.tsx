@@ -245,7 +245,7 @@ export function ContributionGraph({
               return (
                 <li
                   className={cn(
-                    'aspect-square cursor-pointer rounded-[2px] hover:ring-2 hover:ring-foreground/40 sm:rounded-[3px]',
+                    'aspect-square cursor-pointer rounded-[2px] hover:outline-2 hover:outline-foreground/40 sm:rounded-[3px]',
                     Math.floor(index / DAYS_IN_WEEK) < hiddenWeeks &&
                       'max-sm:hidden',
                     CONTRIBUTION_COLORS[dayData.level],
