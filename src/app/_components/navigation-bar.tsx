@@ -71,23 +71,23 @@ export function NavigationBar() {
   const { handleNavClick } = useLenis()
   const t = useTranslations('nav')
   const pathname = usePathname()
-  const isProjectPage = pathname.includes('/projects')
+  const isSubPage = pathname !== '/'
 
   const navItems: NavItem[] = [
     {
       name: t('solutions'),
-      link: isProjectPage ? '/#solutions' : '#solutions',
+      link: isSubPage ? '/#solutions' : '#solutions',
     },
     {
       name: t('experiences'),
-      link: isProjectPage ? '/#experiences' : '#experiences',
+      link: isSubPage ? '/#experiences' : '#experiences',
     },
-    { name: t('projects'), link: isProjectPage ? '/#projects' : '#projects' },
-    { name: t('faq'), link: isProjectPage ? '/#faq' : '#faq' },
-    { name: t('contact'), link: isProjectPage ? '/#contact' : '#contact' },
+    { name: t('projects'), link: isSubPage ? '/#projects' : '#projects' },
+    { name: t('faq'), link: isSubPage ? '/#faq' : '#faq' },
+    { name: t('contact'), link: isSubPage ? '/#contact' : '#contact' },
   ]
 
-  const contactLink = isProjectPage ? '/#contact' : '#contact'
+  const contactLink = isSubPage ? '/#contact' : '#contact'
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (

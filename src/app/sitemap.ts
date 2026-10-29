@@ -14,5 +14,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    ...(['about', 'contact', 'privacy'] as const).map((page) => ({
+      url: `https://andersonkaiti.com/${page}`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.5,
+    })),
   ]
 }

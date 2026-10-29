@@ -254,5 +254,130 @@
     "a5": "Português (nativo), inglês C1.",
     "q6": "Como falo com você?",
     "a6": "E-mail, LinkedIn ou WhatsApp."
+  },
+  "pages": {
+    "nav": {
+      "about": "Sobre",
+      "contact": "Contato",
+      "privacy": "Privacidade"
+    },
+    "home": "Início",
+    "contactLinks": {
+      "email": "E-mail",
+      "whatsapp": "WhatsApp",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    },
+    "about": {
+      "metaTitle": "Sobre Anderson Kaiti | Desenvolvedor Full-Stack",
+      "metaDescription": "Formação, experiência e forma de trabalhar de Anderson Kaiti, desenvolvedor full-stack júnior de Bauru, com graduação em Ciência da Computação.",
+      "title": "Sobre Anderson Kaiti",
+      "lead": "Sou desenvolvedor full-stack júnior de Bauru, com graduação em Ciência da Computação e experiência em produção em três organizações.",
+      "sections": [
+        {
+          "heading": "Formação",
+          "body": [
+            "Me formei em Ciência da Computação pela UNISAGRADO (2022–2025). Minha primeira experiência profissional foi um estágio de TI na Funprev Bauru (nov 2024 – nov 2025), onde mantive sistemas web internos em PHP e JavaScript sobre PostgreSQL e cuidei para que a rede e os dispositivos ficassem estáveis e seguros."
+          ]
+        },
+        {
+          "heading": "Trabalhos recentes",
+          "body": [
+            "De fevereiro a abril de 2026 atuei como desenvolvedor full-stack freelancer na Solid Tech, entregando apps de Smart TV para sinalização digital e testes médicos em React Native TVOS com WebSockets em tempo real, além de dashboards B2B com checkout Pix e apps de logística em Node.js e Prisma.",
+            "Desde abril de 2026 sou estagiário de desenvolvimento full-stack na Prefeitura de Borebi. Unifiquei três dos quatro sistemas internos em Laravel em um único app, com interface em React e TypeScript (Inertia.js), controle de acesso por papéis e validação, e substituí fluxos públicos em papel por fluxos digitais que hoje rodam em produção."
+          ]
+        },
+        {
+          "heading": "Como eu trabalho",
+          "body": [
+            "Eu meço o ponto de partida, construo a correção e depois mostro os números. Foi assim que um site legado em Joomla foi de 2,4 s para 0,6 s de LCP. Me importo mais com o que quebra primeiro: autenticação, controle de acesso, modelagem de dados e testes."
+          ]
+        },
+        {
+          "heading": "Stack e idiomas",
+          "body": [
+            "TypeScript, React, Next.js, Node.js (Fastify), PostgreSQL com Prisma ou Drizzle e AWS serverless. Escrevo testes com Vitest e Cypress. Português é minha língua nativa e meu inglês é C1, evoluindo para C2."
+          ]
+        },
+        {
+          "heading": "Disponibilidade",
+          "body": [
+            "Estou aberto a vagas full-stack e a projetos, remoto, híbrido ou presencial, com equipes brasileiras e internacionais. A página de contato lista as melhores formas de falar comigo."
+          ]
+        }
+      ]
+    },
+    "contact": {
+      "metaTitle": "Contato com Anderson Kaiti | Desenvolvedor Full-Stack",
+      "metaDescription": "Como falar com Anderson Kaiti sobre vagas full-stack ou projetos: e-mail, WhatsApp, LinkedIn e GitHub.",
+      "title": "Contato",
+      "lead": "A forma mais rápida de falar comigo é por e-mail. Estou aberto a vagas full-stack e a projetos.",
+      "sections": [
+        {
+          "heading": "O que eu busco",
+          "body": [
+            "Vagas full-stack com Node.js e React, além de trabalhos freelance ou por projeto. Trabalho remoto, híbrido ou presencial, com equipes brasileiras e internacionais, e estou disponível agora."
+          ]
+        },
+        {
+          "heading": "O que incluir na mensagem",
+          "body": [
+            "Uma breve descrição da vaga ou do projeto, a stack, o tamanho do time e o seu prazo já bastam para uma primeira resposta útil.",
+            "Se quiser avaliar meu trabalho antes, apresento qualquer projeto do meu GitHub ao vivo, ou faço uma pequena tarefa ou uma sessão de pair de 30 minutos antes de você decidir."
+          ]
+        },
+        {
+          "heading": "Localização e idiomas",
+          "body": [
+            "Moro em Bauru, São Paulo, Brasil. Me comunico em português (nativo) e inglês (C1)."
+          ]
+        }
+      ]
+    },
+    "privacy": {
+      "metaTitle": "Política de Privacidade | Anderson Kaiti",
+      "metaDescription": "Quais dados o andersonkaiti.com coleta, quais serviços de terceiros utiliza e como falar com Anderson Kaiti sobre seus dados pessoais.",
+      "title": "Privacidade",
+      "lead": "Este site é um portfólio pessoal. Não tem contas, formulários nem anúncios, e eu não vendo nem compartilho dados pessoais.",
+      "sections": [
+        {
+          "heading": "O que é coletado",
+          "body": [
+            "O site usa o Vercel Web Analytics e o Vercel Speed Insights para contar visitas e medir o desempenho das páginas. Eles reportam dados de uso agregados e anônimos, como páginas vistas, país, navegador e tempos de carregamento, e o Vercel Web Analytics não define cookies de rastreamento.",
+            "Como qualquer servidor web, o provedor de hospedagem processa dados técnicos da requisição, como seu endereço IP e user agent, para entregar as páginas."
+          ]
+        },
+        {
+          "heading": "Cookies e armazenamento local",
+          "body": [
+            "O site guarda duas preferências no seu dispositivo: um cookie NEXT_LOCALE que lembra o idioma escolhido, definido apenas quando você usa o seletor de idioma e válido por um ano, e a sua escolha de tema claro ou escuro no armazenamento local. Nenhum dos dois é usado para rastreamento."
+          ]
+        },
+        {
+          "heading": "Serviços de terceiros",
+          "body": [
+            "Os dados dos repositórios e o gráfico de contribuições vêm da API do GitHub, consultada pelo servidor e não pelo seu navegador. As prévias em imagem de projetos e links são geradas pelo Microlink (api.microlink.io), que pode receber uma requisição quando uma prévia é exibida. Os links para e-mail, WhatsApp, LinkedIn e GitHub levam a serviços regidos por suas próprias políticas de privacidade."
+          ]
+        },
+        {
+          "heading": "Se você entrar em contato",
+          "body": [
+            "Se você me enviar um e-mail ou mensagem, uso o que enviar apenas para responder e dar continuidade à conversa que você iniciou. Não adiciono você a listas de e-mail nem repasso seus dados a terceiros, e apago as mensagens a pedido."
+          ]
+        },
+        {
+          "heading": "Seus direitos",
+          "body": [
+            "Pela LGPD (Lei Geral de Proteção de Dados, Lei 13.709/2018) você pode perguntar quais dados pessoais eu tenho sobre você, pedir a correção ou a exclusão deles e revogar seu consentimento. Escreva para anderkaiti@gmail.com e eu respondo."
+          ]
+        },
+        {
+          "heading": "Alterações",
+          "body": [
+            "Última atualização: 28 de outubro de 2026. Se esta política mudar, a nova versão será publicada nesta página."
+          ]
+        }
+      ]
+    }
   }
 }

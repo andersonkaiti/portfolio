@@ -254,5 +254,130 @@
     "a5": "Portuguese (native), English C1.",
     "q6": "How do I reach you?",
     "a6": "Email, LinkedIn or WhatsApp."
+  },
+  "pages": {
+    "nav": {
+      "about": "About",
+      "contact": "Contact",
+      "privacy": "Privacy"
+    },
+    "home": "Home",
+    "contactLinks": {
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    },
+    "about": {
+      "metaTitle": "About Anderson Kaiti | Full-Stack Developer",
+      "metaDescription": "Background, experience and working style of Anderson Kaiti, a junior full-stack developer from Bauru, Brazil with a Computer Science degree.",
+      "title": "About Anderson Kaiti",
+      "lead": "I am a junior full-stack developer from Bauru, Brazil, with a Computer Science degree and production experience in three organizations.",
+      "sections": [
+        {
+          "heading": "Background",
+          "body": [
+            "I graduated in Computer Science from UNISAGRADO (2022–2025). My first professional role was an IT internship at Funprev Bauru (Nov 2024 – Nov 2025), where I maintained internal web systems in PHP and JavaScript on PostgreSQL and kept the network and devices stable and secure."
+          ]
+        },
+        {
+          "heading": "Recent work",
+          "body": [
+            "From February to April 2026 I worked as a freelance full-stack developer at Solid Tech, shipping Smart TV signage and medical-testing apps in React Native TVOS with real-time WebSockets, plus B2B dashboards with Pix checkout and logistics apps on Node.js and Prisma.",
+            "Since April 2026 I have been a full-stack development intern at Borebi City Hall. I unified three of four internal Laravel systems into one app, with a React and TypeScript interface (Inertia.js), role-based access control and validation, and replaced paper-based public workflows with digital ones that now run in production."
+          ]
+        },
+        {
+          "heading": "How I work",
+          "body": [
+            "I measure the starting point, build the fix, then show the numbers. That is how a legacy Joomla site went from 2.4 s to 0.6 s LCP. I care most about the parts that break first: authentication, access control, data models and tests."
+          ]
+        },
+        {
+          "heading": "Stack and languages",
+          "body": [
+            "TypeScript, React, Next.js, Node.js (Fastify), PostgreSQL with Prisma or Drizzle, and AWS serverless. I write tests with Vitest and Cypress. Portuguese is my native language and my English is C1, advancing to C2."
+          ]
+        },
+        {
+          "heading": "Availability",
+          "body": [
+            "I am open to full-stack roles and project work, remote, hybrid or on-site, with Brazilian and international teams. The contact page lists the best ways to reach me."
+          ]
+        }
+      ]
+    },
+    "contact": {
+      "metaTitle": "Contact Anderson Kaiti | Full-Stack Developer",
+      "metaDescription": "How to contact Anderson Kaiti about full-stack roles or project work: email, WhatsApp, LinkedIn and GitHub.",
+      "title": "Contact",
+      "lead": "The fastest way to reach me is email. I am open to full-stack roles and project work.",
+      "sections": [
+        {
+          "heading": "What I am open to",
+          "body": [
+            "Full-stack roles with Node.js and React, and freelance or project work. I work remotely, hybrid or on-site, with Brazilian and international teams, and I am available now."
+          ]
+        },
+        {
+          "heading": "What to include in a message",
+          "body": [
+            "A short description of the role or project, the stack, the team size and your timeline is enough for a useful first reply.",
+            "If you would like to evaluate my work first, I am happy to walk through any project on my GitHub live, or to do a small task or a 30-minute pair session before you decide."
+          ]
+        },
+        {
+          "heading": "Location and languages",
+          "body": [
+            "I am based in Bauru, São Paulo, Brazil. I communicate in Portuguese (native) and English (C1)."
+          ]
+        }
+      ]
+    },
+    "privacy": {
+      "metaTitle": "Privacy Policy | Anderson Kaiti",
+      "metaDescription": "What data andersonkaiti.com collects, which third-party services it uses, and how to contact Anderson Kaiti about your personal data.",
+      "title": "Privacy",
+      "lead": "This site is a personal portfolio. It has no accounts, no forms and no advertising, and I do not sell or share personal data.",
+      "sections": [
+        {
+          "heading": "What is collected",
+          "body": [
+            "The site uses Vercel Web Analytics and Vercel Speed Insights to count visits and measure page performance. They report aggregated, anonymous usage data such as pages viewed, country, browser and loading times, and Vercel Web Analytics does not set tracking cookies.",
+            "Like any web server, the hosting provider processes technical request data such as your IP address and user agent in order to deliver the pages."
+          ]
+        },
+        {
+          "heading": "Cookies and local storage",
+          "body": [
+            "The site stores two preferences on your device: a NEXT_LOCALE cookie that remembers the language you chose, which is set only when you use the language switcher and lasts one year, and your light or dark theme choice in local storage. Neither is used for tracking."
+          ]
+        },
+        {
+          "heading": "Third-party services",
+          "body": [
+            "Repository data and the contribution graph come from the GitHub API, requested by the server rather than by your browser. Screenshot previews of projects and links are generated by Microlink (api.microlink.io), which may receive a request when a preview is shown. Links to email, WhatsApp, LinkedIn and GitHub lead to services governed by their own privacy policies."
+          ]
+        },
+        {
+          "heading": "If you contact me",
+          "body": [
+            "If you email or message me, I use what you send only to reply and to follow up on the conversation you started. I do not add you to mailing lists or pass your details to anyone else, and I delete messages on request."
+          ]
+        },
+        {
+          "heading": "Your rights",
+          "body": [
+            "Under Brazil’s LGPD (Lei Geral de Proteção de Dados, Law 13.709/2018) you can ask what personal data I hold about you, request its correction or deletion, and withdraw your consent. Write to anderkaiti@gmail.com and I will reply."
+          ]
+        },
+        {
+          "heading": "Changes",
+          "body": [
+            "Last updated: October 28, 2026. If this policy changes, the new version will be published on this page."
+          ]
+        }
+      ]
+    }
   }
 }

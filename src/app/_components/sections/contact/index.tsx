@@ -1,10 +1,12 @@
 import { IsoDeco } from '@components/iso/iso-deco'
 import { AnimatedText } from '@components/ui/animated-text'
 import { Reveal } from '@components/ui/reveal'
+import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
 
 export async function ContactSection() {
   const t = await getTranslations('footer')
+  const tPages = await getTranslations('pages.nav')
 
   const email = t('values.email')
   const linkedinUrl = `https://www.linkedin.com/in/${t('values.linkedin')}/`
@@ -86,9 +88,20 @@ export async function ContactSection() {
           {t('ps')}
         </Reveal>
 
-        <p className="mt-14 font-mono text-[15px] text-[#2a3a12]">
-          {t('tagline')}
-        </p>
+        <div className="mt-14 flex flex-wrap items-center gap-x-6 gap-y-1 font-mono text-[15px] text-[#2a3a12]">
+          <p>{t('tagline')}</p>
+          <nav className="flex flex-wrap gap-x-5">
+            {(['about', 'contact', 'privacy'] as const).map((page) => (
+              <Link
+                key={page}
+                href={`/${page}`}
+                className="inline-flex min-h-11 items-center underline underline-offset-4"
+              >
+                {tPages(page)}
+              </Link>
+            ))}
+          </nav>
+        </div>
       </div>
     </section>
   )
