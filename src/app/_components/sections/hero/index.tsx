@@ -14,7 +14,7 @@ export async function HeroSection() {
 
   return (
     <header
-      className="mx-auto grid w-full max-w-7xl scroll-mt-[150px] items-center gap-x-6 gap-y-8 px-6 pt-28 pb-24 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.85fr)] lg:min-h-[calc(100svh-6rem)] lg:pt-40 lg:pb-32"
+      className="mx-auto grid w-full max-w-7xl scroll-mt-[150px] items-center gap-x-6 gap-y-8 px-6 pt-16 pb-24 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.85fr)] lg:min-h-[calc(100svh-6rem)] lg:pt-40 lg:pb-32"
       id="hero"
     >
       <div className="min-w-0">
@@ -31,7 +31,7 @@ export async function HeroSection() {
         </Reveal>
 
         <Reveal delay={200}>
-          <h1 className="mt-10 text-balance font-bold leading-[0.96] tracking-[-0.04em] text-[clamp(36px,min(4.2vw,6vh),60px)]">
+          <h1 className="mt-6 text-balance lg:mt-10 font-bold leading-[0.96] tracking-[-0.04em] text-[clamp(36px,min(4.2vw,6vh),60px)]">
             {t('headlinePre')}{' '}
             <span
               className="ak-underline-draw"
@@ -46,12 +46,12 @@ export async function HeroSection() {
         </Reveal>
 
         <Reveal delay={300}>
-          <p className="mt-12 max-w-[34em] text-[clamp(18px,1.9vw,23px)] leading-[1.45] text-body">
+          <p className="mt-6 max-w-[34em] lg:mt-12 text-[clamp(18px,1.9vw,23px)] leading-[1.45] text-body">
             {t('subtitle')}
           </p>
         </Reveal>
 
-        <Reveal delay={400} className="mt-14 flex flex-wrap gap-4">
+        <Reveal delay={400} className="mt-8 flex flex-wrap gap-4 lg:mt-14">
           <a
             href="#contact"
             className="ak-btn inline-flex min-h-16 items-center gap-5 rounded-full bg-signal py-0 pr-2.5 pl-8 text-[17px] font-semibold text-on-signal no-underline"

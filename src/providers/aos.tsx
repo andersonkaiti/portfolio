@@ -23,7 +23,11 @@ export function AosProvider({ children }: { children: React.ReactNode }) {
       const elements = document.querySelectorAll('[data-aos]')
       for (const el of elements) {
         if (!observedSet.has(el)) {
-          observer.observe(el)
+          if (el.getBoundingClientRect().top < window.innerHeight) {
+            el.classList.add('aos-animate')
+          } else {
+            observer.observe(el)
+          }
           observedSet.add(el)
         }
       }
