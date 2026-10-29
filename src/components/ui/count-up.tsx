@@ -62,11 +62,7 @@ function RollingDigit({ digit, active, delay, instant }: RollingDigitProps) {
         }}
       >
         {strip.map((value, index) => (
-          <span
-            className="block text-center"
-            key={`${index}-${value}`}
-            style={{ height: CELL, lineHeight: CELL }}
-          >
+          <span className="ak-digit" key={`${index}-${value}`}>
             {value}
           </span>
         ))}

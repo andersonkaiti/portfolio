@@ -3,7 +3,7 @@
 import { cn } from 'cn'
 import { motion, useReducedMotion } from 'motion/react'
 import type React from 'react'
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useSyncExternalStore } from 'react'
 import { createPortal } from 'react-dom'
 
 export interface ContributionData {
@@ -61,6 +61,10 @@ const LEVEL_2 = 2
 const LEVEL_3 = 3
 const LEVEL_4 = 4
 const CONTRIBUTION_LEVELS = [LEVEL_0, LEVEL_1, LEVEL_2, LEVEL_3, LEVEL_4]
+const subscribeNoop = () => () => {}
+const getClientSnapshot = () => true
+const getServerSnapshot = () => false
+
 const toUtc = (dateString: string) => {
   const [year, month, day] = dateString.split('-').map(Number)
   return Date.UTC(year ?? 0, (month ?? 1) - 1, day ?? 1)
@@ -130,6 +134,11 @@ export function ContributionGraph({
   const [hoveredDay, setHoveredDay] = useState<ContributionData | null>(null)
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 })
   const shouldReduceMotion = useReducedMotion()
+  const isClient = useSyncExternalStore(
+    subscribeNoop,
+    getClientSnapshot,
+    getServerSnapshot,
+  )
 
   const {
     days: yearData,
@@ -220,57 +229,70 @@ export function ContributionGraph({
             ))}
           </div>
 
-          <ul
-            aria-label={`Contribution Graph for ${displayYear}`}
-            className="m-0 grid grid-flow-col grid-rows-7 list-none gap-px p-0 sm:gap-1"
-            style={{
-              gridAutoColumns: '1fr',
-            }}
-          >
-            {yearData.map((dayData, index) => {
-              if (!dayData.date) {
+          {isClient ? (
+            <ul
+              aria-label={`Contribution Graph for ${displayYear}`}
+              className="m-0 grid grid-flow-col grid-rows-7 list-none gap-px p-0 sm:gap-1"
+              style={{
+                gridAutoColumns: '1fr',
+              }}
+            >
+              {yearData.map((dayData, index) => {
+                if (!dayData.date) {
+                  return (
+                    <li
+                      aria-hidden="true"
+                      className={cn(
+                        'aspect-square',
+                        Math.floor(index / DAYS_IN_WEEK) < hiddenWeeks &&
+                          'max-sm:hidden',
+                      )}
+                      key={`empty-${Math.floor(index / DAYS_IN_WEEK)}-${index % DAYS_IN_WEEK}`}
+                    />
+                  )
+                }
+
                 return (
                   <li
-                    aria-hidden="true"
                     className={cn(
-                      'aspect-square',
+                      'aspect-square cursor-pointer rounded-[2px] hover:outline-2 hover:outline-foreground/40 sm:rounded-[3px]',
                       Math.floor(index / DAYS_IN_WEEK) < hiddenWeeks &&
                         'max-sm:hidden',
+                      CONTRIBUTION_COLORS[dayData.level],
+                      dayData.level <= DIM_MAX_LEVEL && 'ak-cell',
                     )}
-                    key={`empty-${Math.floor(index / DAYS_IN_WEEK)}-${index % DAYS_IN_WEEK}`}
+                    key={dayData.date}
+                    style={
+                      dayData.level <= DIM_MAX_LEVEL
+                        ? ({
+                            '--d': `${(Math.floor(index / DAYS_IN_WEEK) * WAVE_COLUMN_STEP + (index % DAYS_IN_WEEK) * WAVE_ROW_STEP).toFixed(2)}s`,
+                          } as React.CSSProperties)
+                        : undefined
+                    }
+                    aria-label={`${formatDate(dayData.date)}: ${getContributionText(dayData.count)}`}
+                    onMouseEnter={(e) => handleDayHover(dayData, e)}
+                    onMouseLeave={handleDayLeave}
+                    title={
+                      showTooltips
+                        ? `${formatDate(dayData.date)}: ${getContributionText(dayData.count)}`
+                        : undefined
+                    }
                   />
                 )
+              })}
+            </ul>
+          ) : (
+            <div
+              aria-hidden="true"
+              className="aspect-(--ar-mobile) sm:aspect-(--ar)"
+              style={
+                {
+                  '--ar': `${weeks} / ${DAYS_IN_WEEK}`,
+                  '--ar-mobile': `${Math.min(weeks, MOBILE_WEEKS)} / ${DAYS_IN_WEEK}`,
+                } as React.CSSProperties
               }
-
-              return (
-                <li
-                  className={cn(
-                    'aspect-square cursor-pointer rounded-[2px] hover:outline-2 hover:outline-foreground/40 sm:rounded-[3px]',
-                    Math.floor(index / DAYS_IN_WEEK) < hiddenWeeks &&
-                      'max-sm:hidden',
-                    CONTRIBUTION_COLORS[dayData.level],
-                    dayData.level <= DIM_MAX_LEVEL && 'ak-cell',
-                  )}
-                  key={dayData.date}
-                  style={
-                    dayData.level <= DIM_MAX_LEVEL
-                      ? ({
-                          '--d': `${(Math.floor(index / DAYS_IN_WEEK) * WAVE_COLUMN_STEP + (index % DAYS_IN_WEEK) * WAVE_ROW_STEP).toFixed(2)}s`,
-                        } as React.CSSProperties)
-                      : undefined
-                  }
-                  aria-label={`${formatDate(dayData.date)}: ${getContributionText(dayData.count)}`}
-                  onMouseEnter={(e) => handleDayHover(dayData, e)}
-                  onMouseLeave={handleDayLeave}
-                  title={
-                    showTooltips
-                      ? `${formatDate(dayData.date)}: ${getContributionText(dayData.count)}`
-                      : undefined
-                  }
-                />
-              )
-            })}
-          </ul>
+            />
+          )}
         </div>
       </div>
 

@@ -771,6 +771,13 @@ details[open] > summary .ak-plus {
   transform: rotate(45deg);
 }
 
+.ak-digit {
+  display: block;
+  height: 1.1em;
+  line-height: 1.1em;
+  text-align: center;
+}
+
 .ak-cell {
   --peak: color-mix(in srgb, var(--primary) 34%, transparent);
   animation: ak-cell 7s ease-in-out var(--d, 0s) infinite;
