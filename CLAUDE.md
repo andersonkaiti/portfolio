@@ -9,6 +9,7 @@ pnpm dev        # Start dev server with Turbopack
 pnpm build      # Production build
 pnpm start      # Start production server
 pnpm format     # Lint and format with Biome (biome check --write)
+pnpm test       # Playwright specs in tests/ (run pnpm build first; starts pnpm start on :3111, or set BASE_URL)
 ```
 
 ## Environment
