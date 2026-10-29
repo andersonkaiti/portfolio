@@ -31,10 +31,11 @@ export function ScrollFade() {
 
     const update = () => {
       frame = 0
-      const zone = window.innerHeight * ZONE
+      const baseZone = window.innerHeight * ZONE
 
       for (const element of targets) {
         const { bottom } = element.getBoundingClientRect()
+        const zone = Math.min(baseZone, Math.max(1, bottom + window.scrollY))
 
         if (bottom >= zone) {
           if (touched.has(element)) {
