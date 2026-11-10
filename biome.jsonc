@@ -6,7 +6,12 @@
     "lineWidth": 80
   },
   "files": {
-    "includes": ["**", "!node_modules", "!.next/*"]
+    "includes": [
+      "**",
+      "!node_modules",
+      "!.next/*",
+      "!src/lib/hairline/kernel.ts"
+    ]
   },
   "linter": {
     "enabled": true,
