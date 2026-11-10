@@ -1,4 +1,4 @@
-import { IsoDeco } from '@components/iso/iso-deco'
+import { HubDeco } from '@components/iso/hub-deco'
 import { Reveal } from '@components/ui/reveal'
 import { getInfoPage, type InfoPageKey } from '@lib/agents/content'
 import { CONTACT } from '@lib/agents/site'
@@ -46,10 +46,7 @@ export async function InfoPage({ pageKey }: { pageKey: InfoPageKey }) {
 
   return (
     <main className="relative mx-auto w-full max-w-7xl px-6 pt-[72px] pb-28">
-      <IsoDeco
-        className="absolute top-6 right-6 hidden w-[340px] lg:block"
-        style={{ ['--iso-bg' as string]: 'var(--background)' }}
-      />
+      <HubDeco className="absolute top-6 right-6 z-10 hidden w-[340px] lg:block" />
 
       <div className="flex max-w-3xl flex-col gap-8">
         <Reveal>
