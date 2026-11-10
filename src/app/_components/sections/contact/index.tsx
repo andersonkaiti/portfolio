@@ -1,4 +1,4 @@
-import { IsoDeco } from '@components/iso/iso-deco'
+import { PanelFigure } from '@components/iso/panel-figure'
 import { AnimatedText } from '@components/ui/animated-text'
 import { Reveal } from '@components/ui/reveal'
 import Link from 'next/link'
@@ -21,10 +21,7 @@ export async function ContactSection() {
       id="contact"
       className="ak-on-signal relative scroll-mt-[120px] overflow-hidden bg-signal text-on-signal selection:bg-on-signal selection:text-signal"
     >
-      <IsoDeco
-        className="absolute top-1/2 right-10 -mt-[208px] hidden w-[480px] lg:block"
-        style={{ ['--iso-bg' as string]: 'var(--signal)' }}
-      />
+      <PanelFigure className="absolute top-1/2 right-10 z-10 -mt-[230px] hidden w-[560px] lg:block" />
 
       <div className="mx-auto w-full max-w-7xl px-6 pt-20 pb-12">
         <Reveal>
