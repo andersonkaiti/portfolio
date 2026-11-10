@@ -1,4 +1,4 @@
-import { IsoDeco } from '@components/iso/iso-deco'
+import { RiffleDeco } from '@components/iso/riffle-deco'
 import { Reveal } from '@components/ui/reveal'
 import { getProjects } from '@http/get-projects'
 import type { Metadata } from 'next'
@@ -35,18 +35,18 @@ export default async function ProjectsPage() {
   return (
     <NuqsAdapter>
       <main className="relative mx-auto w-full max-w-7xl px-6 pt-[72px] pb-28">
-        <IsoDeco
-          className="absolute top-6 right-6 hidden w-[340px] lg:block"
-          style={{ ['--iso-bg' as string]: 'var(--background)' }}
+        <RiffleDeco
+          interactive
+          className="absolute top-6 right-6 z-10 hidden w-[300px] lg:block"
         />
 
         <ProjectList projects={projects} />
       </main>
 
       <section className="relative overflow-hidden bg-signal text-on-signal selection:bg-on-signal selection:text-signal">
-        <IsoDeco
-          className="absolute right-6 -bottom-5 hidden w-[300px] lg:block"
-          style={{ ['--iso-bg' as string]: 'var(--signal)' }}
+        <RiffleDeco
+          tone="signal"
+          className="absolute top-1/2 left-[56%] hidden w-[300px] -translate-x-1/2 -translate-y-1/2 lg:block"
         />
 
         <div className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-x-12 gap-y-8 px-6 py-22">
