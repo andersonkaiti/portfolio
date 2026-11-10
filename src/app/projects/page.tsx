@@ -36,7 +36,7 @@ export default async function ProjectsPage() {
     <NuqsAdapter>
       <main className="relative mx-auto w-full max-w-7xl px-6 pt-[72px] pb-28">
         <IsoDeco
-          className="absolute top-6 right-6 hidden w-[280px] lg:block"
+          className="absolute top-6 right-6 hidden w-[340px] lg:block"
           style={{ ['--iso-bg' as string]: 'var(--background)' }}
         />
 
@@ -45,7 +45,7 @@ export default async function ProjectsPage() {
 
       <section className="relative overflow-hidden bg-signal text-on-signal selection:bg-on-signal selection:text-signal">
         <IsoDeco
-          className="absolute right-6 -bottom-5 hidden w-[240px] lg:block"
+          className="absolute right-6 -bottom-5 hidden w-[300px] lg:block"
           style={{ ['--iso-bg' as string]: 'var(--signal)' }}
         />
 

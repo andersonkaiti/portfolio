@@ -47,7 +47,7 @@ export async function InfoPage({ pageKey }: { pageKey: InfoPageKey }) {
   return (
     <main className="relative mx-auto w-full max-w-7xl px-6 pt-[72px] pb-28">
       <IsoDeco
-        className="absolute top-6 right-6 hidden w-[280px] lg:block"
+        className="absolute top-6 right-6 hidden w-[340px] lg:block"
         style={{ ['--iso-bg' as string]: 'var(--background)' }}
       />
 

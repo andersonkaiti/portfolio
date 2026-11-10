@@ -8,6 +8,17 @@ export const FIGURE_THEME = {
   '--hairline-lo': 'var(--border)',
 } as CSSProperties
 
+const SOFT = (share: number) =>
+  `color-mix(in srgb, var(--foreground) ${share}%, var(--iso-bg, var(--background)))`
+
+export const DECO_THEME = {
+  ...FIGURE_THEME,
+  '--hairline-hi': 'var(--foreground)',
+  '--hairline-edge': SOFT(62),
+  '--hairline-mid': SOFT(42),
+  '--hairline-lo': SOFT(24),
+} as CSSProperties
+
 const INK = (share: number) =>
   `color-mix(in srgb, var(--on-signal) ${share}%, var(--signal))`
 
