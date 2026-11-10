@@ -14,7 +14,7 @@ export async function HeroSection() {
 
   return (
     <header
-      className="mx-auto grid w-full max-w-7xl scroll-mt-[150px] items-center gap-x-6 gap-y-8 px-6 pt-16 pb-24 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.85fr)] lg:min-h-[calc(100svh-6rem)] lg:pt-40 lg:pb-32"
+      className="mx-auto grid w-full max-w-7xl scroll-mt-[150px] items-center gap-x-6 gap-y-8 px-6 pt-16 pb-24 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)] lg:min-h-[calc(100svh-6rem)] lg:pt-40 lg:pb-32"
       id="hero"
     >
       <div className="min-w-0">
