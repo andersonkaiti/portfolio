@@ -6,6 +6,7 @@ import type { IGithubRepository } from '@http/get-projects'
 import { jetBrainsMono } from '@lib/fonts'
 import { cn } from 'cn'
 import { ArrowLeft, SearchX } from 'lucide-react'
+import { AnimatePresence, MotionConfig, motion } from 'motion/react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { useAvailableTechs } from '../_hooks/use-available-techs'
@@ -85,11 +86,26 @@ export function ProjectList({ projects }: ProjectListProps) {
           )}
         </div>
       ) : (
-        <div className="mt-10 grid w-full grid-cols-[repeat(auto-fit,minmax(min(440px,100%),1fr))] gap-x-12 gap-y-[72px]">
-          {filteredProjects.map((project) => (
-            <Project key={project.id} {...project} demoLabel={t('demo')} />
-          ))}
-        </div>
+        <MotionConfig reducedMotion="user">
+          <div className="mt-10 grid w-full grid-cols-[repeat(auto-fit,minmax(min(440px,100%),1fr))] gap-x-12 gap-y-[72px]">
+            <AnimatePresence mode="popLayout">
+              {filteredProjects.map((project) => (
+                <motion.div
+                  key={project.id}
+                  layout
+                  exit={{ opacity: 0, scale: 0.96 }}
+                  transition={{
+                    layout: { type: 'spring', stiffness: 380, damping: 40 },
+                    opacity: { duration: 0.2 },
+                    scale: { duration: 0.2 },
+                  }}
+                >
+                  <Project {...project} demoLabel={t('demo')} />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+        </MotionConfig>
       )}
     </div>
   )
