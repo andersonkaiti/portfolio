@@ -6,6 +6,7 @@ import { jetBrainsMono } from '@lib/fonts'
 import { cn } from 'cn'
 import { setCookie } from 'cookies-next'
 import { Check, Loader2 } from 'lucide-react'
+import { AnimatePresence, motion } from 'motion/react'
 import { useRouter } from 'next/navigation'
 import { useLocale } from 'next-intl'
 import { useTransition } from 'react'
@@ -41,18 +42,34 @@ export function LanguageToggle() {
           aria-label={locale === 'en' ? 'Select language' : 'Selecionar idioma'}
           disabled={isPending}
         >
-          {isPending ? (
-            <Loader2 className="size-4 animate-spin" />
-          ) : (
-            <span
-              className={cn(
-                'text-[11px] font-medium uppercase tracking-widest',
-                jetBrainsMono.className,
-              )}
-            >
-              {locale === 'pt-BR' ? 'PT' : 'EN'}
-            </span>
-          )}
+          <AnimatePresence mode="popLayout" initial={false}>
+            {isPending ? (
+              <motion.span
+                key="pending"
+                initial={{ y: 8, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -8, opacity: 0 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
+                className="flex"
+              >
+                <Loader2 className="size-4 animate-spin" />
+              </motion.span>
+            ) : (
+              <motion.span
+                key={locale}
+                initial={{ y: 8, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -8, opacity: 0 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
+                className={cn(
+                  'text-[11px] font-medium uppercase tracking-widest',
+                  jetBrainsMono.className,
+                )}
+              >
+                {locale === 'pt-BR' ? 'PT' : 'EN'}
+              </motion.span>
+            )}
+          </AnimatePresence>
         </Button>
       </PopoverTrigger>
       <PopoverContent align="center" className="w-40 p-2">
@@ -68,7 +85,7 @@ export function LanguageToggle() {
             )}
           >
             <span>English</span>
-            {locale === 'en' && <Check className="size-4" />}
+            {locale === 'en' && <CheckMark />}
           </Button>
           <Button
             variant="ghost"
@@ -81,10 +98,23 @@ export function LanguageToggle() {
             )}
           >
             <span>Português</span>
-            {locale === 'pt-BR' && <Check className="size-4" />}
+            {locale === 'pt-BR' && <CheckMark />}
           </Button>
         </div>
       </PopoverContent>
     </Popover>
+  )
+}
+
+function CheckMark() {
+  return (
+    <motion.span
+      initial={{ scale: 0.4, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ type: 'spring', stiffness: 500, damping: 24 }}
+      className="flex"
+    >
+      <Check className="size-4" />
+    </motion.span>
   )
 }
