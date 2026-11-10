@@ -10,6 +10,7 @@ import {
   NavItems,
 } from '@components/ui/resizable-navbar'
 import { useLenis } from '@providers/lenis'
+import { cn } from 'cn'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTranslations } from 'next-intl'
@@ -22,21 +23,25 @@ export interface NavItem {
   link: string
 }
 
+const FOLD =
+  'inline-grid grid-cols-[1fr] transition-[grid-template-columns,opacity,filter] duration-700 ease-[cubic-bezier(0.65,0,0.35,1)] group-data-[visible=true]/nav:grid-cols-[0fr] group-data-[visible=true]/nav:opacity-0 group-data-[visible=true]/nav:blur-sm motion-reduce:transition-none'
+
 function Logo() {
   return (
     <Link
       href="/"
       aria-label="Anderson Kaiti"
-      className="inline-grid font-display text-2xl leading-none font-normal tracking-[-0.035em] whitespace-nowrap text-foreground no-underline"
+      className="inline-flex items-baseline font-display text-2xl leading-none font-normal tracking-[-0.035em] whitespace-nowrap text-foreground no-underline"
     >
-      <span className="col-start-1 row-start-1 transition-[opacity,transform,filter] duration-500 ease-out group-data-[visible=true]/nav:pointer-events-none group-data-[visible=true]/nav:-translate-y-3 group-data-[visible=true]/nav:opacity-0 group-data-[visible=true]/nav:blur-sm motion-reduce:transition-none">
-        Anderson Kaiti
-      </span>
-      <span
-        aria-hidden="true"
-        className="col-start-1 row-start-1 translate-y-3 opacity-0 blur-sm transition-[opacity,transform,filter] duration-500 ease-out group-data-[visible=true]/nav:translate-x-4 group-data-[visible=true]/nav:translate-y-0 group-data-[visible=true]/nav:opacity-100 group-data-[visible=true]/nav:blur-none motion-reduce:transition-none"
-      >
-        AK
+      <span aria-hidden="true" className="inline-flex items-baseline">
+        <span>A</span>
+        <span className={cn(FOLD, 'delay-75')}>
+          <span className="overflow-hidden whitespace-pre">nderson </span>
+        </span>
+        <span>K</span>
+        <span className={FOLD}>
+          <span className="overflow-hidden whitespace-pre">aiti</span>
+        </span>
       </span>
     </Link>
   )
