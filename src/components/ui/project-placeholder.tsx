@@ -59,7 +59,7 @@ export function ProjectPlaceholder() {
             style={SWEEP_DOTS}
             initial={{ maskPosition: '-60% 0%', opacity: 0.55 }}
             animate={{ maskPosition: '160% 0%', opacity: [0.55, 0.55, 0] }}
-            transition={{ duration: 1.6, ease: 'easeInOut' }}
+            transition={{ duration: 1, ease: 'easeInOut' }}
           />
         )}
 
@@ -76,7 +76,7 @@ export function ProjectPlaceholder() {
                 type: 'spring',
                 stiffness: 520,
                 damping: 20,
-                delay: 0.15 + index * 0.08,
+                delay: 0.05 + index * 0.05,
               }}
             />
           ))}
@@ -86,7 +86,7 @@ export function ProjectPlaceholder() {
             animate={
               inView ? { scaleX: 1, opacity: 0.15 } : { scaleX: 0, opacity: 0 }
             }
-            transition={{ duration: 0.7, delay: 0.45, ease: EASE }}
+            transition={{ duration: 0.4, delay: 0.2, ease: EASE }}
           />
           <motion.span
             className="absolute inset-x-0 bottom-0 h-px origin-left bg-primary"
@@ -96,7 +96,7 @@ export function ProjectPlaceholder() {
                 ? { scaleX: [0, 1], opacity: [1, 1, 0] }
                 : { scaleX: 0, opacity: 1 }
             }
-            transition={{ duration: 1.1, delay: 0.3, ease: EASE }}
+            transition={{ duration: 0.6, delay: 0.15, ease: EASE }}
           />
         </div>
 
@@ -116,7 +116,7 @@ export function ProjectPlaceholder() {
               stroke={STROKE}
               initial={{ pathLength: 0 }}
               animate={{ pathLength: inView ? 1 : 0 }}
-              transition={{ duration: 0.9, delay: 0.6, ease: EASE }}
+              transition={{ duration: 0.5, delay: 0.25, ease: EASE }}
             />
             <motion.path
               d={RIGHT}
@@ -124,7 +124,7 @@ export function ProjectPlaceholder() {
               stroke={STROKE}
               initial={{ pathLength: 0 }}
               animate={{ pathLength: inView ? 1 : 0 }}
-              transition={{ duration: 0.9, delay: 0.72, ease: EASE }}
+              transition={{ duration: 0.5, delay: 0.31, ease: EASE }}
             />
             <motion.path
               d={TOP}
@@ -136,8 +136,8 @@ export function ProjectPlaceholder() {
                 y: hover ? -7 : 0,
               }}
               transition={{
-                pathLength: { duration: 0.9, delay: 0.84, ease: EASE },
-                fill: { duration: 0.6, delay: 1.4 },
+                pathLength: { duration: 0.5, delay: 0.37, ease: EASE },
+                fill: { duration: 0.4, delay: 0.7 },
                 y: { type: 'spring', stiffness: 380, damping: 18 },
               }}
             />

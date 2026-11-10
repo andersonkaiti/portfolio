@@ -38,7 +38,7 @@ export function ProjectReveal({
             ? { clipPath: `inset(0 0% 0 0 round ${imageRadius}px)` }
             : undefined
         }
-        transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
+        transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
       >
         {image}
       </motion.div>
@@ -47,8 +47,8 @@ export function ProjectReveal({
         initial={{ opacity: 0, y: 32 }}
         animate={inView ? { opacity: 1, y: 0 } : undefined}
         transition={{
-          duration: 0.9,
-          delay: 0.45,
+          duration: 0.5,
+          delay: 0.2,
           ease: [0.215, 0.61, 0.355, 1],
         }}
       >
