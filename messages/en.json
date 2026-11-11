@@ -186,6 +186,13 @@
     },
     "note": "I measure the starting point, build the fix, then show the numbers. That's how a legacy Joomla site went from 2.4 s to 0.6 s LCP. No guesswork and no “it feels faster”."
   },
+  "notFound": {
+    "label": "404",
+    "title": "Nothing here",
+    "description": "This page doesn’t exist or was moved. Open the drawer: there is nothing inside.",
+    "home": "Back to home",
+    "projects": "See projects"
+  },
   "proof": {
     "label": "Proof",
     "title": "Proof",

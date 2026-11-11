@@ -186,6 +186,13 @@
     },
     "note": "Eu meço o ponto de partida, construo a correção e depois mostro os números. Foi assim que um site legado em Joomla foi de 2,4 s para 0,6 s de LCP. Sem achismo e sem “parece mais rápido”."
   },
+  "notFound": {
+    "label": "404",
+    "title": "Nada por aqui",
+    "description": "Essa página não existe ou mudou de lugar. Abra a gaveta: não tem nada aqui dentro.",
+    "home": "Voltar para o início",
+    "projects": "Ver projetos"
+  },
   "proof": {
     "label": "Resultados",
     "title": "Resultados",
