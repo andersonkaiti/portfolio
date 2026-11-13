@@ -46,7 +46,7 @@ export async function InfoPage({ pageKey }: { pageKey: InfoPageKey }) {
 
   return (
     <main className="relative mx-auto w-full max-w-7xl px-6 pt-[72px] pb-28">
-      <HubDeco className="absolute top-6 right-6 z-10 hidden w-[340px] lg:block" />
+      <HubDeco className="mx-auto -mb-2 block w-60 lg:absolute lg:top-6 lg:right-6 lg:z-10 lg:mx-0 lg:mb-0 lg:w-[340px]" />
 
       <div className="flex max-w-3xl flex-col gap-8">
         <Reveal>

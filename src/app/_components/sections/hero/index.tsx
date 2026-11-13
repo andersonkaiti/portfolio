@@ -88,7 +88,7 @@ export async function HeroSection() {
         </Reveal>
       </div>
 
-      <Reveal delay={300} className="hidden min-w-0 lg:block">
+      <Reveal delay={300} className="min-w-0">
         <IsoHeroArt
           label={t('artLabel')}
           layers={[t('layerUi'), t('layerApi'), t('layerDb')]}

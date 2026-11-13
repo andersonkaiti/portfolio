@@ -21,8 +21,6 @@ export async function ContactSection() {
       id="contact"
       className="ak-on-signal relative scroll-mt-[120px] overflow-hidden bg-signal text-on-signal selection:bg-on-signal selection:text-signal"
     >
-      <PanelFigure className="absolute top-1/2 right-10 z-10 -mt-[230px] hidden w-[560px] lg:block" />
-
       <div className="mx-auto w-full max-w-7xl px-6 pt-20 pb-12">
         <Reveal>
           <AnimatedText
@@ -100,6 +98,8 @@ export async function ContactSection() {
           </nav>
         </div>
       </div>
+
+      <PanelFigure className="mx-auto mb-10 block w-[300px] lg:absolute lg:top-1/2 lg:right-10 lg:z-10 lg:mx-0 lg:-mt-[230px] lg:mb-0 lg:w-[560px]" />
     </section>
   )
 }
