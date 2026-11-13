@@ -3,7 +3,7 @@
 import { HL } from '@lib/hairline/kernel'
 import { useEffect, useRef } from 'react'
 import { FIGURE_THEME } from './figure-theme'
-import { camera, LIFT, N, R, REST, T, W, zOf } from './layers-geometry'
+import { camera, LIFT, R, REST, T, W, zOf } from './layers-geometry'
 
 const {
   clamp,
