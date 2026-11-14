@@ -36,5 +36,8 @@ const BASE = proj(camera())
 
 export const LAYER_ANCHORS = [2, 1, 0].map((i) => {
   const [x, y] = BASE(W, 0, zOf(i) + T / 2)
-  return { left: `${(x / 400) * 100}%`, top: `${(y / 320) * 100}%` }
+  return {
+    left: `${((x / 400) * 100).toFixed(2)}%`,
+    top: `${((y / 320) * 100).toFixed(2)}%`,
+  }
 })

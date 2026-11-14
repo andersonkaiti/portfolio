@@ -1,9 +1,21 @@
 'use client'
 
+import { jetBrainsMono } from '@lib/fonts'
 import { HL } from '@lib/hairline/kernel'
+import { cn } from 'cn'
 import { useEffect, useRef } from 'react'
 import { FIGURE_THEME } from './figure-theme'
-import { camera, LIFT, R, REST, T, W, zOf } from './layers-geometry'
+import {
+  camera,
+  LAYER_ANCHORS,
+  LIFT,
+  N,
+  R,
+  REST,
+  T,
+  W,
+  zOf,
+} from './layers-geometry'
 
 const {
   clamp,
@@ -25,7 +37,9 @@ const {
   seg,
 } = HL
 
-function mount(stage: HTMLElement, svg: SVGSVGElement) {
+type Tag = HTMLElement | null
+
+function mount(stage: HTMLElement, svg: SVGSVGElement, tags: Tag[]) {
   const bag = disposer()
   let act = -1
 
@@ -57,6 +71,8 @@ function mount(stage: HTMLElement, svg: SVGSVGElement) {
     }
   })
 
+  const tagOf = (slab: number) => tags[N - 1 - slab]
+
   const draw = (s: (typeof slabs)[number], lift: number) => {
     if (lift === s.drawn) return
     s.drawn = lift
@@ -67,6 +83,8 @@ function mount(stage: HTMLElement, svg: SVGSVGElement) {
       place(m, P(18 + k * 9, 18, z1))
     })
     const zm = z0 + T / 2
+    const tag = tagOf(s.i)
+    if (tag) tag.style.top = `${(P(W, 0, zm)[1] / 320) * 100}%`
     if (s.i === 1) {
       s.lines.setAttribute(
         'd',
@@ -112,6 +130,8 @@ function mount(stage: HTMLElement, svg: SVGSVGElement) {
     const lit = act < 0 ? REST : act
     slabs.forEach((s, i) => {
       s.el.sil.classList.toggle('hi', i === lit)
+      const tag = tagOf(i)
+      if (tag) tag.dataset.active = String(i === act)
     })
   }
 
@@ -139,15 +159,21 @@ function mount(stage: HTMLElement, svg: SVGSVGElement) {
   return bag.dispose as () => void
 }
 
-export function LayersFigure({ label }: { label: string }) {
+interface LayersFigureProps {
+  label: string
+  labels: string[]
+}
+
+export function LayersFigure({ label, labels }: LayersFigureProps) {
   const ref = useRef<HTMLDivElement>(null)
+  const tags = useRef<Tag[]>([])
 
   useEffect(() => {
     const stage = ref.current
     if (!stage) return
     HL.inject(document)
     const svg = HL.mk('svg', { viewBox: '0 0 400 320' }, stage)
-    const dispose = mount(stage, svg)
+    const dispose = mount(stage, svg, tags.current)
     return () => {
       dispose()
       svg.remove()
@@ -155,12 +181,37 @@ export function LayersFigure({ label }: { label: string }) {
   }, [])
 
   return (
-    <div
-      ref={ref}
-      role="img"
-      aria-label={label}
-      data-hairline="layers"
-      style={FIGURE_THEME}
-    />
+    <div className="relative">
+      <div
+        ref={ref}
+        role="img"
+        aria-label={label}
+        data-hairline="layers"
+        style={FIGURE_THEME}
+      />
+      <ul
+        aria-hidden="true"
+        className={cn(
+          'pointer-events-none absolute inset-0 m-0 list-none p-0 text-[10px] text-muted-foreground sm:text-[12px]',
+          jetBrainsMono.className,
+        )}
+      >
+        {labels.map((text, index) => (
+          <li
+            key={text}
+            ref={(el) => {
+              tags.current[index] = el
+            }}
+            data-active="false"
+            className="group absolute flex -translate-y-1/2 items-center gap-1.5 whitespace-nowrap pl-2 transition-colors duration-300 data-[active=true]:text-foreground"
+            style={LAYER_ANCHORS[index]}
+          >
+            <span className="size-1 rounded-full bg-primary/30 transition-[background-color,box-shadow,transform] duration-300 group-data-[active=true]:scale-150 group-data-[active=true]:bg-primary group-data-[active=true]:shadow-[0_0_0_3px_color-mix(in_srgb,var(--primary)_25%,transparent),0_0_10px_var(--primary)]" />
+            <span className="h-px w-3 border-t border-dashed border-dash" />
+            {text}
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
