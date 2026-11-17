@@ -116,7 +116,13 @@ Crie um `.env.local` com um token do GitHub (somente leitura é suficiente):
 GITHUB_TOKEN=<seu_token>
 ```
 
-A variável é validada em `src/config/env.ts` e nunca usa o prefixo `NEXT_PUBLIC_`. Sem ela, o app falha ao iniciar.
+O `GITHUB_TOKEN` é validado em `src/config/env.ts` e nunca usa o prefixo `NEXT_PUBLIC_`. Sem ele, o app falha ao iniciar.
+
+Opcionalmente, defina o ID do projeto do [Microsoft Clarity](https://clarity.microsoft.com/) para ativar a análise de sessões em produção:
+
+```txt
+NEXT_PUBLIC_CLARITY_PROJECT_ID=<id_do_projeto>
+```
 
 ```bash
 pnpm dev        # servidor de desenvolvimento (Turbopack)

@@ -5,8 +5,11 @@ export const env = createEnv({
   server: {
     GITHUB_TOKEN: z.string().min(1),
   },
-  client: {},
+  client: {
+    NEXT_PUBLIC_CLARITY_PROJECT_ID: z.string().min(1).optional(),
+  },
   runtimeEnv: {
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
+    NEXT_PUBLIC_CLARITY_PROJECT_ID: process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID,
   },
 })

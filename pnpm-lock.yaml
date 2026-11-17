@@ -15,6 +15,9 @@ importers:
       '@lucasmarkes/hairline':
         specifier: ^0.5.1
         version: 0.5.1(react@19.3.0)
+      '@microsoft/clarity':
+        specifier: ^1.0.2
+        version: 1.0.2
       '@radix-ui/react-collapsible':
         specifier: ^1.1.12
         version: 1.1.12(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -528,6 +531,9 @@ packages:
     peerDependenciesMeta:
       react:
         optional: true
+
+  '@microsoft/clarity@1.0.2':
+    resolution: {integrity: sha512-9EZYROFpJxEGmQpHvUFqvD3ZJ7QQSqnibYSWmS+1xusoZfG1QQ1/Al9yVBBc11DWMbJrs1pe1hLT273it/skJg==}
 
   '@next/env@16.3.6':
     resolution: {integrity: sha512-x9Vblze1EbtltQYnNH38xCPWU3TVfBd1eXqA3+w9+BTpedkkdNpAaltXlGQ/nsc1+E0mVTNrtcbX3GoO09zeLQ==}
@@ -3148,6 +3154,8 @@ snapshots:
   '@lucasmarkes/hairline@0.5.1(react@19.3.0)':
     optionalDependencies:
       react: 19.3.0
+
+  '@microsoft/clarity@1.0.2': {}
 
   '@next/env@16.3.6': {}
 

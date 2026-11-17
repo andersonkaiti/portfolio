@@ -1,3 +1,4 @@
+import { Clarity } from '@components/analytics/clarity'
 import { TooltipProvider } from '@components/ui/tooltip'
 import { bricolage, instrumentSans, jetBrainsMono } from '@lib/fonts'
 import { AosProvider } from '@providers/aos'
@@ -140,6 +141,7 @@ export default function RootLayout({
 
         <Analytics />
         <SpeedInsights />
+        <Clarity />
       </body>
     </html>
   )
