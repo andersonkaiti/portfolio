@@ -357,13 +357,14 @@
           "heading": "What is collected",
           "body": [
             "The site uses Vercel Web Analytics and Vercel Speed Insights to count visits and measure page performance. They report aggregated, anonymous usage data such as pages viewed, country, browser and loading times, and Vercel Web Analytics does not set tracking cookies.",
+            "The site also uses Microsoft Clarity to understand how pages are used. Clarity records anonymized sessions, such as clicks, scrolling, mouse movement, pages visited, device, browser and country, and shows them to me as heatmaps and replays. It does not capture what you type, and sensitive content is masked. Microsoft processes this data under its own privacy statement.",
             "Like any web server, the hosting provider processes technical request data such as your IP address and user agent in order to deliver the pages."
           ]
         },
         {
           "heading": "Cookies and local storage",
           "body": [
-            "The site stores two preferences on your device: a NEXT_LOCALE cookie that remembers the language you chose, which is set only when you use the language switcher and lasts one year, and your light or dark theme choice in local storage. Neither is used for tracking."
+            "The site stores two preferences on your device: a NEXT_LOCALE cookie that remembers the language you chose, which is set only when you use the language switcher and lasts one year, and your light or dark theme choice in local storage. Neither is used for tracking. Microsoft Clarity sets its own cookies (_clck and _clsk) to tell visits apart and link pages viewed in the same session."
           ]
         },
         {

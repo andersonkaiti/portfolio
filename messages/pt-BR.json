@@ -357,13 +357,14 @@
           "heading": "O que é coletado",
           "body": [
             "O site usa o Vercel Web Analytics e o Vercel Speed Insights para contar visitas e medir o desempenho das páginas. Eles reportam dados de uso agregados e anônimos, como páginas vistas, país, navegador e tempos de carregamento, e o Vercel Web Analytics não define cookies de rastreamento.",
+            "O site também usa o Microsoft Clarity para entender como as páginas são usadas. O Clarity registra sessões anonimizadas, como cliques, rolagem, movimento do mouse, páginas visitadas, dispositivo, navegador e país, e as mostra para mim em mapas de calor e replays. Ele não captura o que você digita, e conteúdo sensível é mascarado. A Microsoft processa esses dados conforme a própria declaração de privacidade.",
             "Como qualquer servidor web, o provedor de hospedagem processa dados técnicos da requisição, como seu endereço IP e user agent, para entregar as páginas."
           ]
         },
         {
           "heading": "Cookies e armazenamento local",
           "body": [
-            "O site guarda duas preferências no seu dispositivo: um cookie NEXT_LOCALE que lembra o idioma escolhido, definido apenas quando você usa o seletor de idioma e válido por um ano, e a sua escolha de tema claro ou escuro no armazenamento local. Nenhum dos dois é usado para rastreamento."
+            "O site guarda duas preferências no seu dispositivo: um cookie NEXT_LOCALE que lembra o idioma escolhido, definido apenas quando você usa o seletor de idioma e válido por um ano, e a sua escolha de tema claro ou escuro no armazenamento local. Nenhum dos dois é usado para rastreamento. O Microsoft Clarity define cookies próprios (_clck e _clsk) para distinguir visitas e ligar as páginas vistas na mesma sessão."
           ]
         },
         {
