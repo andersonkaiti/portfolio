@@ -1,6 +1,7 @@
 'use client'
 
 import { useReducedMotion } from 'motion/react'
+import { usePathname } from 'next/navigation'
 import { useEffect } from 'react'
 
 const ZONE = 0.3
@@ -9,15 +10,13 @@ const MAX_LIFT = 48
 
 export function ScrollFade() {
   const reduce = useReducedMotion()
+  const pathname = usePathname()
 
   useEffect(() => {
-    if (reduce) {
+    if (reduce || !pathname) {
       return
     }
 
-    const targets = [
-      ...document.querySelectorAll<HTMLElement>('main [data-aos]'),
-    ]
     const touched = new Set<HTMLElement>()
     let frame = 0
 
@@ -32,8 +31,16 @@ export function ScrollFade() {
     const update = () => {
       frame = 0
       const baseZone = window.innerHeight * ZONE
+      const targets = document.querySelectorAll<HTMLElement>('main [data-aos]')
 
       for (const element of targets) {
+        if (element.getClientRects().length === 0) {
+          if (touched.has(element)) {
+            reset(element)
+          }
+          continue
+        }
+
         const { bottom } = element.getBoundingClientRect()
         const zone = Math.min(baseZone, Math.max(1, bottom + window.scrollY))
 
@@ -73,7 +80,7 @@ export function ScrollFade() {
         reset(element)
       }
     }
-  }, [reduce])
+  }, [reduce, pathname])
 
   return null
 }
