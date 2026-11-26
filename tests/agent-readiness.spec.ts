@@ -5,6 +5,13 @@ const HTML = { Accept: 'text/html' }
 const TRUST_PAGES = ['/about', '/contact', '/privacy']
 const ORIGIN = 'https://www.andersonkaiti.com'
 const APEX_URL = /https:\/\/andersonkaiti\.com/
+const AGENT_USER_AGENTS = [
+  'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot',
+  'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; ClaudeBot/1.0; +claudebot@anthropic.com)',
+  'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)',
+  'curl/8.7.1',
+  'python-requests/2.32.3',
+]
 
 function visibleText(html: string): string {
   return html
@@ -131,6 +138,24 @@ test.describe('Homepage without JavaScript', () => {
 })
 
 test.describe('Homepage metadata', () => {
+  for (const userAgent of AGENT_USER_AGENTS) {
+    test(`puts lang, canonical, og:type and og:image in <head> for ${userAgent}`, async ({
+      request,
+    }) => {
+      const html = await (
+        await request.get('/', {
+          headers: { ...HTML, 'User-Agent': userAgent },
+        })
+      ).text()
+      const head = html.match(/<head>[\s\S]*?<\/head>/)?.[0] ?? ''
+
+      expect(attribute(html, /<html[^>]*\slang="([^"]+)"/)).toMatch(/^[a-z]{2}/)
+      expect(head).toContain('<link rel="canonical"')
+      expect(head).toContain('<meta property="og:type"')
+      expect(head).toContain('<meta property="og:image"')
+    })
+  }
+
   test('names the served www host in canonical, og:url and og:image', async ({
     request,
   }) => {
