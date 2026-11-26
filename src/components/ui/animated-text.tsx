@@ -36,10 +36,7 @@ export function AnimatedText({
       {words.map((word, index) => (
         // biome-ignore lint/suspicious/noArrayIndexKey: words may repeat
         <Fragment key={`${word}-${index}`}>
-          <span
-            aria-hidden="true"
-            className="-mb-[0.14em] inline-block overflow-hidden pb-[0.14em] align-bottom"
-          >
+          <span aria-hidden="true" className="ak-word">
             <motion.span
               className="inline-block"
               initial={{ y: '115%', rotate: 4 }}
