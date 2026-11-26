@@ -23,6 +23,10 @@ function stripScripts(html: string): string {
     .replace(/<style[\s\S]*?<\/style>/g, '')
 }
 
+function mainOf(html: string): string {
+  return stripScripts(html).match(/<main[\s\S]*?<\/main>/)?.[0] ?? ''
+}
+
 test.describe('Markdown content negotiation', () => {
   test('serves Markdown with Vary: Accept when asked', async ({ request }) => {
     const response = await request.get('/', { headers: MARKDOWN })
@@ -162,6 +166,22 @@ test.describe('llms.txt', () => {
     expect(response.status()).toBe(200)
     expect(await response.text()).toMatch(/^# Anderson Kaiti$/m)
   })
+})
+
+test.describe('Main landmark', () => {
+  for (const path of ['/', '/projects', ...TRUST_PAGES]) {
+    test(`${path} has one main element holding the real content`, async ({
+      request,
+    }) => {
+      const html = stripScripts(
+        await (await request.get(path, { headers: HTML })).text(),
+      )
+
+      expect(html.match(/<main[\s>]/g)).toHaveLength(1)
+      expect(mainOf(html)).not.toContain('aria-busy')
+      expect(visibleText(mainOf(html)).length).toBeGreaterThan(200)
+    })
+  }
 })
 
 test.describe('Trust pages', () => {

@@ -234,7 +234,7 @@ export function InfoPageLoading({ page }: { page: InfoPageLoadingKey }) {
   const shape: PageShape = PAGES[page]
 
   return (
-    <main
+    <div
       aria-busy="true"
       className="relative mx-auto w-full max-w-7xl px-6 pt-[72px] pb-28"
     >
@@ -303,6 +303,6 @@ export function InfoPageLoading({ page }: { page: InfoPageLoadingKey }) {
           ))}
         </div>
       </div>
-    </main>
+    </div>
   )
 }
