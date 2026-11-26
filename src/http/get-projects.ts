@@ -1,5 +1,6 @@
 import { env } from '@config/env'
 import dayjs from 'dayjs'
+import { cacheLife } from 'next/cache'
 import z from 'zod'
 
 const githubOwnerSchema = z.object({
@@ -58,14 +59,14 @@ function firstThenRecent(a: IGithubRepository, b: IGithubRepository): number {
 }
 
 export async function getProjects() {
+  'use cache'
+  cacheLife('hours')
+
   const response = await fetch(
     'https://api.github.com/users/andersonkaiti/repos?per_page=100&page=1',
     {
       headers: {
         Authorization: `Bearer ${env.GITHUB_TOKEN}`,
-      },
-      next: {
-        revalidate: 3600,
       },
     },
   )

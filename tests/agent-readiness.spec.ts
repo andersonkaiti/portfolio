@@ -135,6 +135,21 @@ test.describe('Homepage without JavaScript', () => {
 
     expect(ratio).toBeGreaterThanOrEqual(0.05)
   })
+
+  test('renders the latest projects inside main, not as a deferred chunk', async ({
+    request,
+  }) => {
+    const html = await (await request.get('/', { headers: HTML })).text()
+    const projects =
+      mainOf(html).match(
+        /<section[^>]*id="projects"[\s\S]*?<\/section>/,
+      )?.[0] ?? ''
+
+    expect(projects).not.toBe('')
+    expect(projects).not.toMatch(/<template id="B:/)
+    expect(projects.match(/<h3[\s>]/g)?.length ?? 0).toBeGreaterThan(0)
+    expect(visibleText(projects).length).toBeGreaterThan(200)
+  })
 })
 
 test.describe('Homepage metadata', () => {

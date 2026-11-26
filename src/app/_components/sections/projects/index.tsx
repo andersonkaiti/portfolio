@@ -5,12 +5,13 @@ import {
 } from '@components/ui/section'
 import { getProjects } from '@http/get-projects'
 import { getTranslations } from 'next-intl/server'
-import { Suspense } from 'react'
 import { ProjectList } from './project-list'
-import { ProjectSkeleton } from './project-skeleton'
 
 export async function ProjectListSection() {
-  const t = await getTranslations('projects')
+  const [t, projects] = await Promise.all([
+    getTranslations('projects'),
+    getProjects().catch(() => []),
+  ])
 
   return (
     <SectionContainer id="projects" className="pt-12">
@@ -19,23 +20,7 @@ export async function ProjectListSection() {
         <SectionTitle className="sr-only">{t('title')}</SectionTitle>
       </div>
 
-      <Suspense
-        fallback={
-          <div className="flex flex-col gap-16">
-            <ProjectSkeleton />
-            <ProjectSkeleton />
-            <ProjectSkeleton />
-          </div>
-        }
-      >
-        <ProjectListWrapper />
-      </Suspense>
+      <ProjectList projects={projects} />
     </SectionContainer>
   )
-}
-
-async function ProjectListWrapper() {
-  const projects = await getProjects()
-
-  return <ProjectList projects={projects} />
 }
