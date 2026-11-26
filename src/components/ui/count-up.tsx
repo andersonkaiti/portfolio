@@ -53,7 +53,7 @@ function RollingDigit({ digit, active, delay, instant }: RollingDigitProps) {
     >
       <span className="invisible">0</span>
       <span
-        className="absolute inset-x-0 top-0 flex flex-col will-change-transform"
+        className="ak-digits"
         style={{
           transform: `translateY(calc(${active ? -end : 0} * ${CELL}))`,
           transition: instant
@@ -61,11 +61,7 @@ function RollingDigit({ digit, active, delay, instant }: RollingDigitProps) {
             : `transform ${DURATION}s ${EASE} ${delay}s`,
         }}
       >
-        {strip.map((value, index) => (
-          <span className="ak-digit" key={`${index}-${value}`}>
-            {value}
-          </span>
-        ))}
+        {strip.join('\n')}
       </span>
     </span>
   )
