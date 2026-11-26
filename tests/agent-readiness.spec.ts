@@ -136,6 +136,15 @@ test.describe('Homepage without JavaScript', () => {
     expect(ratio).toBeGreaterThanOrEqual(0.05)
   })
 
+  test('keeps at least 5% ratio counting only the main content', async ({
+    request,
+  }) => {
+    const html = await (await request.get('/', { headers: HTML })).text()
+    const ratio = visibleText(mainOf(html)).length / stripScripts(html).length
+
+    expect(ratio).toBeGreaterThanOrEqual(0.05)
+  })
+
   test('renders the latest projects inside main, not as a deferred chunk', async ({
     request,
   }) => {
@@ -149,6 +158,20 @@ test.describe('Homepage without JavaScript', () => {
     expect(projects).not.toMatch(/<template id="B:/)
     expect(projects.match(/<h3[\s>]/g)?.length ?? 0).toBeGreaterThan(0)
     expect(visibleText(projects).length).toBeGreaterThan(200)
+  })
+
+  test('keeps headings sequential from a single H1', async ({ request }) => {
+    const html = await (await request.get('/', { headers: HTML })).text()
+    const levels = [...mainOf(html).matchAll(/<h([1-6])[\s>]/g)].map((match) =>
+      Number(match[1]),
+    )
+
+    expect(levels[0]).toBe(1)
+    for (let index = 1; index < levels.length; index++) {
+      expect(
+        (levels[index] ?? 0) - (levels[index - 1] ?? 0),
+      ).toBeLessThanOrEqual(1)
+    }
   })
 })
 
