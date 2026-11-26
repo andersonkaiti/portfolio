@@ -45,6 +45,7 @@ const nextConfig: NextConfig = {
   ),
   experimental: {
     turbopackFileSystemCacheForDev: true,
+    turbopackFileSystemCacheForBuild: false,
   },
   images: {
     formats: ['image/avif', 'image/webp'],
