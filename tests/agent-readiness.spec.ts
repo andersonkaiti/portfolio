@@ -3,6 +3,8 @@ import { expect, test } from '@playwright/test'
 const MARKDOWN = { Accept: 'text/markdown' }
 const HTML = { Accept: 'text/html' }
 const TRUST_PAGES = ['/about', '/contact', '/privacy']
+const ORIGIN = 'https://www.andersonkaiti.com'
+const APEX_URL = /https:\/\/andersonkaiti\.com/
 
 function visibleText(html: string): string {
   return html
@@ -25,6 +27,10 @@ function stripScripts(html: string): string {
 
 function mainOf(html: string): string {
   return stripScripts(html).match(/<main[\s\S]*?<\/main>/)?.[0] ?? ''
+}
+
+function attribute(html: string, pattern: RegExp): string | undefined {
+  return html.match(pattern)?.[1]
 }
 
 test.describe('Markdown content negotiation', () => {
@@ -124,6 +130,71 @@ test.describe('Homepage without JavaScript', () => {
   })
 })
 
+test.describe('Homepage metadata', () => {
+  test('names the served www host in canonical, og:url and og:image', async ({
+    request,
+  }) => {
+    const html = await (await request.get('/', { headers: HTML })).text()
+
+    expect(
+      attribute(html, /<link rel="canonical" href="([^"]+)"/)?.replace(
+        /\/$/,
+        '',
+      ),
+    ).toBe(ORIGIN)
+    expect(
+      attribute(html, /<meta property="og:url" content="([^"]+)"/)?.replace(
+        /\/$/,
+        '',
+      ),
+    ).toBe(ORIGIN)
+    expect(attribute(html, /<meta property="og:type" content="([^"]+)"/)).toBe(
+      'website',
+    )
+
+    const image = attribute(html, /<meta property="og:image" content="([^"]+)"/)
+
+    expect(image?.startsWith(`${ORIGIN}/`)).toBe(true)
+
+    const served = await request.get(new URL(image ?? '').pathname)
+
+    expect(served.status()).toBe(200)
+    expect(served.headers()['content-type']).toContain('image/')
+  })
+
+  test('points robots.txt at the www sitemap and host', async ({ request }) => {
+    const response = await request.get('/robots.txt')
+    const body = await response.text()
+
+    expect(response.status()).toBe(200)
+    expect(body).toContain(`Sitemap: ${ORIGIN}/sitemap.xml`)
+    expect(body).toContain(`Host: ${ORIGIN}`)
+    expect(body).not.toMatch(APEX_URL)
+  })
+
+  test('lists only www URLs in the sitemap', async ({ request }) => {
+    const body = await (await request.get('/sitemap.xml')).text()
+    const locations = [...body.matchAll(/<loc>([^<]+)<\/loc>/g)].map(
+      (match) => match[1] ?? '',
+    )
+
+    expect(locations.length).toBeGreaterThan(0)
+    for (const location of locations) {
+      expect(location.startsWith(`${ORIGIN}/`)).toBe(true)
+    }
+  })
+
+  for (const path of ['/llms.txt', '/']) {
+    test(`links ${path} to the www host for agents`, async ({ request }) => {
+      const headers = path === '/' ? MARKDOWN : {}
+      const body = await (await request.get(path, { headers })).text()
+
+      expect(body).toContain(ORIGIN)
+      expect(body).not.toMatch(APEX_URL)
+    })
+  }
+})
+
 test.describe('JSON-LD on the homepage', () => {
   test('embeds Person, Organization and WebSite', async ({ request }) => {
     const html = await (await request.get('/', { headers: HTML })).text()
@@ -199,9 +270,7 @@ test.describe('Trust pages', () => {
         expect(response.status()).toBe(200)
         expect(html.match(/<h1[\s>]/g)).toHaveLength(1)
         expect(visibleText(main).length).toBeGreaterThan(500)
-        expect(html).toContain(
-          `<link rel="canonical" href="https://andersonkaiti.com${path}"`,
-        )
+        expect(html).toContain(`<link rel="canonical" href="${ORIGIN}${path}"`)
       })
     }
   }
@@ -210,7 +279,7 @@ test.describe('Trust pages', () => {
     const body = await (await request.get('/sitemap.xml')).text()
 
     for (const path of TRUST_PAGES) {
-      expect(body).toContain(`https://andersonkaiti.com${path}</loc>`)
+      expect(body).toContain(`${ORIGIN}${path}</loc>`)
     }
   })
 

@@ -20,7 +20,7 @@ test.describe('JSON-LD', () => {
     const person = nodeOfType('Person')
 
     expect(person.name).toBe('Anderson Kaiti')
-    expect(person.url).toBe('https://andersonkaiti.com')
+    expect(person.url).toBe('https://www.andersonkaiti.com')
     expect(String(person.description).length).toBeGreaterThan(40)
     expect(person.sameAs).toEqual(
       expect.arrayContaining([

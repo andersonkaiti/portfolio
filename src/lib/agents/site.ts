@@ -1,6 +1,6 @@
 import en from '../../../messages/en.json'
 
-export const SITE_URL = 'https://andersonkaiti.com'
+export const SITE_URL = 'https://www.andersonkaiti.com'
 export const SITE_NAME = 'Anderson Kaiti'
 
 const { values } = en.footer

@@ -1,7 +1,7 @@
 import { HubDeco } from '@components/iso/hub-deco'
 import { Reveal } from '@components/ui/reveal'
 import { getInfoPage, type InfoPageKey } from '@lib/agents/content'
-import { CONTACT } from '@lib/agents/site'
+import { CONTACT, SITE_URL } from '@lib/agents/site'
 import { jetBrainsMono } from '@lib/fonts'
 import { cn } from 'cn'
 import { ArrowLeft } from 'lucide-react'
@@ -17,7 +17,7 @@ const OTHER_PAGES: Record<InfoPageKey, InfoPageKey[]> = {
 
 export async function getInfoPageMetadata(key: InfoPageKey): Promise<Metadata> {
   const t = await getTranslations(`pages.${key}`)
-  const url = `https://andersonkaiti.com/${key}`
+  const url = `${SITE_URL}/${key}`
 
   return {
     title: t('metaTitle'),

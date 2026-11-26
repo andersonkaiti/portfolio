@@ -1,3 +1,4 @@
+import { SITE_URL } from '@lib/agents/site'
 import type { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
@@ -7,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/api/',
     },
-    sitemap: 'https://andersonkaiti.com/sitemap.xml',
-    host: 'https://andersonkaiti.com',
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   }
 }

@@ -1,6 +1,7 @@
 import { RiffleDeco } from '@components/iso/riffle-deco'
 import { Reveal } from '@components/ui/reveal'
 import { getProjects } from '@http/get-projects'
+import { SITE_URL } from '@lib/agents/site'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
@@ -16,12 +17,12 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t('title'),
     description: t('description'),
     alternates: {
-      canonical: 'https://andersonkaiti.com/projects',
+      canonical: `${SITE_URL}/projects`,
     },
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: 'https://andersonkaiti.com/projects',
+      url: `${SITE_URL}/projects`,
     },
   }
 }

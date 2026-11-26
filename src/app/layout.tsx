@@ -1,5 +1,6 @@
 import { Clarity } from '@components/analytics/clarity'
 import { TooltipProvider } from '@components/ui/tooltip'
+import { SITE_URL } from '@lib/agents/site'
 import { bricolage, instrumentSans, jetBrainsMono } from '@lib/fonts'
 import { AosProvider } from '@providers/aos'
 import { LenisProvider } from '@providers/lenis'
@@ -23,11 +24,11 @@ export async function generateMetadata(): Promise<Metadata> {
   const ogLocale = locale === 'pt-BR' ? 'pt_BR' : 'en_US'
 
   return {
-    metadataBase: new URL('https://andersonkaiti.com'),
+    metadataBase: new URL(SITE_URL),
     title: typeof t === 'function' ? t('title') : 'Anderson Kaiti',
     description: typeof t === 'function' ? t('description') : 'Portfolio',
     applicationName: 'Anderson Kaiti - Portfolio',
-    authors: [{ name: 'Anderson Kaiti', url: 'https://andersonkaiti.com' }],
+    authors: [{ name: 'Anderson Kaiti', url: SITE_URL }],
     keywords: [
       'Anderson Kaiti',
       'Full-Stack Developer',
@@ -41,11 +42,11 @@ export async function generateMetadata(): Promise<Metadata> {
       'Portfolio',
     ],
     alternates: {
-      canonical: 'https://andersonkaiti.com',
+      canonical: `${SITE_URL}/`,
     },
     openGraph: {
       type: 'website',
-      url: 'https://andersonkaiti.com',
+      url: `${SITE_URL}/`,
       locale: ogLocale,
       title: typeof t === 'function' ? t('title') : 'Anderson Kaiti',
       description: typeof t === 'function' ? t('description') : 'Portfolio',
